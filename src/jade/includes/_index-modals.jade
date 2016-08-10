@@ -1,0 +1,45 @@
+// !!!! ATTENTION !!!!!! hidden blocks !!!! ATTENTION !!!!!!
+#regions_hidden.hidden_bg
+  .hidden-block.regions_wrap
+    .hidden-block-close.button_close
+    h2 Область доставки
+    .regions_map
+      img(src='img/map2x.png', alt='map-region')
+    .regions
+      h3 Выберите область, куда необходимо доставить заказ
+      form.region_form(action='/', method='/')
+        label
+          input(name='region', type='radio', value='brest', checked='')
+          | Брестская область
+        label
+          input(name='region', type='radio', value='Vitebsk')
+          | Витебская область
+        label
+          input(name='region', type='radio', value='Gomel')
+          | Гомельская область
+        label
+          input(name='region', type='radio', value='Grodno')
+          | Гродненская область
+        label
+          input(name='region', type='radio', value='Minsk')
+          | Минск, Минская область
+        label
+          input(name='region', type='radio', value='Mogilev')
+          | Могилевская область
+        input(type='submit', value='Выбрать')
+// SUCCSES
+#success_hidden.hidden_bg
+  .hidden-block.success_hidden
+    .hidden-block-close.button_close
+    h2 Спасибо
+    p
+      | Вы успешно подписались на рассылку информации о скидках и распродажах торгового центра «Полесье».
+      | Настроить подписку вы можете в 
+      a(href='#') Личном кабинете.
+    p.button_close
+      a(href='#') Закрыть
+//if lt IE 9
+  script(src='libs/html5shiv/es5-shim.min.js')
+  script(src='libs/html5shiv/html5shiv.min.js')
+  script(src='libs/html5shiv/html5shiv-printshiv.min.js')
+  script(src='libs/respond/respond.min.js')

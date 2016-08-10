@@ -1,0 +1,317 @@
+.header
+  header
+    // top line
+    .top-line
+      .top-line-region
+        p
+          a(href='#regions_hidden') Минск, Минская область
+      .top-line-nav
+        nav
+          ul
+            li
+              a(href='#') Доставка и оплата
+            li
+              a(href='#') Частые вопросы
+            li
+              a(href='#') Новости и акции
+            li
+              a(href='#') Ещё...
+              ul.drop-line-nav
+                li
+                  a(href='#') Как заказать
+                li
+                  a(href='#') Возврат
+                li
+                  a(href='#') Оферта
+                li
+                  a(href='#') Контакты
+      .top-line-call
+        p
+          span +375 29 605 05 05
+          |  - или 
+          a(href='#') обратный звонок
+    // line
+    .line
+      // logo
+      .line-wrap-logo
+        .wrap-logo
+          img.logo(src='img/logo.svg', alt='Полесье')
+          .logo-market
+            p.market Market
+            p.bigmarket Онлайн-гипермаркет
+        .wrap-catalog-btn
+          p Каталог продукции
+      // search
+      .line-search-form
+        form(action='', method='post')
+          input(type='search', name='search', placeholder='Поиск по 200 000 товарам, разделам и артикулам')
+          input(type='submit', value='Найти')
+        // cart_list_hidden
+        .line_search_hidden.search-catalog(style='display: none')
+          .cart_list_block_scroll.search_scroll
+            .search_list
+              ul
+                li
+                  a(href='#') Детские велосипеды
+                li
+                  a(href='#') Велосипеды
+                li
+                  a(href='#') Велосипедные аксессуары
+            .cart_list_block
+              img(src='img/promo/cart_list.jpg', alt='#')
+              .cart_list_descr
+                p.cart_list_name Samsung Galaxy S6 Edge 32Gb
+                p Цвет: черный
+                p Кол-во: 1 шт.
+                .cart_list_coast
+                  p.hits_coast_new
+                    | 10 435,60 р. 
+                    span  10 435 600 р
+                  p.hits_coast.old
+                    | 13 435,60 р. 
+                    span  13 435 600 р
+            .cart_list_block
+              img(src='img/promo/cart_list.jpg', alt='#')
+              .cart_list_descr
+                p.cart_list_name Samsung Galaxy S6 Edge 32Gb
+                p Цвет: черный
+                p Кол-во: 1 шт.
+                .cart_list_coast
+                  p.hits_coast_new
+                    | 10 435,60 р. 
+                    span  10 435 600 р
+                  p.hits_coast.old
+                    | 13 435,60 р. 
+                    span  13 435 600 р
+            .cart_list_block
+              img(src='img/promo/cart_list.jpg', alt='#')
+              .cart_list_descr
+                p.cart_list_name Samsung Galaxy S6 Edge 32Gb
+                p Цвет: черный
+                p Кол-во: 1 шт.
+                .cart_list_coast
+                  p.hits_coast_new
+                    | 10 435,60 р. 
+                    span  10 435 600 р
+                  p.hits_coast.old
+                    | 13 435,60 р. 
+                    span  13 435 600 р
+            .cart_list_block
+              img(src='img/promo/cart_list.jpg', alt='#')
+              .cart_list_descr
+                p.cart_list_name Samsung Galaxy S6 Edge 32Gb
+                p Цвет: черный
+                p Кол-во: 1 шт.
+                .cart_list_coast
+                  p.hits_coast_new
+                    | 10 435,60 р. 
+                    span  10 435 600 р
+                  p.hits_coast.old
+                    | 13 435,60 р. 
+                    span  13 435 600 р
+        // cart_list_hidden
+        .line_search_hidden.search-text(style='display: none')
+          .cart_list_block_scroll
+            .cart_list_block
+              img(src='img/promo/search-text.jpg', alt='#')
+              .cart_list_descr
+                p.search_date 06 июля 2016 года
+                p.search_list_name Новое поступление детских велосипедов
+                p.short_descr
+                  | В нашем магазине обновление ассорти- мента — более 120 новых моделей детских и подростковых велосипедов...
+            .cart_list_block
+              img(src='img/promo/search-text.jpg', alt='#')
+              .cart_list_descr
+                p.search_date 06 июля 2016 года
+                p.cart_list_name Новое поступление детских велосипедов
+                p.short_descr
+                  | В нашем магазине обновление ассорти- мента — более 120 новых моделей детских и подростковых велосипедов...
+            .cart_list_block
+              img(src='img/promo/search-text.jpg', alt='#')
+              .cart_list_descr
+                p.search_date 06 июля 2016 года
+                p.cart_list_name Новое поступление детских велосипедов
+                p.short_descr
+                  | В нашем магазине обновление ассорти- мента — более 120 новых моделей детских и подростковых велосипедов...
+            .cart_list_block
+              img(src='img/promo/search-text.jpg', alt='#')
+              .cart_list_descr
+                p.search_date 06 июля 2016 года
+                p.cart_list_name Новое поступление детских велосипедов
+                p.short_descr
+                  | В нашем магазине обновление ассорти- мента — более 120 новых моделей детских и подростковых велосипедов...
+      // tools
+      .line-tools
+        .tools-comparison(data-title='Список сравнения пуст')
+        .tools-defer(data-title='Список отложенных товаров пуст')
+        .account
+          a(href='#') Личный кабинет
+      // cart
+      .line-cart
+        a.cart(data-title='Ваша корзина совершенно пуста', href='#')
+          | Корзина 
+          span 0
+        // cart_list_hidden
+        .cart_list_hidden
+          .cart_list_block_scroll
+            .cart_list_block
+              img(src='img/promo/cart_list.jpg', alt='#')
+              .cart_list_descr
+                p.cart_list_name Samsung Galaxy S6 Edge 32Gb
+                p Цвет: черный
+                p Кол-во: 1 шт.
+                .cart_list_coast
+                  p.hits_coast_new
+                    | 10 435,60 р. 
+                    span  10 435 600 р
+                  p.hits_coast.old
+                    | 13 435,60 р. 
+                    span  13 435 600 р
+            .cart_list_block
+              img(src='img/promo/cart_list.jpg', alt='#')
+              .cart_list_descr
+                p.cart_list_name Samsung Galaxy S6 Edge 32Gb
+                p Цвет: черный
+                p Кол-во: 1 шт.
+                .cart_list_coast
+                  p.hits_coast_new
+                    | 10 435,60 р. 
+                    span  10 435 600 р
+                  p.hits_coast.old
+                    | 13 435,60 р. 
+                    span  13 435 600 р
+            .cart_list_block
+              img(src='img/promo/cart_list.jpg', alt='#')
+              .cart_list_descr
+                p.cart_list_name Samsung Galaxy S6 Edge 32Gb
+                p Цвет: черный
+                p Кол-во: 1 шт.
+                .cart_list_coast
+                  p.hits_coast_new
+                    | 10 435,60 р. 
+                    span  10 435 600 р
+                  p.hits_coast.old
+                    | 13 435,60 р. 
+                    span  13 435 600 р
+            .cart_list_block
+              img(src='img/promo/cart_list.jpg', alt='#')
+              .cart_list_descr
+                p.cart_list_name Samsung Galaxy S6 Edge 32Gb
+                p Цвет: черный
+                p Кол-во: 1 шт.
+                .cart_list_coast
+                  p.hits_coast_new
+                    | 10 435,60 р. 
+                    span  10 435 600 р
+                  p.hits_coast.old
+                    | 13 435,60 р. 
+                    span  13 435 600 р
+          .cart_total
+            p
+              | Итого: 
+              span
+                | 4 466,60 р. 
+                span  44 666 000 р
+          .cart_buttons
+            a.cart_incart(href='#') Перейти в корзину
+            a.cart_content(href='#') Оформить заказ
+    // main-nav
+    .main-nav
+      nav.nav
+        ul
+          li
+            a(href='#') Твары для детей
+          li
+            a(href='#') Мода и красота
+          li
+            a(href='#') Спорт и туризм
+          li
+            a(href='#') Электроника и техника
+            .main-nav-dropmenu
+              .nav-main-wrap
+                .nav-main
+                  ul
+                    li
+                      a(href='#') Мебель, оборудование для сада
+                    li
+                      a(href='#') Электрика и освещение
+                    li
+                      a(href='#') Садоводство и озеленение
+                    li
+                      a(href='#') Электроинструмент
+                      .drop-nav-dropmenu
+                        ul
+                          li
+                            a(href='#') Дрели, шуруповёрты, молотки
+                          li
+                            a(href='#') Шлифовальные станки и машины
+                          li
+                            a(href='#') Пилы и лобзики
+                          li
+                            a(href='#') Отрезные станки и ножницы
+                          li
+                            a(href='#') Рубанки, фрезерные станки
+                          li
+                            a(href='#')
+                              | Фены строительные 
+                              span -5%
+                          li
+                            a(href='#') Лебёдки
+                          li
+                            a(href='#') Компрессоры, пылесосы
+                          li
+                            a(href='#') Сварочное оборудование
+                          li
+                            a(href='#')
+                              | Расходные материалы 
+                              span -5%
+                    li
+                      a(href='#') Инструмент ручной
+                    li
+                      a(href='#') Текстиль для дома, рукоделие
+                    li
+                      a(href='#') Домашний декор
+                    li
+                      a(href='#') Бытовая химия, СМС
+                    li
+                      a(href='#') Хозтовары, садовый инвентарь
+                    li
+                      a(href='#') Садоводство и озеленение
+              .main-nav-featur
+                .featur-blocks-wrap
+                  .themed_block
+                    img(src='img/promo/themed101.jpg', alt='#')
+                    p.themed_name
+                      a(href='#', tabindex='0') Мягкая игрушка Hasbro Игривый щенок [B0449]
+                    p.themed_cat Мягкие игрушки
+                    p.themed_coast 3 798,00 р.
+                  .themed_block
+                    img(src='img/promo/themed101.jpg', alt='#')
+                    p.themed_name
+                      a(href='#', tabindex='0') Мягкая игрушка Hasbro Игривый щенок [B0449]
+                    p.themed_cat Мягкие игрушки
+                    p.themed_coast 3 798,00 р.
+                  .themed_block
+                    img(src='img/promo/themed101.jpg', alt='#')
+                    p.themed_name
+                      a(href='#', tabindex='0') Мягкая игрушка Hasbro Игривый щенок [B0449]
+                    p.themed_cat Мягкие игрушки
+                    p.themed_coast 3 798,00 р.
+                .featur-brands
+                  ul
+                    li
+                      img(src='img/promo/featur-brands.jpg', alt='#')
+                    li
+                      img(src='img/promo/featur-brands.jpg', alt='#')
+                    li
+                      img(src='img/promo/featur-brands.jpg', alt='#')
+                    li
+                      img(src='img/promo/featur-brands.jpg', alt='#')
+          li
+            a(href='#') Для дома и сада
+          li
+            a(href='#') Автотовары
+          li
+            a(href='#') Ремонт и стройка
+          li
+            a.sale(href='#') Распродажа	
