@@ -6,6 +6,9 @@
     color: $grey;
     opacity: 1;
   }
+  &:focus{
+    outline:0;
+  }
 }
 
 body {
@@ -81,7 +84,7 @@ body {
   min-width: 320px;
   position: relative;
   line-height: 1.6;
-  font-family: "ProximaNovaRegular", sans-serif;
+  font-family: $ProximaRegular;
   color: #3c3c3c;
 }
 
@@ -143,7 +146,7 @@ body {
   position: relative;
 
   &:first-child {
-    font-family: "ProximaNovaSemibold",sans-serif;
+    font-family: $ProximaSemibold;
     font-weight: bold;
   }
 }
@@ -154,7 +157,7 @@ body {
   p {
     font-weight: bold;
     position: relative;
-    font-family: "ProximaNovaSemibold", sans-serif;
+    font-family: $ProximaSemibold;
     cursor: pointer;
     display: inline-block;
 
@@ -211,7 +214,7 @@ body {
   font-size: 12px;
 
   p span {
-    font-family: "ProximaNovaSemibold",sans-serif;
+    font-family: $ProximaSemibold;
     font-weight: bold;
     font-size: 14px;
   }
@@ -838,7 +841,7 @@ body {
     a {
       font-size: 14px;
       font-weight: bold;
-      font-family: "ProximaNovaSemibold", sans-serif;
+      font-family: $ProximaSemibold;
       text-align: left;
       padding-left: 17px;
       line-height: 34px;
@@ -869,7 +872,9 @@ body {
 
     a {
       font-weight: normal;
-
+      width: 100%;
+      height: 100%;
+      display: inline-block;
       span {
         color: #fb0101;
       }
@@ -940,7 +945,60 @@ body {
   display: inline-block;
   vertical-align: top;
   border-radius: 4px;
+  position:relative;
+  .galery__nav{
+    position: absolute;
+    top:45%;
+    @include x-rem(height, 40px)
+    width:100%;
+    z-index: 1;
+    .slick-arrow{
+      display: inline-block;
+      @include x-rem(width, 15px);
+      @include x-rem(height, 40px);
+      border:none;
+      background: none;
+      outline: 0;
+      cursor:pointer;
+      &:hover{
+        .icon{
+          .st0{
+          fill:$yellow;
+          transition: fill .3s;
+        }
+        }
+      }
+      .icon{
+        width:100%;
+        height:100%;
+        svg{
+          width:40px;
+          height:15px;
+        }
+        .st0{
+          fill:$white;
+          transition: fill .3s;
+        }
+      }
+    }
+    .carousel-next{
+      float:right;
+      @include x-rem(margin-right, 20px);
+      svg{
+          transform: rotate(270deg);
+          transform-origin: 50% 100%;
+        }
 
+    }
+    .carousel-prev{
+      float:left;
+      svg{
+          transform: rotate(-270deg);
+          transform-origin: 50% 100%;
+        }
+
+    }
+  }
   .slide {
     position: relative;
     padding-top: 40px;
@@ -967,21 +1025,27 @@ body {
     /* Proxima Nova Regular */
   }
 
-  a {
+  .promo-link__wrapper{
     margin-left: 45px;
     width: 132px;
     height: 31px;
-    font-size: 14px;
     position: absolute;
-    font-weight: bold;
-
     /* Proxima Nova Semibold */
-    background-image: url("../img/promo-sale.png");
-    background-repeat: no-repeat;
-    text-align: center;
-    color: #fff;
-    text-decoration: none;
-    line-height: 30px;
+    transform: skew(-10deg);
+    background: $red;
+    border-radius: 3px;
+    a{
+      transform: skew(10deg);
+      display: inline-block;
+      width:100%;
+      height:100%;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+      text-decoration: none;
+      line-height: 30px;
+    }
   }
 
   img {
@@ -1000,12 +1064,17 @@ body {
   display: inline-block;
   height: 400px;
   float: right;
-
+  
   a {
     display: block;
     width: 100%;
     height: 100%;
     text-decoration: none;
+    transition: opacity .3s;
+    &:hover{
+      opacity: .8;
+      transition: opacity .3s;
+    }
   }
 
   h3 {
@@ -1091,11 +1160,14 @@ body {
 .features_block {
   line-height: 72px;
 
-  img {
-    width: 40px;
+  .features--img {
+    @include x-rem(width, 40px);
     padding-left: 35px;
     display: inline-block;
+    svg{
+      display: inline-block;
     vertical-align: middle;
+    }
   }
 
   p {
@@ -1125,10 +1197,20 @@ body {
   display: table;
   width: 100%;
 }
-
+.discount-hoverable{
+    height: 400px;
+    position: relative;
+    z-index: 4;
+}
 .discount_block {
   margin: 0 1.32%;
-
+  @include clearfix
+  &:hover{
+        .discount_name{
+            background: $yellowHov;
+      transition: background .2s;
+        }
+    }
   img {
     margin: 0 auto;
     display: block;
@@ -1140,10 +1222,12 @@ body {
     position: relative;
     top: -10px;
     margin: 0 auto;
-
+    @include x-rem(padding, 0 5px);
+    transition: background .2s;
     a {
       text-decoration: none;
       line-height: 38px;
+      width:100%;
       font-size: 16px;
       color: #000000;
     }
@@ -1192,6 +1276,7 @@ body {
   left: -21px;
   margin-top: -9px;
   background-position: -41px;
+  transition: all .3s;
 }
 
 .slick-prev:before {
@@ -1209,27 +1294,47 @@ body {
 
 /* section @HITS!@ */
 
-.hits_status li {
-  display: inline-block;
-  vertical-align: top;
-
-  &.status_dis {
-    position: relative;
-
-    img {
-      position: absolute;
+.hits_status{
+  position: absolute;
+  top:15px;
+  right:20px;
+  @include x-rem(height, 30px);
+  width:auto;
+  @include clearfix
+  .status_item{
+    display: inline-block;
+    @include x-rem(min-width, 50px);
+    @include x-rem(height, 30px);
+    border:2px solid $white;
+    transform: skew(-10deg);
+    @include x-rem(margin,0 3px);
+    border-radius: 4px;
+    .status__item-bg{
+      width:100%;
+      height:100%;
+      border-radius: 4px;
+      span{
+        color: $white;
+        width: 100%;
+        @include x-rem(line-height,30px);
+        display: inline-block;
+        @include x-rem(font-size,14px);
+        text-align:center;
+        vertical-align: middle;
+        transform: skew(10deg);
+        @include x-rem(letter-spacing,1px);
+      }
     }
   }
-
-  span {
-    font-size: 14px;
-    color: #fff;
-    font-weight: bold;
-
-    /* Proxima Nova Semibold */
-    position: relative;
-    top: 8px;
-    left: 16px;
+    .status_item.item-new{
+      .status__item-bg{
+      background-color: $new;
+    }
+  }
+    .status_item.item-sale{
+      .status__item-bg{
+      background-color: $red;
+    }
   }
 }
 
@@ -1245,13 +1350,14 @@ body {
   margin: 3px;
   display: inline-block;
   vertical-align: top;
-
+  box-shadow: 1px 0 8px rgba(1, 0, 0, 0);
+  background: $white;
   &:hover {
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.38);
+    box-shadow: 1px 0 8px rgba(0, 0, 0, 0.38);
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
-
+    overflow-y: visible;
     .hits_descr {
       height: 66px;
     }
@@ -1264,11 +1370,6 @@ body {
 
 .hits_block {}
 
-.hits_status {
-  position: absolute;
-  right: 40px;
-  top: 10px;
-}
 
 .hits_about {
   padding-bottom: 10px;
@@ -1493,7 +1594,7 @@ body {
     font-weight: bold;
 
     /* Proxima Nova Semibold */
-    font-family: "ProximaNovaSemibold", sans-serif;
+    font-family: $ProximaSemibold;
   }
 }
 
@@ -1515,7 +1616,7 @@ body {
   font-size: 16px;
   text-decoration: none;
   line-height: 1.3;
-  font-family: "ProximaNovaRegular", sans-serif;
+  font-family: $ProximaRegular;
 
   &:hover {
     color: $red;
@@ -1532,7 +1633,7 @@ body {
   font-size: 14px;
   font-weight: bold;
   padding-top: 10px;
-  font-family: "ProximaNovaSemibold", sans-serif;
+  font-family: $ProximaSemibold;
 }
 
 .themed .discount-slider {
@@ -1816,6 +1917,8 @@ p.button_close a {
 .headhesive {
   .line {
     padding: 10px 0;
+    position: relative;
+    z-index: 40;
   }
 
   .main-nav {
@@ -1880,4 +1983,13 @@ p.button_close a {
 .short_descr {
   color: $letters;
   padding-top: 3px;
+}
+//button hover
+.slick-arrow{
+  &:hover{
+    &:before{
+    background-color: $yellow;
+    transition: all .3s;
+  }
+  }
 }

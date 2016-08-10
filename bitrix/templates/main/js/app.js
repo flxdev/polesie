@@ -16,38 +16,46 @@ $(function() {
 	//SLICK slider
 	$('.slick-slider').slick({
 		accessibility: true,
-		arrows: false,
-		dots: true
+		arrows: true,
+		dots: true,
+		appendArrows: $('.galery__nav'),
+  nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st0" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
+  prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st0" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
 	});
 
 	$('.slick-slider-discount').slick({
 		accessibility: true,
 		arrows: true,
-		slidesToShow: 7
+		slidesToShow: 7,
+		draggable: false
 	});
 
 	$('.slick-slider-discount-brand').slick({
 		accessibility: true,
 		arrows: true,
-		slidesToShow: 7
+		slidesToShow: 7,
+		draggable: false
 	});
 
 	$('.slick-slider-discount-news').slick({
 		accessibility: true,
 		arrows: true,
-		slidesToShow: 3
+		slidesToShow: 3,
+		draggable: false
 	});
 
 	$('.slick-slider-discount-themed').slick({
 		accessibility: true,
 		arrows: true,
-		slidesToShow: 7
+		slidesToShow: 7,
+		draggable: false
 	});
 
 	$('.slick-slider-discount-hits').slick({
 		accessibility: true,
 		arrows: true,
-		slidesToShow: 5
+		slidesToShow: 5,
+		draggable: false
 	});
 
 	//tabs BRAND
@@ -127,7 +135,9 @@ $(function() {
 	
 });
 
-
+	$('.hits_block_wrap ').matchHeight({
+		 property: 'min-height'
+	});
 	//images or links draggeble
 	function drag() {
 		$("img, a").on("dragstart", function(event) { event.preventDefault(); });

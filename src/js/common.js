@@ -5,6 +5,7 @@
 //= lib/modernizr.js
 //= lib/respond.min.js
 //= lib/slick.min.js
+//= lib/jquery.matchHeight-min.js
 
 
 //= app.js

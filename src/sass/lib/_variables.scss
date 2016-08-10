@@ -1,6 +1,6 @@
 //fonts
-@include font-face('ProximaRegular', "../fonts/ProximaNova/ProximaNovaRegular" ,null, null, ttf eot woff2 woff svg);
-@include font-face('ProximaSemibold', "../fonts/ProximaNova/ProximaNovaSemibold" ,null, null, ttf eot woff2 woff svg);
+@include font-face('ProximaRegular', "../fonts/ProximaNovaRegular_0" ,null, null, ttf eot otf woff svg);
+@include font-face('ProximaSemibold', "../fonts/ProximaNovaSemibold_1" ,null, null, ttf eot otf woff svg);
 
 
 $ProximaRegular: 'ProximaRegular', $font-stack-helvetica;
@@ -10,10 +10,12 @@ $ProximaSemibold: 'ProximaSemibold', $font-stack-helvetica;
 //colors
 $yellow: #fff000;
 $yellowLight: #e7da10;
+$yellowHov: #fff445;
 $red: #ff0000;
 $menuBorder: #fb0101;
 $white: #ffffff;
 $grey: #8f8f8f;
 $letters: #3b3b3b;
+$new: #73e6e2;
 
 //dimentions
