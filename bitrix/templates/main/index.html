@@ -37,13 +37,15 @@
 									<li><a href="#">Доставка и оплата</a></li>
 									<li><a href="#">Частые вопросы</a></li>
 									<li><a href="#">Новости и акции</a></li>
-									<li><a href="#">Ещё...</a>
-										<ul class="drop-line-nav">
-											<li><a href="#">Как заказать</a></li>
-											<li><a href="#">Возврат</a></li>
-											<li><a href="#">Оферта</a></li>
-											<li><a href="#">Контакты</a></li>
-										</ul>
+									<li class="dropdown-btn"><a href="#">Ещё...</a>
+										<div class="drop-menu-wrapper">
+											<ul class="drop-line-nav">
+												<li><a href="#">Как заказать</a></li>
+												<li><a href="#">Возврат</a></li>
+												<li><a href="#">Оферта</a></li>
+												<li><a href="#">Контакты</a></li>
+											</ul>
+										</div>
 									</li>
 								</ul>
 							</nav>
@@ -69,9 +71,26 @@
 						<!-- search-->
 						<div class="line-search-form">
 							<form action="" method="post">
-								<input type="search" name="search" placeholder="Поиск по 200 000 товарам, разделам и артикулам">
+								<input type="search" name="search" placeholder="Поиск по 200 000 товарам, разделам и артикулам" class="search">
 								<input type="submit" value="Найти">
 							</form>
+							<div class="select-container"><a href="#" class="search_drop"> <span>По тексту </span>
+									<div class="img">
+										<svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 8 4" style="enable-background:new 0 0 8 4;" xml:space="preserve">
+											<path d="M8,0H0l4,4L8,0z"></path>
+										</svg>
+									</div></a>
+								<div class="section">
+									<div class="section-item">
+										<input id="dva1" type="radio" checked="checked" name="dva">
+										<label for="dva1">По тексту</label>
+									</div>
+									<div class="section-item">
+										<input id="dva2" type="radio" name="dva">
+										<label for="dva2">По каталогу</label>
+									</div>
+								</div>
+							</div>
 							<!-- cart_list_hidden-->
 							<div style="display: none" class="line_search_hidden search-catalog">
 								<div class="cart_list_block_scroll search_scroll">
@@ -171,57 +190,59 @@
 						<!-- cart-->
 						<div class="line-cart"><a data-title="Ваша корзина совершенно пуста" href="#" class="cart">Корзина <span>0</span></a>
 							<!-- cart_list_hidden-->
-							<div class="cart_list_hidden">
-								<div class="cart_list_block_scroll">
-									<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
-										<div class="cart_list_descr">
-											<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
-											<p>Цвет: черный</p>
-											<p>Кол-во: 1 шт.</p>
-											<div class="cart_list_coast">
-												<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-												<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
+							<div class="cart_list-wrapper">
+								<div class="cart_list_hidden">
+									<div class="cart_list_block_scroll">
+										<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
+											<div class="cart_list_descr">
+												<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
+												<p>Цвет: черный</p>
+												<p>Кол-во: 1 шт.</p>
+												<div class="cart_list_coast">
+													<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
+													<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
+												</div>
+											</div>
+										</div>
+										<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
+											<div class="cart_list_descr">
+												<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
+												<p>Цвет: черный</p>
+												<p>Кол-во: 1 шт.</p>
+												<div class="cart_list_coast">
+													<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
+													<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
+												</div>
+											</div>
+										</div>
+										<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
+											<div class="cart_list_descr">
+												<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
+												<p>Цвет: черный</p>
+												<p>Кол-во: 1 шт.</p>
+												<div class="cart_list_coast">
+													<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
+													<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
+												</div>
+											</div>
+										</div>
+										<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
+											<div class="cart_list_descr">
+												<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
+												<p>Цвет: черный</p>
+												<p>Кол-во: 1 шт.</p>
+												<div class="cart_list_coast">
+													<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
+													<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
+												</div>
 											</div>
 										</div>
 									</div>
-									<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
-										<div class="cart_list_descr">
-											<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
-											<p>Цвет: черный</p>
-											<p>Кол-во: 1 шт.</p>
-											<div class="cart_list_coast">
-												<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-												<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
-											</div>
-										</div>
+									<div class="cart_total">
+										<p>Итого: <span>4 466,60 р. <span> 44 666 000 р</span></span></p>
 									</div>
-									<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
-										<div class="cart_list_descr">
-											<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
-											<p>Цвет: черный</p>
-											<p>Кол-во: 1 шт.</p>
-											<div class="cart_list_coast">
-												<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-												<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
-											</div>
-										</div>
-									</div>
-									<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
-										<div class="cart_list_descr">
-											<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
-											<p>Цвет: черный</p>
-											<p>Кол-во: 1 шт.</p>
-											<div class="cart_list_coast">
-												<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-												<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
-											</div>
-										</div>
-									</div>
+									<div class="cart_buttons"><a href="#" class="cart_incart">Перейти в корзину</a><a href="#" class="cart_content">Оформить заказ</a></div>
 								</div>
-								<div class="cart_total">
-									<p>Итого: <span>4 466,60 р. <span> 44 666 000 р</span></span></p>
-								</div>
-								<div class="cart_buttons"><a href="#" class="cart_incart">Перейти в корзину</a><a href="#" class="cart_content">Оформить заказ</a></div>
 							</div>
 						</div>
 					</div>
@@ -231,8 +252,10 @@
 							<ul>
 								<li><a href="#">Твары для детей</a></li>
 								<li><a href="#">Мода и красота</a></li>
-								<li><a href="#">Спорт и туризм</a></li>
-								<li><a href="#">Электроника и техника</a>
+								<li><a href="#">Спорт и туризм</a>
+									<!--если внутри есть выпадающее меню - вешаем класс-->
+								</li>
+								<li class="dropdown"><a href="#">Электроника и техника</a>
 									<div class="main-nav-dropmenu">
 										<div class="nav-main-wrap">
 											<div class="nav-main">
@@ -1491,6 +1514,7 @@
 					</div>
 				</div>
 			</section>
+			<div class="mask-js"></div>
 			<!-- footer-->
 			<footer>
 				<div class="footer">

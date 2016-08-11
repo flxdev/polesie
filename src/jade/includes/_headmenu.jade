@@ -14,17 +14,18 @@
               a(href='#') Частые вопросы
             li
               a(href='#') Новости и акции
-            li
+            li.dropdown-btn
               a(href='#') Ещё...
-              ul.drop-line-nav
-                li
-                  a(href='#') Как заказать
-                li
-                  a(href='#') Возврат
-                li
-                  a(href='#') Оферта
-                li
-                  a(href='#') Контакты
+              .drop-menu-wrapper
+                ul.drop-line-nav
+                  li
+                    a(href='#') Как заказать
+                  li
+                    a(href='#') Возврат
+                  li
+                    a(href='#') Оферта
+                  li
+                    a(href='#') Контакты
       .top-line-call
         p
           span +375 29 605 05 05
@@ -44,8 +45,23 @@
       // search
       .line-search-form
         form(action='', method='post')
-          input(type='search', name='search', placeholder='Поиск по 200 000 товарам, разделам и артикулам')
+          input.search(type='search', name='search', placeholder='Поиск по 200 000 товарам, разделам и артикулам')
           input(type='submit', value='Найти')
+        .select-container
+          a.search_drop(href='#') 
+            span По тексту 
+            .img
+              svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 8 4', style='enable-background:new 0 0 8 4;', xml:space='preserve')
+               path(d='M8,0H0l4,4L8,0z')
+          .section
+            .section-item
+              input#dva1(type='radio', checked='checked', name='dva')
+              label(for='dva1') По тексту
+            .section-item
+              input#dva2(type='radio', name='dva')
+              label(for='dva2') По каталогу
+              
+              
         // cart_list_hidden
         .line_search_hidden.search-catalog(style='display: none')
           .cart_list_block_scroll.search_scroll
@@ -152,69 +168,70 @@
           | Корзина 
           span 0
         // cart_list_hidden
-        .cart_list_hidden
-          .cart_list_block_scroll
-            .cart_list_block
-              img(src='img/promo/cart_list.jpg', alt='#')
-              .cart_list_descr
-                p.cart_list_name Samsung Galaxy S6 Edge 32Gb
-                p Цвет: черный
-                p Кол-во: 1 шт.
-                .cart_list_coast
-                  p.hits_coast_new
-                    | 10 435,60 р. 
-                    span  10 435 600 р
-                  p.hits_coast.old
-                    | 13 435,60 р. 
-                    span  13 435 600 р
-            .cart_list_block
-              img(src='img/promo/cart_list.jpg', alt='#')
-              .cart_list_descr
-                p.cart_list_name Samsung Galaxy S6 Edge 32Gb
-                p Цвет: черный
-                p Кол-во: 1 шт.
-                .cart_list_coast
-                  p.hits_coast_new
-                    | 10 435,60 р. 
-                    span  10 435 600 р
-                  p.hits_coast.old
-                    | 13 435,60 р. 
-                    span  13 435 600 р
-            .cart_list_block
-              img(src='img/promo/cart_list.jpg', alt='#')
-              .cart_list_descr
-                p.cart_list_name Samsung Galaxy S6 Edge 32Gb
-                p Цвет: черный
-                p Кол-во: 1 шт.
-                .cart_list_coast
-                  p.hits_coast_new
-                    | 10 435,60 р. 
-                    span  10 435 600 р
-                  p.hits_coast.old
-                    | 13 435,60 р. 
-                    span  13 435 600 р
-            .cart_list_block
-              img(src='img/promo/cart_list.jpg', alt='#')
-              .cart_list_descr
-                p.cart_list_name Samsung Galaxy S6 Edge 32Gb
-                p Цвет: черный
-                p Кол-во: 1 шт.
-                .cart_list_coast
-                  p.hits_coast_new
-                    | 10 435,60 р. 
-                    span  10 435 600 р
-                  p.hits_coast.old
-                    | 13 435,60 р. 
-                    span  13 435 600 р
-          .cart_total
-            p
-              | Итого: 
-              span
-                | 4 466,60 р. 
-                span  44 666 000 р
-          .cart_buttons
-            a.cart_incart(href='#') Перейти в корзину
-            a.cart_content(href='#') Оформить заказ
+        .cart_list-wrapper
+          .cart_list_hidden
+            .cart_list_block_scroll
+              .cart_list_block
+                img(src='img/promo/cart_list.jpg', alt='#')
+                .cart_list_descr
+                  p.cart_list_name Samsung Galaxy S6 Edge 32Gb
+                  p Цвет: черный
+                  p Кол-во: 1 шт.
+                  .cart_list_coast
+                    p.hits_coast_new
+                      | 10 435,60 р. 
+                      span  10 435 600 р
+                    p.hits_coast.old
+                      | 13 435,60 р. 
+                      span  13 435 600 р
+              .cart_list_block
+                img(src='img/promo/cart_list.jpg', alt='#')
+                .cart_list_descr
+                  p.cart_list_name Samsung Galaxy S6 Edge 32Gb
+                  p Цвет: черный
+                  p Кол-во: 1 шт.
+                  .cart_list_coast
+                    p.hits_coast_new
+                      | 10 435,60 р. 
+                      span  10 435 600 р
+                    p.hits_coast.old
+                      | 13 435,60 р. 
+                      span  13 435 600 р
+              .cart_list_block
+                img(src='img/promo/cart_list.jpg', alt='#')
+                .cart_list_descr
+                  p.cart_list_name Samsung Galaxy S6 Edge 32Gb
+                  p Цвет: черный
+                  p Кол-во: 1 шт.
+                  .cart_list_coast
+                    p.hits_coast_new
+                      | 10 435,60 р. 
+                      span  10 435 600 р
+                    p.hits_coast.old
+                      | 13 435,60 р. 
+                      span  13 435 600 р
+              .cart_list_block
+                img(src='img/promo/cart_list.jpg', alt='#')
+                .cart_list_descr
+                  p.cart_list_name Samsung Galaxy S6 Edge 32Gb
+                  p Цвет: черный
+                  p Кол-во: 1 шт.
+                  .cart_list_coast
+                    p.hits_coast_new
+                      | 10 435,60 р. 
+                      span  10 435 600 р
+                    p.hits_coast.old
+                      | 13 435,60 р. 
+                      span  13 435 600 р
+            .cart_total
+              p
+                | Итого: 
+                span
+                  | 4 466,60 р. 
+                  span  44 666 000 р
+            .cart_buttons
+              a.cart_incart(href='#') Перейти в корзину
+              a.cart_content(href='#') Оформить заказ
     // main-nav
     .main-nav
       nav.nav
@@ -225,7 +242,8 @@
             a(href='#') Мода и красота
           li
             a(href='#') Спорт и туризм
-          li
+            //если внутри есть выпадающее меню - вешаем класс
+          li.dropdown
             a(href='#') Электроника и техника
             .main-nav-dropmenu
               .nav-main-wrap

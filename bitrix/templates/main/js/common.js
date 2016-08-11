@@ -95,7 +95,23 @@ $(function() {
 	$(".wrap-catalog-btn p").click(function(){
 		$(".headhesive .main-nav").toggle();
 	});
+	//hover nemu
+	(function(){
+		var head = $('.header'),
+			mask = $('.mask-js'),
+			item = $('nav ul li.dropdown'),
+			target = $('nav').find('.main-nav-dropmenu');
 
+			item.mouseover(function(){
+				if(head.hasClass('headhesive--stick')){
+					mask.fadeIn();
+				}
+			});
+			item.mouseleave(function(){
+					mask.fadeOut();
+			});
+
+	})();
 
 	//SLICK slider
 	$('.slick-slider').slick({
@@ -150,21 +166,73 @@ $(function() {
 	}).eq(0).addClass("active");
 
 
-	// hover card
-	$('.line-cart').mouseover(function(){
-		$(".cart_list_hidden").css("display"," block");
-	});
-	$('.cart_list_hidden').mouseout(function(){
-		$('.cart_list_hidden').hide();
-	});
-	$(document).mouseup(function (e) {
-		var container = $(".cart_list_hidden");
+
+
+//input blocks
+	(function(){
+		var input = $('.line-search-form').find('input[type=search]'),
+			form = $('.line-search-form').find("form"),
+			category = $('.select-container'),
+			container =$('.line-search-form') ;
+
+			input.focus(function(){
+				console.log(2)
+				form.css('border-color','#fff445');
+				$(this).css('border-right-color','#fff445');
+				category.fadeIn();
+
+			})
+			container.focusout(function(){
+				console.log(2)
+				form.css('border-color','#eaeaea');
+				$(this).css('border-right-color','#eaeaea');
+			})
+			
+	})();
+
+// hover card
+	(function(){
+		var cart = $('.cart'),
+			parent = cart.parent(),
+			list = parent.find('.cart_list-wrapper');
+
+		cart.on('mouseenter', function(){
+			parent.addClass('active');
+			cart.addClass('active');
+			list.fadeIn('fast');
+
+		});
+		parent.on('mouseleave', function(){
+			parent.removeClass('active');
+			cart.removeClass('active');
+			list.fadeOut('fast');
+		});
+		$(document).mouseup(function (e) {
+		var container = $(".cart_list-wrapper");
 		if (container.has(e.target).length === 0){
 			container.hide();
 		}
 	});
+	})();
 
 	// hover nav
+	(function(){
+		var more = $('.dropdown-btn > a '),
+			parent = more.parent(),
+			list = parent.find('.drop-menu-wrapper');
+
+		more.on('mouseenter', function(){
+			parent.addClass('active');
+			more.addClass('active');
+			list.fadeIn('fast');
+
+		});
+		parent.on('mouseleave', function(){
+			parent.removeClass('active');
+			more.removeClass('active');
+			list.fadeOut('fast');
+		});
+	})();
 	$('.top-line-nav nav > ul > li:last-child').mouseover(function(){
 		$(".drop-line-nav").css("display"," block");
 		$('.top-line-nav nav > ul > li:last-child').find('a').first().css("color","#ff0000");

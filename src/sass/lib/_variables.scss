@@ -1,6 +1,6 @@
 //fonts
-@include font-face('ProximaRegular', "../fonts/ProximaNovaRegular_0" ,null, null, ttf eot otf woff svg);
-@include font-face('ProximaSemibold', "../fonts/ProximaNovaSemibold_1" ,null, null, ttf eot otf woff svg);
+@include font-face('ProximaRegular', "../fonts/ProximaNovaRegular_0" ,null, null, eot otf woff svg);
+@include font-face('ProximaSemibold', "../fonts/ProximaNovaSemibold_1" ,null, null, eot otf woff svg);
 
 
 $ProximaRegular: 'ProximaRegular', $font-stack-helvetica;
