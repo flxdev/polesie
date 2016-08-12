@@ -2,6 +2,7 @@
 @import "lib/base";
 
 * {
+  box-sizing:border-box;
   &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
     color: $grey;
     opacity: 1;
@@ -45,6 +46,10 @@ header, #wrap {
   @include r(1280){
     padding: 0 10px;
   }
+  @include r(768){
+    padding: 0 15px;
+  }
+  
 }
 
 .hidden-block {
@@ -1072,6 +1077,14 @@ input:focus:-moz-placeholder {
     width:100%;
     height:380px;
   }
+  @include r(768){
+    width:100%;
+    height:300px;
+  }
+  @include r(480){
+    width:100%;
+    height:250px;
+  }
   .slick-track{
     height:100%;
   }
@@ -1139,6 +1152,9 @@ input:focus:-moz-placeholder {
     font-size: 28px;
     line-height: 1.3;
     font-weight: normal;
+    @include r(480){
+    margin-top: 10px;
+  }
 
     /* Proxima Nova Regular */
   }
@@ -1184,8 +1200,14 @@ input:focus:-moz-placeholder {
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
-    width:100%;
-    height:auto;
+    height:100%;
+    @include r(980){
+      height:auto;
+      width:100%;
+    }
+    @include r(480){
+      height:100%;
+    }
   }
 }
 
@@ -1198,15 +1220,20 @@ input:focus:-moz-placeholder {
   @include r(980){
     padding-top: 10px;
     width:100%;
-    height:380px;
     float: left;
   }
+  @include r(480){
+      height:auto;
+    }
   a {
     display: block;
     width: 100%;
     height: 100%;
+    min-height:200px;
     text-decoration: none;
     transition: opacity .3s;
+    overflow: hidden;
+    padding:0 20px;
     &:hover{
       opacity: .8;
       transition: opacity .3s;
@@ -1231,88 +1258,182 @@ input:focus:-moz-placeholder {
   }
 
   img {
-    position: absolute;
-    top: 0;
-    z-index: -1;
+    max-width:279px;
+    display: block;
+    margin:30px auto ;
   }
 
   .ban_1 {
-    width: 317px;
+    width: 50%;
     height: 400px;
     display: inline-block;
     float: left;
     border-radius: 4px;
     position: relative;
     left: 2px;
+    min-height: 1px;
+    padding:0 6px;
+    overflow: hidden;
     @include r(980){
     width:50%;
-    height:380px;
     float: left;
-  }
+    height: 410px;
+   }
+   @include r(480){
+      width:100%;
+      margin-bottom: 10px;
+    }
+   img{
+    @include r(1230){
+      width:100%;
+      }
+    }
   }
 
   .ban_3, .ban_2 {
     display: inline-block;
-    width: 312px;
+    width: 50%;
     height: 196px;
     float: right;
     border-radius: 4px;
     position: relative;
+    min-height: 1px;
+    overflow: hidden;
+    padding:0 6px;
     @include r(980){
     width:50%;
-    height:380px;
     float: left;
+    height: 50%;
+  }
+  @include r(480){
+    width:100%;
   }
   }
 
   .ban_3 {
     top: 8px;
-
+  .text__wrapper{
+    width:150px;
+    display: inline-block;
+    float: left;
+    @include r(980){
+    padding-left: 20px;
+  }
+  }
     h3, p {
       text-align: left;
       width: 130px;
-      padding-left: 25px;
       line-height: 1.3;
+      display: inline-block;
     }
+    img{
+    position: absolute;
+    right:30px;
+    margin:0;
+    bottom:20px;
+  }
   }
 }
 
 /* section @features@ */
-
+.section-feature{
+  position: relative;
+}
 .features {
   margin-top: 20px;
   box-shadow: 0px 1px 1px rgba(128, 128, 128, 0.9);
   -moz-box-shadow: 0px 1px 1px rgba(128, 128, 128, 0.9);
   -webkit-box-shadow: 0px 1px 1px rgba(128, 128, 128, 0.9);
-
-  ul {
-    font-size: 0;
-
-    li {
-      list-style-type: none;
-      width: 25%;
-      display: inline-block;
-      border: 1px solid #eaeaea;
-      box-sizing: border-box;
-      border-left: none;
-
-      &:first-child {
-        border-left: 1px solid #eaeaea;
-      }
-    }
+  height: 74px;
+  @include r(570){
+    height: 150px;
   }
 }
+.features__nav{
+    position: absolute;
+    top:28%;
+    @include x-rem(height, 40px)
+    width:100%;
+    z-index: 1;
+    @include r(570){
+    top:40%;
+  }
+    .slick-arrow{
+      display: inline-block;
+      @include x-rem(width, 15px);
+      @include x-rem(height, 40px);
+      border:none;
+      background: none;
+      outline: 0;
+      cursor:pointer;
+      &:hover{
+        .icon{
+          .st0{
+          fill:$yellow;
+          transition: fill .3s;
+        }
+        }
+      }
+      .icon{
+        width:100%;
+        height:100%;
+        svg{
+          width:40px;
+          height:15px;
+        }
+        .st0{
+          fill:$grey;
+          transition: fill .3s;
+        }
+      }
+    }
+    .carousel-next{
+      float:right;
+      @include x-rem(margin-right, 10px);
+      svg{
+          transform: rotate(270deg);
+          transform-origin: 45% 130%;
+        }
 
+    }
+    .carousel-prev{
+      float:left;
+      @include x-rem(margin-left, 10px);
+      svg{
+          transform: rotate(-270deg);
+          transform-origin: 25% 45%;
+
+        }
+
+    }
+  }
 .features_block {
   line-height: 72px;
-
+  border: 1px solid #eaeaea;
+  border-left: none;
+  width: 25%;
+  display: inline-block;
+  @include r(570){
+    height: 150px;
+    text-align: center;
+  }
+    &:first-child {
+        border-left: 1px solid #eaeaea;
+      }
+    &:last-child {
+        border-right: 1px solid transparent;
+      }
   .features--img {
-    @include x-rem(width, 40px);
     padding-left: 35px;
     display: inline-block;
+    @include r(570){
+    display: block;
+    padding: 0;
+  }
     svg{
       display: inline-block;
     vertical-align: middle;
+    @include x-rem(width, 40px);
     }
   }
 
@@ -1324,6 +1445,10 @@ input:focus:-moz-placeholder {
     width: 63%;
     padding-left: 18px;
     line-height: 1.3;
+    @include r(570){
+    text-align: center;
+    padding: 0;
+  }
   }
 }
 
@@ -1349,7 +1474,6 @@ input:focus:-moz-placeholder {
     z-index: 4;
 }
 .discount_block {
-  margin: 0 1.32%;
   @include clearfix
   &:hover{
         .discount_name{
@@ -1397,7 +1521,9 @@ input:focus:-moz-placeholder {
   padding: 35px 0 44px;
   border-bottom: 1px solid #e3e3e3;
 }
-
+.slider_block{
+  margin: 3px;
+}
 .slick-prev {
   top: -65px;
 }
@@ -1408,7 +1534,8 @@ input:focus:-moz-placeholder {
 }
 
 .slick-prev {
-  left: 96%;
+  right: 31px;
+  left:auto;
 }
 
 .slick-next:before {
@@ -1443,7 +1570,7 @@ input:focus:-moz-placeholder {
 .hits_status{
   position: absolute;
   top:15px;
-  right:20px;
+  right:5%;
   @include x-rem(height, 30px);
   width:auto;
   @include clearfix
@@ -1486,14 +1613,16 @@ input:focus:-moz-placeholder {
 
 .hits-bg {
   position: relative;
+  img{
+    width:100%;
+  }
 }
 
 .hits_block_wrap {
-  width: 250px;
+  width:100%;
   padding: 14px 16px;
   box-sizing: border-box;
   cursor: pointer;
-  margin: 3px;
   display: inline-block;
   vertical-align: top;
   box-shadow: 1px 0 8px rgba(1, 0, 0, 0);
@@ -1503,7 +1632,6 @@ input:focus:-moz-placeholder {
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
-    overflow-y: visible;
     .hits_descr {
       height: 66px;
     }
@@ -1796,16 +1924,21 @@ input:focus:-moz-placeholder {
   margin-bottom: 50px;
   text-decoration: none;
   font-size: 14px;
-  background: $yellow;
+  background-color: $yellow;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+  transition:background-color .3s;
+  &:hover{
+    background-color: $yellowHov;
+    transition:background-color .3s;
+  }
 }
 
 /* section @news@ */
 
 .news_block {
-  padding-right: 77px;
+  padding-right: 27px;
 
   a {
     text-decoration: none;
@@ -1825,6 +1958,8 @@ input:focus:-moz-placeholder {
     color: #000;
     font-size: 16px;
     line-height: 1.3;
+    display: block;
+    overflow: hidden;
   }
 }
 
@@ -1832,11 +1967,45 @@ input:focus:-moz-placeholder {
 
 footer {
   padding-bottom: 57px;
+  @include clearfix;
 }
+.footer__content-wrapper{
+  @include clearfix;
+  position: relative;
+  display: inline-block;
+  @include r(1280){
+    width:70%;
+  }
+  @include r(768){
+    width:100%;
+  }
+}
+.footer__menu-wrapper{
+  display: inline-block;
+  float: left;
+  width:600px;
 
+  @include r(1280){
+    margin-top: 80px;
+    width:100%;
+  }
+  @include r(1080){
+    margin-top: 80px;
+    width:100%;
+  }
+  @include r(768){
+    margin-top: 40px;
+    width:100%;
+    padding-bottom: 70px;
+  }
+
+
+}
 .footer {
   font-size: 0;
   padding-top: 30px;
+  display: inline-block;
+  width:100%;
 }
 
 .footer_help, .footer_info, .footer_catalog, .footer_contacts {
@@ -1849,11 +2018,33 @@ footer {
 }
 
 .footer_info, .footer_help {
-  width: 215px;
+  width: 30%;
+  min-width:150px;
+  padding-right:10px;
+  @include r(1280){
+    width:30%;
+    margin-right:10px;
+  }
+  @include r(768){
+    width:50%;
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .footer_catalog {
-  width: 200px;
+  width: 30%;
+  min-width:150px;
+  @include r(1280){
+    width:30%;
+  }
+  @include r(768){
+    width:50%;
+    margin-top: 20px;
+    padding: 0;
+  }
 }
 
 .footer_help li, .footer_info li, .footer_catalog li {
@@ -1865,6 +2056,10 @@ footer {
   text-decoration: none;
   font-size: 14px;
   color: $letters;
+  display:inline-block;
+  width:100%;
+  height:100%;
+  text-align: left;
 }
 
 .footer_contacts h3 {
@@ -1878,16 +2073,31 @@ footer {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-
+  @include r(1280){
+    float: left;
+    display: inline-block;
+    }
+  @include r(768){
+    width:100%;
+    }
+  form{
+    @include r(1280){
+    width:360px;
+    }
+    @include r(768){
+    width:100%;
+    display: inline-block;
+    }
+  }
   input {
     border: none;
     outline: none;
     background: none;
-
     &[type="submit"] {
       cursor: pointer;
-      line-height: 35px;
       padding: 0 17px;
+      font: initial;
+      font-family: $ProximaRegular;
       border-left: 1px solid $yellow;
     }
 
@@ -1895,38 +2105,100 @@ footer {
       width: 222px;
       padding-left: 15px;
       box-sizing: border-box;
+      font: initial;
+      font-family: $ProximaRegular;
+      height: 35px;
+      @include r(1280){
+         width:60%;
+         display: inline-block;
+      }
+      @include r(768){
+         width:65%;
+      }
     }
   }
 }
 
 .footer_soc {
   padding-top: 34px;
-
+@include r(1280){
+    float: left;
+    padding: 0;
+    margin-top: -18px;
+    margin-left:21%;
+  }
+  @include r(1100){
+    margin-left:10%;
+  }
+  @include r(900){
+    margin-left:5%;
+  }
+  @include r(768){
+    position: absolute;
+    bottom:0;
+    left:50%;
+    transform: translateX(-50%);
+    margin:0;
+  }
   h3 {
     padding-bottom: 20px;
     font-size: 14px;
+    @include r(768){
+         text-align:center;
+      }
   }
-
+  ul{
+    @include r(768){
+         text-align:center;
+      }
+  }
   li {
     list-style-type: none;
     display: inline-block;
-    margin-right: 18px;
-
+    &:not(:last-child){
+      margin-right: 18px;
+      @include r(1280){
+      margin-right: 28px;
+        }
+    @include r(900){
+      margin-right: 18px;
+        }
+    }
+    @include r(768){
+         margin:0 20px;
+      }
     img {
       width: 30px;
     }
   }
 }
-
+.footer_contacts{
+  @include r(1280){
+    float: left;
+    display:inline-block;
+    width:100%;
+      }
+  @include r(768){
+    width:100%;
+      }
+}
 .footer_VK {
   display: inline-block;
-  padding-left: 21px;
   float: right;
+  @include r(1280){
+    float: right;
+    padding:0;
+    width:25%;
+      }
+  @include r(768){
+    display: none;
+  }
 }
 
 .footer_line {
   font-size: 0px;
   padding-top: 50px;
+  @include clearfix;
 }
 
 .footer_copy, .footer_carts, .footer_developer {
@@ -1935,9 +2207,12 @@ footer {
 }
 
 .footer_carts {
-  width: 60%;
   text-align: center;
-
+  width: 50%;
+  @include r(768){
+    display: block;
+    width:100%;
+  }
   ul li {
     display: inline-block;
     list-style-type: none;
@@ -1950,21 +2225,33 @@ footer {
 
 .footer_copy {
   font-size: 14px;
-  width: 20%;
+  width: 25%;
+  float: left;
+   @include r(768){
+    display: inline-block;
+    width:100%;
+    text-align: center;
+    line-height:3;
+    margin-top:20px;
+  }
 }
 
 .footer_developer {
   font-size: 14px;
   text-align: right;
-  width: 20%;
-
+  float: right;
+  width: 25%;
+  @include r(768){
+    display: inline-block;
+    width:100%;
+    text-align: center;
+  }
   a {
     text-decoration: none;
     color: $red;
     font-weight: bold;
     padding-left: 25px;
     position: relative;
-
     &:before {
       content: "";
       background: url("../img/promo/FlexMedia.jpg");
@@ -2149,4 +2436,8 @@ p.button_close a {
   right: 0;
   top: 0;
   z-index: 4;
+}
+//utility
+.blacktext{
+  color:#000;
 }
