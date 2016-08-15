@@ -498,6 +498,25 @@ $(function() {
 	}
 	drag();
 
+var footerBtn = function(){
+	
+	var btn = $('.js-content-trigger'),
+		menu = $('.js-content-trigger').next();
 
+	 $('.spoiler').click(function(){
+	 	btn.removeClass('active');
+	 	$(this).toggleClass('active');
 
-});
+	    if ($(this).next('.spoiler-body').css("display")=="none") {
+		    $('.spoiler-body').hide('normal');
+		    $(this).next('.spoiler-body').toggle('normal');
+			 }
+	 	else $('.spoiler-body').hide('normal');
+	 		return false;
+	 	});
+	
+};
+footerBtn();
+$(window).resize(footerBtn);
+
+ });

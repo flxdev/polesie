@@ -1979,6 +1979,9 @@ footer {
   @include r(768){
     width:100%;
   }
+  @include r(420){
+    padding-bottom: 220px;
+  }
 }
 .footer__menu-wrapper{
   display: inline-block;
@@ -1998,6 +2001,9 @@ footer {
     width:100%;
     padding-bottom: 70px;
   }
+  @include r(420){
+    margin-top: 10px;
+  }
 
 
 }
@@ -2006,6 +2012,9 @@ footer {
   padding-top: 30px;
   display: inline-block;
   width:100%;
+  @include r(420){
+    padding-top: 0;
+  }
 }
 
 .footer_help, .footer_info, .footer_catalog, .footer_contacts {
@@ -2015,6 +2024,17 @@ footer {
 
 .footer_help h3, .footer_info h3, .footer_catalog h3, .footer_contacts h3 {
   font-size: 14px;
+  .icon{
+    width:20px;
+    height:100%;
+    transform: rotate(270deg);
+    transform-origin: center center; 
+    display: none;
+    float: right;
+    @include r(420){
+      display: inline-block;
+    }
+  }
 }
 
 .footer_info, .footer_help {
@@ -2032,6 +2052,9 @@ footer {
     margin: 0;
     padding: 0;
   }
+  @include r(420){
+    width:100%;
+  }
 }
 
 .footer_catalog {
@@ -2045,8 +2068,33 @@ footer {
     margin-top: 20px;
     padding: 0;
   }
+  @include r(420){
+    width:100%;
+    margin-top: 0;
+  }
 }
+.footer_help , .footer_info , .footer_catalog {
+  ul.active{
+    display: block;
+  }
+    @include r(420){
+      ul{
+      display: none;
+      &.active{
+        display: block;
+      }
+    }
+    h3{
+      display: block;
+      width:100%;
+      line-height:3;
+      cursor: pointer;
+     @include x-rem(font-size, 18px);
+     border-bottom: 1px solid rgba(143, 143, 143, 0.53);
+    }
+  }
 
+}
 .footer_help li, .footer_info li, .footer_catalog li {
   list-style-type: none;
   padding-top: 15px;
@@ -2073,6 +2121,9 @@ footer {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+  @include r(420){
+        border-color: transparent;
+      }
   @include r(1280){
     float: left;
     display: inline-block;
@@ -2093,12 +2144,26 @@ footer {
     border: none;
     outline: none;
     background: none;
+    @include r(420){
+        border: 3px solid $yellow;
+        width:100%;
+        border-radius: 4px;
+        @include x-rem(height,45px);
+      }
     &[type="submit"] {
       cursor: pointer;
       padding: 0 17px;
       font: initial;
       font-family: $ProximaRegular;
-      border-left: 1px solid $yellow;
+      border-left: 2px solid $yellow;
+      height: 35px;
+      color: $letters;
+      @include r(420){
+        display: inline-block;
+        width:100%;
+        background-color: $yellowHov;
+        @include x-rem(height,45px);
+      }
     }
 
     &[type="email"] {
@@ -2114,6 +2179,11 @@ footer {
       }
       @include r(768){
          width:65%;
+      }
+       @include r(420){
+         width:100%;
+         margin-bottom: 20px;
+          @include x-rem(height,45px);
       }
     }
   }
@@ -2140,6 +2210,25 @@ footer {
     transform: translateX(-50%);
     margin:0;
   }
+  @include r(420){
+    position: relative;
+    left:auto;
+    bottom:auto;
+    transform: translateX(0);
+    width:100%;
+    float:none;
+    h3{
+      display: none;
+    }
+    li{
+      margin:20px;
+      img{
+        width:50px !important;
+        height: 50px;
+      }
+    }
+
+  }
   h3 {
     padding-bottom: 20px;
     font-size: 14px;
@@ -2164,9 +2253,6 @@ footer {
       margin-right: 18px;
         }
     }
-    @include r(768){
-         margin:0 20px;
-      }
     img {
       width: 30px;
     }
@@ -2181,6 +2267,10 @@ footer {
   @include r(768){
     width:100%;
       }
+  @include r(420){
+    position: absolute;
+    bottom:0;
+  }
 }
 .footer_VK {
   display: inline-block;
@@ -2188,7 +2278,7 @@ footer {
   @include r(1280){
     float: right;
     padding:0;
-    width:25%;
+    width:30%;
       }
   @include r(768){
     display: none;
@@ -2199,6 +2289,9 @@ footer {
   font-size: 0px;
   padding-top: 50px;
   @include clearfix;
+  @include r(420){
+    padding-top: 0;
+  }
 }
 
 .footer_copy, .footer_carts, .footer_developer {
@@ -2212,6 +2305,9 @@ footer {
   @include r(768){
     display: block;
     width:100%;
+  }
+  @include r(420){
+   display:none;
   }
   ul li {
     display: inline-block;
@@ -2227,6 +2323,7 @@ footer {
   font-size: 14px;
   width: 25%;
   float: left;
+
    @include r(768){
     display: inline-block;
     width:100%;
@@ -2234,6 +2331,7 @@ footer {
     line-height:3;
     margin-top:20px;
   }
+
 }
 
 .footer_developer {
