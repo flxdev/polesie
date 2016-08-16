@@ -71,8 +71,8 @@
 						<!-- search-->
 						<div class="line-search-form">
 							<form action="" method="post">
-								<input type="search" name="search" placeholder="Поиск по 200 000 товарам, разделам и артикулам" class="search">
 								<input type="submit" value="Найти">
+								<input type="search" name="search" placeholder="Поиск по 200 000 товарам, разделам и артикулам" class="search">
 							</form>
 							<div class="select-container"><a href="#" class="search_drop"> <span>По тексту </span>
 									<div class="img">
@@ -184,11 +184,10 @@
 						<!-- tools-->
 						<div class="line-tools">
 							<div data-title="Список сравнения пуст" class="tools-comparison"></div>
-							<div data-title="Список отложенных товаров пуст" class="tools-defer"></div>
-							<div class="account"><a href="#">Личный кабинет</a></div>
+							<div data-title="Список отложенных товаров пуст" class="tools-defer"></div><a href="#" class="account"><span>Личный кабинет</span></a>
 						</div>
 						<!-- cart-->
-						<div class="line-cart"><a data-title="Ваша корзина совершенно пуста" href="#" class="cart">Корзина <span>0</span></a>
+						<div class="line-cart"><a href="#" class="cart">Корзина <span>0</span></a>
 							<!-- cart_list_hidden-->
 							<div class="cart_list-wrapper">
 								<div class="cart_list_hidden">
@@ -244,18 +243,23 @@
 									<div class="cart_buttons"><a href="#" class="cart_incart">Перейти в корзину</a><a href="#" class="cart_content">Оформить заказ</a></div>
 								</div>
 							</div>
+							<div class="cart_list-empty">
+								<div class="cart_list_hidden">
+									<p>Ваша корзина совершенно пуста</p>
+								</div>
+							</div>
 						</div>
 					</div>
 					<!-- main-nav-->
 					<div class="main-nav">
 						<nav class="nav">
 							<ul>
-								<li><a href="#">Твары для детей</a></li>
-								<li><a href="#">Мода и красота</a></li>
-								<li><a href="#">Спорт и туризм</a>
+								<li class="menu-item"><a href="#">Твары для детей</a></li>
+								<li class="menu-item"><a href="#">Мода и красота</a></li>
+								<li class="menu-item"><a href="#">Спорт и туризм</a>
 									<!--если внутри есть выпадающее меню - вешаем класс-->
 								</li>
-								<li class="dropdown"><a href="#">Электроника и техника</a>
+								<li class="menu-item dropdown"><a href="#">Электроника и техника</a>
 									<div class="main-nav-dropmenu">
 										<div class="nav-main-wrap">
 											<div class="nav-main">
@@ -317,10 +321,25 @@
 										</div>
 									</div>
 								</li>
-								<li><a href="#">Для дома и сада</a></li>
-								<li><a href="#">Автотовары</a></li>
-								<li><a href="#">Ремонт и стройка</a></li>
-								<li><a href="#" class="sale">Распродажа	</a></li>
+								<li class="menu-item"><a href="#">Для дома и сада</a></li>
+								<li class="menu-item"><a href="#">Автотовары</a></li>
+								<li class="menu-item"><a href="#">Ремонт и стройка</a></li>
+								<li class="menu-item"><a href="#" class="sale">Распродажа	</a></li>
+								<div class="dropdown-btn js-menu_add-btn"><a href="">Еще
+										<div class="icon">
+											<svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 15 3" style="enable-background:new 0 0 15 3;" xml:space="preserve">
+												<style type="text/css">.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#3B3B3B;}</style>
+												<g>
+													<g>
+														<path d="M1.5,0C0.7,0,0,0.7,0,1.5C0,2.3,0.7,3,1.5,3C2.3,3,3,2.3,3,1.5C3,0.7,2.3,0,1.5,0z M7.5,0C6.7,0,6,0.7,6,1.5                      C6,2.3,6.7,3,7.5,3C8.3,3,9,2.3,9,1.5C9,0.7,8.3,0,7.5,0z M13.5,0C12.7,0,12,0.7,12,1.5C12,2.3,12.7,3,13.5,3                      C14.3,3,15,2.3,15,1.5C15,0.7,14.3,0,13.5,0z" class="st1"></path>
+													</g>
+												</g>
+											</svg>
+										</div></a>
+									<div class="drop-menu-wrapper">
+										<ul class="drop-line-nav js-container"></ul>
+									</div>
+								</div>
 							</ul>
 						</nav>
 					</div>
@@ -1536,8 +1555,8 @@
 								<h3 class="js-content-trigger">Помощь
 									<div class="icon">
 										<svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve">
-											<style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}</style>
-											<path d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5" class="st0"></path>
+											<style type="text/css">.ftr-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}</style>
+											<path d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5" class="ftr-arr"></path>
 										</svg>
 									</div>
 								</h3>
@@ -1555,8 +1574,8 @@
 								<h3 class="js-content-trigger">Информация
 									<div class="icon">
 										<svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve">
-											<style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}</style>
-											<path d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5" class="st0"></path>
+											<style type="text/css">.ftr-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}</style>
+											<path d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5" class="ftr-arr"></path>
 										</svg>
 									</div>
 								</h3>
@@ -1574,8 +1593,8 @@
 								<h3 class="js-content-trigger">Каталог
 									<div class="icon">
 										<svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve">
-											<style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}</style>
-											<path d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5" class="st0"></path>
+											<style type="text/css">.ftr-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}</style>
+											<path d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5" class="ftr-arr"></path>
 										</svg>
 									</div>
 								</h3>

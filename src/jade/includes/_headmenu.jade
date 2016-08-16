@@ -45,8 +45,9 @@
       // search
       .line-search-form
         form(action='', method='post')
-          input.search(type='search', name='search', placeholder='Поиск по 200 000 товарам, разделам и артикулам')
           input(type='submit', value='Найти')
+          input.search(type='search', name='search', placeholder='Поиск по 200 000 товарам, разделам и артикулам')
+          
         .select-container
           a.search_drop(href='#') 
             span По тексту 
@@ -160,11 +161,11 @@
       .line-tools
         .tools-comparison(data-title='Список сравнения пуст')
         .tools-defer(data-title='Список отложенных товаров пуст')
-        .account
-          a(href='#') Личный кабинет
+        a(href='#').account
+          span Личный кабинет
       // cart
       .line-cart
-        a.cart(data-title='Ваша корзина совершенно пуста', href='#')
+        a.cart( href='#')
           | Корзина 
           span 0
         // cart_list_hidden
@@ -232,18 +233,21 @@
             .cart_buttons
               a.cart_incart(href='#') Перейти в корзину
               a.cart_content(href='#') Оформить заказ
+        .cart_list-empty
+          .cart_list_hidden
+            p Ваша корзина совершенно пуста
     // main-nav
     .main-nav
       nav.nav
         ul
-          li
+          li.menu-item
             a(href='#') Твары для детей
-          li
+          li.menu-item
             a(href='#') Мода и красота
-          li
+          li.menu-item
             a(href='#') Спорт и туризм
             //если внутри есть выпадающее меню - вешаем класс
-          li.dropdown
+          li.menu-item.dropdown
             a(href='#') Электроника и техника
             .main-nav-dropmenu
               .nav-main-wrap
@@ -325,11 +329,27 @@
                       img(src='img/promo/featur-brands.jpg', alt='#')
                     li
                       img(src='img/promo/featur-brands.jpg', alt='#')
-          li
+          li.menu-item
             a(href='#') Для дома и сада
-          li
+          li.menu-item
             a(href='#') Автотовары
-          li
+          li.menu-item
             a(href='#') Ремонт и стройка
-          li
+          li.menu-item
             a.sale(href='#') Распродажа	
+          .dropdown-btn.js-menu_add-btn
+            a(href="") Еще
+              .icon
+                svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 15 3', style='enable-background:new 0 0 15 3;', xml:space='preserve')
+                  style(type='text/css').
+                    .st1{fill-rule:evenodd;clip-rule:evenodd;fill:#3B3B3B;}
+                  g
+                    g
+                      path.st1(d='M1.5,0C0.7,0,0,0.7,0,1.5C0,2.3,0.7,3,1.5,3C2.3,3,3,2.3,3,1.5C3,0.7,2.3,0,1.5,0z M7.5,0C6.7,0,6,0.7,6,1.5\
+                      C6,2.3,6.7,3,7.5,3C8.3,3,9,2.3,9,1.5C9,0.7,8.3,0,7.5,0z M13.5,0C12.7,0,12,0.7,12,1.5C12,2.3,12.7,3,13.5,3\
+                      C14.3,3,15,2.3,15,1.5C15,0.7,14.3,0,13.5,0z')
+            .drop-menu-wrapper
+              ul.drop-line-nav.js-container
+  
+
+

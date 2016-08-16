@@ -11,7 +11,9 @@
     outline:0;
   }
 }
-
+a{
+  text-decoration: none; 
+}
 body {
   input:focus:required:invalid, textarea:focus:required:invalid, input:required:valid, textarea:required:valid {}
 }
@@ -40,7 +42,7 @@ a, img {
   outline: none;
 }
 
-header, #wrap {
+#wrap, header {
   max-width: 1280px;
   margin: 0 auto;
   @include r(1280){
@@ -48,10 +50,13 @@ header, #wrap {
   }
   @include r(768){
     padding: 0 15px;
-  }
-  
+  }  
 }
-
+header{
+  @include r(1280){
+    padding: 0;
+  }
+}
 .hidden-block {
   background: #ffffff;
   border-radius: 3px;
@@ -128,7 +133,9 @@ body {
 
 .top-line-region {
   padding-right: 144px;
-
+  @include r(1150){
+    padding-right: 40px;
+  }
   a {
     position: relative;
     padding-right: 24px;
@@ -384,10 +391,11 @@ input:focus:-moz-placeholder {
   display: inline-block;
   vertical-align: top;
   position: relative;
+  width:34%;
   .select-container{
     position: absolute;
-    top:15px;
-    right:100px;
+    top:30%;
+    right:26%;
     display: none;
     background-color: $white;
     padding-left: 6px;
@@ -476,6 +484,7 @@ input:focus:-moz-placeholder {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     display: inline-block;
+    width:100%;
   }
 
   input {
@@ -484,12 +493,15 @@ input:focus:-moz-placeholder {
       border: none;
       outline: none;
       display: inline-block;
-      float:left;
+      line-height: 52px;
     }
     &[type='search'] {
-      padding: 13px 14px;
-      width: 346px;
+      padding: 0 13px;
       border-right: 1px solid #eaeaea;
+      display: block;
+      overflow: hidden;
+      width: 80%;
+    
       &:focus{
         color:transparent;
       }
@@ -499,8 +511,10 @@ input:focus:-moz-placeholder {
     }
 
     &[type='submit'] {
-      padding: 13px 22px;
+      width:20%;
       cursor: pointer;
+      float: right;
+    
       &:hover{
         background-color: $yellowHov;
       }
@@ -549,7 +563,9 @@ input:focus:-moz-placeholder {
 
 .line-tools {
   padding-left: 26px;
-
+  @include r(1100){
+    padding-left: 1%;
+  }
   .account {
     display: inline-block;
     vertical-align: top;
@@ -669,9 +685,15 @@ input:focus:-moz-placeholder {
   padding-top: 11px;
   margin-left: 30px;
 
-  a {
+  @include r(1024){
+     margin-left: 14px;
+    }
+  span {
     color: $letters;
-    text-decoration: none;
+    line-height:20px;
+    @include r(1180){
+      display: none;
+    }
   }
 
   &:before {
@@ -682,7 +704,7 @@ input:focus:-moz-placeholder {
     background-size: 20px 20px;
     position: absolute;
     top: 50%;
-    margin-top: -10px;
+    margin-top: -5px;
     left: 0px;
   }
 }
@@ -692,7 +714,6 @@ input:focus:-moz-placeholder {
   vertical-align: top;
   float: right;
   position: relative;
-
   .cart {
     text-decoration: none;
     color: #fff;
@@ -704,6 +725,9 @@ input:focus:-moz-placeholder {
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
+    @include r(1024){
+        padding-left: 14px;
+      }
   }
 
 }
@@ -727,6 +751,9 @@ input:focus:-moz-placeholder {
       top: 50%;
       margin-top: -9px;
       left: 13px;
+      @include r(1024){
+        display: none;
+      }
     }
   }
 
@@ -746,7 +773,7 @@ input:focus:-moz-placeholder {
   }
 
 }
-.cart_list-wrapper{
+.cart_list-wrapper,.cart_list-empty{
   padding-top: 60px;
   display: none;
   width: 408px;
@@ -881,7 +908,53 @@ input:focus:-moz-placeholder {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-
+  .dropdown-btn{
+      position: relative;
+      text-align: center;
+      cursor: pointer;
+      vertical-align: bottom;
+      height: 100%;
+      .drop-line-nav {
+        li{
+          padding-left: 0;
+        }
+        
+      }
+      a{
+        color: #000;
+        font-size: 17px;
+        font-weight: 700;
+        text-decoration: none;
+        text-align: center;
+        width:100%;
+        display: inline-block;
+        height:100%;
+        line-height:46px;
+        &:hover{
+          background: $red;
+          color:$white;
+          transition:all .3s ; 
+          .st1{
+            fill:#fff;
+            transition:fill .3s;
+          }
+        }
+      }
+      .icon{
+        display: inline-block;
+        width:20px;
+        height:100%;
+        margin-left: 2px;
+        .st1{
+          transition:fill .3s;
+        }
+      }
+      .drop-menu-wrapper{
+        right:0;
+        width:auto; 
+        padding-top: 48px;
+      }
+    }
   > ul {
     position: relative;
     display: table;
@@ -900,11 +973,11 @@ input:focus:-moz-placeholder {
         color: #000000;
         font-size: 17px;
         font-weight: bold;
-
+        transition: color.3s;
         /* Proxima Nova Semibold */
         text-decoration: none;
-        line-height: 48px;
         text-align: center;
+        padding-top: 10px;
       }
 
       &:last-child {
@@ -916,6 +989,8 @@ input:focus:-moz-placeholder {
 
         &:hover {
           color: #fff;
+          transition:background .3s;
+          transition: color.3s;
         }
       }
     }
@@ -944,6 +1019,7 @@ input:focus:-moz-placeholder {
   > a {
     color: #fff;
     background: #f20101;
+    transition:background .3s;
   }
 
   .main-nav-dropmenu {
@@ -1079,7 +1155,7 @@ input:focus:-moz-placeholder {
   }
   @include r(768){
     width:100%;
-    height:300px;
+    height:380px;
   }
   @include r(480){
     width:100%;
@@ -1278,6 +1354,7 @@ input:focus:-moz-placeholder {
     width:50%;
     float: left;
     height: 410px;
+    padding: 0 6px 0 0; 
    }
    @include r(480){
       width:100%;
@@ -1300,10 +1377,11 @@ input:focus:-moz-placeholder {
     min-height: 1px;
     overflow: hidden;
     padding:0 6px;
-    @include r(980){
+  @include r(980){
     width:50%;
     float: left;
     height: 50%;
+    padding:0 0 0 6px;
   }
   @include r(480){
     width:100%;
@@ -2074,16 +2152,10 @@ footer {
   }
 }
 .footer_help , .footer_info , .footer_catalog {
-  ul.active{
+  ul{
     display: block;
   }
     @include r(420){
-      ul{
-      display: none;
-      &.active{
-        display: block;
-      }
-    }
     h3{
       display: block;
       width:100%;
@@ -2093,7 +2165,9 @@ footer {
      border-bottom: 1px solid rgba(143, 143, 143, 0.53);
     }
   }
-
+.ftr-arr{
+  fill:#3b3b3b!important;
+}
 }
 .footer_help li, .footer_info li, .footer_catalog li {
   list-style-type: none;
@@ -2138,6 +2212,8 @@ footer {
     @include r(768){
     width:100%;
     display: inline-block;
+    position: relative;
+    z-index: 2;
     }
   }
   input {
@@ -2458,6 +2534,7 @@ p.button_close a {
     left: 0;
     right: 0;
     border-bottom: 2px solid $menuBorder;
+
   }
 
   .nav {
@@ -2465,7 +2542,13 @@ p.button_close a {
     margin: 0 auto;
     background: $yellow;
     border-bottom: none;
-
+    .nav-more{
+      display: inline-block;
+      .icon{
+        width:30px;
+        height:100%;
+      }
+    }
     > ul > li {
       &:first-child {
         border-left: 1px solid $yellowLight;
