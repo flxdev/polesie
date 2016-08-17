@@ -486,13 +486,13 @@ var menuAdd = function(){
 
 	if($(window).width() < 1030){
 
-		console.log(menuItems.length)
 		moreBtn.css({'display':'table-cell'});
 		menuItems.detach().appendTo(btn);
 	}
 	else if($(window).width() > 1030){
 		console.log(22)
 	moreBtn.css({'display':'none'});
+	
 	}
 };
 menuAdd();
