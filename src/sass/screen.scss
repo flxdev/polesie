@@ -110,7 +110,9 @@ body {
 .top-line {
   padding-top: 12px;
   padding-bottom: 26px;
-
+  @include r(482){
+    display: none;
+  }
   a {
     color: #3c3c3c;
     text-decoration: none;
@@ -153,16 +155,41 @@ body {
     }
   }
 }
-
+.top-line-nav{
+  @include r(840){
+    display: none;
+  }
+}
 .top-line-nav nav > ul > li {
   display: inline-block;
   padding-right: 27px;
   vertical-align: top;
   position: relative;
-
+  //hide 3rd block that appended in dropdonw
+  &:nth-child(3){
+    @include r(1054){
+    display: none;
+    }
+  }
   &:first-child {
     font-family: $ProximaSemibold;
     font-weight: bold;
+  }
+    .drop-line-nav li{
+      &:first-child{
+        display: none;
+        @include r(1054){
+          display: block;
+        }
+      }
+  }
+  &.dropdown-btn{
+    .icon{
+      width:20px;
+     position: absolute;
+      right: 0;
+      top:0;
+    }
   }
 }
 
@@ -190,12 +217,15 @@ body {
 }
 .dropdown-btn{
   a.active{
-    color:$red;
+    a{
+      color:$red;
+    }
+    .st1{
+        fill:$red;
+    }
   }
 }
-.more-svg{
 
-}
 .drop-menu-wrapper{
   padding-top: 22px;
   position: absolute;
@@ -332,13 +362,25 @@ body {
 
 .line {
   padding-bottom: 20px;
+  @include clearfix;
+  position: relative;
+  @include r(482){
+    padding-bottom: 0;
+    padding-top: 15px;
+  }
 }
 
 .line-wrap-logo {
   display: inline-block;
   vertical-align: top;
   padding-right: 12px;
-
+  @include r(482){
+      padding-top: 10px;
+      .logo{
+        margin-top: 5px;
+        width:130px !important;
+      }
+    }
   .logo {
     width: 170px;
     display: inline-block;
@@ -349,7 +391,9 @@ body {
     display: inline-block;
     padding-top: 5px;
     padding-left: 5px;
-
+    @include r(900){
+      display: none;
+    }
     p {
       line-height: 1.2;
 
@@ -392,6 +436,12 @@ input:focus:-moz-placeholder {
   vertical-align: top;
   position: relative;
   width:34%;
+  @include r(900){
+    width:38%;
+  }
+   @include r(688){
+    display: none;
+  }
   .select-container{
     position: absolute;
     top:30%;
@@ -540,7 +590,6 @@ input:focus:-moz-placeholder {
 
 .search_list {
   padding-bottom: 17px;
-
   a {
     color: #000;
     font-size: 16px;
@@ -563,9 +612,16 @@ input:focus:-moz-placeholder {
 
 .line-tools {
   padding-left: 26px;
+  position: relative;
   @include r(1100){
     padding-left: 1%;
   }
+  @include r(768){
+     float: right;
+    }
+  @include r(482){
+      margin-top: 10px;
+    }
   .account {
     display: inline-block;
     vertical-align: top;
@@ -575,7 +631,45 @@ input:focus:-moz-placeholder {
   vertical-align: top;
 }
 
-.tools-defer {
+//mobile searsh
+
+.mobile-search{
+    position: absolute;
+    @include x-rem(bottom,-10px);
+    width:100%;
+    z-index: 4;
+    opacity: 0;
+    visibility: hidden;
+    background: $white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: all.3s;
+    &.active{
+      @include x-rem(bottom,-80px);
+      opacity: 1;
+      visibility: visible;
+      transition: all.3s;
+    }
+    .mobile-search-submit,.mobile-search-input{
+      background: 0 0;
+      border: none;
+      outline: 0;
+      display: inline-block;
+      @include x-rem(padding,15px); 
+    }
+    .mobile-search-submit{
+      float: right;
+      color:transparent;
+      width:20%;
+      background: url(../img/utility/search_2.svg); 
+      background-repeat: no-repeat;
+      @include x-rem(background-size,20px 20px);
+      background-position: center center;
+    }
+    .mobile-search-input{
+      width:80%;
+    }
+  }
+.tools-defer,.tools-comparison {
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -583,17 +677,12 @@ input:focus:-moz-placeholder {
   height: 16px;
   margin: 14px;
   cursor: pointer;
+  @include r(482){
+    display:none;
+  }
 }
 
 .tools-comparison {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  width: 16px;
-  height: 16px;
-  margin: 14px;
-  cursor: pointer;
-
   &:before {
     content: "";
     width: 16px;
@@ -614,6 +703,7 @@ input:focus:-moz-placeholder {
     position: absolute;
     top: 50%;
     margin-top: -8px;
+
   }
 }
 
@@ -660,6 +750,9 @@ input:focus:-moz-placeholder {
   position: absolute;
   top: 50%;
   margin-top: -8px;
+  @include r(482){
+      left:25%;
+    }
 }
 
 /*
@@ -675,7 +768,35 @@ input:focus:-moz-placeholder {
 	right: -2px;
 }
 */
-
+.tools-search{
+  position: relative;
+  display: none;
+  vertical-align: top;
+  width: 16px;
+  height: 16px;
+  margin: 10px;
+  cursor: pointer;
+  @include r(482){
+    display: inline-block;
+    @include x-rem(width,40px)
+     margin: 0;
+     padding: 0;
+     @include x-rem(height,40px)
+  }
+  &:before {
+    content: "";
+    width: 17px;
+    height: 17px;
+    background: url(../img/utility/search_1.svg);
+    background-size: 17px 17px;
+    position: absolute;
+    top: 50%;
+    @include r(482){
+      left:33%;
+      top:38%;
+    }
+  }
+}
 .line-tools .account {
   display: inline-block;
   vertical-align: top;
@@ -687,6 +808,12 @@ input:focus:-moz-placeholder {
 
   @include r(1024){
      margin-left: 14px;
+    }
+  @include r(482){
+     @include x-rem(width,40px)
+     margin: 0;
+     padding: 0;
+     @include x-rem(height,40px)
     }
   span {
     color: $letters;
@@ -705,7 +832,11 @@ input:focus:-moz-placeholder {
     position: absolute;
     top: 50%;
     margin-top: -5px;
-    left: 0px;
+    left: 0;
+    @include r(482){
+      left:33%;
+      top:45%;
+    }
   }
 }
 
@@ -714,6 +845,10 @@ input:focus:-moz-placeholder {
   vertical-align: top;
   float: right;
   position: relative;
+  @include r(482){
+      color:transparent !important;
+      padding-top: 10px;
+      }
   .cart {
     text-decoration: none;
     color: #fff;
@@ -728,6 +863,29 @@ input:focus:-moz-placeholder {
     @include r(1024){
         padding-left: 14px;
       }
+    @include r(768){
+        padding:0;
+        background: transparent;
+        color:transparent;
+        &.active{
+          background: transparent !important;
+          color: transparent !important;
+        }
+        span{
+          background-color: $red;
+          color:$white;
+          position: absolute;
+          top:-10px;
+          right:0;
+          height:20px;
+          line-height:1.4; 
+        }
+      }
+      @include r(482){
+        span{
+          top:0;
+        }
+      }
   }
 
 }
@@ -736,6 +894,10 @@ input:focus:-moz-placeholder {
 
 .line-cart {
   .cart {
+    @include r(482){
+      float: right;
+      margin-right: 10px;
+    }
     &.active {
       background: #fff445;
       color: #000;
@@ -753,6 +915,8 @@ input:focus:-moz-placeholder {
       left: 13px;
       @include r(1024){
         display: none;
+      }@include r(768){
+        display: block;
       }
     }
   }
@@ -901,18 +1065,40 @@ input:focus:-moz-placeholder {
 }
 
 /* nav */
-
+.main-nav{
+  position: relative;
+}
 .nav {
   background: $yellow;
   border-bottom: 2px solid #fb0101;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+
   .dropdown-btn{
       position: relative;
       text-align: center;
       cursor: pointer;
       height: 100%;
+      display: none;
+      &:hover{
+          background-color: $red;
+          &>a{
+            color:$white;
+             transition:color .3s;
+          }
+          .st1{
+            fill:$white;
+            transition:fill .3s;
+          }
+        }
+      @include r(1054){
+        display: table-cell;
+      }
+      @include r(768){
+        display: none;
+      }
+      
       &>a{
         padding:12px 0;
       }
@@ -933,18 +1119,15 @@ input:focus:-moz-placeholder {
         display: inline-block;
         height:100%;
         padding:10px;
-        &:hover{
-          .st1{
-            fill:#fff;
-            transition:fill .3s;
-          }
-        }
       }
       .icon{
         display: inline-block;
         width:20px;
         height:100%;
         margin-left: 2px;
+        @include r(960){
+          display: none;
+        }
         .st1{
           transition:fill .3s;
         }
@@ -960,13 +1143,31 @@ input:focus:-moz-placeholder {
     display: table;
     width: 100%;
     height: 50px;
-
+    @include r(768){
+      @include x-rem(padding-top,10px)
+      position: absolute;
+      background: $white;
+      z-index: 4;
+      margin-top: 5px;
+    }
     > li {
       display: table-cell;
       border-right: 1px solid $yellowLight;
       &:nth-child(n+6){
-        @include r(1024){
+        @include r(1054){
           display: none;
+        }
+      }
+      @include r(768){
+        border-right:1px solid transparent;
+        display: block;
+        background: $white;
+        border-bottom: 1px solid $greyLight;
+        &:hover{
+          a{
+            background: $greyLight;
+          }
+          
         }
       }
       > a {
@@ -982,6 +1183,10 @@ input:focus:-moz-placeholder {
         text-decoration: none;
         text-align: center;
         padding: 12px 0;
+        @include r(768){
+          text-align: left;
+          padding: 12px 2px;
+        }
       }
 
       &:last-child {
@@ -990,7 +1195,6 @@ input:focus:-moz-placeholder {
 
       a.sale {
         color: $red;
-
         &:hover {
           color: #fff;
           transition:background .3s;
@@ -1000,7 +1204,28 @@ input:focus:-moz-placeholder {
     }
   }
 }
-
+.js-mobile-menu-btn{
+  padding: 12px 10px;
+  display: none;
+  @include r(768){
+    display: block;
+  }
+  a{
+    color: #000;
+    @include x-rem(font-size, 17px)
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    width:100%;
+  }
+  .icon.arr-r{
+    height:100%;
+    width:20px;
+    float: right;
+    transform: rotate(270deg);
+    transform-origin: 50%;
+  }
+}
 .main-nav-dropmenu {
   display: none;
   position: absolute;
@@ -1103,9 +1328,16 @@ input:focus:-moz-placeholder {
   display: inline-block;
   list-style-type: none;
   padding: 0 7px;
-
+  @include r(996){
+      &:nth-child(n+4){
+        display: none;
+      }
+    }
   img {
-    width: 100%;
+    max-width: 100px;
+    @include r(930){
+      max-width:75px; 
+    }
   }
 }
 
@@ -1113,12 +1345,22 @@ input:focus:-moz-placeholder {
   width: 49%;
   display: inline-block;
   vertical-align: top;
+  @include r(1040){
+    width:40%;
+  }
 }
 
 .main-nav-featur {
   width: 50%;
   display: inline-block;
   vertical-align: top;
+  @include r(1040){
+    float:right;
+    margin-right: 10px;
+  }
+  @include r(768){
+    display: none;
+  }
 }
 
 .featur-blocks-wrap {
@@ -1127,7 +1369,8 @@ input:focus:-moz-placeholder {
 
 .featur-brands {
   float: right;
-  padding-top: 24px;
+  padding: 24px 0;
+
 }
 
 .featur-blocks-wrap img {
@@ -1960,7 +2203,17 @@ input:focus:-moz-placeholder {
   width: 182px;
   padding: 0px 8px;
   box-sizing: border-box;
-
+  @include r(1040){
+    float:right;
+    &:last-child{
+      display: none;
+    }
+  }
+  @include r(960){
+    &:not(:first-child){
+      display: none;
+    }
+  }
   img {
     margin: 0 auto;
     padding-bottom: 14px;
@@ -2503,6 +2756,7 @@ p.button_close a {
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: none;
+  padding:0 10px;
 }
 
 .headhesive--stick {
@@ -2542,7 +2796,7 @@ p.button_close a {
   }
 
   .nav {
-    width: 1280px;
+    max-width: 1280px;
     margin: 0 auto;
     background: $yellow;
     border-bottom: none;

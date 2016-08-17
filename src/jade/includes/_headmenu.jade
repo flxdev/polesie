@@ -8,14 +8,23 @@
       .top-line-nav
         nav
           ul
-            li
+            li.top-item
               a(href='#') Доставка и оплата
-            li
+            li.top-item
               a(href='#') Частые вопросы
-            li
+            li.top-item
               a(href='#') Новости и акции
             li.dropdown-btn
-              a(href='#') Ещё...
+              a(href='#') Ещё
+                .icon
+                  svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 15 3', style='enable-background:new 0 0 15 3;', xml:space='preserve')
+                    style(type='text/css').
+                      .st1{fill-rule:evenodd;clip-rule:evenodd;fill:#3B3B3B;}
+                    g
+                      g
+                        path.st1(d='M1.5,0C0.7,0,0,0.7,0,1.5C0,2.3,0.7,3,1.5,3C2.3,3,3,2.3,3,1.5C3,0.7,2.3,0,1.5,0z M7.5,0C6.7,0,6,0.7,6,1.5\
+                        C6,2.3,6.7,3,7.5,3C8.3,3,9,2.3,9,1.5C9,0.7,8.3,0,7.5,0z M13.5,0C12.7,0,12,0.7,12,1.5C12,2.3,12.7,3,13.5,3\
+                        C14.3,3,15,2.3,15,1.5C15,0.7,14.3,0,13.5,0z')
               .drop-menu-wrapper
                 ul.drop-line-nav
                   li
@@ -157,13 +166,6 @@
                 p.cart_list_name Новое поступление детских велосипедов
                 p.short_descr
                   | В нашем магазине обновление ассорти- мента — более 120 новых моделей детских и подростковых велосипедов...
-      // tools
-      .line-tools
-        .tools-comparison(data-title='Список сравнения пуст')
-        .tools-defer(data-title='Список отложенных товаров пуст')
-        a(href='#').account
-          span Личный кабинет
-      // cart
       .line-cart
         a.cart( href='#')
           | Корзина 
@@ -236,9 +238,30 @@
         .cart_list-empty
           .cart_list_hidden
             p Ваша корзина совершенно пуста
+      // tools
+      .mobile-search
+        .mobile_form-wrapper
+          form(action="")
+            input.mobile-search-input(type="text" placeholder='Поиск пок каталогу')
+            input.mobile-search-submit(type="submit")
+      .line-tools
+        a(href="#").tools-comparison(data-title='Список сравнения пуст')
+        a(href="#").tools-defer(data-title='Список отложенных товаров пуст')
+        a(href="#").tools-search.js-search-btn
+        a(href='#').account
+          span Личный кабинет
+      // cart
+      
     // main-nav
     .main-nav
       nav.nav
+        .js-mobile-menu-btn
+          a(href="#") Все разделы каталога
+            .icon.arr-r
+                svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                  style(type='text/css').
+                    .ftr-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                  path.ftr-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
         ul
           //в menu-item лучше использовать неразрывные пробелы
           li.menu-item
@@ -323,13 +346,13 @@
                 .featur-brands
                   ul
                     li
-                      img(src='img/promo/featur-brands.jpg', alt='#')
+                      img(src='img/promo/brand1.jpg', alt='#')
                     li
-                      img(src='img/promo/featur-brands.jpg', alt='#')
+                      img(src='img/promo/brand2.jpg', alt='#')
                     li
-                      img(src='img/promo/featur-brands.jpg', alt='#')
+                      img(src='img/promo/brand3.jpg', alt='#')
                     li
-                      img(src='img/promo/featur-brands.jpg', alt='#')
+                      img(src='img/promo/brand4.jpg', alt='#')
           li.menu-item
             a(href='#') Для дома и сада
           li.menu-item

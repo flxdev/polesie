@@ -304,9 +304,40 @@ $(function() {
 	$("#brand .tab_item").not(":first").hide();
 	$("#brand .tab").click(function() {
 		$("#brand .tab").removeClass("active").eq($(this).index()).addClass("active");
-		$("#brand .tab_item").hide().eq($(this).index()).fadeIn()
+		$("#brand .tab_item").hide().eq($(this).index()).fadeIn().find('.slick-slider').slick('SetPosition');
+
 	}).eq(0).addClass("active");
 
+// function tab() {
+// 		$(".js-tab").each(function(){
+// 			var tab_link = $(this).find("a"),
+// 				tab_item = $(this).find("li"),
+// 				index = tab_link.data("href"),
+// 				parents = $(this).parents(".js-tab_group"),
+// 				tab_cont = parents.find(".js-tab-cont");
+
+// 			tab_link.on("click", function() {
+// 				var index = $(this).data("href");
+// 				var activeTab = $(this).parents(".js-tab_group").find("."+index);
+// 				$('.js-tab-item').removeClass("is-active");
+// 				$(this).parent().addClass("is-active");
+// 				tab_cont.fadeOut(0).removeClass('visible');
+// 				setTimeout(function(){
+//         	   			parents.find("."+index).addClass('visible')
+//         			}, 10);
+// 				parents.find("."+index).show().find('.js-slider').slick('setPosition');
+//         	   		autoHeight();
+// 				auto();
+// 				return false;
+// 			});
+// 			tab_item.first().addClass("is-active");
+// 			parents.find("."+index).show();
+// 			setTimeout(function(){
+//         	   		parents.find("."+index).addClass('visible')
+//         	}, 10);
+// 		});
+// 	}
+// 	tab();
 
 
 
@@ -318,7 +349,6 @@ $(function() {
 			container =$('.line-search-form') ;
 
 			input.focus(function(){
-				console.log(2)
 				form.css('border-color','#fff445');
 				$(this).css('border-right-color','#fff445');
 				category.fadeIn();
@@ -327,7 +357,7 @@ $(function() {
 			container.focusout(function(){
 				console.log(2)
 				form.css('border-color','#eaeaea');
-				$(this).css('border-right-color','#eaeaea');
+				input.css('border-right-color','#eaeaea');
 			})
 			
 	})();
@@ -477,29 +507,28 @@ var footerBtn = function(){
 };
 footerBtn();
 $(window).resize(footerBtn);
-
+// adding >6 vtyu item to container
 var menuAdd = function(){
 
 	var btn = $('.js-container');
 	var menuItems = $('.main-nav nav .menu-item:nth-child(n+6)');
-	var menuCont = $('.main-nav nav ul');
+
+	var topItem = $('.top-line-nav nav .top-item:nth-child(3)');
+	var topCont = $('.top-line-nav .drop-line-nav');
 
 	menuItems.clone().appendTo(btn);
-
+	topItem.clone().prependTo(topCont);
+	console.log(topCont)
 	};
 menuAdd();
-var moreAddShow = function(){
 
-	var moreBtn = $('.js-menu_add-btn');
-	if($(window).width() < 1026){
+var mobileSearch = function(){
+		var trigger = $('.js-search-btn'),
+			target =$('.mobile-search');
 
-		moreBtn.css({'display':'table-cell'});
-	}
-	else if($(window).width() > 1028){
-	moreBtn.css({'display':'none'});
-	
-	}
-
-}
-$(window).resize(moreAddShow);;
+		trigger.on('click', function(){
+			target.toggleClass('active');
+		});
+	};
+mobileSearch();
  });
