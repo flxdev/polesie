@@ -214,7 +214,6 @@ body {
   -webkit-border-radius: 3px;
   width:100%;
   li {
-    padding-right: 50px;
     border-left: 2px solid #fff;
     &:hover {
       background: #f4f4f4;
@@ -223,8 +222,9 @@ body {
 
     a {
       padding-left: 17px;
-      line-height: 40px;
+      padding:12px 10px;
       display: block;
+      width:100%;
 
       &:hover {
         color: #fb0101;
@@ -912,11 +912,14 @@ input:focus:-moz-placeholder {
       position: relative;
       text-align: center;
       cursor: pointer;
-      vertical-align: bottom;
       height: 100%;
+      &>a{
+        padding:12px 0;
+      }
       .drop-line-nav {
+        min-width:200px;
         li{
-          padding-left: 0;
+          padding-right: 0;
         }
         
       }
@@ -925,15 +928,12 @@ input:focus:-moz-placeholder {
         font-size: 17px;
         font-weight: 700;
         text-decoration: none;
-        text-align: center;
+        text-align: right;
         width:100%;
         display: inline-block;
         height:100%;
-        line-height:46px;
+        padding:10px;
         &:hover{
-          background: $red;
-          color:$white;
-          transition:all .3s ; 
           .st1{
             fill:#fff;
             transition:fill .3s;
@@ -964,7 +964,11 @@ input:focus:-moz-placeholder {
     > li {
       display: table-cell;
       border-right: 1px solid $yellowLight;
-
+      &:nth-child(n+6){
+        @include r(1024){
+          display: none;
+        }
+      }
       > a {
         display: block;
         position: relative;
@@ -977,7 +981,7 @@ input:focus:-moz-placeholder {
         /* Proxima Nova Semibold */
         text-decoration: none;
         text-align: center;
-        padding-top: 10px;
+        padding: 12px 0;
       }
 
       &:last-child {
