@@ -14,17 +14,37 @@ html(lang='ru')
     #wrap
       // header
       include ./includes/_headmenu.jade
-      // promo / slider - banners
-      section
-        ul.breadcrums
-            a.home-btn(href="#")
-                .home-img
-                    svg#Layer_home(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='9px', y='5px', viewbox='0 0 14.1 13', style='enable-background:new 0 0 14.1 13;', xml:space='preserve')
-                      style(type='text/css').
-                        .sthome{fill-rule:evenodd;clip-rule:evenodd;fill:#989898;}
-                      path.sthome(d='M7.1,0l4.8,4.1L14,5.8c0,0,0.2,0.4,0,0.7c-0.3,0.4-0.8,0.2-0.8,0.2l-0.5-0.2v5.8c0,0.3-0.3,0.6-0.6,0.6h-3V8h-4\
-                      v5h-3c-0.3,0-0.6-0.3-0.6-0.6V6.6L0.9,6.8c0,0-0.6,0-0.8-0.2c-0.2-0.3,0-0.9,0-0.9l2-1.6L7.1,0z')
-            li.bread-item
+
+      .content_main-wrapper
+        section
+          ul.breadcrums
+              a.home-btn(href="#")
+                  .home-img
+                      svg#Layer_home(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='9px', y='5px', viewbox='0 0 14.1 13', style='enable-background:new 0 0 14.1 13;', xml:space='preserve')
+                        style(type='text/css').
+                          .sthome{fill-rule:evenodd;clip-rule:evenodd;fill:#989898;}
+                        path.sthome(d='M7.1,0l4.8,4.1L14,5.8c0,0,0.2,0.4,0,0.7c-0.3,0.4-0.8,0.2-0.8,0.2l-0.5-0.2v5.8c0,0.3-0.3,0.6-0.6,0.6h-3V8h-4\
+                        v5h-3c-0.3,0-0.6-0.3-0.6-0.6V6.6L0.9,6.8c0,0-0.6,0-0.8-0.2c-0.2-0.3,0-0.9,0-0.9l2-1.6L7.1,0z')
+              li.bread-item
+                  a(href="#") Спорт и туризм
+                  .bread-arrow
+                      svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                        style(type='text/css').
+                          .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                        path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                  .bread__add-menu-wrap
+                    .bread__add-container
+                      ul.add-list
+                        li.add-list-item
+                          a(href="#") Товары для детей
+                        li.add-list-item
+                          a(href="#") Мода и красота
+                        li.add-list-item
+                          a(href="#") Электроника и техника
+                        li.add-list-item
+                          a(href="#") Всякие гадости
+                  
+              li.bread-item
                 a(href="#") Спорт и туризм
                 .bread-arrow
                     svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
@@ -41,181 +61,170 @@ html(lang='ru')
                       li.add-list-item
                         a(href="#") Электроника и техника
                       li.add-list-item
-                        a(href="#") Всякие гадости
-                
-            li.bread-item
-              a(href="#") Спорт и туризм
-              .bread-arrow
-                  svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
-                    style(type='text/css').
-                      .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
-                    path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
-              .bread__add-menu-wrap
-                .bread__add-container
-                  ul.add-list
-                    li.add-list-item
-                      a(href="#") Товары для детей
-                    li.add-list-item
-                      a(href="#") Мода и красота
-                    li.add-list-item
-                      a(href="#") Электроника и техника
-                    li.add-list-item
-                      a(href="#") Ldt jlbyflwfnbrkfccybws rrr
-            li.bread-item
-                a(href="#") Спорт и туризм
-      section
-        h1.section-title Велосипеды
-        .section__wrapper
-            aside.aside__selection
-              .selection_wrapper
-                .selection_item
-                  .selection_item-title
-                    span Цена, новые рубли
-                  .selection_body
-                    span.price-label от
-                    input.price.price-min(type="text",placeholder = '100,00 р.')
-                    span.price-label до
-                    input.price.price-max(type="text",placeholder = '2000,00 р.')
-                .selection_item
-                  .selection_item-title
-                    span Производитель
-                  .selection_body
-                    ul.select-u-body
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="checkbox", value = 'Samsung')
-                            span.input-checked
-                          span.input-text Samsung
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="checkbox", value = 'Мороз')
-                            span.input-checked 
-                          span.input-text Мороз
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="checkbox", value = 'Xiaomi')
-                            span.input-checked
-                          span.input-text Xiaomi
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="checkbox", value = 'Samsung')
-                            span.input-checked
-                          span.input-text Samsung
-                .selection_item
-                  .selection_item-title
-                    span Возраст
-                  .selection_body
-                    ul.select-u-body
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="checkbox", value = 'Детский')
-                            span.input-checked
-                          span.input-text Детский
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="checkbox", value = 'Средний')
-                            span.input-checked 
-                          span.input-text Средний
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="checkbox", value = 'Взрослый')
-                            span.input-checked
-                          span.input-text Взрослый
-                .selection_item
-                  .selection_item-title
-                    span Возраст
-                  .selection_body
-                    ul.select-u-body
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="checkbox", value = '2014')
-                            span.input-checked
-                          span.input-text 2014
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="checkbox", value = '2015')
-                            span.input-checked 
-                          span.input-text 2015
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="checkbox", value = '2016')
-                            span.input-checked
-                          span.input-text 2016
-                .selection_item
-                  .selection_item-title
-                    span Класс
-                  .selection_body
-                    ul.select-u-body
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="checkbox", value = 'Горный')
-                            span.input-checked
-                          span.input-text Горный
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="checkbox", value = 'Городской')
-                            span.input-checked 
-                          span.input-text Городской
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="checkbox", value = 'Гибридный')
-                            span.input-checked
-                          span.input-text Гибридный
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="checkbox", value = 'Шоссейный')
-                            span.input-checked
-                          span.input-text Шоссейный
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="checkbox", value = 'Комфортный')
-                            span.input-checked
-                          span.input-text Комфортный
-                .selection_item
-                  .selection_item-title
-                    span Задний тормоз
-                  .selection_body
-                    ul.select-u-body.select-radio
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="radio",name = 'type' value = 'Горный')
-                            span.input-checked
-                          span.input-text Горный
-                      li.select-u-item
-                        label.input_label
-                          span.input_main
-                            input.input-real(type="radio",name = 'type' value = 'Городской')
-                            span.input-checked 
-                          span.input-text Городской
-                // если нужны доп параметры
-                //- .selection_item.additional_trigger
-                //-     a(href="#") Дополнительные параметры
-                .selection_find-block
-                  button.selection_find-btn Подобрать
-                  a.selection_find-clear(href='#') Очистить Фильтр
-  
+                        a(href="#") Ldt jlbyflwfnbrkfccybws rrr
+              li.bread-item
+                  a(href="#") Спорт и туризм
+        section
+          h1.section-title Велосипеды
+          .section__wrapper
+              aside.aside__selection
+                .selection_wrapper
+                  .selection_item
+                    .selection_item-title
+                      span Цена, новые рубли
+                    .selection_body
+                      .price-wrapper
+                        span.price-label от
+                        input.price.price-min(type="text",placeholder = '100,00 р.')
+                        span.price-label до
+                        input.price.price-max(type="text",placeholder = '2000,00 р.')
+                  .selection_item
+                    .selection_item-title
+                      span Производитель
+                    .selection_body
+                      ul.select-u-body
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox", value = 'Samsung')
+                              span.input-checked
+                            span.input-text Samsung
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox", value = 'Мороз')
+                              span.input-checked 
+                            span.input-text Мороз
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox", value = 'Xiaomi')
+                              span.input-checked
+                            span.input-text Xiaomi
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox", value = 'Samsung')
+                              span.input-checked
+                            span.input-text Samsung
+                  .selection_item
+                    .selection_item-title
+                      span Возраст
+                    .selection_body
+                      ul.select-u-body
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox", value = 'Детский')
+                              span.input-checked
+                            span.input-text Детский
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox", value = 'Средний')
+                              span.input-checked 
+                            span.input-text Средний
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox", value = 'Взрослый')
+                              span.input-checked
+                            span.input-text Взрослый
+                  .selection_item
+                    .selection_item-title
+                      span Возраст
+                    .selection_body
+                      ul.select-u-body
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox", value = '2014')
+                              span.input-checked
+                            span.input-text 2014
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox", value = '2015')
+                              span.input-checked 
+                            span.input-text 2015
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox", value = '2016')
+                              span.input-checked
+                            span.input-text 2016
+                  .selection_item
+                    .selection_item-title
+                      span Класс
+                    .selection_body
+                      ul.select-u-body
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox", value = 'Горный')
+                              span.input-checked
+                            span.input-text Горный
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox", value = 'Городской')
+                              span.input-checked 
+                            span.input-text Городской
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox", value = 'Гибридный')
+                              span.input-checked
+                            span.input-text Гибридный
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox", value = 'Шоссейный')
+                              span.input-checked
+                            span.input-text Шоссейный
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="checkbox", value = 'Комфортный')
+                              span.input-checked
+                            span.input-text Комфортный
+                  .selection_item
+                    .selection_item-title
+                      span Задний тормоз
+                    .selection_body
+                      ul.select-u-body.select-radio
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="radio",name = 'type' value = 'Горный')
+                              span.input-checked
+                            span.input-text Горный
+                        li.select-u-item
+                          label.input_label
+                            span.input_main
+                              input.input-real(type="radio",name = 'type' value = 'Городской')
+                              span.input-checked 
+                            span.input-text Городской
+                  // если нужны доп параметры
+                  //- .selection_item.additional_trigger
+                  //-     a(href="#") Дополнительные параметры
+                  .selection_find-block
+                    button.selection_find-btn Подобрать
+                    a.selection_find-clear(href='#') Очистить Фильтр
+    
 
 
 
-                
-            .section__content
-              
+                  
+              .section__content
+                .sort_wrapper
+                  .sort-select.sort-select-by
+                  .sort-select.sort-select-by
+                  .sort_view_wrap
+                    .sort-view-item.sort-block
+                      a(href="#")
+                    .sort-view-item.sort-row
+                      a(href="#")
 
       
       .mask-js

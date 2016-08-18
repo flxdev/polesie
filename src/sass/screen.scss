@@ -42,7 +42,7 @@ a, img {
   outline: none;
 }
 
-#wrap, header {
+#wrap {
   max-width: 1280px;
   margin: 0 auto;
   @include r(1280){
@@ -50,13 +50,22 @@ a, img {
   }
   @include r(768){
     padding: 0 15px;
-    overflow: hidden;
   }  
 }
 header{
   @include r(1280){
     padding: 0;
+    background: #fff;
   }
+  @include r(482){
+    position: fixed;
+    top:0;
+    width:100%;
+    padding: 0 15px;
+    left:0;
+    right:0;
+    z-index: 9999;
+  }  
 }
 .hidden-block {
   background: #ffffff;
@@ -105,7 +114,12 @@ body {
 .hidden {
   display: none;
 }
+.content_main-wrapper{
+  @include r(482){
+    @include x-rem(padding-top,125px)
 
+  }
+}
 /* top-line */
 
 .top-line {
@@ -2784,6 +2798,11 @@ p.button_close a {
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: none;
   padding:0 10px;
+  @include r(482){
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .headhesive--stick {
@@ -2796,8 +2815,8 @@ p.button_close a {
   }
 
   .wrap-catalog-btn {
-    display: block;
-    width: 316px;
+    display: inline-block;
+    width: 100%;
   }
 }
 
@@ -2805,12 +2824,17 @@ p.button_close a {
   line-height: 46px;
   padding-left: 30px;
 }
-
 .headhesive {
   .line {
     padding: 10px 0;
     position: relative;
     z-index: 40;
+    .line-search-form{
+      width:47%;
+      @include r(820){
+        width:40%;
+      }
+    }
   }
 
   .main-nav {
@@ -3209,8 +3233,11 @@ p.button_close a {
   .selection_item-title{
     @include x-rem(font-size,14px);
     font-weight: bold;
-    @include x-rem(margin-bottom,20px);
     position: relative;
+    cursor:pointer;
+    .price-wrapper{
+      opacity:0;
+    }
     &:before{
       content: '';
       @include x-rem(width,14px);
@@ -3221,17 +3248,25 @@ p.button_close a {
       right: 0;
       background-position: center;
       background-repeat: no-repeat;
+      transform: rotate(180deg);
+      transform-origin: 50%;
     }
     &.active{
       &:before{
-        transform: rotate(180deg);
-        transform-origin: 50%;
+        transform: rotate(0);
+      }
+      +.selection_body{
+        .price-wrapper{
+         transition-delay:.3s;
+        }
       }
     }
    }
    .selection_body{
     font-size: 0;
+    @include x-rem(margin-top,20px);
     //max-min price
+    display:none;
     .price{
       width:50%;
       display: inline-block;
@@ -3248,7 +3283,7 @@ p.button_close a {
       position: absolute;
       @include x-rem(margin-right, -14px);
       color:#000;
-      z-index: 2;
+      z-index: 1;
       @include x-rem(padding-left, 5px);
     }
     .price-min{
@@ -3269,6 +3304,7 @@ p.button_close a {
     display: inline-block;
      @include x-rem(min-width, 15px)
      cursor: pointer;
+     width:100%;
      .input_main{
       float: left;
       position: relative;

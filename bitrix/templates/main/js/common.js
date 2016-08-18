@@ -91,7 +91,7 @@ $(function() {
 		offset: 500
 	};
 	var header = new Headhesive('.header', options);
-
+	
 	$(".wrap-catalog-btn p").click(function(){
 		$(".headhesive .main-nav").toggle();
 	});
@@ -714,4 +714,15 @@ var mobileAside = function(){
 		});
 	};
 mobileAside();
+if($('.selection_item').length){
+
+	var searchBlk = $('.selection_item-title');
+	
+
+	searchBlk.on('click', function(){
+		var target =  $(this).parent().find('.selection_body');
+		$(this).toggleClass('active');
+			target.toggle('normal');
+	});
+}
  });
