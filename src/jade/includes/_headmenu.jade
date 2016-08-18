@@ -245,8 +245,8 @@
             input.mobile-search-input(type="text" placeholder='Поиск пок каталогу')
             input.mobile-search-submit(type="submit")
       .line-tools
-        a(href="#").tools-comparison(data-title='Список сравнения пуст')
-        a(href="#").tools-defer(data-title='Список отложенных товаров пуст')
+        a(href="#",data-title='Список сравнения пуст').tools-comparison
+        a(href="#",data-title='Список отложенных товаров пуст').tools-defer
         a(href="#").tools-search.js-search-btn
         a(href='#').account
           span Личный кабинет
