@@ -1,3 +1,12 @@
+$(window).on('load',function(){
+	if($('.selection_wrapper').length){
+
+		$('.input_label').each(function(){
+			filterItems($(this));
+			//возможно сделать блоки окрытыми
+		})
+	}
+});
 $(document).ready(function () {
 
 $(function() {
@@ -641,4 +650,87 @@ if($('.selection_item').length){
 			target.toggle('normal');
 	});
 }
+
+
+var priceFilter = function(val){
+	var parent = val.parents('.selection_item');
+
+	if(val.val().length > 0){
+		parent.addClass('checked');
+		console.log($(this).val())
+	}
+	else {
+		parent.removeClass('checked');
+		console.log($(this).length)
+	}
+}
+
+$('.price-wrapper .price').on('input change',function(e){
+	console.log($(this).val().length)
+	priceFilter($(this));
+});
+
+var clearItems = function(block){
+	var selBody = block.parents('.selection_wrapper'),
+		selInput = selBody.find('input:checked'),
+		selCont = selInput.parents('.selection_item');
+
+		selInput.prop('checked', false); 
+		selCont.removeClass('checked');
+		$('.selection_body').hide('normal');
+		$('.selection_item-title').removeClass('active');
+		$('.price').val('');
+		priceFilter($('.price'));
+
+}
+    $('.input_label').click(function(){
+    	filterItems($(this));
+    });
+
+    $('.selection_find-clear').click(function(event){
+    	event.preventDefault();
+    	clearItems($(this));
+    });
+
+ if($('.sort_wrapper').length){
+
+ 	var sortItem = function(){
+ 		var trigger = $('.js-select-item');
+
+ 		trigger.on('click', function(){
+ 			var _ = $(this);
+ 			var textCont = _.find('span');
+ 			var target = _.parent().find('.sort-select-body');
+ 			var item = target.find('.sort-select-item a');
+ 			target.toggleClass('active');
+ 			_.toggleClass('active');
+
+ 			item.on('click',function(){
+ 				var _ = $(this),
+ 					altLext = _.data('text');
+ 				textCont.text(altLext);
+ 				console.log(altLext);
+ 				_.parent().addClass('active').siblings().removeClass('active');
+ 				setTimeout(function(){
+ 					target.removeClass('active');
+ 				},500);
+ 				
+ 			});
+
+ 		});
+ 	};
+ 	sortItem();
+ } 
  });
+var filterItems = function(item){
+	var selCont = item.parents('.selection_item'),
+		selInput = selCont.find('input:checked');
+
+	 	if(selInput.length != 0){
+	 		selCont.addClass('checked');
+	 	}
+	 	else if(selInput.length === 0) {
+	 		selCont.removeClass('checked');
+	 	}
+
+    }

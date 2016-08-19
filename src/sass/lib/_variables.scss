@@ -1,10 +1,13 @@
 //fonts
 @include font-face('ProximaRegular', "../fonts/ProximaNovaRegular_0" ,null, null, eot otf woff svg);
 @include font-face('ProximaSemibold', "../fonts/ProximaNovaSemibold_1" ,null, null, eot otf woff svg);
+@include font-face('ProximaLight', "../fonts/proximanovalight_0" ,null, null, eot otf woff svg);
 
 
 $ProximaRegular: 'ProximaRegular', $font-stack-helvetica;
 $ProximaSemibold: 'ProximaSemibold', $font-stack-helvetica;
+$ProximaLight: 'ProximaLight', $font-stack-helvetica;
+
 
 
 //colors

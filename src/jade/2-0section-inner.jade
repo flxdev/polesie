@@ -19,7 +19,7 @@ html(lang='ru')
         section
           ul.breadcrums
               a.home-btn(href="#")
-                  .home-img
+                  i.home-img
                       svg#Layer_home(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='9px', y='5px', viewbox='0 0 14.1 13', style='enable-background:new 0 0 14.1 13;', xml:space='preserve')
                         style(type='text/css').
                           .sthome{fill-rule:evenodd;clip-rule:evenodd;fill:#989898;}
@@ -46,7 +46,7 @@ html(lang='ru')
                   
               li.bread-item
                 a(href="#") Спорт и туризм
-                .bread-arrow
+                i.bread-arrow
                     svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
                       style(type='text/css').
                         .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
@@ -68,16 +68,16 @@ html(lang='ru')
           h1.section-title Велосипеды
           .section__wrapper
               aside.aside__selection
-                .selection_wrapper
+                form(action="#",metod = 'post',name = 'filter').selection_wrapper
                   .selection_item
                     .selection_item-title
                       span Цена, новые рубли
                     .selection_body
                       .price-wrapper
                         span.price-label от
-                        input.price.price-min(type="text",placeholder = '100,00 р.')
+                        input.price.price-min(type="number",placeholder = '100,00 р.')
                         span.price-label до
-                        input.price.price-max(type="text",placeholder = '2000,00 р.')
+                        input.price.price-max(type="number",placeholder = '2000,00 р.')
                   .selection_item
                     .selection_item-title
                       span Производитель
@@ -86,7 +86,7 @@ html(lang='ru')
                         li.select-u-item
                           label.input_label
                             span.input_main
-                              input.input-real(type="checkbox", value = 'Samsung')
+                              input.input-real(type="checkbox", checked='checked',value = 'Samsung')
                               span.input-checked
                             span.input-text Samsung
                         li.select-u-item
@@ -107,6 +107,10 @@ html(lang='ru')
                               input.input-real(type="checkbox", value = 'Samsung')
                               span.input-checked
                             span.input-text Samsung
+                    .selection_item-hover
+                      .sel-how-wrapper
+                        .selection_item-hover-container
+                          span 500 моделей
                   .selection_item
                     .selection_item-title
                       span Возраст
@@ -161,7 +165,7 @@ html(lang='ru')
                         li.select-u-item
                           label.input_label
                             span.input_main
-                              input.input-real(type="checkbox", value = 'Горный')
+                              input.input-real(type="checkbox", checked='checked',value = 'Горный')
                               span.input-checked
                             span.input-text Горный
                         li.select-u-item
@@ -173,7 +177,7 @@ html(lang='ru')
                         li.select-u-item
                           label.input_label
                             span.input_main
-                              input.input-real(type="checkbox", value = 'Гибридный')
+                              input.input-real(type="checkbox", checked='checked',value = 'Гибридный')
                               span.input-checked
                             span.input-text Гибридный
                         li.select-u-item
@@ -218,8 +222,44 @@ html(lang='ru')
                   
               .section__content
                 .sort_wrapper
-                  .sort-select.sort-select-by
-                  .sort-select.sort-select-by
+                  .sort-select
+                    .sort-select-title.js-select-item
+                      span Сначала популярные
+                      i.bread-arrow
+                        svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='8px', y='4px', viewbox='0 0 8 4', style='enable-background:new 0 0 8 4;', xml:space='preserve')
+                          path(d='M8,0H0l4,4L8,0z')
+                    .sort_body-wrap
+                      .sort-select-body
+                        .sort-select-item
+                          a(href="#",data-text="От А до Я") От А до Я
+                        .sort-select-item
+                          a(href="#",data-text="От Я до А") От Я до А
+                        .sort-select-item
+                          a(href="#",data-text="Популярные") Популярные
+                        .sort-select-item.active
+                          a(href="#",data-text="Дешевые") Дешевые
+                        .sort-select-item
+                          a(href="#",data-text="Дорогие") Дорогие
+                        .sort-select-item
+                          a(href="#",data-text="Новинки") Новинки
+                        .sort-select-item
+                          a(href="#",data-text="Хиты продаж") Хиты продаж
+                  .sort-select
+                    .sort-select-title.js-select-item
+                      span Выводить по 20 товаров
+                      i.bread-arrow
+                        svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='8px', y='4px', viewbox='0 0 8 4', style='enable-background:new 0 0 8 4;', xml:space='preserve')
+                          path(d='M8,0H0l4,4L8,0z')
+                    .sort_body-wrap
+                      .sort-select-body
+                        .sort-select-item
+                          a(href="#",data-text="Выводить по 20 товаров") 20 товаров
+                        .sort-select-item
+                          a(href="#",data-text="Выводить по 50 товаров") 50 товаров
+                        .sort-select-item
+                          a(href="#",data-text="Выводить по 100 товаров") 100 товаров
+ 
+
                   .sort_view_wrap
                     .sort-view-item.sort-block
                       a(href="#")
