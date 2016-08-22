@@ -104,22 +104,7 @@ $(function() {
 	$(".wrap-catalog-btn p").click(function(){
 		$(".headhesive .main-nav").toggle();
 	});
-	/*//hide additional item on top
-	var headItem = function(){
-		var menuItem = $('.top-line-nav nav ul').find('li').last(),
-			menuTarget = $('.drop-line-nav');
-			console.log('bingo')
 
-			menuTarget.prepend(menuItem);
-	};
-	headItem();
-	$(window).resize(headItem);
-	var menuAdaptive = function(){
-		var items =  $('.main-nav nav ul').length;
-		console.log(items);
-	};
-	menuAdaptive();
-	*/
 
 	//hover nemu
 	(function(){

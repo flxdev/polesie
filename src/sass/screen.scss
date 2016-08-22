@@ -60,11 +60,12 @@ a, img {
   max-width: 1280px;
   margin: 0 auto;
   @include r(1280){
+    padding: 0 8px;
+  }
+  @include r(1040){
     padding: 0 10px;
   }
-  @include r(768){
-    padding: 0 15px;
-  }  
+
 }
 header{
   @include r(1280){
@@ -2009,7 +2010,7 @@ input:focus:-moz-placeholder {
 
 .hits_block_wrap {
   width:100%;
-  padding: 14px 16px;
+  @include x-rem(padding,15px)
   box-sizing: border-box;
   cursor: pointer;
   display: inline-block;
@@ -2017,10 +2018,12 @@ input:focus:-moz-placeholder {
   box-shadow: 1px 0 8px rgba(1, 0, 0, 0);
   background: $white;
   &:hover {
-    box-shadow: 1px 0 8px rgba(0, 0, 0, 0.38);
-    border-radius: 3px;
+    box-shadow: 0.5px 0.866px 5px 0px rgba( 0, 0, 0 ,.24);
+    @include x-rem(border-radius, 3px);
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
+    position: relative;
+    z-index: 1;
     .hits_descr {
       height: 66px;
     }
@@ -2031,7 +2034,9 @@ input:focus:-moz-placeholder {
   }
 }
 
-.hits_block {}
+.hits_block {
+  position: relative;
+}
 
 
 .hits_about {
@@ -2967,6 +2972,8 @@ p.button_close a {
 }
 .home-btn{
   display: inline-block;
+  @include x-rem(width,14px);
+    @include x-rem(height,14px);
   .home-img{
     @include x-rem(width,14px);
     @include x-rem(height,14px);
@@ -3245,7 +3252,7 @@ p.button_close a {
 //2-0-inner
 .aside__selection{
    @include x-rem(width,262px);
-  @include x-rem(padding-right,21px);
+  @include x-rem(padding-right,20px);
   display: inline-block;
   float: left;
   @include x-rem(margin-bottom,20px);
@@ -3648,6 +3655,7 @@ p.button_close a {
 }
 .products_wrap{
   @include x-rem(padding-top, 15px);
+  @include clearfix;
 }
 .product_item{
   display: inline-block;
@@ -3772,16 +3780,25 @@ p.button_close a {
           text-align:center;
           @include x-rem(margin-top,10px);
         }
+      }
     }
-
+    .hits_descr {
+  overflow: visible;
+  }
+}
       .hits_tools{
-        display: block;
+        display: none;
         @include x-rem(margin,25px 0 0);
         .hits-wrap{
           display: inline-block;
           .hits_comparison, .hits_defer{
             display: none;
+            @include x-rem(min-width,16px);
+            @include x-rem(min-height,16px);
             a{
+              @include x-rem(min-width,16px);
+              @include x-rem(min-height,16px);
+              display: inline-block;
               background-position: left top;
               background-repeat: no-repeat;
               @include x-rem(background-size,16px 16px);
@@ -3842,12 +3859,6 @@ p.button_close a {
               }
         }
       }
-    }
-    .hits_descr {
-  overflow: visible;
-  }
-}
-
 .hits_status{
   top:0;
 }
@@ -3891,8 +3902,11 @@ p.button_close a {
   
 }
 
-
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //pagination
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 .pagination_wrap{
   display: inline-block;
   width:100%;
@@ -3962,5 +3976,48 @@ p.button_close a {
         opacity: .5;
       }
     }
+  }
+}
+//+++++++++++++++++++++++++++++++++++
+//grid-item
+//+++++++++++++++++++++++++++++++++++
+.item-grid-wrap{
+  display: inline-block;
+  float:left;
+  width:25%;
+  @include x-rem(padding,1px);
+  @include x-rem(height, 350px);
+  img{
+    max-width:100%;
+    display: block;
+    margin:0 auto; 
+  }
+
+  .hits_stat{
+    .stat_yes{
+      display: none;
+      &.active{
+        display: inline-block;
+      }
+    }
+  }
+  .hits_tools{
+    margin:0;
+    @include x-rem(padding,5px 0);
+  }
+  @include r(1108){
+    width:33.3%;
+  }
+   @include r(970){
+    width:50%;
+  }
+  @include r(769){
+    width:33.3%;
+  }
+  @include r(731){
+    width:50%;
+  }
+  @include r(500){
+    width:100%;
   }
 }
