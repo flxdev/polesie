@@ -614,10 +614,9 @@ var menuAdd = function(){
 
 	menuItems.clone().appendTo(btn);
 	topItem.clone().prependTo(topCont);
-	console.log(topCont)
 	};
 menuAdd();
-
+//mobile search
 var mobileSearch = function(){
 		var trigger = $('.js-search-btn'),
 			target =$('.mobile-search');
@@ -627,18 +626,32 @@ var mobileSearch = function(){
 		});
 	};
 mobileSearch();
-
+//mobile nav
 var mobileAside = function(){
 
 		var trigger = $('.moblie_btn');
 
 		trigger.on('click', function(){
-			target = trigger.parent().find('.aside-list');
-			$(this).toggleClass('active');
-			target.toggle('normal');
+			target = trigger.parent().find('.js-toggle-target');
+			if(!$(this).hasClass('active')) {
+				$(this).addClass('active')
+				target.fadeIn(300);
+			} else {
+				$(this).removeClass('active');
+				target.fadeOut({
+					duration: 300,
+					complete: function(){
+						$(this).removeAttr('style')
+					}
+				})
+			}
+			/*$(this).toggleClass('active');
+			target.toggle('normal');*/
 		});
 	};
+
 mobileAside();
+
 if($('.selection_item').length){
 
 	var searchBlk = $('.selection_item-title');
