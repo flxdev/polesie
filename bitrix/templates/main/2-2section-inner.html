@@ -29,7 +29,7 @@
 					<!-- top line-->
 					<div class="top-line">
 						<div class="top-line-region">
-							<p><a href="#regions_hidden">Минск, Минская область</a></p>
+							<p><a href="#" data-target=".regions_hidden" class="js-modal-trigger">Минск, Минская область</a></p>
 						</div>
 						<div class="top-line-nav">
 							<nav>
@@ -1047,10 +1047,10 @@
 			</footer>
 		</div>
 		<!-- !!!! ATTENTION !!!!!! hidden blocks !!!! ATTENTION !!!!!!-->
-		<div id="regions_hidden" class="hidden_bg">
-			<div class="hidden-block regions_wrap">
+		<div class="regions_hidden hidden_bg">
+			<div class="hidden-block">
 				<div class="hidden-block-close button_close"></div>
-				<h2>Область доставки</h2>
+				<h2 class="hidden-title">Область доставки</h2>
 				<div class="regions_map"><img src="img/map2x.png" alt="map-region"></div>
 				<div class="regions">
 					<h3>Выберите область, куда необходимо доставить заказ</h3>
@@ -1079,15 +1079,75 @@
 			</div>
 		</div>
 		<!-- SUCCSES-->
-		<div id="success_hidden" class="hidden_bg">
-			<div class="hidden-block success_hidden">
+		<div class="success_hidden hidden_bg">
+			<div class="hidden-block">
 				<div class="hidden-block-close button_close"></div>
-				<h2>Спасибо</h2>
-				<p>
+				<h2 class="hidden-title">Спасибо</h2>
+				<p class="title-text">
 					Вы успешно подписались на рассылку информации о скидках и распродажах торгового центра «Полесье».
 					Настроить подписку вы можете в <a href="#">Личном кабинете.</a>
 				</p>
-				<p class="button_close"><a href="#">Закрыть</a></p>
+				<p class="btn-wrap button_close"><a href="#" class="block-btn">Закрыть</a></p>
+			</div>
+		</div>
+		<div class="product_hidden hidden_bg">
+			<div class="hidden-block">
+				<div class="hidden-block-close button_close"></div>
+				<div class="product-galery-wrap">
+					<div class="product-much-cont active">
+						<div class="product-modal-slider">
+							<div class="product-slider-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-slider-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-slider-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-slider-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-slider-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-slider-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-slider-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+						</div>
+						<div class="product-madd-slider">
+							<div class="product-add-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-add-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-add-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-add-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-add-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-add-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-add-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+						</div>
+						<div class="features__nav-modal"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="offer_hidden hidden_bg">
+			<div class="hidden-block">
+				<div class="hidden-block-close button_close"></div>
+				<h2 class="modal-title text-left">Товар добавлен в корзину</h2>
+				<p class="items-counter">В вашей корзине <span> 1 </span>товар.</p>
+				<div class="modal-items-wrapper">
+					<div class="modal-item">
+						<div class="modal-item-img"><img src="img/promo/product.jpg" alt="velasaped"></div>
+						<div class="modal-item-info">
+							<p class="main-title">STELS Navigator 500 V 26 (2016)</p>
+							<p class="product-option"><span>Цвет</span>: <span> голубой</span></p>
+							<p class="product-option"><span>Размер рамы</span>: <span>  21”</span></p>
+							<p class="product-option"><span>Кол-во </span>: <span> 1 шт.</span></p>
+						</div>
+						<div class="modal-item-price">
+							<div class="hits_coast">
+								<p class="hits_coast">13 435,60 р. <span> 13 435 600 р</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-add"><a href="#" class="block-btn">Перейти к корзине</a><a href="#" class="product-learn-more button_close">
+						<svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewbox="0 0 18 18" style="enable-background:new 0 0 18 18;" xml:space="preserve">
+							<style type="text/css">.stmore{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style>
+							<g>
+								<g>
+									<path d="M9,0C4,0,0,4,0,9c0,5,4,9,9,9c5,0,9-4,9-9C18,4,14,0,9,0z M9,17c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8              c4.4,0,8,3.6,8,8C17,13.4,13.4,17,9,17z M10.4,5L6,9l4.4,4l0.6-0.6L7.3,9L11,5.6L10.4,5z" class="stmore"></path>
+								</g>
+							</g>
+						</svg>Продолжить покупки</a></div>
 			</div>
 		</div>
 		<!--if lt IE 9
