@@ -6,6 +6,8 @@
 //= lib/respond.min.js
 //= lib/slick.min.js
 //= lib/jquery.matchHeight-min.js
+//= lib/jquery.fancybox.pack.js
+//= lib/dropzone.min.js
 
 
 //= app.js

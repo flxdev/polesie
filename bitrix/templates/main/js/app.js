@@ -375,16 +375,18 @@ $(function() {
 
 	}
 
-	
+	if($('#brand').length){
+		//tabs BRAND
+	$("#brand").find('.tab_item').not(":first").hide();
 
-	//tabs BRAND
-	$("#brand .tab_item").not(":first").hide();
 	$("#brand .tab").click(function() {
 		$("#brand .tab").removeClass("active").eq($(this).index()).addClass("active");
-		$("#brand .tab_item").hide().eq($(this).index()).fadeIn().find('.slick-slider').slick('SetPosition');
-
+		$("#brand").find('.tab_item').hide().eq($(this).index()).fadeIn().find('.slick-slider').slick('setPosition');
 	}).eq(0).addClass("active");
 
+	}
+
+	
 // function tab() {
 // 		$(".js-tab").each(function(){
 // 			var tab_link = $(this).find("a"),
@@ -873,7 +875,7 @@ var selectProduct = function(select){
 				var div = $(".select-check");
 				if (!div.is(e.target) 
 				    && div.has(e.target).length === 0) {
-					div.find(btn).removeClass('active').removeClass('is-checked'); 
+					div.find(btn).removeClass('active'); 
 				}
 			});
 		});
@@ -936,6 +938,22 @@ function number() {
 	});
 }
 number();
+
+//fancybox
+   $('.fancybox').fancybox({
+   	openEffect  : 'elastic',
+      closeBtn: true,
+      padding : 40,
+      nextEffect: 'fade',
+      prevEffect: 'fade',
+   	 helpers:  {
+        overlay : {
+            css : {
+                'background' : 'rgba(74,74,74,.34)'
+            }
+        }
+    }
+   });
 
 //end of document.ready
  });
