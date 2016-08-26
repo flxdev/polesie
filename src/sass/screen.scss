@@ -2864,6 +2864,12 @@ footer {
       border:0;
     }
   }
+  &.consult_hidden{
+    .form-feed{
+      text-align: left;
+      @include x-rem(width,370px);
+    }
+  }
 }
 
 
@@ -4128,6 +4134,7 @@ footer {
   position: relative;
   text-align: center; 
   @include x-rem(padding,35px 0  15px);
+
   .hits_status{
     @include x-rem(top,18px);
     z-index: 2;
@@ -4138,6 +4145,12 @@ footer {
    display: inline-block;
    float: left;
    @include clearfix;
+   
+}
+.product-status-wrap,.product-galery-wrap,.product-main-wrap{
+  @include r(1040){
+    width:100%;
+   }
 }
 .product-solo-cont{
   position: relative;
@@ -4179,6 +4192,15 @@ footer {
       opacity: 0;
       visibility: hidden;
       transition: all .3s;
+      @include r(668){
+        @include x-rem(width,370px);
+      }
+      @include r(520){
+        @include x-rem(width,270px);
+      }
+      @include r(430){
+        @include x-rem(width,200px);
+      }
       &.active{
         opacity: 1;
         visibility: visible;
@@ -4204,6 +4226,9 @@ footer {
           display: block;
           margin:0 auto;
           max-width:100%;
+          @include r(668){
+            @include x-rem(height,50px);
+          }
         }
       }
     }
@@ -4211,6 +4236,9 @@ footer {
 
 .product-galery-wrap{
   @include x-rem(padding-top,85px);
+   @include r(570){
+    @include x-rem(padding-top,15px);
+  }
   .features__nav,.features__nav-modal{
     top:auto;
     @include x-rem(height,65px);
@@ -4237,11 +4265,17 @@ footer {
       &.carousel-next{
         svg{
           float: left;
+          @include r(480){
+            float: none;
+          }
         } 
       }
       &.carousel-prev{
         svg{
           float: right;
+          @include r(480){
+            float: none;
+          }
         } 
       }
       &:hover{
@@ -4263,18 +4297,36 @@ footer {
   @include x-rem(padding,22px 30px);
   border-left: 0;
   border-left: 1px solid $border;
+  @include r(480){
+    @include x-rem(padding,12px 10px);
+  }
   .hits_stat{
     display: inline-block;
+    @include r(480){
+      width:100%;
+      position: absolute;
+      @include x-rem(top,-20px);
+    }
   }
   .hits_tools{
     margin: 0;
     padding:0;
     margin-left: 35%; 
+    display: inline-block;
+    @include r(1200){
+      margin-left: 15%; 
+    }
+    @include r(480){
+      margin-left: 1%; 
+    }
     .hits-wrap.review {
       position: absolute;
       @include x-rem(right,30px);
       top:50%;
       transform: translateY(-50%);
+      @include r(480){
+        @include x-rem(right,15px);
+      }
     }
     .hits_defer{
       @include x-rem(padding,0 31px);
@@ -4285,8 +4337,16 @@ footer {
   @include x-rem(padding,30px 28px);
   border-left: 1px solid $border;
   border-top: 1px solid $border;
+  @include r(480){
+    @include x-rem(padding,15px 14px);
+    position: relative;
+  }
 }
+
 .product-descr{
+  @include r(570){
+    width:100%;
+  }
   border: none;
   .hits_raiting{
     margin-top: 0;
@@ -4299,6 +4359,9 @@ footer {
     overflow: hidden;
     text-overflow: ellipsis;
     @include x-rem(margin-bottom,10px);
+    @include r(570){
+      @include x-rem(height,45px);
+    }
   }
   .hits_raiting-star-wrap{
     display: block;
@@ -4313,6 +4376,10 @@ footer {
 }
 .descr-r{
   @include x-rem(padding-left,25px);
+  @include r(570){
+   padding: 0;
+   @include x-rem(margin-top,20px)
+  }
 }
 .product-learn-more{
   display: inline-block;
@@ -4508,6 +4575,13 @@ footer {
   @include x-rem(border-radius,3px);
   border: 1px solid $border;
   float: left;
+  @include r(1200){
+    float: none;
+    @include clearfix;
+    display: table;
+    width:100%;
+    @include x-rem(margin-bottom,20px);
+  }
 }
 .number__minus, .number__plus {
     @include x-rem(width,37px);
@@ -4522,20 +4596,16 @@ footer {
 .number__minus, .number__plus, .number__input {
     float: left;
     display: block;
+    @include r(1200){
+      display: table-cell;
+      width:33.3% !important;
+    }
 }
-.number__minus, .number__plus, .number__input {
-    float: left;
-    display: block;
-}
-.number__minus, .number__plus, .number__input {
-    float: left;
-    display: block;
-}
+
 .number__input {
     background-color: #fff;
     font-family: 'museosanscyrl_300', Arial, sans-serif;
     font-size: 14px;
-    display: inline-block;
     vertical-align: top;
     height: 35px;
     line-height: 35px;
@@ -4569,6 +4639,11 @@ footer {
     fill:#000;
     transition: fill .3s;
     }
+  }
+  @include r(1200){
+    float:none;
+    @include x-rem(padding, 7.5px 45px 7.5px 45px);
+    text-align: center;
   }
 }
 .product-oneclick{
@@ -4673,6 +4748,14 @@ footer {
     @include x-rem(max-width,305px);
     @include x-rem(padding,35px);
     @include x-rem(border-radius,3px);
+    display: none;
+    @include r(1040){
+      @include x-rem(padding,35px 15px);
+      @include x-rem(max-width,255px);
+    }
+    &.active{
+      display: block;
+    }
     .hits_raiting{
       margin-bottom: 0;
     }
@@ -4722,6 +4805,7 @@ footer {
     .counter{
         color:$letters2 !important;
         @include x-rem(margin,0 0 0 5px);
+        margin-right:0!important;
         &:hover{
           padding:0;
           border: none !important;  
@@ -4729,8 +4813,13 @@ footer {
       }
   }
    .tab_content{
-    @include x-rem(padding-right,365px);
     @include clearfix;
+   }
+   .tab_item{
+    @include x-rem(padding-right,365px);
+    @include r(1040){
+      @include x-rem(padding-right,295px);
+    }
    }
    .product-main-characteristic{
     @include clearfix;
@@ -4739,6 +4828,7 @@ footer {
    .char-wrapper{
      border-bottom:1px solid $border;
      @include clearfix;
+      @include x-rem(min-height,250px);
    }
    .feedback-container:not(:last-child){
     border-bottom:1px solid $border;
@@ -4990,4 +5080,107 @@ footer {
   @include x-rem(padding,7px 0 7px 60px );
   @include x-rem(margin-bottom,13px );
   color:$letters;
+}
+.rev-stars{
+  position: relative;
+   @include x-rem(margin-top,10px );
+  .rev-star{
+    display: inline-block;
+    float: left;
+    @include x-rem(margin-right,5px );
+    @include x-rem(width,14px );
+    @include x-rem(height,14px );
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+  .rev-hidden{
+    display: none;
+  }
+}
+.tab_item.video-back{
+  background: #fff;
+  padding:0; 
+  position: relative;
+  z-index: 2;
+  @include x-rem(max-height,400px );
+  .video-playlist-wrap,.video-main-cont{
+    display: inline-block;
+    float:left;
+     width:50%;
+  }
+  .video-playlist-wrap{
+     @include x-rem(padding-right,150px ); 
+     @include r(1040){
+      padding: 0;
+     }
+  }
+  .video-playlist-cont{
+    overflow-y: auto; 
+    @include x-rem(height,350px );  
+  }
+  .video-main-cont{
+    @include x-rem(padding-right,20px ); 
+  }
+  .video-item-img{
+    display: inline-block;
+    float: left;
+    @include x-rem(max-width,170px );
+    @include x-rem(max-height,100px );
+    overflow:hidden;
+    img{
+      display: block;
+      width:100%;
+      height:100%;
+
+    }
+  }
+  .video-item{
+    width:100%;
+    display: inline-block;
+    @include clearfix;
+    border:1px solid $border;
+    border-left:2px solid $border;
+    @include x-rem(border-radius,3px);
+    overflow:hidden; 
+    float: left;
+    &.active{
+      border-left:2px solid $red;
+    }
+    &:not(:last-child){
+      @include x-rem(margin-bottom,28px ); 
+    }
+    &:hover{
+      background: #fafafa;
+      .item-title{
+        color:$red;
+        transition: color .3s;
+      }
+    }
+  }
+  .video-item-decribe{
+    display: block;
+    overflow:hidden;
+    @include x-rem(padding,15px); 
+    @include x-rem(max-height,96px);
+  }
+  .item-date{
+    @include x-rem(font-size,14px );
+    color:$letters2; 
+  }
+  .item-title{
+    @include x-rem(font-size,16px );
+    color:#000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    @include x-rem(margin,5px 0 0); 
+    transition: color .3s;
+  }
+  .item-counter{
+    @include x-rem(font-size,12px);
+    color:$letters;
+    vertical-align: bottom;
+    display: inline-block;
+  }
 }

@@ -382,6 +382,13 @@ $(function() {
 	$("#brand .tab").click(function() {
 		$("#brand .tab").removeClass("active").eq($(this).index()).addClass("active");
 		$("#brand").find('.tab_item').hide().eq($(this).index()).fadeIn().find('.slick-slider').slick('setPosition');
+		if($(this).is(':last-child')){
+			$("#brand").find('.tabs_consult').last().addClass('active').siblings().removeClass('active');
+		}else{
+			$("#brand").find('.tabs_consult').first().addClass('active').siblings().removeClass('active');
+
+		}
+
 	}).eq(0).addClass("active");
 
 	}
@@ -770,7 +777,23 @@ var clearItems = function(block){
 			draggable: false,
 			arrows:false,
 			focusOnSelect: true,
-		})
+			responsive: [
+		    {
+		      breakpoint: 668,
+		      settings: {
+		        slidesToShow: 3,
+		        slidesToScroll: 1,
+		      }
+		    },
+		     {
+		      breakpoint: 520,
+		      settings: {
+		        slidesToShow: 2,
+		        slidesToScroll: 1,
+		      }
+		    },
+			]
+		});
 	}, 100);
 
 
@@ -790,14 +813,11 @@ var clearItems = function(block){
 
 		});
 	})
+	if($(window).width() > 835){
+		trigger.data('target','.product_hidden')
 	trigger.click(function(){
 
 		var currslide = $(this).find('.slick-active').data('slick-index');
-		
-		// $('.product-modal-slider').on('init', function () {
-		// 		$(this).slick('slickGoTo', currslide);
-		// });
-    
 
 		$('.product-modal-slider').slick({
 			arrows: true,
@@ -820,9 +840,17 @@ var clearItems = function(block){
 		});
 		$('.product-modal-slider').slick('slickGoTo', currslide);
 	});
+	}
+
+	else{
+		console.log(100)
+		trigger.data('target','')
+	}
 }
+
  if($('.product-describe-buy').length){
-var selectProduct = function(select){
+
+	var selectProduct = function(select){
 
 		var btn = $('.js-select-toggle');
 
@@ -954,7 +982,37 @@ number();
         }
     }
    });
+$('.rev-star').click(function() {
+  num = parseInt($(this).data("num"));
+  i = 1;
+  for (i = 1; i <= num; i++) {
+    $("#rev-star-" + i).css("background-image", "url(../img/utility/star-yellow.svg)");
+  }
+  for (i = num + 1; i <= 5; i++) {
+    $("#rev-star-" + i).css("background-image", "url(../img/utility/star-gray.svg)");
+  }
+  $(".rev-hidden").val(num);
 
+  return false;
+});
+//video playlist
+if($('.video-playlist-cont').length){
+
+	var item = $('.video-item'),
+		playerCont = $('.video-main-cont').find('iframe');
+	item.each(function(){
+		var _ = $(this);
+		_.click(function(e){
+			_.addClass('active').siblings().removeClass('active');
+			e.preventDefault();
+			var src = _.attr('href');
+			console.log(src);
+
+			playerCont.attr('src',src);
+
+		})
+	})
+}
 //end of document.ready
  });
 var filterItems = function(item){

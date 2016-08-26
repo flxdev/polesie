@@ -107,7 +107,7 @@
     .modal-add
       a.block-btn(href='#') Перейти к корзине
       a(href="#").product-learn-more.button_close
-        svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='18px',height='18px', viewbox='0 0 18 18', style='enable-background:new 0 0 18 18;', xml:space='preserve')
+        svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='18px',height='18px', viewbox='0 0 18 18', style='enable-background:new 0 0 18 18;', xml:space='preserve')
           style(type='text/css').
             .stmore{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}
           g
@@ -115,6 +115,29 @@
               path.stmore(d='M9,0C4,0,0,4,0,9c0,5,4,9,9,9c5,0,9-4,9-9C18,4,14,0,9,0z M9,17c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8\
               c4.4,0,8,3.6,8,8C17,13.4,13.4,17,9,17z M10.4,5L6,9l4.4,4l0.6-0.6L7.3,9L11,5.6L10.4,5z')
         |Продолжить покупки
+.consult_hidden.hidden_bg
+  .hidden-block
+    .hidden-block-close.button_close
+    h2.hidden-title Консультация
+    form(action="/").form-feed
+      .input-wrapper
+        label.input-label 
+          span.text Ваше имя
+        input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович')
+      .input-wrapper
+        label.input-label 
+          span.text E-mail
+        input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com')
+      .input-wrapper
+        label.input-label
+          span.text  Отзыв
+        input.input-main.input-from(type='tell',name="", placeholder = '+375 29 000-00-00')
+      .input-wrapper
+        label.input-label 
+          span.text Вопрос
+        textarea.input-main.input-small(name="", rows="3", placeholder = 'Опишите')
+      input.hits-stat-more(type="submit", placeholder = 'Задать вопрос')
+
 
 
 //if lt IE 9
