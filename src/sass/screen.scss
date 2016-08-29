@@ -38,18 +38,10 @@ body {
 }
 
 .header, #wrap {
-  ::-webkit-scrollbar {
-    width: 5px;
-    cursor: pointer;
-    background-color: $grey;
-  }
+  ::-webkit-scrollbar { /* for Mac OS X support */
+        width: 0;
+    }
 
-  ::-webkit-scrollbar-thumb {
-    border-width: 1px 1px 1px 2px;
-    border-color: #777;
-    background-color: #919191;
-    cursor: pointer;
-  }
 }
 
 * {
@@ -1312,7 +1304,7 @@ input:focus:-moz-placeholder {
   margin: 0 auto;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 4;
   border-top: 2px solid $red;
   background: #ffffff;
   border-radius: 3px;
@@ -2543,6 +2535,7 @@ input:focus:-moz-placeholder {
 footer {
   padding-bottom: 57px;
   @include clearfix;
+  background-color: #fff;
 }
 .footer__content-wrapper{
   @include clearfix;
@@ -3312,7 +3305,7 @@ footer {
 }
 .section-title{
   color: $letters;
-  @include x-rem(margin,22px 0 10px 0);
+  @include x-rem(margin,5px 0 10px 0);
   @include x-rem(letter-spacing,2px);
   font-weight: 600;
 }
@@ -5440,4 +5433,160 @@ footer {
     vertical-align: bottom;
     display: inline-block;
   }
+}
+//++++++++++++++++++++++++
+//compare-page
+//++++++++++++++++++++++
+.compare_tabs{
+  width:100%;
+  .compare_tab-item{
+    display: inline-block;
+    @include x-rem(padding,10px 0);
+    color:#000;
+    a{
+      color:#000;
+    }
+    border-bottom:2px solid transparent; 
+    &:not(:last-child){
+      @include x-rem(margin-right,28px);
+    }
+    &.active{
+      border-bottom:2px solid $yellow;
+      font-weight: bold; 
+    }
+  }
+  .selection_find-clear{
+    float: right;
+  }
+}
+.compare-main-wrap{
+  position: relative; 
+}
+.compare-wrapper{
+  overflow-x: scroll; 
+}
+.compare_inner{
+    background-color: #fff;
+    border-collapse: collapse;
+    empty-cells: show;
+    font-size: 14px;
+    table-layout: fixed;
+    @include x-rem(padding-bottom,50px);
+
+}
+.compare-row{
+  &.table-title{
+    @include x-rem(min-height,20px);
+    td{
+      width:100% !important;
+      min-height:10px;
+      font-weight: bold;
+      font-size: 17px;
+       @include x-rem(padding,40px 0);
+       border:none;
+       background: 0 0;
+    }
+  }
+}
+.compare_inner{
+  &>.compare-body{
+      .compare-bg{
+        height:400px;
+        z-index: 3;
+    }
+  }
+}
+.compare-item{
+  min-width:209px;
+  text-align: left;
+  vertical-align: top;
+  position: relative;
+  @include x-rem(padding,15px 30px 15px 0);
+  &:first-child{
+    min-width: 250px;
+    @include x-rem(width,250px);
+    position: absolute;
+    text-align: left;
+    z-index: 3;
+    top: auto;
+    background: #fff;
+      /* @include r(1040){
+        @include x-rem(width,200px);
+        @include x-rem(min-width,200px);
+      } */
+    }
+    &.item-clone{
+      @include x-rem(width,250px);
+      @include x-rem(min-width,250px);
+      /* @include r(1040){
+        @include x-rem(width,200px);
+        @include x-rem(min-width,200px);
+      } */
+    }
+    .hits-stat-more{
+    position: absolute;
+    bottom: 0;
+    }
+    .hits_name{
+      font-weight: 100;
+    }
+     .hits_coast{
+      @include x-rem(margin,10px 0);
+     }
+     .compare-item-close{
+      @include x-rem(width,12px);
+      @include x-rem(height,12px);
+      @include x-rem(right,15px);
+      @include x-rem(top,15px);
+      position: absolute;
+      opacity: .5;
+      background: url(../img/utility/close.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      z-index: 1;
+      cursor: pointer;
+     }
+     .select-u-body{
+      position: absolute;
+      @include x-rem(top,-35px);
+     }
+     .compare-item-name{
+      @include x-rem(padding-left,20px);
+      font-weight: bold;
+     }
+     .compare-value{
+      font-weight: 100;
+     }
+  }
+.compare-item-main{
+  @include x-rem(padding-bottom,50px);
+  .hits_block{
+    img{
+      display: block;
+      max-width:100%;
+      margin: 0 auto;
+    }
+  }
+}
+.compare_group{
+  .compare-row{
+    &:not(:first-child){
+      border-bottom:1px solid $border;
+    }
+    &:nth-child(2){
+     border-top:1px solid $border;
+    }
+  }
+}
+//scroller
+.main__bar{
+  position: absolute;
+  z-index: 100;
+  cursor: pointer;
+  border: 2px solid #c7c7c7;
+  @include x-rem(border-radius,3px);
+  @include x-rem(margin-top,20px);
+  @include x-rem(top,370px);
+  @include x-rem(margin-left,50px);
+  
 }

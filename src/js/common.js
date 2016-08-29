@@ -8,6 +8,7 @@
 //= lib/jquery.matchHeight-min.js
 //= lib/jquery.fancybox.pack.js
 //= lib/dropzone.min.js
+//= lib/baron.min.js
 
 
 //= app.js

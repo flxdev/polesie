@@ -67,7 +67,398 @@ html(lang='ru')
         section
           h1.section-title Сравнение
           .section__wrapper
-            .product-content-wrapper
+            .compare_tabs
+              .compare_tab-item
+                a(href="#") Велосипеды
+              .compare_tab-item.active
+                a(href="#") Компьютеры
+              .compare_tab-item
+                a(href="#") Каталки
+              a.selection_find-clear(href='#') Очистить сравнение
+            .compare-main-wrap
+              .compare_fakehead
+              .compare-wrapper.main__scroller
+                table.compare_inner
+                  tbody.compare-body
+                    tr.compare-row
+                      th.compare-item.compare-bg
+                      th.compare-item.item-clone
+                      th.compare-item
+                        .compare-item-main
+                          .compare-item-close
+                          a(href="#").hits_block
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            p.hits_name
+                              a(href='#') STELS Navigator 500 V 26 (2016)
+                          .hits_coast
+                            p.hits_coast_new
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                            p
+                              | 13 435,60 р. 
+                              span  13 435 600 р
+                          a(href="#").hits-stat-more Подробнее
+                      th.compare-item
+                        .compare-item-main
+                          .compare-item-close
+                          a(href="#").hits_block
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            p.hits_name
+                              a(href='#') STELS Navigator 500 V 26 (2016)
+                          .hits_coast
+                            p.hits_coast_new
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                            p
+                              | 13 435,60 р. 
+                              span  13 435 600 р
+                          a(href="#").hits-stat-more Подробнее
+                      th.compare-item
+                        .compare-item-main
+                          .compare-item-close
+                          a(href="#").hits_block
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            p.hits_name
+                              a(href='#') STELS Navigator 500 V 26 (2016)
+                          .hits_coast
+                            p.hits_coast_new
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                            p
+                              | 13 435,60 р. 
+                              span  13 435 600 р
+                          a(href="#").hits-stat-more Подробнее
+                      th.compare-item
+                        .compare-item-main
+                          .compare-item-close
+                          a(href="#").hits_block
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            p.hits_name
+                              a(href='#') STELS Navigator 500 V 26 (2016)
+                          .hits_coast
+                            p.hits_coast_new
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                            p
+                              | 13 435,60 р. 
+                              span  13 435 600 р
+                          a(href="#").hits-stat-more Подробнее
+                      th.compare-item
+                        .compare-item-main
+                          .compare-item-close
+                          a(href="#").hits_block
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            p.hits_name
+                              a(href='#') STELS Navigator 500 V 26 (2016)
+                          .hits_coast
+                            p.hits_coast_new
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                            p
+                              | 13 435,60 р. 
+                              span  13 435 600 р
+                          a(href="#").hits-stat-more Подробнее
+                  tbody.compare-body
+                    tr.compare-row
+                      td.compare-item
+                        ul.select-u-body
+                          li.select-u-item
+                            label.input_label
+                              span.input_main
+                                input.input-real(type="checkbox", value = 'Показать только отличия')
+                                span.input-checked
+                              span.input-text Показать только отличия
+                  tbody.compare-body.compare_group
+                    tr.compare-row.table-title
+                      td.compare-item(colspan='100')
+                          .text
+                            | Общие характеристики
+                      //2-ой td нужен для правильного отображения
+                      td.compare-item
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Модель
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value 2016 года 
+                      td.compare-item
+                        span.compare-value 2016 года 
+                      td.compare-item
+                        span.compare-value 2016 года 
+                      td.compare-item
+                        span.compare-value 2015 года 
+                      td.compare-item
+                        span.compare-value 2016 года 
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Возраст
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value для взрослых
+                      td.compare-item
+                        span.compare-value для взрослых
+                      td.compare-item
+                        span.compare-value для овощей
+                      td.compare-item
+                        span.compare-value для взрослых
+                      td.compare-item
+                        span.compare-value для взрослых
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Тип
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Тип привода
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value горный (MTB), кросс-кантри 
+                      td.compare-item
+                        span.compare-value горный (MTB
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                  tbody.compare-body.compare_group
+                    tr.compare-row.table-title
+                      td.compare-item(colspan='100')
+                          .text
+                            | Рама
+                      //2-ой td нужен для правильного отображения
+                      td.compare-item
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Модель
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value 2016 года 
+                      td.compare-item
+                        span.compare-value 2016 года 
+                      td.compare-item
+                        span.compare-value 2016 года 
+                      td.compare-item
+                        span.compare-value 2015 года 
+                      td.compare-item
+                        span.compare-value 2016 года 
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Возраст
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value для взрослых
+                      td.compare-item
+                        span.descr-i.yes
+                      td.compare-item
+                        span.compare-value для овощей
+                      td.compare-item
+                        span.descr-i.yes
+                      td.compare-item
+                        span.compare-value для взрослых
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Тип
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Тип привода
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value горный (MTB), кросс-кантри 
+                      td.compare-item
+                        span.compare-value горный (MTB
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                  tbody.compare-body.compare_group
+                    tr.compare-row.table-title
+                      td.compare-item(colspan='100')
+                          .text
+                            | Тормоза
+                      //2-ой td нужен для правильного отображения
+                      td.compare-item
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Модель
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value 2016 года 
+                      td.compare-item
+                        span.compare-value 2016 года 
+                      td.compare-item
+                        span.compare-value 2016 года 
+                      td.compare-item
+                        span.compare-value 2015 года 
+                      td.compare-item
+                        span.compare-value 2016 года 
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Возраст
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value для взрослых
+                      td.compare-item
+                        span.compare-value для взрослых
+                      td.compare-item
+                        span.compare-value для овощей
+                      td.compare-item
+                        span.compare-value для взрослых
+                      td.compare-item
+                        span.compare-value для взрослых
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Тип
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Тип привода
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value горный (MTB), кросс-кантри 
+                      td.compare-item
+                        span.compare-value горный (MTB
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                  tbody.compare-body
+                    tr.compare-row
+                      th.compare-item.compare-bg
+                      th.compare-item.item-clone
+                      th.compare-item
+                        .compare-item-main
+                          .compare-item-close
+                          a(href="#").hits_block
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            p.hits_name
+                              a(href='#') STELS Navigator 500 V 26 (2016)
+                          .hits_coast
+                            p.hits_coast_new
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                            p
+                              | 13 435,60 р. 
+                              span  13 435 600 р
+                          a(href="#").hits-stat-more Подробнее
+                      th.compare-item
+                        .compare-item-main
+                          .compare-item-close
+                          a(href="#").hits_block
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            p.hits_name
+                              a(href='#') STELS Navigator 500 V 26 (2016)
+                          .hits_coast
+                            p.hits_coast_new
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                            p
+                              | 13 435,60 р. 
+                              span  13 435 600 р
+                          a(href="#").hits-stat-more Подробнее
+                      th.compare-item
+                        .compare-item-main
+                          .compare-item-close
+                          a(href="#").hits_block
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            p.hits_name
+                              a(href='#') STELS Navigator 500 V 26 (2016)
+                          .hits_coast
+                            p.hits_coast_new
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                            p
+                              | 13 435,60 р. 
+                              span  13 435 600 р
+                          a(href="#").hits-stat-more Подробнее
+                      th.compare-item
+                        .compare-item-main
+                          .compare-item-close
+                          a(href="#").hits_block
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            p.hits_name
+                              a(href='#') STELS Navigator 500 V 26 (2016)
+                          .hits_coast
+                            p.hits_coast_new
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                            p
+                              | 13 435,60 р. 
+                              span  13 435 600 р
+                          a(href="#").hits-stat-more Подробнее
+                      th.compare-item
+                        .compare-item-main
+                          .compare-item-close
+                          a(href="#").hits_block
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            p.hits_name
+                              a(href='#') STELS Navigator 500 V 26 (2016)
+                          .hits_coast
+                            p.hits_coast_new
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                            p
+                              | 13 435,60 р. 
+                              span  13 435 600 р
+                          a(href="#").hits-stat-more Подробнее
+                   tbody.compare-body
+                    tr.compare-row
+                      td.compare-item
+                        ul.select-u-body
+                          li.select-u-item
+                            label.input_label
+                              span.input_main
+                                input.input-real(type="checkbox", value = 'Показать только отличия')
+                                span.input-checked
+                              span.input-text Показать только отличияl
+                .main__bar
+
+
+                     
+
+
+
+
+
+
+
+
+
               
          
       .mask-js

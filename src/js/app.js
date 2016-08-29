@@ -7,9 +7,16 @@ $(window).on('load',function(){
 	}
 });
 $(document).ready(function () {
-
+	 $('.main__scroller ').baron({
+        bar: '.main__bar',
+        barOnCls: 'baron',
+        direction: 'h',
+        cssGuru: true,
+    }).removeAttr('style');
 $(function() {
-
+$('.main__scroller ').resize(function(){
+	$(this).removeAttr('style');
+})
 //main-mobile menu
 
 	$('.js-mobile-menu-btn').click(function(){
@@ -696,6 +703,9 @@ mobileSub();
 	});
 	$('.categories_item ').matchHeight({
 		 property: 'min-height'
+	});
+	$('.compare-wrapper ').matchHeight({
+		 property: 'height'
 	});
 
 	//images or links draggeble
