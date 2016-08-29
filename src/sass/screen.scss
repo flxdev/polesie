@@ -69,6 +69,7 @@ a, img {
   }
   @include r(1040){
     padding: 0 10px;
+    overflow: hidden;
   }
 
 }
@@ -77,14 +78,13 @@ header{
     padding: 0;
     background: #fff;
   }
-  @include r(482){
+  @include r(770){
     position: fixed;
     top:0;
     width:100%;
-    padding: 0 15px;
     left:0;
     right:0;
-    z-index: 999;
+    z-index: 120;
   }  
 }
 .hidden-block{
@@ -111,10 +111,10 @@ header{
   position: fixed;
   width:100vw;
   background: rgba(74, 74, 74, 0.34);
-  height: 100vh;
+  height: 120vh;
   padding-top: 65px;
-  z-index: 5;
-  overflow: hidden;
+  z-index: 125;
+  overflow-y: scroll;
 }
 
 
@@ -125,15 +125,23 @@ body {
   line-height: 1.6;
   font-family: $ProximaRegular;
   color: #3c3c3c;
+  overflow-x: hidden;
 }
 
 .hidden {
   display: none;
 }
 .content_main-wrapper{
+  transition: transform .3s;
+  &.is-hidden{
+    transform:translate3d(-105%,0,0);
+    transition: transform .3s;
+  }
+  @include r(770){
+    @include x-rem(padding-top,180px)
+  }
   @include r(482){
     @include x-rem(padding-top,125px)
-
   }
 }
 /* top-line */
@@ -331,12 +339,14 @@ body {
 }
 
 .regions_map {
-  width: 600px;
+  max-width: 600px;
   display: inline-block;
   vertical-align: top;
 
   img {
-    width: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
   }
 }
 
@@ -399,7 +409,6 @@ body {
   position: relative;
   @include r(482){
     padding-bottom: 0;
-    padding-top: 15px;
   }
 }
 
@@ -408,10 +417,15 @@ body {
   vertical-align: top;
   padding-right: 12px;
   @include r(482){
-      padding-top: 10px;
+      padding-top: 6px;
       .logo{
-        margin-top: 5px;
         width:130px !important;
+      }
+    }
+  @include r(320){
+      padding-top: 6px;
+      .logo{
+        width:100px !important;
       }
     }
   .logo {
@@ -671,7 +685,7 @@ input:focus:-moz-placeholder {
     position: absolute;
     @include x-rem(bottom,-10px);
     width:100%;
-    z-index: 4;
+    z-index: 5;
     opacity: 0;
     visibility: hidden;
     background: $white;
@@ -1108,7 +1122,9 @@ input:focus:-moz-placeholder {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-
+  @include r(768){
+    @include x-rem(height,50px);
+  }
   .dropdown-btn{
       position: relative;
       text-align: center;
@@ -1177,13 +1193,24 @@ input:focus:-moz-placeholder {
     display: table;
     width: 100%;
     height: 50px;
+    @include clearfix;
     @include r(768){
+
       @include x-rem(padding-top,10px)
       position: absolute;
-      display: none;
+      display: block;
       background: $white;
       z-index: 4;
-      margin-top: 5px;
+      @include x-rem(margin-top,-50px);
+      height:100vh;
+      overflow-y: scroll;
+      padding-bottom:50%;
+      margin-bottom:-50%;
+      transition: transform .3s;
+      &.is-hidden{
+        transform: translateX(105%);
+        transition: transform .3s;
+      }
     }
     > li {
       display: table-cell;
@@ -1192,21 +1219,23 @@ input:focus:-moz-placeholder {
         @include r(1054){
           display: none;
         }
+        @include r(768){
+          display: block;
+        }
       }
       @include r(768){
         border-right:1px solid transparent;
         display: block;
         background: $white;
-        border-bottom: 1px solid $greyLight;
+        border-bottom: 1px solid $border;
         &:hover{
           a{
-            background: $greyLight;
+            background: $white;
           }
           
         }
       }
       > a {
-        display: block;
         position: relative;
         width: 100%;
         height: 100%;
@@ -1218,9 +1247,11 @@ input:focus:-moz-placeholder {
         text-decoration: none;
         text-align: center;
         padding: 12px 0;
+        display: block;
+        width:100%;
         @include r(768){
           text-align: left;
-          padding: 12px 2px;
+          padding: 12px 5px;
         }
       }
 
@@ -1242,6 +1273,7 @@ input:focus:-moz-placeholder {
 .js-mobile-menu-btn{
   padding: 12px 10px;
   display: none;
+  transition: transform .3s;
   @include r(768){
     display: block;
   }
@@ -1260,6 +1292,18 @@ input:focus:-moz-placeholder {
     transform: rotate(270deg);
     transform-origin: 50%;
   }
+  &.mobile-back{
+    transform: translate3d(0,-100%,0);
+    .icon.arr-r{
+      float:left;
+      transform: rotate(-270deg);
+      @include x-rem(margin-right, 20px)
+    }
+  }
+  &.is-hidden{
+    transform: translate3d(105%,-100%,0);
+    transition: transform .3s;
+  }
 }
 .main-nav-dropmenu {
   display: none;
@@ -1269,7 +1313,7 @@ input:focus:-moz-placeholder {
   left: 0;
   right: 0;
   z-index: 2;
-  border-top: 2px solid red;
+  border-top: 2px solid $red;
   background: #ffffff;
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -1277,6 +1321,13 @@ input:focus:-moz-placeholder {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  @include r(768){
+    position: static;
+    border-top: none;
+    border-left: 2px solid $red;
+    box-shadow: none;
+    display: none;
+  }
 }
 
 .nav > ul > li:hover {
@@ -1284,10 +1335,18 @@ input:focus:-moz-placeholder {
     color: #fff;
     background: #f20101;
     transition:background .3s;
+    @include r(768){
+      background: $white;
+      color:$red;
+    }
   }
 
   .main-nav-dropmenu {
     display: block;
+    @include r(768){
+      display: none;
+      
+    }
   }
 }
 
@@ -1298,11 +1357,18 @@ input:focus:-moz-placeholder {
   width: 312px;
   padding: 25px 0;
   position: relative;
+  @include r(768){
+      width: 100%;
+      padding:0;
+    }
   .menu-item-dropable{
     a{
       font-family: $ProximaLight;
       font-weight: 300;
       color:$grey;
+      @include r(768){
+        color:$letters;
+      }
     }
   }
   > ul > li {
@@ -1310,7 +1376,10 @@ input:focus:-moz-placeholder {
     list-style-type: none;
     background: #fff;
     border-left: 2px solid transparent;
+    @include r(768){
+      width:100%;
 
+    }
     a {
       font-size: 14px;
       font-weight: bold;
@@ -1320,16 +1389,21 @@ input:focus:-moz-placeholder {
       line-height: 34px;
       color: #000;
       text-decoration: none;
-
+      width:100%;
+      display: inline-block;
+      height:100%;
       &:hover {
-        color: #fb0101;
+        color: $red;
         background: transparent;
       }
     }
 
     &:hover {
       background: #f4f4f4;
-      border-left: 2px solid #fb0101;
+      border-left: 2px solid $red;
+        @include r(768){
+        border-left: 2px solid transparent;
+      }
     }
   }
 }
@@ -1339,7 +1413,12 @@ input:focus:-moz-placeholder {
   right: -240px;
   top: 26px;
   display: none;
-
+  @include r(768){
+    position: static;
+    display: none;
+    @include x-rem(padding-left,10px)
+    background-color: $white;
+  }
   ul li {
     list-style-type: none;
 
@@ -1348,6 +1427,7 @@ input:focus:-moz-placeholder {
       width: 100%;
       height: 100%;
       display: inline-block;
+      
       span {
         color: #fb0101;
       }
@@ -1362,6 +1442,9 @@ input:focus:-moz-placeholder {
 
   .drop-nav-dropmenu {
     display: block;
+     @include r(768){
+      display: none;
+     }
   }
 }
 
@@ -1389,6 +1472,9 @@ input:focus:-moz-placeholder {
   @include r(1040){
     width:40%;
   }
+  @include r(768){
+      width: 100%;
+    }
 }
 
 .main-nav-featur {
@@ -1845,6 +1931,11 @@ input:focus:-moz-placeholder {
   h2 {
     font-size: 28px;
   }
+  &.brand{
+    @include r(768){
+      position: relative;
+    }
+  }
 }
 
 .discount_slider {
@@ -2187,6 +2278,19 @@ input:focus:-moz-placeholder {
       color: #000;
       cursor: pointer;
       margin-right: 30px;
+      @include r(1040){
+        margin-right: 2%;
+      }
+      @include r(768){
+        &:nth-child(n+4){
+            display:none;
+          }
+        }
+      @include r(480){
+        &:nth-child(n+2){
+            display:none;
+          }
+        }
     }
 
     a {
@@ -2195,7 +2299,30 @@ input:focus:-moz-placeholder {
       text-decoration: none;
     }
   }
-
+  .dropdown-btn{
+    display:none;
+     @include r(768){
+        display: inline-block;
+      }
+    
+    .tab{
+      display: none;
+      @include x-rem(padding,5px );
+      @include r(768){
+        &:nth-child(n+4){
+            display:block;
+          }
+        }
+      @include r(480){
+        &:nth-child(n+2){
+            display:block;
+          }
+        }
+    }
+    .tabs{
+      padding-bottom: 0;
+    }
+  }
   .brand_all {
     display: inline-block;
     float: right;
@@ -2214,6 +2341,33 @@ input:focus:-moz-placeholder {
           border:none;
         }
       }
+    }
+    @include r(768){
+      background-color: $yellow;
+      position: absolute;
+      bottom: 0; 
+      left:50%;
+      transform: translateX(-50%);
+      display: inline-block;
+      float: none;
+      margin:0 ;
+      @include x-rem(padding,7px 14px);
+      @include x-rem(border-radius,3px);
+      a{
+        color:$letters;
+        &:hover{
+          color:$letters;
+        }
+      }
+      span{
+        min-height:0;
+        width:auto;
+      }
+    }
+  }
+  .tab_content{
+    @include r(768){
+      @include x-rem(padding-bottom,50px);
     }
   }
 }
@@ -2267,6 +2421,9 @@ input:focus:-moz-placeholder {
 
 .brand_block img {
   vertical-align: middle;
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 /* section @themed@ */
@@ -2355,7 +2512,9 @@ input:focus:-moz-placeholder {
 
 .news_block {
   padding-right: 27px;
-
+  @include r(380){
+    padding:0;
+  }
   a {
     text-decoration: none;
   }
@@ -2492,6 +2651,9 @@ footer {
 .footer_help , .footer_info , .footer_catalog {
   ul{
     display: block;
+    @include r(420){
+      display: none;
+    }
   }
     @include r(420){
     h3{
@@ -2784,7 +2946,6 @@ footer {
   height:100vh;
   position: fixed;
   top:0;
-  overflow: hidden;
   text-align: center;
   &.active{
     opacity: 1;
@@ -2883,7 +3044,7 @@ footer {
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: none;
   padding:0 10px;
-  @include r(482){
+  @include r(770){
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
@@ -2914,6 +3075,8 @@ footer {
     padding: 10px 0;
     position: relative;
     z-index: 40;
+    max-width: 1280px;
+    margin: 0 auto;
     .line-search-form{
       width:47%;
       @include r(820){
@@ -3026,10 +3189,15 @@ footer {
 }
 //breadcri=ums
 .breadcrums{
-  @include x-rem(margin-top,30px);
+  @include x-rem(margin-top,20px);
   display: table;
   list-style:none;
-
+  @include r(768){
+    @include x-rem(margin-top,10px);
+  }
+  @include r(480){
+   margin-top: 0;
+  }
 }
 .home-btn{
   display: inline-block;
@@ -3839,6 +4007,11 @@ footer {
           width:100%;
           text-align:center;
           @include x-rem(margin-top,10px);
+        }
+      }
+      .hits-wrap:nth-child(2){
+        @include r(380){
+          float:right;
         }
       }
     }
@@ -4753,11 +4926,20 @@ footer {
       @include x-rem(padding,35px 15px);
       @include x-rem(max-width,255px);
     }
+    @include r(768){
+      min-width:100%;
+      position: static;
+      @include x-rem(margin-top,25px);
+      @include x-rem(padding,15px);
+    }
     &.active{
       display: block;
     }
     .hits_raiting{
       margin-bottom: 0;
+      @include r(768){
+        margin-top: 0;
+      }
     }
     .raiting{
       color:$red;
@@ -4770,6 +4952,9 @@ footer {
     }
     p{
       @include x-rem(padding,20px 0);
+      @include r(570){
+        @include x-rem(padding,5px 0);
+      }
     }
     .hits-stat-more{
       margin: 0;
@@ -4788,6 +4973,9 @@ footer {
     display: table;
     border:1px solid $border; 
     padding-bottom: 0 !important;
+    @include r(572){
+      display: block;
+    }
     .tab{
       display: table-cell;
       width:20%;
@@ -4800,6 +4988,15 @@ footer {
       }
       &:hover, &.active{
         border-bottom:2px solid $red; 
+      }
+      @include r(572){
+      display: block;
+      width: 100%;
+      @include x-rem(padding-bottom,10px );
+      @include x-rem(padding-top,10px );
+        &:hover{
+          padding-bottom:10px !important;
+        }
       }
     }
     .counter{
@@ -4820,10 +5017,28 @@ footer {
     @include r(1040){
       @include x-rem(padding-right,295px);
     }
+    @include r(768){
+      padding-right:0; 
+      @include x-rem(padding-top,20px);
+    }
+    &:nth-child(3){
+      @include r(768){
+      .char-descr,.char-name{
+        width:100%;
+          p{
+            min-height:1px;
+            padding-left: 0;
+          }
+        }
+      }
+    }
    }
    .product-main-characteristic{
     @include clearfix;
     @include x-rem(margin,20px 0 55px);
+    @include r(768){
+      margin-top: 0;
+    }
    }
    .char-wrapper{
      border-bottom:1px solid $border;
@@ -4841,34 +5056,42 @@ footer {
     width:33.3%;
     @include x-rem(padding-top,16px);
     @include x-rem(font-size,17px);
+    @include r(768){
+      width:100%;
+    }
    }
    .char-options{
     width:66.6%;
+    @include r(768){
+      width:100%;
+    }
     .char-name{
       p{
         @include x-rem(padding-right,40px);
       }
-      &:nth-last-child(2){
-        border-bottom:0 !important;
+    }
+    dl{
+      font-size:0;
+      @include clearfix;
+      &:not(:last-child){
+        border-bottom:1px solid $border; 
       }
     }
     .char-descr{
       font-weight:600;
+      vertical-align: middle;
       p{
         @include x-rem(padding-left,10px);
       }
     }
     .char-descr,.char-name{
+      @include x-rem(font-size,14px);
       p{
         font-weight: 300;
         @include x-rem(min-height,170px);
         &:not(:last-child){
-        @include x-rem(margin-bottom,30px);
-        
+          @include x-rem(margin-bottom,20px);
         }
-      }
-      &:not(:last-child){
-        border-bottom:1px solid $border;
       }
     }
    }
@@ -4876,8 +5099,8 @@ footer {
       width:50%;
       color:$letters;
       display: inline-block;
-      float: left;
       @include x-rem(padding,16px 0);
+      vertical-align: middle;
     }
 
 }
@@ -5018,11 +5241,17 @@ footer {
   display: inline-block;
   width:80%;
   border: 0;
+  @include r(768){
+    width:100%;
+  }
   .form-col{
     display: inline-block;
     width:50%;
     float:left;
     @include x-rem(padding-right,28px);
+      @include r(480){
+      width:100%;
+    }
   }
   .hits-stat-more{
     border:0;
@@ -5077,6 +5306,7 @@ footer {
   float:left;
   background-repeat: no-repeat;
   background-position: left 10px center;
+  @include x-rem(background-size,30px 30px);
   @include x-rem(padding,7px 0 7px 60px );
   @include x-rem(margin-bottom,13px );
   color:$letters;
@@ -5088,8 +5318,8 @@ footer {
     display: inline-block;
     float: left;
     @include x-rem(margin-right,5px );
-    @include x-rem(width,14px );
-    @include x-rem(height,14px );
+    @include x-rem(width,18px );
+    @include x-rem(height,18px );
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
@@ -5104,10 +5334,15 @@ footer {
   position: relative;
   z-index: 2;
   @include x-rem(max-height,400px );
+
   .video-playlist-wrap,.video-main-cont{
     display: inline-block;
     float:left;
      width:50%;
+     @include r(768){
+      width:100%;
+     }
+
   }
   .video-playlist-wrap{
      @include x-rem(padding-right,150px ); 
@@ -5117,10 +5352,29 @@ footer {
   }
   .video-playlist-cont{
     overflow-y: auto; 
-    @include x-rem(height,350px );  
+    @include x-rem(height,350px ); 
+    @include r(768){
+      @include x-rem(margin-top,10px ); 
+      @include x-rem(height,150px ); 
+     } 
   }
   .video-main-cont{
     @include x-rem(padding-right,20px ); 
+    @include r(768){
+      padding: 0;
+     }
+    .video{
+      position: relative;
+      padding-top:56.25%;
+      @include clearfix;
+      iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
   .video-item-img{
     display: inline-block;
@@ -5149,6 +5403,9 @@ footer {
     }
     &:not(:last-child){
       @include x-rem(margin-bottom,28px ); 
+      @include r(768){
+      @include x-rem(margin-bottom,10px );
+     }
     }
     &:hover{
       background: #fafafa;

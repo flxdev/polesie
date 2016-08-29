@@ -17,7 +17,7 @@
             li.dropdown-btn
               a(href='#') Ещё
                 .icon
-                  svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 15 3', style='enable-background:new 0 0 15 3;', xml:space='preserve')
+                  svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='14px', viewbox='0 0 15 3', style='enable-background:new 0 0 15 3;', xml:space='preserve')
                     style(type='text/css').
                       .st1{fill-rule:evenodd;clip-rule:evenodd;fill:#3B3B3B;}
                     g
@@ -258,11 +258,18 @@
         .js-mobile-menu-btn
           a(href="#") Все разделы каталога
             .icon.arr-r
-                svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
-                  style(type='text/css').
-                    .ftr-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
-                  path.ftr-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
-        ul
+              svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                style(type='text/css').
+                  .ftr-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                path.ftr-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+        .js-mobile-menu-btn.mobile-back.is-hidden
+          a(href="#") Назад
+            .icon.arr-r
+              svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                style(type='text/css').
+                  .ftr-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                path.ftr-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+        ul.is-hidden
           //в menu-item лучше использовать неразрывные пробелы
           li.menu-item
             a(href='#') Твары для детей
@@ -273,6 +280,114 @@
             //если внутри есть выпадающее меню - вешаем класс
           li.menu-item.dropdown
             a(href='#') Электроника и техника
+            .main-nav-dropmenu
+              .nav-main-wrap
+                .nav-main
+                  ul
+                    li.sub-item
+                      a(href='#') Мебель, оборудование для сада
+                    li.sub-item
+                      a(href='#') Электрика и освещение
+                    li.sub-item
+                      a(href='#') Садоводство и озеленение
+                    li.sub-item
+                      a(href='#') Электроинструмент
+                      .drop-nav-dropmenu
+                        ul.menu-item-dropable
+                          li
+                            a(href='#') Дрели, шуруповёрты, молотки
+                          li
+                            a(href='#') Шлифовальные станки и машины
+                          li
+                            a(href='#') Пилы и лобзики
+                          li
+                            a(href='#') Отрезные станки и ножницы
+                          li
+                            a(href='#') Рубанки, фрезерные станки
+                          li
+                            a(href='#')
+                              | Фены строительные 
+                              span -5%
+                          li
+                            a(href='#') Лебёдки
+                          li
+                            a(href='#') Компрессоры, пылесосы
+                          li
+                            a(href='#') Сварочное оборудование
+                          li
+                            a(href='#')
+                              | Расходные материалы 
+                              span -5%
+                    li.sub-item
+                      a(href='#') Инструмент ручной
+                      .drop-nav-dropmenu
+                        ul.menu-item-dropable
+                          li
+                            a(href='#') Дрели, шуруповёрты, молотки
+                          li
+                            a(href='#') Шлифовальные станки и машины
+                          li
+                            a(href='#') Пилы и лобзики
+                          li
+                            a(href='#') Отрезные станки и ножницы
+                          li
+                            a(href='#') Рубанки, фрезерные станки
+                          li
+                            a(href='#')
+                              | Фены строительные 
+                              span -5%
+                          li
+                            a(href='#') Лебёдки
+                          li
+                            a(href='#') Компрессоры, пылесосы
+                          li
+                            a(href='#') Сварочное оборудование
+                          li
+                            a(href='#')
+                              | Расходные материалы 
+                              span -5%
+                    li.sub-item
+                      a(href='#') Текстиль для дома, рукоделие
+                    li.sub-item
+                      a(href='#') Домашний декор
+                    li.sub-item
+                      a(href='#') Бытовая химия, СМС
+                    li.sub-item
+                      a(href='#') Хозтовары, садовый инвентарь
+                    li.sub-item
+                      a(href='#') Садоводство и озеленение
+              .main-nav-featur
+                .featur-blocks-wrap
+                  .themed_block
+                    img(src='img/promo/themed101.jpg', alt='#')
+                    p.themed_name
+                      a(href='#', tabindex='0') Мягкая игрушка Hasbro Игривый щенок [B0449]
+                    p.themed_cat Мягкие игрушки
+                    p.themed_coast 3 798,00 р.
+                  .themed_block
+                    img(src='img/promo/themed101.jpg', alt='#')
+                    p.themed_name
+                      a(href='#', tabindex='0') Мягкая игрушка Hasbro Игривый щенок [B0449]
+                    p.themed_cat Мягкие игрушки
+                    p.themed_coast 3 798,00 р.
+                  .themed_block
+                    img(src='img/promo/themed101.jpg', alt='#')
+                    p.themed_name
+                      a(href='#', tabindex='0') Мягкая игрушка Hasbro Игривый щенок [B0449]
+                    p.themed_cat Мягкие игрушки
+                    p.themed_coast 3 798,00 р.
+                .featur-brands
+                  ul
+                    li
+                      img(src='img/promo/brand1.jpg', alt='#')
+                    li
+                      img(src='img/promo/brand2.jpg', alt='#')
+                    li
+                      img(src='img/promo/brand3.jpg', alt='#')
+                    li
+                      img(src='img/promo/brand4.jpg', alt='#')
+          li.menu-item.dropdown
+            a(href='#') Для дома и сада
             .main-nav-dropmenu
               .nav-main-wrap
                 .nav-main
@@ -353,8 +468,6 @@
                       img(src='img/promo/brand3.jpg', alt='#')
                     li
                       img(src='img/promo/brand4.jpg', alt='#')
-          li.menu-item
-            a(href='#') Для дома и сада
           li.menu-item
             a(href='#') Автотовары
           li.menu-item

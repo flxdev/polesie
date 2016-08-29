@@ -164,7 +164,7 @@ html(lang='ru')
                   h4.product-small-title Краткие характеристики
                   p.hits_descr
                     | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза. У меня сын такой носит, сносу нет. Берите не пожалеете. Ососбенно если у вас ноги короткие.
-                  a(href="#").product-learn-more
+                  a(href="#tab_item").product-learn-more.js-scroll
                     |Узнать больше
                     svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink',width='18px',height='18px', x='0px', y='0px', viewbox='0 0 18 18', style='enable-background:new 0 0 18 18;', xml:space='preserve')
                       style(type='text/css').
@@ -325,7 +325,7 @@ html(lang='ru')
                   span.tab Материалы для скачивания
                   span.tab Отзывы
                    span.counter (18)
-                .tab_content
+                #tab_item.tab_content
                   .tabs_consult.active
                     span.char-main-name Консультация специалиста
                     p Появились вопросы? Не стесняйтесь напишите нам. Наши специалисты с радостью помогут решить все вопросы
@@ -337,100 +337,127 @@ html(lang='ru')
                       .hits_raiting-star-wrap
                         i.star-raiting
                     p Уже приобрели этот товар? Поделитесь вашими впечатлениями о нём и получите бонус 100 руб. (1 000 000 руб.) на следующую покупку
-                    a(href="#").hits-stat-more Оставить отзыв
+                    a(href="#feedback-form").hits-stat-more.js-scroll Оставить отзыв
 
                   .tab_item
                     .product-main-characteristic
                       .char-wrapper
                         .char-main-name
                           h4 Stels Navigator 500 V 26 – это  велосипед из новой линейки бюджетной компании Stels 
-                        dl.char-options
-                          dt.char-name 
-                            p Он относится к кросс-кантри байкам и при этом замечательно подходит для исполь- зования в городе и пре- одоления любых расстояний в самых разных местностях. Доступность – главный козырь модели, причем, этоне отразилось на качестве исполнения велосипеда в целом.
-                            p Здесь установлены стандартные колеса диаметром 26 дюймов, имеющие широкий протектор для улучшения проходимости в жестких условиях. 
+                        .char-options
+                          dl
+                            dt.char-name 
+                              p Он относится к кросс-кантри байкам и при этом замечательно подходит для исполь- зования в городе и пре- одоления любых расстояний в самых разных местностях. Доступность – главный козырь модели, причем, этоне отразилось на качестве исполнения велосипеда в целом.
+                              p Здесь установлены стандартные колеса диаметром 26 дюймов, имеющие широкий протектор для улучшения проходимости в жестких условиях. 
 
-                          dd.char-descr 
-                            p  Велосипед оснащен амортизационной вилкой, которая значительно облегчит экстремальные прыжки по горным рельефам и, конечно, придаст комфорт перемещению при езде в городе. Механическая трансмиссия с внешним переключателем рассчитана на 21 скорость.
-                            p Внешне модель выглядит очень симпатично, хотя это довольно большая редкость для бюджетного сегмента. Все элементы выглядят органично, а расцветка спокойная и не бросается в глаза. Визуально такой велосипед выглядит как серьезный экземпляр.
+                            dd.char-descr 
+                              p  Велосипед оснащен амортизационной вилкой, которая значительно облегчит экстремальные прыжки по горным рельефам и, конечно, придаст комфорт перемещению при езде в городе. Механическая трансмиссия с внешним переключателем рассчитана на 21 скорость.
+                              p Внешне модель выглядит очень симпатично, хотя это довольно большая редкость для бюджетного сегмента. Все элементы выглядят органично, а расцветка спокойная и не бросается в глаза. Визуально такой велосипед выглядит как серьезный экземпляр.
                   .tab_item
                     .product-main-characteristic
                       .char-wrapper
                         .char-main-name
                           h4 Общие характеристики
-                        dl.char-options
-                          dt.char-name Модель
-                          dd.char-descr 2016 года 
-                          dt.char-name Возраст
-                          dd.char-descr для взрослых 
-                          dt.char-name Тип
-                          dd.char-descr горный (MTB), кросс-кантри
-                          dt.char-name Тип привода
-                          dd.char-descr цепной 
-                          dt.char-name Вес велосипеда
-                          dd.char-descr 15.9 кг  
+                        .char-options
+                          dl
+                            dt.char-name Модель
+                            dd.char-descr 2016 года 
+                          dl
+                            dt.char-name Возраст
+                            dd.char-descr для взрослых 
+                          dl
+                            dt.char-name Тип
+                            dd.char-descr горный (MTB), кросс-кантри
+                          dl
+                            dt.char-name Тип привода
+                            dd.char-descr цепной 
+                          dl
+                            dt.char-name Вес велосипеда
+                            dd.char-descr 15.9 кг  
                       .char-wrapper
                         .char-main-name
                           h4 Общие характеристики
-                        dl.char-options
-                          dt.char-name Модель
-                          dd.char-descr 2016 года 
-                          dt.char-name Возраст
-                          dd.char-descr для взрослых 
-                          dt.char-name Тип
-                          dd.char-descr горный (MTB), кросс-кантри
-                          dt.char-name Тип привода
-                          dd.char-descr цепной 
-                          dt.char-name Вес велосипеда
-                          dd.char-descr 15.9 кг  
+                        .char-options
+                          dl
+                            dt.char-name Модель
+                            dd.char-descr 2016 года 
+                          dl
+                            dt.char-name Возраст
+                            dd.char-descr для взрослых 
+                          dl
+                            dt.char-name Тип
+                            dd.char-descr горный (MTB), кросс-кантри
+                          dl
+                            dt.char-name Тип привода
+                            dd.char-descr цепной 
+                          dl
+                            dt.char-name Вес велосипеда
+                            dd.char-descr 15.9 кг  
                       .char-wrapper
                         .char-main-name
                           h4 Общие характеристики
-                        dl.char-options
-                          dt.char-name Модель
-                          dd.char-descr 2016 года 
-                          dt.char-name Возраст
-                          dd.char-descr для взрослых 
-                          dt.char-name Тип
-                          dd.char-descr горный (MTB), кросс-кантри
-                          dt.char-name Тип привода
-                          dd.char-descr цепной 
-                          dt.char-name Вес велосипеда
-                          dd.char-descr 15.9 кг  
+                        .char-options
+                          dl
+                            dt.char-name Модель
+                            dd.char-descr 2016 года
+                          dl 
+                            dt.char-name Возраст
+                            dd.char-descr для взрослых 
+                          dl
+                            dt.char-name Тип
+                            dd.char-descr горный (MTB), кросс-кантри
+                          dl
+                            dt.char-name Тип привода
+                            dd.char-descr цепной 
+                          dl
+                            dt.char-name Вес велосипеда
+                            dd.char-descr 15.9 кг  
                       .char-wrapper
                         .char-main-name
                           h4 Не общие характеристики
-                        dl.char-options
-                          dt.char-name Модель
-                          dd.char-descr 2016 года 
-                          dt.char-name Возраст
-                          dd.char-descr 
-                            span.descr-i.yes
-                          dt.char-name Тип
-                          dd.char-descr
-                            span.descr-i.no
-                          dt.char-name Тип привода
-                          dd.char-descr цепной 
-                          dt.char-name Вес велосипеда
-                          dd.char-descr 15.9 кг  
+                        .char-options
+                          dl
+                            dt.char-name Модель
+                            dd.char-descr 2016 года
+                          dl 
+                            dt.char-name Возраст
+                            dd.char-descr 
+                              span.descr-i.yes
+                          dl
+                            dt.char-name Тип
+                            dd.char-descr
+                              span.descr-i.no
+                          dl
+                            dt.char-name Тип привода
+                            dd.char-descr цепной 
+                          dl
+                            dt.char-name Вес велосипеда
+                            dd.char-descr 15.9 кг  
                       .char-wrapper
                         .char-main-name
                           h4 Общие характеристики
-                        dl.char-options
-                          dt.char-name Модель
-                          dd.char-descr 2016 года 
-                          dt.char-name Возраст
-                          dd.char-descr для взрослых 
-                          dt.char-name Тип
-                          dd.char-descr горный (MTB), кросс-кантри
-                          dt.char-name Тип привода
-                          dd.char-descr цепной 
-                          dt.char-name Вес велосипеда
-                          dd.char-descr 15.9 кг  
+                        .char-options
+                          dl
+                            dt.char-name Модель
+                            dd.char-descr 2016 года 
+                          dl
+                            dt.char-name Возраст
+                            dd.char-descr для взрослых 
+                          dl
+                            dt.char-name Тип
+                            dd.char-descr горный (MTB), кросс-кантри
+                          dl
+                            dt.char-name Тип привода
+                            dd.char-descr цепной 
+                          dl
+                            dt.char-name Вес велосипеда
+                            dd.char-descr 15.9 кг  
                   .tab_item.video-back
                     //video-back нужен только тут
                     .product-main-characteristic
                       .video-main-cont
-                        iframe#ytplayer(type='text/html', width='100%', height='350px', src='https://www.youtube.com/embed/jZ46cL4_QeQ', frameborder='0', allowfullscreen='')
+                        .video
+                          iframe#ytplayer(type='text/html', src='https://www.youtube.com/embed/jZ46cL4_QeQ', frameborder='0', allowfullscreen='')
                       .video-playlist-wrap
                         .video-playlist-cont
                           a(href="https://www.youtube.com/embed/jZ46cL4_QeQ").video-item.active
@@ -599,7 +626,7 @@ html(lang='ru')
                                   l4.9,8c0.2,0.3,0.6,0.4,0.9,0.4c0.3,0,0.7-0.1,0.9-0.4l13.5-17.4c0.4-0.5,0.3-1.1-0.2-1.5C31.7,12.3,31,12.4,30.7,12.8z')
                             | Спасибо за ваше участие
                           .message-text благодарим вас за оставленный отзыв, вы восхитительны.
-                      .feedback-form
+                      #feedback-form.feedback-form
                         .char-main-name
                           h4 Отзыв
                           span.fed-talk Расскажите о товаре
