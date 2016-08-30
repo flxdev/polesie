@@ -77,10 +77,15 @@ html(lang='ru')
               a.selection_find-clear(href='#') Очистить сравнение
             .compare-main-wrap
               .compare_fakehead
-              .compare-wrapper.main__scroller
-                table.compare_inner
+              .compare-wrapper
+                .compare-scroll-cont
+                  .compare-scroll-inner
+                    .compare-scroller
+                //если элементов в сравнении <4  добавляем .row-fixed
+                table.compare_inner.row-fixed
                   tbody.compare-body
-                    tr.compare-row
+                    //   и .row-2/3/4 сюда
+                    tr.compare-row.row-4
                       th.compare-item.compare-bg
                       th.compare-item.item-clone
                       th.compare-item
@@ -88,8 +93,8 @@ html(lang='ru')
                           .compare-item-close
                           a(href="#").hits_block
                             img(src='img/promo/bike_hit.jpg', alt='#')
-                            p.hits_name
-                              a(href='#') STELS Navigator 500 V 26 (2016)
+                          p.hits_name
+                            a(href='#') STELS Navigator 500 V 26 (2016)
                           .hits_coast
                             p.hits_coast_new
                               | 10 435,60 р. 
@@ -143,21 +148,21 @@ html(lang='ru')
                               | 13 435,60 р. 
                               span  13 435 600 р
                           a(href="#").hits-stat-more Подробнее
-                      th.compare-item
-                        .compare-item-main
-                          .compare-item-close
-                          a(href="#").hits_block
-                            img(src='img/promo/bike_hit.jpg', alt='#')
-                            p.hits_name
-                              a(href='#') STELS Navigator 500 V 26 (2016)
-                          .hits_coast
-                            p.hits_coast_new
-                              | 10 435,60 р. 
-                              span  10 435 600 р
-                            p
-                              | 13 435,60 р. 
-                              span  13 435 600 р
-                          a(href="#").hits-stat-more Подробнее
+                      //- th.compare-item
+                      //-   .compare-item-main
+                      //-     .compare-item-close
+                      //-     a(href="#").hits_block
+                      //-       img(src='img/promo/bike_hit.jpg', alt='#')
+                      //-       p.hits_name
+                      //-         a(href='#') STELS Navigator 500 V 26 (2016)
+                      //-     .hits_coast
+                      //-       p.hits_coast_new
+                      //-         | 10 435,60 р. 
+                      //-         span  10 435 600 р
+                      //-       p
+                      //-         | 13 435,60 р. 
+                      //-         span  13 435 600 р
+                      //-     a(href="#").hits-stat-more Подробнее
                   tbody.compare-body
                     tr.compare-row
                       td.compare-item
@@ -447,6 +452,211 @@ html(lang='ru')
                                 span.input-checked
                               span.input-text Показать только отличияl
                 .main__bar
+            .compare-mobile-wrap
+              .mobile-items-wrap
+                .compare-item
+                  .compare-item-main
+                    .compare-item-close
+                    a(href="#").hits_block
+                      img(src='img/promo/bike_hit.jpg', alt='#')
+                      p.hits_name
+                        a(href='#') STELS Navigator 500 V 26 (2016)
+                    .hits_coast
+                      p.hits_coast_new
+                        | 10 435,60 р. 
+                        span  10 435 600 р
+                      p
+                        | 13 435,60 р. 
+                        span  13 435 600 р
+                    a(href="#").hits-stat-more Подробнее
+                .compare-item
+                  .compare-item-main
+                    .compare-item-close
+                    a(href="#").hits_block
+                      img(src='img/promo/bike_hit.jpg', alt='#')
+                      p.hits_name
+                        a(href='#') STELS Navigator 500 V 26 (2016)
+                    .hits_coast
+                      p.hits_coast_new
+                        | 10 435,60 р. 
+                        span  10 435 600 р
+                      p
+                        | 13 435,60 р. 
+                        span  13 435 600 р
+                    a(href="#").hits-stat-more Подробнее
+                .compare-item
+                  .compare-item-main
+                    .compare-item-close
+                    a(href="#").hits_block
+                      img(src='img/promo/bike_hit.jpg', alt='#')
+                      p.hits_name
+                        a(href='#') STELS Navigator 500 V 26 (2016)
+                    .hits_coast
+                      p.hits_coast_new
+                        | 10 435,60 р. 
+                        span  10 435 600 р
+                      p
+                        | 13 435,60 р. 
+                        span  13 435 600 р
+                    a(href="#").hits-stat-more Подробнее
+                .compare-item
+                  .compare-item-main
+                    .compare-item-close
+                    a(href="#").hits_block
+                      img(src='img/promo/bike_hit.jpg', alt='#')
+                      p.hits_name
+                        a(href='#') STELS Navigator 500 V 26 (2016)
+                    .hits_coast
+                      p.hits_coast_new
+                        | 10 435,60 р. 
+                        span  10 435 600 р
+                      p
+                        | 13 435,60 р. 
+                        span  13 435 600 р
+                    a(href="#").hits-stat-more Подробнее
+              .mobile-compare-wrap
+                ul.select-u-body
+                  li.select-u-item
+                    label.input_label
+                      span.input_main
+                        input.input-real(type="checkbox", value = 'Показать только отличия')
+                        span.input-checked
+                      span.input-text Показать только отличия
+                .compare-row.table-title
+                  .compare-item
+                    .text
+                      | Общие характеристики
+                .compare-group
+                  .compare-item-name Тип привода
+                  dl.item-wrap
+                    dd.item.item-name STELS Navigator 500 V 26 (2016)
+                    dt.item.item-value 2016
+                  dl.item-wrap
+                    dd.item.item-name STELS Navigator 500 V 26 (2016)
+                    dt.item.item-value 2016
+                  dl.item-wrap
+                    dd.item.item-name STELS Navigator 500 V 26 (2016)
+                    dt.item.item-value 2016
+                  dl.item-wrap
+                    dd.item.item-name STELS Navigator 500 V 26 (2016)
+                    dt.item.item-value 2016
+                  dl.item-wrap
+                    dd.item.item-name STELS Navigator 500 V 26 (2016)
+                    dt.item.item-value 2016
+                .compare-group
+                  .compare-item-name Рама
+                  dl.item-wrap
+                    dd.item.item-name STELS Navigator 500 V 26 (2016)
+                    dt.item.item-value 2 трубки и палка
+                  dl.item-wrap
+                    dd.item.item-name STELS Navigator 500 V 26 (2016)
+                    dt.item.item-value 2 трубки и палка
+                  dl.item-wrap
+                    dd.item.item-name STELS Navigator 500 V 26 (2016)
+                    dt.item.item-value 2 трубки и палка
+                  dl.item-wrap
+                    dd.item.item-name STELS Navigator 500 V 26 (2016)
+                    dt.item.item-value 2 трубки и палка
+                  dl.item-wrap
+                    dd.item.item-name STELS Navigator 500 V 26 (2016)
+                    dt.item.item-value 2 трубки и палка
+                .compare-row.table-title
+                  .compare-item
+                    .text
+                      | Не общие характеристики
+                .compare-group
+                  .compare-item-name Тип привода
+                  dl.item-wrap
+                    dd.item.item-name STELS Navigator 500 V 26 (2016)
+                    dt.item.item-value 2016
+                  dl.item-wrap
+                    dd.item.item-name STELS Navigator 500 V 26 (2016)
+                    dt.item.item-value 2016
+                  dl.item-wrap
+                    dd.item.item-name STELS Navigator 500 V 26 (2016)
+                    dt.item.item-value 2016
+                  dl.item-wrap
+                    dd.item.item-name STELS Navigator 500 V 26 (2016)
+                    dt.item.item-value 2016
+                  dl.item-wrap
+                    dd.item.item-name STELS Navigator 500 V 26 (2016)
+                    dt.item.item-value 2016
+              .mobile-compare-wrap
+                ul.select-u-body
+                  li.select-u-item
+                    label.input_label
+                      span.input_main
+                        input.input-real(type="checkbox", value = 'Показать только отличия')
+                        span.input-checked
+                      span.input-text Показать только отличия
+                .mobile-items-wrap
+                  .compare-item
+                    .compare-item-main
+                      .compare-item-close
+                      a(href="#").hits_block
+                        img(src='img/promo/bike_hit.jpg', alt='#')
+                        p.hits_name
+                          a(href='#') STELS Navigator 500 V 26 (2016)
+                      .hits_coast
+                        p.hits_coast_new
+                          | 10 435,60 р. 
+                          span  10 435 600 р
+                        p
+                          | 13 435,60 р. 
+                          span  13 435 600 р
+                      a(href="#").hits-stat-more Подробнее
+                  .compare-item
+                    .compare-item-main
+                      .compare-item-close
+                      a(href="#").hits_block
+                        img(src='img/promo/bike_hit.jpg', alt='#')
+                        p.hits_name
+                          a(href='#') STELS Navigator 500 V 26 (2016)
+                      .hits_coast
+                        p.hits_coast_new
+                          | 10 435,60 р. 
+                          span  10 435 600 р
+                        p
+                          | 13 435,60 р. 
+                          span  13 435 600 р
+                      a(href="#").hits-stat-more Подробнее
+                  .compare-item
+                    .compare-item-main
+                      .compare-item-close
+                      a(href="#").hits_block
+                        img(src='img/promo/bike_hit.jpg', alt='#')
+                        p.hits_name
+                          a(href='#') STELS Navigator 500 V 26 (2016)
+                      .hits_coast
+                        p.hits_coast_new
+                          | 10 435,60 р. 
+                          span  10 435 600 р
+                        p
+                          | 13 435,60 р. 
+                          span  13 435 600 р
+                      a(href="#").hits-stat-more Подробнее
+                  .compare-item
+                    .compare-item-main
+                      .compare-item-close
+                      a(href="#").hits_block
+                        img(src='img/promo/bike_hit.jpg', alt='#')
+                        p.hits_name
+                          a(href='#') STELS Navigator 500 V 26 (2016)
+                      .hits_coast
+                        p.hits_coast_new
+                          | 10 435,60 р. 
+                          span  10 435 600 р
+                        p
+                          | 13 435,60 р. 
+                          span  13 435 600 р
+                      a(href="#").hits-stat-more Подробнее
+                
+
+
+
+
+
+
 
 
                      

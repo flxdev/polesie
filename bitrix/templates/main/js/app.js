@@ -7,16 +7,37 @@ $(window).on('load',function(){
 	}
 });
 $(document).ready(function () {
-	 $('.main__scroller ').baron({
+
+/*	 $('.main__scroller ').baron({
         bar: '.main__bar',
         barOnCls: 'baron',
         direction: 'h',
         cssGuru: true,
-    }).removeAttr('style');
+        impact: 'scroller',
+    })
+	 $('.main__scroller ').resize(function(){
+	$(this).baron().dispose().update();
+	console.log('update');
+})*/
+var Comparescroll = function(){
+	var target = $('.compare-wrapper');
+	var targetW = $('.compare_inner').width() - 250;
+	var scroler = $('.compare-scroller');
+
+
+	scroler.css({'width': targetW});
+	
+	$('.compare-scroll-inner').on('scroll',function(e){
+			var scroll = $(this).scrollLeft();
+		console.log(scroll);
+
+			target.scrollLeft(scroll);
+
+	})
+}
+Comparescroll();
 $(function() {
-$('.main__scroller ').resize(function(){
-	$(this).removeAttr('style');
-})
+
 //main-mobile menu
 
 	$('.js-mobile-menu-btn').click(function(){
