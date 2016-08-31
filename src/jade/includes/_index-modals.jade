@@ -269,6 +269,24 @@
           span.text Вопрос
         textarea.input-main.input-small(name="", rows="3", placeholder = 'Опишите')
       input.hits-stat-more(type="submit", placeholder = 'Задать вопрос')
+.oneclick_hidden.hidden_bg
+  .hidden-block
+    .hidden-block-close.button_close
+    h2.hidden-title Купить в 1 клик
+    form(action="/").form-feed
+      .input-wrapper
+        label.input-label 
+          span.text Ваше имя
+        input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович')
+      .input-wrapper
+        label.input-label 
+          span.text Телефон
+        input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00')
+      .input-wrapper
+        label.input-label 
+          span Сообщение
+        textarea.input-main.input-small(name="", rows="3", placeholder = 'Оставьте сообщение')
+      input.hits-stat-more(type="submit", placeholder = 'Отправить',data-target=".success_hidden").js-modal-trigger.button_close
 
 
 

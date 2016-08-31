@@ -243,7 +243,7 @@ html(lang='ru')
                       | 13 435,60 р. 
                       span  13 435 600 р
                   .product-describe-buy
-                    .product-select-cont
+                    form.inner-form(action="").product-select-cont
                       .select-check
                         button.selects.js-select-toggle(data-placeholder = 'Выберите цвет')
                           span Выберите цвет
@@ -255,16 +255,15 @@ html(lang='ru')
                         .select-list
                           .select-list-inner
                             a.selection_find-clear.js-clear(href='#') Сбросить
-                            form.inner-form(action="")
-                              label.option
-                                input(type="radio",name='select1',value ='Голубой') 
-                                span Голубой
-                              label.option
-                                input(type="radio",name='select1',value ='Зеленый') 
-                                span Зеленый
-                              label.option
-                                input(type="radio",name='select1',value ='Розовенький') 
-                                span Розовенький
+                            label.option
+                              input(type="radio",name='select1',value ='Голубой') 
+                              span Голубой
+                            label.option
+                              input(type="radio",name='select1',value ='Зеленый') 
+                              span Зеленый
+                            label.option
+                              input(type="radio",name='select1',value ='Розовенький') 
+                              span Розовенький
                       .select-check
                         button.selects.js-select-toggle(data-placeholder = 'Выберите размер рамы')
                           span Выберите размер рамы
@@ -276,16 +275,15 @@ html(lang='ru')
                         .select-list
                           .select-list-inner
                             a.selection_find-clear.js-clear(href='#') Сбросить
-                            form.inner-form(action="")
-                              label.option
-                                input(type="radio",name='select1',value ='21"') 
-                                span 21"
-                              label.option
-                                input(type="radio",name='select1',value ='23"') 
-                                span 23"
-                              label.option
-                                input(type="radio",name='select1',value ='20"') 
-                                span 20"
+                            label.option
+                              input(type="radio",name='select1',value ='21"') 
+                              span 21"
+                            label.option
+                              input(type="radio",name='select1',value ='23"') 
+                              span 23"
+                            label.option
+                              input(type="radio",name='select1',value ='20"') 
+                              span 20"
                       .number.js-number(data-max-number='999')
                         button.number__minus.js-minus-number(type='button', tabindex='0')
                           svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 2', style='enable-background:new 0 0 12 2;', xml:space='preserve')

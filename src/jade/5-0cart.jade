@@ -67,242 +67,642 @@ html(lang='ru')
         section
           h1.section-title Корзина
           .section__wrapper
-            .cart-main-wrapper
-              .product_tabs-wrapper
-                #brand.wrap_brand
-                  .tabs
-                    span.tab В корзине
-                    span.tab Отложенные
-                  #tab_item.tab_content
-                    .tab_item
-                      .tab-cart-wrap
-                        //.tab-like for 2nd .tab-cart fo 1st
-                        .tab-head.tab-cart
-                          .item Название товара
-                          .item Цена
-                          .item Количество
-                          .item Сумма
-                        .tab-item-wrap
-                          .tab-element
-                            .elem-name
-                              p.hits_name
-                                a(href='#') STELS Navigator 500 V 26 (2016)
-                              p.elem-attr
-                                span.val.val-name Цвет:
-                                span.val.val-val черный
-                            .elem-img
-                              img(src='img/promo/bike_hit.jpg', alt='#')
-                            .elem-price
-                              .curr-price
-                                .hits_coast
-                                  p.hits_coast_new
-                                    | 10 435,60 р. 
-                                    span  10 435 600 р
-                                  p.old
-                                    | 13 435,60 р. 
-                                    span  13 435 600 р
-                               .number.js-number(data-max-number='999')
-                                  button.number__minus.js-minus-number(type='button', tabindex='0')
-                                    svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 2', style='enable-background:new 0 0 12 2;', xml:space='preserve')
-                                      style(type='text/css').
-                                        .stpl{fill-rule:evenodd;clip-rule:evenodd;}
-                                      path.stpl(d='M0,0h12v2H0V0z')
-                                  input.number__input.js-price-input(type='text', value='0', tabindex='0')
-                                  button.number__plus.js-plus-number(type='button', tabindex='0')
-                                    svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 12', style='enable-background:new 0 0 12 12;', xml:space='preserve')
-                                      style(type='text/css').
-                                        .stpl{fill-rule:evenodd;clip-rule:evenodd;}
-                                      g
+            .cart-outer-wrapper
+              .cart-main-wrapper
+                .product_tabs-wrapper
+                  #brand.wrap_brand
+                    .tabs
+                      span.tab В корзине
+                      span.tab Отложенные
+                    #tab_item.tab_content
+                      .tab_item
+                        .tab-cart-wrap
+                          //.tab-like for 2nd .tab-cart fo 1st
+                          .tab-head.tab-cart
+                            .item Название товара
+                            .item Цена
+                            .item Количество
+                            .item Сумма
+                          .tab-item-wrap
+                            .tab-element
+                              .elem-name
+                                p.hits_name
+                                  a(href='#') STELS Navigator 500 V 26 (2016)
+                                p.elem-attr
+                                  span.val.val-name Цвет:
+                                  span.val.val-val черный
+                              .elem-img
+                                img(src='img/promo/bike_hit.jpg', alt='#')
+                              .elem-price
+                                .curr-price
+                                  .hits_coast
+                                    p.hits_coast_new
+                                      | 10 435,60 р. 
+                                      span  10 435 600 р
+                                    p.old
+                                      | 13 435,60 р. 
+                                      span  13 435 600 р
+                                 .number.js-number(data-max-number='999')
+                                    button.number__minus.js-minus-number(type='button', tabindex='0')
+                                      svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 2', style='enable-background:new 0 0 12 2;', xml:space='preserve')
+                                        style(type='text/css').
+                                          .stpl{fill-rule:evenodd;clip-rule:evenodd;}
+                                        path.stpl(d='M0,0h12v2H0V0z')
+                                    input.number__input.js-price-input(type='text', value='0', tabindex='0')
+                                    button.number__plus.js-plus-number(type='button', tabindex='0')
+                                      svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 12', style='enable-background:new 0 0 12 12;', xml:space='preserve')
+                                        style(type='text/css').
+                                          .stpl{fill-rule:evenodd;clip-rule:evenodd;}
                                         g
-                                          polygon.stpl(points='12,5 7,5 7,0 5,0 5,5 0,5 0,7 5,7 5,12 7,12 7,7 12,7')
-                              .tot-price
-                                .hits_coast
-                                  p.hits_coast_new
-                                    | 10 435,60 р. 
-                                    span  10 435 600 р
-                                  p.old
-                                    | 13 435,60 р. 
-                                    span  13 435 600 р
-                            .elem-add
-                              // if already added replace with .added-like
-                              .add.add-like
-                                a(href="#")
-                              .add.add-remove
-                                a(href="#")
-                          .tab-element
-                            .elem-name
-                              p.hits_name
-                                a(href='#') STELS Navigator 500 V 26 (2016)
-                              p.elem-attr
-                                span.val.val-name Цвет:
-                                span.val.val-val черный
-                            .elem-img
-                              img(src='img/promo/bike_hit.jpg', alt='#')
-                            .elem-price
-                              .curr-price
-                                .hits_coast
-                                  p
-                                    | 13 435,60 р. 
-                                    span  13 435 600 р
-                               .number.js-number(data-max-number='999')
-                                  button.number__minus.js-minus-number(type='button', tabindex='0')
-                                    svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 2', style='enable-background:new 0 0 12 2;', xml:space='preserve')
-                                      style(type='text/css').
-                                        .stpl{fill-rule:evenodd;clip-rule:evenodd;}
-                                      path.stpl(d='M0,0h12v2H0V0z')
-                                  input.number__input.js-price-input(type='text', value='0', tabindex='0')
-                                  button.number__plus.js-plus-number(type='button', tabindex='0')
-                                    svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 12', style='enable-background:new 0 0 12 12;', xml:space='preserve')
-                                      style(type='text/css').
-                                        .stpl{fill-rule:evenodd;clip-rule:evenodd;}
-                                      g
+                                          g
+                                            polygon.stpl(points='12,5 7,5 7,0 5,0 5,5 0,5 0,7 5,7 5,12 7,12 7,7 12,7')
+                                .tot-price
+                                  .hits_coast
+                                    p.hits_coast_new
+                                      | 10 435,60 р. 
+                                      span  10 435 600 р
+                                    p.old
+                                      | 13 435,60 р. 
+                                      span  13 435 600 р
+                              .elem-add
+                                // if already added replace with .added-like
+                                .add.add-like
+                                  a(href="#")
+                                .add.add-remove
+                                  a(href="#")
+                            .tab-element
+                              .elem-name
+                                p.hits_name
+                                  a(href='#') STELS Navigator 500 V 26 (2016)
+                                p.elem-attr
+                                  span.val.val-name Цвет:
+                                  span.val.val-val черный
+                              .elem-img
+                                img(src='img/promo/bike_hit.jpg', alt='#')
+                              .elem-price
+                                .curr-price
+                                  .hits_coast
+                                    p
+                                      | 13 435,60 р. 
+                                      span  13 435 600 р
+                                 .number.js-number(data-max-number='999')
+                                    button.number__minus.js-minus-number(type='button', tabindex='0')
+                                      svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 2', style='enable-background:new 0 0 12 2;', xml:space='preserve')
+                                        style(type='text/css').
+                                          .stpl{fill-rule:evenodd;clip-rule:evenodd;}
+                                        path.stpl(d='M0,0h12v2H0V0z')
+                                    input.number__input.js-price-input(type='text', value='0', tabindex='0')
+                                    button.number__plus.js-plus-number(type='button', tabindex='0')
+                                      svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 12', style='enable-background:new 0 0 12 12;', xml:space='preserve')
+                                        style(type='text/css').
+                                          .stpl{fill-rule:evenodd;clip-rule:evenodd;}
                                         g
-                                          polygon.stpl(points='12,5 7,5 7,0 5,0 5,5 0,5 0,7 5,7 5,12 7,12 7,7 12,7')
-                              .tot-price
-                                .hits_coast
-                                  p
-                                    | 13 435,60 р. 
-                                    span  13 435 600 р
-                            .elem-add
-                              // if already added replace with .added-like
-                              .add.added-like
-                                a(href="#")
-                              .add.add-remove
-                                a(href="#")
-                          .tab-element
-                            .elem-name
-                              p.hits_name
-                                a(href='#') STELS Navigator 500 V 26 (2016)
-                              p.elem-attr
-                                span.val.val-name Цвет:
-                                span.val.val-val черный
-                              p.elem-attr
-                                span.val.val-name Имя:
-                                span.val.val-val Ибрагим
-                              p.elem-attr
-                                span.val.val-name Имя:
-                                span.val.val-val Ибрагим
-                            .elem-img
-                              img(src='img/promo/bike_hit.jpg', alt='#')
-                            .elem-price
-                              .curr-price
-                                .hits_coast
-                                  p.hits_coast_new
-                                    | 10 435,60 р. 
-                                    span  10 435 600 р
-                                  p.old
-                                    | 13 435,60 р. 
-                                    span  13 435 600 р
-                               .number.js-number(data-max-number='999')
-                                  button.number__minus.js-minus-number(type='button', tabindex='0')
-                                    svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 2', style='enable-background:new 0 0 12 2;', xml:space='preserve')
-                                      style(type='text/css').
-                                        .stpl{fill-rule:evenodd;clip-rule:evenodd;}
-                                      path.stpl(d='M0,0h12v2H0V0z')
-                                  input.number__input.js-price-input(type='text', value='0', tabindex='0')
-                                  button.number__plus.js-plus-number(type='button', tabindex='0')
-                                    svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 12', style='enable-background:new 0 0 12 12;', xml:space='preserve')
-                                      style(type='text/css').
-                                        .stpl{fill-rule:evenodd;clip-rule:evenodd;}
-                                      g
+                                          g
+                                            polygon.stpl(points='12,5 7,5 7,0 5,0 5,5 0,5 0,7 5,7 5,12 7,12 7,7 12,7')
+                                .tot-price
+                                  .hits_coast
+                                    p
+                                      | 13 435,60 р. 
+                                      span  13 435 600 р
+                              .elem-add
+                                // if already added replace with .added-like
+                                .add.added-like
+                                  a(href="#")
+                                .add.add-remove
+                                  a(href="#")
+                            .tab-element
+                              .elem-name
+                                p.hits_name
+                                  a(href='#') STELS Navigator 500 V 26 (2016)
+                                p.elem-attr
+                                  span.val.val-name Цвет:
+                                  span.val.val-val черный
+                                p.elem-attr
+                                  span.val.val-name Имя:
+                                  span.val.val-val Ибрагим
+                                p.elem-attr
+                                  span.val.val-name Имя:
+                                  span.val.val-val Ибрагим
+                              .elem-img
+                                img(src='img/promo/bike_hit.jpg', alt='#')
+                              .elem-price
+                                .curr-price
+                                  .hits_coast
+                                    p.hits_coast_new
+                                      | 10 435,60 р. 
+                                      span  10 435 600 р
+                                    p.old
+                                      | 13 435,60 р. 
+                                      span  13 435 600 р
+                                 .number.js-number(data-max-number='999')
+                                    button.number__minus.js-minus-number(type='button', tabindex='0')
+                                      svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 2', style='enable-background:new 0 0 12 2;', xml:space='preserve')
+                                        style(type='text/css').
+                                          .stpl{fill-rule:evenodd;clip-rule:evenodd;}
+                                        path.stpl(d='M0,0h12v2H0V0z')
+                                    input.number__input.js-price-input(type='text', value='0', tabindex='0')
+                                    button.number__plus.js-plus-number(type='button', tabindex='0')
+                                      svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='12px',height='12px', viewbox='0 0 12 12', style='enable-background:new 0 0 12 12;', xml:space='preserve')
+                                        style(type='text/css').
+                                          .stpl{fill-rule:evenodd;clip-rule:evenodd;}
                                         g
-                                          polygon.stpl(points='12,5 7,5 7,0 5,0 5,5 0,5 0,7 5,7 5,12 7,12 7,7 12,7')
-                              .tot-price
-                                .hits_coast
-                                  p.hits_coast_new
-                                    | 10 435,60 р. 
-                                    span  10 435 600 р
-                                  p.old
-                                    | 13 435,60 р. 
-                                    span  13 435 600 р
-                            .elem-add
-                              // if already added replace with .added-like
-                              .add.add-like
-                                a(href="#")
-                              .add.add-remove
-                                a(href="#")
+                                          g
+                                            polygon.stpl(points='12,5 7,5 7,0 5,0 5,5 0,5 0,7 5,7 5,12 7,12 7,7 12,7')
+                                .tot-price
+                                  .hits_coast
+                                    p.hits_coast_new
+                                      | 10 435,60 р. 
+                                      span  10 435 600 р
+                                    p.old
+                                      | 13 435,60 р. 
+                                      span  13 435 600 р
+                              .elem-add
+                                // if already added replace with .added-like
+                                .add.add-like
+                                  a(href="#")
+                                .add.add-remove
+                                  a(href="#")
+                        .tab-btns
+                          a(href="#").product-learn-more
+                            svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='18px',height='18px', viewbox='0 0 18 18', style='enable-background:new 0 0 18 18;', xml:space='preserve')
+                              style(type='text/css').
+                                .stmore{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}
+                              g
+                                g
+                                  path.stmore(d='M9,0C4,0,0,4,0,9c0,5,4,9,9,9c5,0,9-4,9-9C18,4,14,0,9,0z M9,17c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8\
+                                  c4.4,0,8,3.6,8,8C17,13.4,13.4,17,9,17z M10.4,5L6,9l4.4,4l0.6-0.6L7.3,9L11,5.6L10.4,5z')
+                            |Продолжить покупки
+                          .promo-form-wrap
+                            form.promo-form(action="/")
+                              input.promo-imput(type="text", placeholder = 'Введите промокод')
+                              button.promo-submit(type='submit') Применить
 
 
-                    .tab_item
-                      .tab-cart-wrap
 
-                        .tab-head.tab-like
-                          .item Название товара
-                          .item Наличие
-                          .item Цена
-                        .tab-item-wrap
-                          .tab-element.elem-liked
-                            .elem-name
-                              p.hits_name
-                                a(href='#') STELS Navigator 500 V 26 (2016)
-                              p.elem-attr
-                                span.val.val-name Цвет:
-                                span.val.val-val черный
-                            .elem-img
-                              img(src='img/promo/bike_hit.jpg', alt='#')
-                            //.liked-price только в отложенных
-                            .elem-price.liked-price
-                              .hits_stat
-                                p.stat_yes.active В наличии
-                                p.stat_yes.zakaz Под заказ
-                              .tot-price
-                                .hits_coast
-                                  p.hits_coast_new
-                                    | 10 435,60 р. 
-                                    span  10 435 600 р
-                                  p.old
-                                    | 13 435,60 р. 
-                                    span  13 435 600 р
-                            .elem-add
-                              a( href='#').hits-stat-more.product-buy-btn
-                                svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='20px',height='15px', viewbox='0 0 23.3 18.1', style='enable-background:new 0 0 23.3 18.1;', xml:space='preserve')
-                                  style(type='text/css').
-                                    .stcart{fill:#3B3B3B;}
-                                  g
+                      .tab_item
+                        .tab-cart-wrap
+
+                          .tab-head.tab-like
+                            .item Название товара
+                            .item Наличие
+                            .item Цена
+                          .tab-item-wrap
+                            .tab-element.elem-liked
+                              .elem-name
+                                p.hits_name
+                                  a(href='#') STELS Navigator 500 V 26 (2016)
+                                p.elem-attr
+                                  span.val.val-name Цвет:
+                                  span.val.val-val черный
+                              .elem-img
+                                img(src='img/promo/bike_hit.jpg', alt='#')
+                              //.liked-price только в отложенных
+                              .elem-price.liked-price
+                                .hits_stat
+                                  p.stat_yes.active В наличии
+                                  p.stat_yes.zakaz Под заказ
+                                .tot-price
+                                  .hits_coast
+                                    p.hits_coast_new
+                                      | 10 435,60 р. 
+                                      span  10 435 600 р
+                                    p.old
+                                      | 13 435,60 р. 
+                                      span  13 435 600 р
+                              .elem-add
+                                a( href='#').hits-stat-more.product-buy-btn
+                                  svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='20px',height='15px', viewbox='0 0 23.3 18.1', style='enable-background:new 0 0 23.3 18.1;', xml:space='preserve')
+                                    style(type='text/css').
+                                      .stcart{fill:#3B3B3B;}
                                     g
-                                      path.stcart(d='M11.3,14c-0.6-0.3-0.6-1.9-0.6-1.9s9.8,0,10,0c0.3,0,0.8,0.1,1-1s1.4-8,1.4-8H8.7c-1.3-3.2-3.2-3-3.2-3H1.6\
-                                      c0,0-1.9,0.2-1.2,2c0.5,0.8,2,0.7,2.3-0.2c0.1-0.4,0-0.8,0-0.8h3c0,0,1.1,0.3,1.5,1.3c1.7,4.2,2.3,9.9,2.7,11.2\
-                                      C10.2,14.8,11,15,11,15h2h1.4h3.5h2.6v-1 M10.5,11.1c-0.3-1.6-1-4.8-1.5-7h12.7l-1,7H10.5z')
-                                  path.stcart(d='M12.5,14.3c-1,0-1.9,0.8-1.9,1.9c0,1,0.8,1.9,1.9,1.9c1,0,1.9-0.8,1.9-1.9C14.3,15.1,13.5,14.3,12.5,14.3z\
-                                  M12.5,17.3c-0.6,0-1.1-0.5-1.1-1.1s0.5-1.1,1.1-1.1s1.1,0.5,1.1,1.1S13.1,17.3,12.5,17.3z')
-                                  path.stcart(d='M19.9,14.3c-1,0-1.9,0.8-1.9,1.9c0,1,0.8,1.9,1.9,1.9c1,0,1.9-0.8,1.9-1.9S21,14.3,19.9,14.3z M19.9,17.3\
-                                  c-0.6,0-1.1-0.5-1.1-1.1s0.5-1.1,1.1-1.1s1.1,0.5,1.1,1.1C21.1,16.8,20.6,17.3,19.9,17.3z')
-                                | В корзину
-                              .add.add-remove
-                                a(href="#")
+                                      g
+                                        path.stcart(d='M11.3,14c-0.6-0.3-0.6-1.9-0.6-1.9s9.8,0,10,0c0.3,0,0.8,0.1,1-1s1.4-8,1.4-8H8.7c-1.3-3.2-3.2-3-3.2-3H1.6\
+                                        c0,0-1.9,0.2-1.2,2c0.5,0.8,2,0.7,2.3-0.2c0.1-0.4,0-0.8,0-0.8h3c0,0,1.1,0.3,1.5,1.3c1.7,4.2,2.3,9.9,2.7,11.2\
+                                        C10.2,14.8,11,15,11,15h2h1.4h3.5h2.6v-1 M10.5,11.1c-0.3-1.6-1-4.8-1.5-7h12.7l-1,7H10.5z')
+                                    path.stcart(d='M12.5,14.3c-1,0-1.9,0.8-1.9,1.9c0,1,0.8,1.9,1.9,1.9c1,0,1.9-0.8,1.9-1.9C14.3,15.1,13.5,14.3,12.5,14.3z\
+                                    M12.5,17.3c-0.6,0-1.1-0.5-1.1-1.1s0.5-1.1,1.1-1.1s1.1,0.5,1.1,1.1S13.1,17.3,12.5,17.3z')
+                                    path.stcart(d='M19.9,14.3c-1,0-1.9,0.8-1.9,1.9c0,1,0.8,1.9,1.9,1.9c1,0,1.9-0.8,1.9-1.9S21,14.3,19.9,14.3z M19.9,17.3\
+                                    c-0.6,0-1.1-0.5-1.1-1.1s0.5-1.1,1.1-1.1s1.1,0.5,1.1,1.1C21.1,16.8,20.6,17.3,19.9,17.3z')
+                                  | В корзину
+                                .add.add-remove
+                                  a(href="#")
 
-            .price-calc-wrap
-              .cart-buttons
-                .btn-item.print
-                  a(href="#").print-btn Распечатать
-                .btn-item.clear
-                  a.selection_find-clear(href='#') Очистить корзину
-              .tab_content
-                .tabs_consult.active
-                  .price
-                    span.price-name Стоимость
-                    .prices.prices-main
-                      .prices-item
-                        span.item_search-price 2.81 руб.
-                      .prices-item
-                        span.item_search-price-old 28 100 руб.
-                    .old_price
-                  .price
-                    span.price-name Скидка
-                    .prices
-                      .prices-item
-                        span.item_search-price 100.00 руб.
-                      .prices-item
-                        span.item_search-price-old 1 000 000 руб.
-                  .price.price-total
-                    span.price-name.total Итого
-                    .prices
-                      span.total-count 4 366,60 р
-                      span.total-count-old 43 666 000 р. 
-                  .cart-msg
-                    span.text Без учета доставки
-                  a(href="#",data-target='.consult_hidden').hits-stat-more.js-modal-trigger Оформить заказ
-                  a(href="#").product-oneclick.btn-width Купить в 1 клик
+              .price-calc-wrap
+                .cart-buttons
+                  .btn-item.print
+                    a(href="#").print-btn Распечатать
+                  .btn-item.clear
+                    a.selection_find-clear(href='#') Очистить корзину
+                .tab_content
+                  .tabs_consult.active
+                    .price
+                      span.price-name Стоимость
+                      .prices.prices-main
+                        .prices-item
+                          span.item_search-price 2.81 руб.
+                        .prices-item
+                          span.item_search-price-old 28 100 руб.
+                      .old_price
+                    .price
+                      span.price-name Скидка
+                      .prices
+                        .prices-item
+                          span.item_search-price 100.00 руб.
+                        .prices-item
+                          span.item_search-price-old 1 000 000 руб.
+                    .price.price-total
+                      span.price-name.total Итого
+                      .prices
+                        span.total-count 4 366,60 р
+                        span.total-count-old 43 666 000 р. 
+                    .cart-msg
+                      span.text Без учета доставки
+                    a(href="#").hits-stat-more Оформить заказ
+                    a(href="#",data-target =".oneclick_hidden").product-oneclick.btn-width.js-modal-trigger Купить в 1 клик
+            //end of tabs
+            section.discount.hits
+              h2 Хиты этой недели
+              .discount-slider.discount-hoverable
+                .slick-slider-discount-hits
+                  // slider - block
+                  .slider_block.hits-bg
+                    // discount_block hit
+                    .hits_block_wrap
+                      .hits_block
+                        .hits_status
+                          .status_item.item-new
+                            .status__item-bg
+                              span New
+                          .status_item.item-sale
+                            .status__item-bg
+                              span -10%
+                        img(src='img/promo/bike_hit.jpg', alt='#')
+                        .hits_about
+                          p.hits_name
+                            a(href='#') STELS Navigator 500 V 26 (2016)
+                          p.hits_descr
+                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                        .hits_coast
+                          p.hits_coast_new
+                            | 10 435,60 р. 
+                            span  10 435 600 р
+                          p.hits_coast
+                            | 13 435,60 р. 
+                            span  13 435 600 р
+                        .hits_tools
+                          .hits-wrap
+                            .hits_comparison.add.active
+                              a(href='#') 
+                            .hits_comparison.added
+                              a(href='#') 
+                          .hits-wrap
+                            .hits_defer.add
+                              a(href='#') 
+                            .hits_defer.added.active
+                              a(href='#') 
+                          .hits-wrap.review     
+                            .hits_review
+                              a(href='#')
+                                | Отзывы 
+                                span (18)
+                        .hits_stat
+                          p.stat_yes.active В наличии
+                          p.stat_yes.zakaz Под заказ
+                          a(href='#') Подробнее
+                  .slider_block.hits-bg
+                    .hits_block_wrap
+                      .hits_block
+                        .hits_status
+                          .status_item.item-new
+                            .status__item-bg
+                              span New
+                          .status_item.item-sale
+                            .status__item-bg
+                              span -10%
+                        img(src='img/promo/bike_hit.jpg', alt='#')
+                        .hits_about
+                          p.hits_name
+                            a(href='#') STELS Navigator 500 V 26 (2016)
+                          p.hits_descr
+                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                        .hits_coast
+                          p.hits_coast_new
+                            | 10 435,60 р. 
+                            span  10 435 600 р
+                          p.hits_coast
+                            | 13 435,60 р. 
+                            span  13 435 600 р
+                        .hits_tools
+                          .hits-wrap
+                            .hits_comparison.add.active
+                              a(href='#') 
+                            .hits_comparison.added
+                              a(href='#') 
+                          .hits-wrap
+                            .hits_defer.add
+                              a(href='#') 
+                            .hits_defer.added.active
+                              a(href='#') 
+                          .hits-wrap.review     
+                            .hits_review
+                              a(href='#')
+                                | Отзывы 
+                                span (18)
+                        .hits_stat
+                          p.stat_yes.active В наличии
+                          p.stat_yes.zakaz Под заказ
+                          a(href='#') Подробнее
+                  .slider_block.hits-bg
+                    .hits_block_wrap
+                      .hits_block
+                        .hits_status
+                          .status_item.item-new
+                            .status__item-bg
+                              span New
+                          .status_item.item-sale
+                            .status__item-bg
+                              span -10%
+                        img(src='img/promo/bike_hit.jpg', alt='#')
+                        .hits_about
+                          p.hits_name
+                            a(href='#') STELS Navigator 500 V 26 (2016)
+                          p.hits_descr
+                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                        .hits_coast
+                          p.hits_coast_new
+                            | 10 435,60 р. 
+                            span  10 435 600 р
+                          p.hits_coast
+                            | 13 435,60 р. 
+                            span  13 435 600 р
+                        .hits_tools
+                          .hits-wrap
+                            .hits_comparison.add.active
+                              a(href='#') 
+                            .hits_comparison.added
+                              a(href='#') 
+                          .hits-wrap
+                            .hits_defer.add
+                              a(href='#') 
+                            .hits_defer.added.active
+                              a(href='#') 
+                          .hits-wrap.review     
+                            .hits_review
+                              a(href='#')
+                                | Отзывы 
+                                span (18)
+                        .hits_stat
+                          p.stat_yes.active В наличии
+                          p.stat_yes.zakaz Под заказ
+                          a(href='#') Подробнее
+                  .slider_block.hits-bg
+                    .hits_block_wrap
+                      .hits_block
+                        .hits_status
+                          .status_item.item-new
+                            .status__item-bg
+                              span New
+                          .status_item.item-sale
+                            .status__item-bg
+                              span -10%
+                        img(src='img/promo/bike_hit.jpg', alt='#')
+                        .hits_about
+                          p.hits_name
+                            a(href='#') STELS Navigator 500 V 26 (2016)
+                          p.hits_descr
+                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                        .hits_coast
+                          p.hits_coast_new
+                            | 10 435,60 р. 
+                            span  10 435 600 р
+                          p.hits_coast
+                            | 13 435,60 р. 
+                            span  13 435 600 р
+                        .hits_tools
+                          .hits-wrap
+                            .hits_comparison.add.active
+                              a(href='#') 
+                            .hits_comparison.added
+                              a(href='#') 
+                          .hits-wrap
+                            .hits_defer.add
+                              a(href='#') 
+                            .hits_defer.added.active
+                              a(href='#') 
+                          .hits-wrap.review     
+                            .hits_review
+                              a(href='#')
+                                | Отзывы 
+                                span (18)
+                        .hits_stat
+                          p.stat_yes.active В наличии
+                          p.stat_yes.zakaz Под заказ
+                          a(href='#') Подробнее
+                  .slider_block.hits-bg
+                    .hits_block_wrap
+                      .hits_block
+                        .hits_status
+                          .status_item.item-new
+                            .status__item-bg
+                              span New
+                          .status_item.item-sale
+                            .status__item-bg
+                              span -10%
+                        img(src='img/promo/bike_hit.jpg', alt='#')
+                        .hits_about
+                          p.hits_name
+                            a(href='#') STELS Navigator 500 V 26 (2016)
+                          p.hits_descr
+                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                        .hits_coast
+                          p.hits_coast_new
+                            | 10 435,60 р. 
+                            span  10 435 600 р
+                          p.hits_coast
+                            | 13 435,60 р. 
+                            span  13 435 600 р
+                        .hits_tools
+                          .hits-wrap
+                            .hits_comparison.add.active
+                              a(href='#') 
+                            .hits_comparison.added
+                              a(href='#') 
+                          .hits-wrap
+                            .hits_defer.add
+                              a(href='#') 
+                            .hits_defer.added.active
+                              a(href='#') 
+                          .hits-wrap.review     
+                            .hits_review
+                              a(href='#')
+                                | Отзывы 
+                                span (18)
+                        .hits_stat
+                          p.stat_yes.active В наличии
+                          p.stat_yes.zakaz Под заказ
+                          a(href='#') Подробнее
+                  .slider_block.hits-bg
+                    .hits_block_wrap
+                      .hits_block
+                        .hits_status
+                          .status_item.item-new
+                            .status__item-bg
+                              span New
+                          .status_item.item-sale
+                            .status__item-bg
+                              span -10%
+                        img(src='img/promo/bike_hit.jpg', alt='#')
+                        .hits_about
+                          p.hits_name
+                            a(href='#') STELS Navigator 500 V 26 (2016)
+                          p.hits_descr
+                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                        .hits_coast
+                          p.hits_coast_new
+                            | 10 435,60 р. 
+                            span  10 435 600 р
+                          p.hits_coast
+                            | 13 435,60 р. 
+                            span  13 435 600 р
+                        .hits_tools
+                          .hits-wrap
+                            .hits_comparison.add.active
+                              a(href='#') 
+                            .hits_comparison.added
+                              a(href='#') 
+                          .hits-wrap
+                            .hits_defer.add
+                              a(href='#') 
+                            .hits_defer.added.active
+                              a(href='#') 
+                          .hits-wrap.review     
+                            .hits_review
+                              a(href='#')
+                                | Отзывы 
+                                span (18)
+                        .hits_stat
+                          p.stat_yes.active В наличии
+                          p.stat_yes.zakaz Под заказ
+                          a(href='#') Подробнее
+                  .slider_block.hits-bg
+                    .hits_block_wrap
+                      .hits_block
+                        .hits_status
+                          .status_item.item-new
+                            .status__item-bg
+                              span New
+                          .status_item.item-sale
+                            .status__item-bg
+                              span -10%
+                        img(src='img/promo/bike_hit.jpg', alt='#')
+                        .hits_about
+                          p.hits_name
+                            a(href='#') STELS Navigator 500 V 26 (2016)
+                          p.hits_descr
+                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                        .hits_coast
+                          p.hits_coast_new
+                            | 10 435,60 р. 
+                            span  10 435 600 р
+                          p.hits_coast
+                            | 13 435,60 р. 
+                            span  13 435 600 р
+                        .hits_tools
+                          .hits-wrap
+                            .hits_comparison.add.active
+                              a(href='#') 
+                            .hits_comparison.added
+                              a(href='#') 
+                          .hits-wrap
+                            .hits_defer.add
+                              a(href='#') 
+                            .hits_defer.added.active
+                              a(href='#') 
+                          .hits-wrap.review     
+                            .hits_review
+                              a(href='#')
+                                | Отзывы 
+                                span (18)
+                        .hits_stat
+                          p.stat_yes.active В наличии
+                          p.stat_yes.zakaz Под заказ
+                          a(href='#') Подробнее
+            section.discount.themed
+              h2 Ранее просмотренные
+              .discount-slider
+                .slick-slider-discount-themed
+                  // slider - block
+                  .slider_block
+                    // block themed
+                    .themed_block
+                      img(src='img/promo/themed101.jpg', alt='#')
+                      p.themed_name
+                        a(href='#') Каталка Полесье Боби [5434]
+                      p.themed_cat Машинки
+                      p.themed_coast 435,60 р.
+                  // slider - block
+                  .slider_block
+                    // block themed
+                    .themed_block
+                      img(src='img/promo/themed101.jpg', alt='#')
+                      p.themed_name
+                        a(href='#') Lego technick
+                      p.themed_cat Конструкторы
+                      p.themed_coast 1 027,00 р.
+                  // slider - block
+                  .slider_block
+                    // block themed
+                    .themed_block
+                      img(src='img/promo/themed101.jpg', alt='#')
+                      p.themed_name
+                        a(href='#') Мягкая игрушка Hasbro Игривый щенок [B0449]
+                      p.themed_cat Мягкие игрушки
+                      p.themed_coast 3 798,00 р.
+                  // slider - block
+                  .slider_block
+                    // block themed
+                    .themed_block
+                      img(src='img/promo/themed101.jpg', alt='#')
+                      p.themed_name
+                        a(href='#') Батут Sundays MOD1 252см - 8ft
+                      p.themed_cat Батуты
+                      p.themed_coast 6 435,60 р.
+                  // slider - block
+                  .slider_block
+                    // block themed
+                    .themed_block
+                      img(src='img/promo/themed101.jpg', alt='#')
+                      p.themed_name
+                        a(href='#') Кукла Simba Animal Doctor (105737393)
+                      p.themed_cat Куклы
+                      p.themed_coast 1,60 р.
+                  // slider - block
+                  .slider_block
+                    // block themed
+                    .themed_block
+                      img(src='img/promo/themed101.jpg', alt='#')
+                      p.themed_name
+                        a(href='#') Телескоп Sky-Watcher BK 767AZ1
+                      p.themed_cat Телескопы
+                      p.themed_coast 35,60 р. 
+                  // slider - block
+                  .slider_block
+                    // block themed
+                    .themed_block
+                      img(src='img/promo/themed101.jpg', alt='#')
+                      p.themed_name
+                        a(href='#') Самокат Sundays SA-401
+                      p.themed_cat Самокаты
+                      p.themed_coast 135,60 р. 
+                  // slider - block
+                  .slider_block
+                    // block themed
+                    .themed_block
+                      img(src='img/promo/themed101.jpg', alt='#')
+                      p.themed_name
+                        a(href='#') Каталка Полесье Боби [5434]
+                      p.themed_cat Машинки
+                      p.themed_coast 435,60 р.
 
 
       .mask-js

@@ -36,6 +36,8 @@ var Comparescroll = function(){
 	})
 }
 Comparescroll();
+
+
 $(function() {
 
 //main-mobile menu
@@ -1023,17 +1025,15 @@ var clearItems = function(block){
 	}
 }
 
- if($('.product-describe-buy').length){
-
 	var selectProduct = function(select){
 
 		var btn = $('.js-select-toggle');
 
 		btn.each(function(){
 			var item = $(this);
-
-			item.click(function(){
-
+			
+			item.click(function(event){
+				event.preventDefault();
 				var _ = $(this),
 					inp = _.parent().find('input'),
 					clr = _.parent().find('.js-clear'),
@@ -1085,7 +1085,6 @@ var clearItems = function(block){
 
 	}
 	selectProduct();
-	}
 //number plus/minus
 function number() {
 	var number = $('.js-number');

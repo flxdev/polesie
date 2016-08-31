@@ -1,0 +1,448 @@
+doctype html
+//if lt IE 7 
+  html.ie.ie6(lang='en')  
+//if IE 7 
+  html.ie.ie7(lang='en')  
+//if IE 8 
+  html.ie.ie8(lang='en')  
+// [if (gte IE 9)|!(IE)] <!
+html(lang='ru')
+  // <![endif]
+  head
+    include ./includes/_head.jade
+  body
+    #wrap
+      // header
+      include ./includes/_headmenu.jade
+
+      .content_main-wrapper
+        section
+          ul.breadcrums
+              a.home-btn(href="#")
+                  i.home-img
+                      svg#Layer_home(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='9px', y='5px', viewbox='0 0 14.1 13', style='enable-background:new 0 0 14.1 13;', xml:space='preserve')
+                        style(type='text/css').
+                          .sthome{fill-rule:evenodd;clip-rule:evenodd;fill:#989898;}
+                        path.sthome(d='M7.1,0l4.8,4.1L14,5.8c0,0,0.2,0.4,0,0.7c-0.3,0.4-0.8,0.2-0.8,0.2l-0.5-0.2v5.8c0,0.3-0.3,0.6-0.6,0.6h-3V8h-4\
+                        v5h-3c-0.3,0-0.6-0.3-0.6-0.6V6.6L0.9,6.8c0,0-0.6,0-0.8-0.2c-0.2-0.3,0-0.9,0-0.9l2-1.6L7.1,0z')
+              li.bread-item
+                  a(href="#") Спорт и туризм
+                  .bread-arrow
+                      svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                        style(type='text/css').
+                          .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                        path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                  .bread__add-menu-wrap
+                    .bread__add-container
+                      ul.add-list
+                        li.add-list-item
+                          a(href="#") Товары для детей
+                        li.add-list-item
+                          a(href="#") Мода и красота
+                        li.add-list-item
+                          a(href="#") Электроника и техника
+                        li.add-list-item
+                          a(href="#") Всякие гадости
+                  
+              li.bread-item
+                a(href="#") Спорт и туризм
+                i.bread-arrow
+                    svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                      style(type='text/css').
+                        .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                      path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                .bread__add-menu-wrap
+                  .bread__add-container
+                    ul.add-list
+                      li.add-list-item
+                        a(href="#") Товары для детей
+                      li.add-list-item
+                        a(href="#") Мода и красота
+                      li.add-list-item
+                        a(href="#") Электроника и техника
+                      li.add-list-item
+                        a(href="#") Ldt jlbyflwfnbrkfccybws rrr
+              li.bread-item
+                  a(href="#") Спорт и туризм
+        section
+          h1.section-title Оформление заказа
+          .section__wrapper
+            .offer-container
+              .offer-inner
+                .offer-head
+                  span Ваш заказ
+                  .btn-item.print
+                    a(href="#").print-btn Редактировать
+                .offer-cont-outer
+                  .offer-cont-main
+                    .offer-cont-inner
+                      .offer-item
+                        .offer-img
+                          img(src='img/promo/bike_hit.jpg', alt='#')
+                        .elem-name
+                          p.hits_name
+                            a(href='#') STELS Navigator 500 V 26 (2016) sdgfsdfds sdfsdf sdfdf sdfsd
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          .hits_coast
+                            p
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                      .offer-item
+                        .offer-img
+                          img(src='img/promo/bike_hit.jpg', alt='#')
+                        .elem-name
+                          p.hits_name
+                            a(href='#') STELS Navigator 500 V 26 (2016) sdgfsdfds sdfsdf sdfdf sdfsd
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          .hits_coast
+                            p
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                      .offer-item
+                        .offer-img
+                          img(src='img/promo/bike_hit.jpg', alt='#')
+                        .elem-name
+                          p.hits_name
+                            a(href='#') STELS Navigator 500 V 26 (2016) sdgfsdfds sdfsdf sdfdf sdfsd
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          .hits_coast
+                            p
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                      .offer-item
+                        .offer-img
+                          img(src='img/promo/bike_hit.jpg', alt='#')
+                        .elem-name
+                          p.hits_name
+                            a(href='#') STELS Navigator 500 V 26 (2016) sdgfsdfds sdfsdf sdfdf sdfsd
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          .hits_coast
+                            p
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                      .offer-item
+                        .offer-img
+                          img(src='img/promo/bike_hit.jpg', alt='#')
+                        .elem-name
+                          p.hits_name
+                            a(href='#') STELS Navigator 500 V 26 (2016) sdgfsdfds sdfsdf sdfdf sdfsd
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          p.elem-attr
+                            span.val.val-name Цвет:
+                            span.val.val-val черный
+                          .hits_coast
+                            p
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                .price-calc-wrap.offer-total
+                  .price
+                    span.price-name Стоимость
+                    .prices.prices-main
+                      .prices-item
+                        span.item_search-price 2.81 руб.
+                        span.item_search-price-old 28 100 руб.
+                    .old_price
+                  .price
+                    span.price-name Скидка
+                    .prices
+                      .prices-item
+                        span.item_search-price 100.00 руб.
+                        span.item_search-price-old 1 000 000 руб.
+                  .price
+                    span.price-name Доставка
+                    .prices
+                      .prices-item
+                        span.item_search-price 100.00 руб.
+                        span.item_search-price-old 1 000 000 руб.
+                .price-calc-wrap.offer-total
+                  .price.price-total
+                    span.price-name Итого
+                    .prices
+                      .prices-item
+                        span.item_search-price.total 100.00 руб.
+                        span.item_search-price-old 1 000 000 руб.
+            // тут нужен .checkout-content. больше нигде
+            .section__content.checkout-content
+              .offer-form-inner
+                .product_tabs-wrapper
+                   #brand.wrap_brand
+                      .tabs
+                        span.tab Покупаю впервые
+                        span.tab Уже покупал(а)
+                      #tab_item.tab_content
+                        .tab_item
+                          .tab-form-wrapper
+                             form(action="/").form-feed
+                              .form-block
+                                .form-block-title
+                                  |Заполните контактную информацию
+                                .form-block-content
+                                  ul.select-u-body
+                                    li.select-u-item
+                                      label.input_label
+                                        span.input_main
+                                          input.input-real(name = 'who', type="radio", value = 'fiz')
+                                          span.input-checked
+                                        span.input-text Физической лицо
+                                    li.select-u-item
+                                      label.input_label
+                                        span.input_main
+                                          input.input-real(name = 'who', type="radio", value = 'jur')
+                                          span.input-checked
+                                        span.input-text Юридическое лицо
+                                  .wrapper-who.wrapper-fiz
+                                    .input-wrapper
+                                      label.input-label 
+                                        span.text Ваше имя
+                                      input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович')
+                                    .input-wrapper
+                                      label.input-label 
+                                        span.text E-mail
+                                      input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com')
+                                    .input-wrapper
+                                      label.input-label 
+                                        span.text Телефон
+                                      input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00')
+                                  .wrapper-who.wrapper-jur
+                                    .input-wrapper
+                                      label.input-label 
+                                        span.text Название компании
+                                      input.input-main.input-from(type='text',name="", placeholder = 'ООО «Юнитрейд»')
+                                    .input-wrapper
+                                      label.input-label 
+                                        span.text Контактное илцо
+                                      input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович')
+                                    .input-wrapper
+                                      label.input-label 
+                                        span.text УНП
+                                      input.input-main.input-from(type='number',name="", placeholder = '1475854')
+                                    .input-wrapper
+                                      label.input-label 
+                                        span.text E-mail
+                                      input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com')
+                                    .input-wrapper
+                                      label.input-label 
+                                        span.text Телефон
+                                      input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00')
+                              .form-block
+                                .form-block-title
+                                  |Выберите тип доставки
+                                .form-block-content
+                                  .input-wrapper
+                                    label.input-label 
+                                      span.text Доставка
+                                      .select-check
+                                        button.selects.js-select-toggle(data-placeholder = 'Способ доставки')
+                                          span Способ доставки
+                                          i.select-img
+                                            svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 7 11', height='12px',width = '8px',style='enable-background:new 0 0 7 11;', xml:space='preserve')
+                                              g
+                                                g
+                                                  path(d='M3.5,0L0,4h7L3.5,0z M3.5,11L7,7H0L3.5,11z')
+                                        .select-list
+                                          .select-list-inner
+                                            label.option
+                                              input(type="radio",name='select1',value ='Курьер') 
+                                              span Курьер
+                                            label.option
+                                              input(type="radio",name='select1',value ='Самовывоз') 
+                                              span Самовывоз
+
+                                  .wrapper-who.wrapper-fiz
+                                    .offer-msg
+                                      .offer-icon
+                                        svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 18 18', style='enable-background:new 0 0 18 18;', xml:space='preserve')
+                                          style(type='text/css').
+                                            .sticon{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}
+                                          g
+                                            g
+                                              path.sticon(d='M9,0C4,0,0,4,0,9c0,5,4,9,9,9c5,0,9-4,9-9C18,4,14,0,9,0z M9,17c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8\
+                                              c4.4,0,8,3.6,8,8C17,13.4,13.4,17,9,17z M7.4,13.5h1.8l1.5-6.8H8.9L7.4,13.5z M10.3,3.9c-0.5,0-1.2,0.4-1.2,1.2\
+                                              C9.1,5.6,9.5,6,10,6c0.5,0,1.2-0.4,1.2-1.2C11.2,4.3,10.8,3.9,10.3,3.9z')
+                                      .offer-text
+                                        p Стоимость доставки в Минск и Минскую область составляет 12,00 р. (120 000 р.). 
+                                        p При заказе от 500 р. (5 000 000 р.) доставка осуществляется бесплатно.
+                                    .input-wrapper
+                                      label.input-label 
+                                        span.text Область
+                                        .select-check
+                                          button.selects.js-select-toggle(data-placeholder = 'Выберите область')
+                                            span Выберите область
+                                            i.select-img
+                                              svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 7 11', height='12px',width = '8px',style='enable-background:new 0 0 7 11;', xml:space='preserve')
+                                                g
+                                                  g
+                                                    path(d='M3.5,0L0,4h7L3.5,0z M3.5,11L7,7H0L3.5,11z')
+                                          .select-list
+                                            .select-list-inner
+                                              label.option
+                                                input(type="radio",name='selectOblasy',value ='Минск, минская область')
+                                                span Минск, минская область
+                                              label.option
+                                                input(type="radio",name='selectOblasy',value ='Брест, Брестская область') 
+                                                span Брест, Брестская область
+                                              label.option
+                                                input(type="radio",name='selectOblasy',value ='Могилев, Могилевская область') 
+                                                span Могилев, Могилевская область
+                                              label.option
+                                                input(type="radio",name='selectOblasy',value ='Могилев, Могилевская область') 
+                                                span Могилев, Могилевская область
+                                              label.option
+                                                input(type="radio",name='selectOblasy',value ='Могилев, Могилевская область') 
+                                                span Могилев, Могилевская область
+                                    .input-wrapper
+                                      label.input-label 
+                                        span.text Город
+                                      input.input-main.input-from(type='text',name="", placeholder = 'Минск')
+                                    .input-wrapper
+                                      label.input-label 
+                                        span.text Улица
+                                      input.input-main.input-from(type='text',name="", placeholder = 'Улица')
+                                    .input-wrapper
+                                      .home-wrap
+                                        label.input-label
+                                          span.text Дом
+                                        input.input-main.input-from(type='text',name="", placeholder = 'Дом')
+                                      .home-wrap
+                                        label.input-label
+                                          span.text Корпус
+                                        input.input-main.input-from(type='text',name="", placeholder = 'Корпус')
+                                      .home-wrap
+                                        label.input-label
+                                          span.text Офис
+                                        input.input-main.input-from(type='text',name="", placeholder = 'Офис')
+  
+                                  .wrapper-who.wrapper-jur
+                                    .offer-msg
+                                      .offer-icon
+                                        svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 18 18', style='enable-background:new 0 0 18 18;', xml:space='preserve')
+                                          style(type='text/css').
+                                            .sticon{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}
+                                          g
+                                            g
+                                              path.sticon(d='M9,0C4,0,0,4,0,9c0,5,4,9,9,9c5,0,9-4,9-9C18,4,14,0,9,0z M9,17c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8\
+                                              c4.4,0,8,3.6,8,8C17,13.4,13.4,17,9,17z M7.4,13.5h1.8l1.5-6.8H8.9L7.4,13.5z M10.3,3.9c-0.5,0-1.2,0.4-1.2,1.2\
+                                              C9.1,5.6,9.5,6,10,6c0.5,0,1.2-0.4,1.2-1.2C11.2,4.3,10.8,3.9,10.3,3.9z')
+                                      .offer-text
+                                        p Пункт самовывоза находится по адресу: Брестская область, г. Кобрин,  ул. Советская 141
+                              .form-block
+                                .form-block-title
+                                  |Выберите способ оплаты
+                                .form-block-content
+                                  ul.select-u-body
+                                    li.select-u-item
+                                      label.input_label
+                                        span.input_main
+                                          input.input-real(name = 'payment', type="radio", value = 'nal')
+                                          span.input-checked
+                                        span.input-text Наличные
+                                    .cards-wrapper
+                                      .select-u-item
+                                        label.input_label
+                                          span.input_main
+                                            input.input-real(name = 'payment', type="radio", value = 'electron')
+                                            span.input-checked
+                                          span.input-text Электронный платеж
+                                            br
+                                            | банковской картой
+                                        .payment-cards
+                                          .card
+                                            img(src='img/promo/cart3.jpg', alt='MasterCard')
+                                          .card
+                                            img(src='img/promo/cart4.jpg', alt='Maestro')
+                                          .card
+                                            img(src='img/promo/cart5.jpg', alt='VISA')
+                                          .card
+                                            img(src='img/promo/cart-bel.jpg', alt='BelCard')
+                              .form-block
+                                .form-block-title
+                                  | Оставьте комментарий
+                                .form-block-content
+                                  .input-wrapper
+                                    label.input-label 
+                                      span Комментарий
+                                    textarea.input-main.input-small(name="", rows="3", placeholder = 'Ваши пожелания к заказу')
+
+                              button.hits-stat-more(type="submit",) Подтвердить заказ
+                        .tab_item
+                          .tab-form-wrapper
+                             form(action="/").form-feed
+                              .form-block
+                                .form-block-title
+                                  |Заполните регистра- ционные данные
+                                .form-block-content
+                                  .wrapper-who.wrapper-fiz
+                                    .input-wrapper
+                                      label.input-label 
+                                        span.text E-mail
+                                      input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com')
+                                    .input-wrapper
+                                      label.input-label 
+                                        span.text Пароль
+                                      input.input-main.input-from(type='password',name="", placeholder = 'Пароль')
+                                      a(href="#").forgot-pass Забыли пароль?
+                              button.hits-stat-more.enter-btn(type="submit") Войти
+
+
+
+
+
+
+            
+
+      .mask-js
+      // footer
+      include ./includes/_footer.jade
+    include ./includes/_index-modals.jade
