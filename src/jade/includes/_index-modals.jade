@@ -287,6 +287,48 @@
           span Сообщение
         textarea.input-main.input-small(name="", rows="3", placeholder = 'Оставьте сообщение')
       input.hits-stat-more(type="submit", placeholder = 'Отправить',data-target=".success_hidden").js-modal-trigger.button_close
+.login_hidden.hidden_bg
+  .hidden-block
+    .hidden-block-close.button_close
+    h2.hidden-title Личный кабинет
+    .tab-form-wrapper
+       form(action="/").form-feed
+        .form-block
+          .form-block-content
+            .input-wrapper
+              label.input-label 
+                span.text E-mail
+              input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com')
+            .input-wrapper
+              label.input-label 
+                span.text Пароль
+              input.input-main.input-from(type='password',name="", placeholder = 'Пароль')
+              a(href="#",data-target=".password_hidden").forgot-pass.js-modal-trigger.button_close Забыли пароль?
+        button.hits-stat-more.enter-btn(type="submit") Войти
+.password_hidden.hidden_bg
+  .hidden-block
+    .hidden-block-close.button_close
+    h2.hidden-title Восстановление пароля     
+    .tab-form-wrapper
+       form(action="", name='pass-forgotten').form-feed.js-form-email
+        .form-block
+          .form-block-content
+            .input-text Изменение пароля будет возможно после того, как вы перейдете по ссылке, которая будет отправлена вам на указанный e-mail
+            .input-wrapper
+              label.input-label 
+                span.text E-mail
+              input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com' ,data-validation="email")
+        input.hits-stat-more.enter-btn.js-modal-trigger(type="submit", value = 'Отправить',data-target=".password-succes_hidden")
+.password-succes_hidden.hidden_bg
+  .hidden-block
+    .hidden-block-close.button_close
+    h2.hidden-title Восстановление пароля   
+    .tab-form-wrapper
+      .form-feed
+        .form-block
+          .form-block-content
+            .input-text В течение 5 минут на указанный e-mail будет выслано письмо с вашими регистрационными данными
+        button.hits-stat-more.button_close Закрыть
 
 
 

@@ -363,7 +363,11 @@ html(lang='ru')
                                         label.input-label
                                           span.text Офис
                                         input.input-main.input-from(type='text',name="", placeholder = 'Офис')
-  
+                                      //  
+                                        .home-wrap
+                                          label.input-label
+                                            span.text Квартира
+                                          input.input-main.input-from(type='text',name="", placeholder = 'Квартира')  
                                   .wrapper-who.wrapper-jur
                                     .offer-msg
                                       .offer-icon
@@ -415,25 +419,45 @@ html(lang='ru')
                                       span Комментарий
                                     textarea.input-main.input-small(name="", rows="3", placeholder = 'Ваши пожелания к заказу')
 
-                              button.hits-stat-more(type="submit",) Подтвердить заказ
+                              button.hits-stat-more(type="submit") Подтвердить заказ
                         .tab_item
-                          .tab-form-wrapper
+                          .tab-form-wrapper.js-form-login
                              form(action="/").form-feed
                               .form-block
                                 .form-block-title
                                   |Заполните регистра- ционные данные
                                 .form-block-content
-                                  .wrapper-who.wrapper-fiz
-                                    .input-wrapper
-                                      label.input-label 
-                                        span.text E-mail
-                                      input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com')
-                                    .input-wrapper
-                                      label.input-label 
-                                        span.text Пароль
-                                      input.input-main.input-from(type='password',name="", placeholder = 'Пароль')
-                                      a(href="#").forgot-pass Забыли пароль?
+                                  .input-wrapper
+                                    label.input-label 
+                                      span.text E-mail
+                                    input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com')
+                                  .input-wrapper
+                                    label.input-label 
+                                      span.text Пароль
+                                    input.input-main.input-from(type='password',name="", placeholder = 'Пароль')
+                                    a(href="#").forgot-pass Забыли пароль?
                               button.hits-stat-more.enter-btn(type="submit") Войти
+                          .tab-form-wrapper.js-forgoten-pass-wrap
+                             form(action="", name='pass-forgotten').form-feed.js-form-email
+                              .form-block
+                                .form-block-title
+                                  |Восстановление пароля
+                                .form-block-content
+                                  .input-text Изменение пароля будет возможно после того, как вы перейдете по ссылке, которая будет отправлена вам на указанный e-mail
+                                  .input-wrapper
+                                    label.input-label 
+                                      span.text E-mail
+                                    input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com' ,data-validation="email")
+                              input.hits-stat-more.enter-btn(type="submit", value = 'Отправить')
+                          .tab-form-wrapper.js-forgoten-pass-succes
+                            .form-feed
+                              .form-block
+                                .form-block-title
+                                  |Восстановление пароля
+                                .form-block-content
+                                  .input-text В течение 5 минут на указанный e-mail будет выслано письмо с вашими регистрационными данными
+                              button.hits-stat-more.enter-btn Закрыть
+
 
 
 

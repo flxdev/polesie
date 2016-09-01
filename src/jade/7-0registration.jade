@@ -1,0 +1,289 @@
+doctype html
+//if lt IE 7 
+  html.ie.ie6(lang='en')  
+//if IE 7 
+  html.ie.ie7(lang='en')  
+//if IE 8 
+  html.ie.ie8(lang='en')  
+// [if (gte IE 9)|!(IE)] <!
+html(lang='ru')
+  // <![endif]
+  head
+    include ./includes/_head.jade
+  body
+    #wrap
+      // header
+      include ./includes/_headmenu.jade
+
+      .content_main-wrapper
+        section
+          ul.breadcrums
+              a.home-btn(href="#")
+                  i.home-img
+                      svg#Layer_home(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='9px', y='5px', viewbox='0 0 14.1 13', style='enable-background:new 0 0 14.1 13;', xml:space='preserve')
+                        style(type='text/css').
+                          .sthome{fill-rule:evenodd;clip-rule:evenodd;fill:#989898;}
+                        path.sthome(d='M7.1,0l4.8,4.1L14,5.8c0,0,0.2,0.4,0,0.7c-0.3,0.4-0.8,0.2-0.8,0.2l-0.5-0.2v5.8c0,0.3-0.3,0.6-0.6,0.6h-3V8h-4\
+                        v5h-3c-0.3,0-0.6-0.3-0.6-0.6V6.6L0.9,6.8c0,0-0.6,0-0.8-0.2c-0.2-0.3,0-0.9,0-0.9l2-1.6L7.1,0z')
+              li.bread-item
+                  a(href="#") Спорт и туризм
+                  .bread-arrow
+                      svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                        style(type='text/css').
+                          .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                        path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                  .bread__add-menu-wrap
+                    .bread__add-container
+                      ul.add-list
+                        li.add-list-item
+                          a(href="#") Товары для детей
+                        li.add-list-item
+                          a(href="#") Мода и красота
+                        li.add-list-item
+                          a(href="#") Электроника и техника
+                        li.add-list-item
+                          a(href="#") Всякие гадости
+                  
+              li.bread-item
+                a(href="#") Спорт и туризм
+                i.bread-arrow
+                    svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                      style(type='text/css').
+                        .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                      path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                .bread__add-menu-wrap
+                  .bread__add-container
+                    ul.add-list
+                      li.add-list-item
+                        a(href="#") Товары для детей
+                      li.add-list-item
+                        a(href="#") Мода и красота
+                      li.add-list-item
+                        a(href="#") Электроника и техника
+                      li.add-list-item
+                        a(href="#") Ldt jlbyflwfnbrkfccybws rrr
+              li.bread-item
+                  a(href="#") Спорт и туризм
+        section
+          h1.section-title Регистрация
+          .section__wrapper
+            .offer-container.registration-container
+              .offer-inner
+                .offer-head
+                  span Есть созданный аккаунт?
+                p.offer-text Если вы ранее уже делали покупки или создавали учетную запись, войдите в личный кабинет для просмотра персональной информации 
+                  br
+                  |и истории заказов
+                a.hits-stat-more.js-modal-trigger(href='#',data-target='.login_hidden') Войти
+            // тут нужен .checkout-content. 
+            .section__content.checkout-content
+              .offer-form-inner
+                .product_tabs-wrapper  
+                  .tab-form-wrapper
+                     form(action="/").form-feed
+                      .form-block
+                        .form-block-title
+                          |Заполните контактную информацию
+                        .form-block-content
+                          ul.select-u-body
+                            li.select-u-item
+                              label.input_label
+                                span.input_main
+                                  input.input-real(name = 'who', type="radio", value = 'fiz')
+                                  span.input-checked
+                                span.input-text Физической лицо
+                            li.select-u-item
+                              label.input_label
+                                span.input_main
+                                  input.input-real(name = 'who', type="radio", value = 'jur')
+                                  span.input-checked
+                                span.input-text Юридическое лицо
+                          .wrapper-who.wrapper-fiz
+                            .input-wrapper
+                              label.input-label 
+                                span.text Ваше имя
+                              input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович')
+                            .input-wrapper
+                              label.input-label 
+                                span.text E-mail
+                              input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com')
+                            .input-wrapper
+                              label.input-label 
+                                span.text Телефон
+                              input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00')
+                            .input-wrapper
+                              label.input-label 
+                                span.text Область
+                                .select-check
+                                  button.selects.js-select-toggle(data-placeholder = 'Выберите область')
+                                    span Выберите область
+                                    i.select-img
+                                      svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 7 11', height='12px',width = '8px',style='enable-background:new 0 0 7 11;', xml:space='preserve')
+                                        g
+                                          g
+                                            path(d='M3.5,0L0,4h7L3.5,0z M3.5,11L7,7H0L3.5,11z')
+                                  .select-list
+                                    .select-list-inner
+                                      label.option
+                                        input(type="radio",name='selectOblasy',value ='Минск, минская область')
+                                        span Минск, минская область
+                                      label.option
+                                        input(type="radio",name='selectOblasy',value ='Брест, Брестская область') 
+                                        span Брест, Брестская область
+                                      label.option
+                                        input(type="radio",name='selectOblasy',value ='Могилев, Могилевская область') 
+                                        span Могилев, Могилевская область
+                                      label.option
+                                        input(type="radio",name='selectOblasy',value ='Могилев, Могилевская область') 
+                                        span Могилев, Могилевская область
+                                      label.option
+                                        input(type="radio",name='selectOblasy',value ='Могилев, Могилевская область') 
+                                        span Могилев, Могилевская область
+                            .input-wrapper
+                              label.input-label 
+                                span.text Город
+                              input.input-main.input-from(type='text',name="", placeholder = 'Минск')
+                            .input-wrapper
+                              label.input-label 
+                                span.text Улица
+                              input.input-main.input-from(type='text',name="", placeholder = 'Улица')
+                            .input-wrapper
+                              .home-wrap
+                                label.input-label
+                                  span.text Дом
+                                input.input-main.input-from(type='text',name="", placeholder = 'Дом')
+                              .home-wrap
+                                label.input-label
+                                  span.text Корпус
+                                input.input-main.input-from(type='text',name="", placeholder = 'Корпус')
+                              .home-wrap
+                                label.input-label
+                                  span.text Квартира
+                                input.input-main.input-from(type='text',name="", placeholder = 'Квартира')
+                          //для юр лиц   
+                          .wrapper-who.wrapper-jur
+                            .input-wrapper
+                              label.input-label 
+                                span.text Название компании
+                              input.input-main.input-from(type='text',name="", placeholder = 'ООО «Юнитрейд»')
+                            .input-wrapper
+                              label.input-label 
+                                span.text Контактное илцо
+                              input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович')
+                            .input-wrapper
+                              label.input-label 
+                                span.text E-mail
+                              input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com')
+                            .input-wrapper
+                              label.input-label 
+                                span.text УНП
+                              input.input-main.input-from(type='number',name="", placeholder = '1475854')
+                            .input-wrapper
+                              label.input-label 
+                                span.text Телефон
+                              input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00')
+                            .input-wrapper
+                              label.input-label 
+                                span.text Область
+                                .select-check
+                                  button.selects.js-select-toggle(data-placeholder = 'Выберите область')
+                                    span Выберите область
+                                    i.select-img
+                                      svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 7 11', height='12px',width = '8px',style='enable-background:new 0 0 7 11;', xml:space='preserve')
+                                        g
+                                          g
+                                            path(d='M3.5,0L0,4h7L3.5,0z M3.5,11L7,7H0L3.5,11z')
+                                  .select-list
+                                    .select-list-inner
+                                      label.option
+                                        input(type="radio",name='selectOblasy',value ='Минск, минская область')
+                                        span Минск, минская область
+                                      label.option
+                                        input(type="radio",name='selectOblasy',value ='Брест, Брестская область') 
+                                        span Брест, Брестская область
+                                      label.option
+                                        input(type="radio",name='selectOblasy',value ='Могилев, Могилевская область') 
+                                        span Могилев, Могилевская область
+                                      label.option
+                                        input(type="radio",name='selectOblasy',value ='Могилев, Могилевская область') 
+                                        span Могилев, Могилевская область
+                                      label.option
+                                        input(type="radio",name='selectOblasy',value ='Могилев, Могилевская область') 
+                                        span Могилев, Могилевская область
+                            .input-wrapper
+                              label.input-label 
+                                span.text Город
+                              input.input-main.input-from(type='text',name="", placeholder = 'Минск')
+                            .input-wrapper
+                              label.input-label 
+                                span.text Улица
+                              input.input-main.input-from(type='text',name="", placeholder = 'Улица')
+                            .input-wrapper
+                              .home-wrap
+                                label.input-label
+                                  span.text Дом
+                                input.input-main.input-from(type='text',name="", placeholder = 'Дом')
+                              .home-wrap
+                                label.input-label
+                                  span.text Корпус
+                                input.input-main.input-from(type='text',name="", placeholder = 'Корпус')
+                              .home-wrap
+                                label.input-label
+                                  span.text Офис
+                                input.input-main.input-from(type='text',name="", placeholder = 'Офис')
+                      .form-block
+                        .form-block-title
+                          |Придумайте пароль
+                        .form-block-content
+                          .input-wrapper
+                              label.input-label 
+                                span.text Пароль
+                              input.input-main.input-from(type='password',name="")
+                          .input-wrapper
+                              label.input-label 
+                                span.text Повторите пароль
+                              input.input-main.input-from(type='password',name="")
+                      .form-block
+                        .form-block-title
+                          | Введите проверочный код
+                        .form-block-content.form-robot-validation
+                          .form-col
+                            .input-wrapper
+                                input.input-main.input-from(type='text')
+                          //капчу сюда, верстаю только кнопку
+                          .form-col
+                            .capcha-container
+                            .capcha-btn
+                              svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='19px', height='22px', viewbox='0 0 19 22', style='enable-background:new 0 0 19 22;', xml:space='preserve')
+                                style(type='text/css').
+                                  .stcapcha{fill-rule:evenodd;clip-rule:evenodd;fill:#9D9C9C;}
+                                g
+                                  g
+                                    path.stcapcha(d='M9.8,3.4l2.5-2.4c0.2-0.2,0.2-0.6,0-0.8c-0.2-0.2-0.6-0.2-0.8,0L8,3.6C7.8,3.8,7.8,4.2,8,4.4l3.5,3.4\
+                                    C11.6,7.9,11.7,8,11.9,8s0.3-0.1,0.4-0.2c0.2-0.2,0.2-0.6,0-0.8L9.6,4.4c4.6,0.1,8.2,3.7,8.2,8.2c0,4.5-3.7,8.2-8.3,8.2\
+                                    c0,0-0.1,0-0.1,0H9.4c-0.3,0-0.6,0.2-0.6,0.5c0,0.3,0.2,0.5,0.4,0.5C9.3,22,9.4,22,9.5,22c5.2,0,9.5-4.2,9.5-9.3\
+                                    C19,7.6,14.9,3.5,9.8,3.4z M1.7,15.7c-0.1-0.2-0.1-0.3-0.2-0.5c-0.1-0.3-0.4-0.4-0.7-0.4c-0.3,0.1-0.5,0.4-0.4,0.7\
+                                    c0.1,0.2,0.1,0.4,0.2,0.5c0.1,0.2,0.3,0.3,0.5,0.3c0.1,0,0.1,0,0.2,0C1.7,16.3,1.8,16,1.7,15.7z M0.6,13.8c0.3,0,0.5-0.3,0.5-0.6\
+                                    c0-0.2,0-0.3,0-0.5c0-0.3-0.3-0.5-0.6-0.5S0,12.4,0,12.7c0,0.2,0,0.4,0,0.6C0,13.5,0.3,13.8,0.6,13.8C0.6,13.8,0.6,13.8,0.6,13.8z\
+                                    M5,19.6c-0.1-0.1-0.3-0.2-0.4-0.3c-0.2-0.2-0.6-0.1-0.8,0.1c-0.2,0.2-0.1,0.6,0.1,0.8c0.2,0.1,0.3,0.2,0.5,0.3\
+                                    c0.1,0.1,0.2,0.1,0.3,0.1c0.2,0,0.4-0.1,0.5-0.3C5.3,20.1,5.2,19.8,5,19.6z M7.4,20.6c-0.2,0-0.3-0.1-0.5-0.1\
+                                    c-0.3-0.1-0.6,0.1-0.7,0.3c-0.1,0.3,0.1,0.6,0.4,0.7c0.2,0.1,0.4,0.1,0.6,0.2c0,0,0.1,0,0.1,0c0.2,0,0.5-0.2,0.5-0.4\
+                                    C7.8,21,7.7,20.7,7.4,20.6z M2.7,17.5c-0.2-0.2-0.5-0.3-0.8-0.1c-0.3,0.2-0.3,0.5-0.1,0.8c0.1,0.2,0.2,0.3,0.4,0.5\
+                                    c0.1,0.1,0.3,0.2,0.4,0.2c0.1,0,0.3,0,0.4-0.1c0.2-0.2,0.3-0.5,0.1-0.8C2.9,17.8,2.8,17.6,2.7,17.5z')
+
+
+
+
+                      button.hits-stat-more(type="submit") Зарегистрироваться
+
+
+
+
+
+
+            
+
+      .mask-js
+      // footer
+      include ./includes/_footer.jade
+    include ./includes/_index-modals.jade

@@ -691,7 +691,9 @@ mobileSub();
 			var target = $(this).parents('.hidden_bg').removeClass('active');
 			var slider =$(this).parent().find('.slick-slider');
 			slider.slick('unslick');
+			if(!$(this).hasClass('js-modal-trigger')){
 			 $("html").css("overflow-y","scroll");
+			}
 		});
 	});
 
@@ -1187,6 +1189,49 @@ if($('.video-playlist-cont').length){
 		})
 	})
 }
+if($('.forgot-pass').length){
+
+	var block = $('.js-forgoten-pass-wrap');
+	var btn = $('.forgot-pass');
+	var succes = $('.js-forgoten-pass-succes');
+	var sucClose = succes.find('.hits-stat-more');
+
+	block.hide();
+	succes.hide();
+	
+	btn.click(function(e){
+		e.preventDefault();
+		$(this).closest('.tab-form-wrapper').hide();
+		block.show();
+	})
+
+	sucClose.click(function(e){
+		e.preventDefault();
+		$(this).closest('.tab-form-wrapper').hide();
+		$('.js-form-login').show();
+	})
+
+
+	 var form_validate = $('.js-form-email');
+    if (form_validate.length) {
+        form_validate.each(function () {
+            var form_this = $(this);
+            $.validate({
+            		lang: 'ru',
+                form : form_this,
+                borderColorOnError : true,
+                scrollToTopOnError : false,
+                onSuccess: function($form){
+                     $('.js-forgoten-pass-wrap').hide();
+                     succes.show();
+                }
+            });
+        });
+    };
+}
+
+
+
 //end of document.ready
  });
 var filterItems = function(item){

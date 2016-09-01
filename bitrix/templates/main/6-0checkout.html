@@ -760,6 +760,12 @@
 																			<label class="input-label"><span class="text">Офис</span></label>
 																			<input type="text" name="" placeholder="Офис" class="input-main input-from">
 																		</div>
+																		<!--  
+																		.home-wrap
+																		  label.input-label
+																		    span.text Квартира
+																		  input.input-main.input-from(type='text',name="", placeholder = 'Квартира')  
+																		-->
 																	</div>
 																</div>
 																<div class="wrapper-who wrapper-jur">
@@ -818,25 +824,49 @@
 												</div>
 											</div>
 											<div class="tab_item">
-												<div class="tab-form-wrapper">
+												<div class="tab-form-wrapper js-form-login">
 													<form action="/" class="form-feed">
 														<div class="form-block">
 															<div class="form-block-title">Заполните регистра- ционные данные</div>
 															<div class="form-block-content">
-																<div class="wrapper-who wrapper-fiz">
-																	<div class="input-wrapper">
-																		<label class="input-label"> <span class="text">E-mail</span></label>
-																		<input type="email" name="" placeholder="info@mail.com" class="input-main input-from">
-																	</div>
-																	<div class="input-wrapper">
-																		<label class="input-label"> <span class="text">Пароль</span></label>
-																		<input type="password" name="" placeholder="Пароль" class="input-main input-from"><a href="#" class="forgot-pass">Забыли пароль?</a>
-																	</div>
+																<div class="input-wrapper">
+																	<label class="input-label"> <span class="text">E-mail</span></label>
+																	<input type="email" name="" placeholder="info@mail.com" class="input-main input-from">
+																</div>
+																<div class="input-wrapper">
+																	<label class="input-label"> <span class="text">Пароль</span></label>
+																	<input type="password" name="" placeholder="Пароль" class="input-main input-from"><a href="#" class="forgot-pass">Забыли пароль?</a>
 																</div>
 															</div>
 														</div>
 														<button type="submit" class="hits-stat-more enter-btn">Войти</button>
 													</form>
+												</div>
+												<div class="tab-form-wrapper js-forgoten-pass-wrap">
+													<form action="" name="pass-forgotten" class="form-feed js-form-email">
+														<div class="form-block">
+															<div class="form-block-title">Восстановление пароля</div>
+															<div class="form-block-content">
+																<div class="input-text">Изменение пароля будет возможно после того, как вы перейдете по ссылке, которая будет отправлена вам на указанный e-mail</div>
+																<div class="input-wrapper">
+																	<label class="input-label"> <span class="text">E-mail</span></label>
+																	<input type="email" name="" placeholder="info@mail.com" data-validation="email" class="input-main input-from">
+																</div>
+															</div>
+														</div>
+														<input type="submit" value="Отправить" class="hits-stat-more enter-btn">
+													</form>
+												</div>
+												<div class="tab-form-wrapper js-forgoten-pass-succes">
+													<div class="form-feed">
+														<div class="form-block">
+															<div class="form-block-title">Восстановление пароля</div>
+															<div class="form-block-content">
+																<div class="input-text">В течение 5 минут на указанный e-mail будет выслано письмо с вашими регистрационными данными</div>
+															</div>
+														</div>
+														<button class="hits-stat-more enter-btn">Закрыть</button>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -1182,6 +1212,65 @@
 					</div>
 					<input type="submit" placeholder="Отправить" data-target=".success_hidden" class="hits-stat-more js-modal-trigger button_close">
 				</form>
+			</div>
+		</div>
+		<div class="login_hidden hidden_bg">
+			<div class="hidden-block">
+				<div class="hidden-block-close button_close"></div>
+				<h2 class="hidden-title">Личный кабинет</h2>
+				<div class="tab-form-wrapper">
+					<form action="/" class="form-feed">
+						<div class="form-block">
+							<div class="form-block-content">
+								<div class="input-wrapper">
+									<label class="input-label"> <span class="text">E-mail</span></label>
+									<input type="email" name="" placeholder="info@mail.com" class="input-main input-from">
+								</div>
+								<div class="input-wrapper">
+									<label class="input-label"> <span class="text">Пароль</span></label>
+									<input type="password" name="" placeholder="Пароль" class="input-main input-from"><a href="#" data-target=".password_hidden" class="forgot-pass js-modal-trigger button_close">Забыли пароль?</a>
+								</div>
+							</div>
+						</div>
+						<button type="submit" class="hits-stat-more enter-btn">Войти</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="password_hidden hidden_bg">
+			<div class="hidden-block">
+				<div class="hidden-block-close button_close"></div>
+				<h2 class="hidden-title">Восстановление пароля     </h2>
+				<div class="tab-form-wrapper">
+					<form action="" name="pass-forgotten" class="form-feed js-form-email">
+						<div class="form-block">
+							<div class="form-block-content">
+								<div class="input-text">Изменение пароля будет возможно после того, как вы перейдете по ссылке, которая будет отправлена вам на указанный e-mail</div>
+								<div class="input-wrapper">
+									<label class="input-label"> <span class="text">E-mail</span></label>
+									<input type="email" name="" placeholder="info@mail.com" data-validation="email" class="input-main input-from">
+								</div>
+							</div>
+						</div>
+						<input type="submit" value="Отправить" data-target=".password-succes_hidden" class="hits-stat-more enter-btn js-modal-trigger">
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="password-succes_hidden hidden_bg">
+			<div class="hidden-block">
+				<div class="hidden-block-close button_close"></div>
+				<h2 class="hidden-title">Восстановление пароля   </h2>
+				<div class="tab-form-wrapper">
+					<div class="form-feed">
+						<div class="form-block">
+							<div class="form-block-content">
+								<div class="input-text">В течение 5 минут на указанный e-mail будет выслано письмо с вашими регистрационными данными</div>
+							</div>
+						</div>
+						<button class="hits-stat-more button_close">Закрыть</button>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!--if lt IE 9

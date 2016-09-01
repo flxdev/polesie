@@ -496,469 +496,67 @@
 					</ul>
 				</section>
 				<section>
-					<h1 class="section-title">Сравнение</h1>
+					<h1 class="section-title">Помощь</h1>
 					<div class="section__wrapper">
-						<div class="compare_tabs">
-							<div class="compare_tab-item"><a href="#">Велосипеды</a></div>
-							<div class="compare_tab-item active"><a href="#">Компьютеры</a></div>
-							<div class="compare_tab-item"><a href="#">Каталки</a></div><a href="#" class="selection_find-clear">Очистить сравнение</a>
+						<div class="aside__menu">
+							<aside class="presonal-aside">
+								<div class="moblie_btn selection_item"><span>Показать меню</span>
+									<div class="bread-arrow">
+										<svg id="Layer_arr" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve">
+											<style type="text/css">.bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}</style>
+											<path d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5" class="bre-arr"></path>
+										</svg>
+									</div>
+								</div>
+								<div class="selection_wrapper js-toggle-target">
+									<ul>
+										<ul class="aside-menu-item active"> <a href="#">Помощь</a></ul>
+										<ul class="aside-menu-item"> <a href="#">История заказов</a></ul>
+										<ul class="aside-menu-item"> <a href="#">Отложенные</a></ul>
+										<ul class="aside-menu-item"> <a href="#">Личные данные</a></ul>
+										<ul class="aside-menu-item"> <a href="#">Подписка</a></ul>
+										<ul class="aside-menu-item"> 
+											<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 21 21" width="21px" height="22px" style="enable-background:new 0 0 21 21;" xml:space="preserve">
+												<style type="text/css">.st0{fill:#9C9B9B;}</style>
+												<g>
+													<g>
+														<path d="M11.8,11.8c0.7,0,1.3-0.6,1.3-1.3c0-0.7-0.6-1.3-1.3-1.3c-0.7,0-1.3,0.6-1.3,1.3                              C10.5,11.2,11.1,11.8,11.8,11.8z M20,1L9.2,0C8.5,0,8,0.3,8,1v13H4v-2l-4,3l4,3v-2h4l-0.1,3.7V21h11.8c0.7,0,1.3-0.6,1.3-1.3V2.6                              C21,1.9,20.7,1,20,1z M20,20H9V1l11,1V20z M4,4h3V3H4.3C3.6,3,3,3.6,3,4.4V10l1,0V4z M3.9,21H7v-1H3C3,20.7,3.2,21,3.9,21z" class="st0"></path>
+													</g>
+												</g>
+											</svg><a href="#">Выйти</a>
+										</ul>
+									</ul>
+								</div>
+							</aside>
 						</div>
-						<div class="compare-main-wrap">
-							<div class="compare_fakehead"></div>
-							<div class="compare-wrapper">
-								<div class="compare-scroll-cont">
-									<div class="compare-scroll-inner">
-										<div class="compare-scroller"></div>
-									</div>
+						<div class="section__content">
+							<section class="content-section">
+								<h2 class="section-title">Общая информация</h2>
+								<p class="text-block gray">В этом разделе вы можете найти ответы на многие вопросы, касающиеся работы нашего сайта. Мы стараемся сделать сервис как можно более удобным для вас, поэтому предлагаем несколько вариантов оформления заказа. </p>
+								<p class="text-block black">Покупатель может отследить состояние заказа непосредственно на сайте интернет-магазина в Персональном кабинете. Кроме этого он получает уведомления по электронной почте при оформлении заказа, его оплате и передаче заказа в службу доставки. В случае возникновения вопросов клиент всегда может обратитьсяв службу по работе с клиентами по телефону и получить полную информацию о состоянии заказа.</p>
+								<article class="text-article">Клиент вправе отказаться от заказанного товара ненадлежащего качества в любое время до его получения, а после получения  — в течение 7 дней, не считая дня покупки. </article>
+							</section>
+							<section class="content-section">
+								<h2 class="section-title">Как оформить заказ</h2>
+								<div class="step-wrapper"><span class="step-counter">01</span>
+									<article class="step-text">
+										<h3 class="title-small">Добавить товар в корзину</h3>
+										<p class="text-block black">В карточке товара, который Вам понравился, выберите подходящие параметры и нажмите кнопку «В корзину». Чтобы подобрать товар наведите курсор на интересующий вас параметр.</p>
+									</article><img src="img/promo/help.jpg" alt="help" class="step-img">
 								</div>
-								<!--если элементов в сравнении <4  добавляем .row-fixed-->
-								<table class="compare_inner row-fixed">
-									<tbody class="compare-body">
-										<!--   и .row-2/3/4 сюда-->
-										<tr class="compare-row row-4">
-											<th class="compare-item compare-bg"></th>
-											<th class="compare-item item-clone"></th>
-											<th class="compare-item">
-												<div class="compare-item-main">
-													<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#"></a>
-													<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p>
-													<div class="hits_coast">
-														<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-														<p>13 435,60 р. <span> 13 435 600 р</span></p>
-													</div><a href="#" class="hits-stat-more">Подробнее</a>
-												</div>
-											</th>
-											<th class="compare-item">
-												<div class="compare-item-main">
-													<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-														<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-													<div class="hits_coast">
-														<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-														<p>13 435,60 р. <span> 13 435 600 р</span></p>
-													</div><a href="#" class="hits-stat-more">Подробнее</a>
-												</div>
-											</th>
-											<th class="compare-item">
-												<div class="compare-item-main">
-													<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-														<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-													<div class="hits_coast">
-														<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-														<p>13 435,60 р. <span> 13 435 600 р</span></p>
-													</div><a href="#" class="hits-stat-more">Подробнее</a>
-												</div>
-											</th>
-											<th class="compare-item">
-												<div class="compare-item-main">
-													<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-														<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-													<div class="hits_coast">
-														<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-														<p>13 435,60 р. <span> 13 435 600 р</span></p>
-													</div><a href="#" class="hits-stat-more">Подробнее</a>
-												</div>
-											</th>
-										</tr>
-									</tbody>
-									<tbody class="compare-body">
-										<tr class="compare-row">
-											<td class="compare-item">
-												<ul class="select-u-body">
-													<li class="select-u-item">
-														<label class="input_label"><span class="input_main">
-																<input type="checkbox" value="Показать только отличия" class="input-real"><span class="input-checked"></span></span><span class="input-text">Показать только отличия</span></label>
-													</li>
-												</ul>
-											</td>
-										</tr>
-									</tbody>
-									<tbody class="compare-body compare_group">
-										<tr class="compare-row table-title">
-											<td colspan="100" class="compare-item">
-												<div class="text">Общие характеристики</div>
-											</td>
-											<!--2-ой td нужен для правильного отображения-->
-											<td class="compare-item"></td>
-										</tr>
-										<tr class="compare-row">
-											<td class="compare-item"><span class="compare-item-name">Модель</span></td>
-											<td class="compare-item item-clone"></td>
-											<td class="compare-item"><span class="compare-value">2016 года </span></td>
-											<td class="compare-item"><span class="compare-value">2016 года </span></td>
-											<td class="compare-item"><span class="compare-value">2016 года </span></td>
-											<td class="compare-item"><span class="compare-value">2015 года </span></td>
-											<td class="compare-item"><span class="compare-value">2016 года </span></td>
-										</tr>
-										<tr class="compare-row">
-											<td class="compare-item"><span class="compare-item-name">Возраст</span></td>
-											<td class="compare-item item-clone"></td>
-											<td class="compare-item"><span class="compare-value">для взрослых</span></td>
-											<td class="compare-item"><span class="compare-value">для взрослых</span></td>
-											<td class="compare-item"><span class="compare-value">для овощей</span></td>
-											<td class="compare-item"><span class="compare-value">для взрослых</span></td>
-											<td class="compare-item"><span class="compare-value">для взрослых</span></td>
-										</tr>
-										<tr class="compare-row">
-											<td class="compare-item"><span class="compare-item-name">Тип</span></td>
-											<td class="compare-item item-clone"></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-										</tr>
-										<tr class="compare-row">
-											<td class="compare-item"><span class="compare-item-name">Тип привода</span></td>
-											<td class="compare-item item-clone"></td>
-											<td class="compare-item"><span class="compare-value">горный (MTB), кросс-кантри </span></td>
-											<td class="compare-item"><span class="compare-value">горный (MTB</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-										</tr>
-									</tbody>
-									<tbody class="compare-body compare_group">
-										<tr class="compare-row table-title">
-											<td colspan="100" class="compare-item">
-												<div class="text">Рама</div>
-											</td>
-											<!--2-ой td нужен для правильного отображения-->
-											<td class="compare-item"></td>
-										</tr>
-										<tr class="compare-row">
-											<td class="compare-item"><span class="compare-item-name">Модель</span></td>
-											<td class="compare-item item-clone"></td>
-											<td class="compare-item"><span class="compare-value">2016 года </span></td>
-											<td class="compare-item"><span class="compare-value">2016 года </span></td>
-											<td class="compare-item"><span class="compare-value">2016 года </span></td>
-											<td class="compare-item"><span class="compare-value">2015 года </span></td>
-											<td class="compare-item"><span class="compare-value">2016 года </span></td>
-										</tr>
-										<tr class="compare-row">
-											<td class="compare-item"><span class="compare-item-name">Возраст</span></td>
-											<td class="compare-item item-clone"></td>
-											<td class="compare-item"><span class="compare-value">для взрослых</span></td>
-											<td class="compare-item"><span class="descr-i yes"></span></td>
-											<td class="compare-item"><span class="compare-value">для овощей</span></td>
-											<td class="compare-item"><span class="descr-i yes"></span></td>
-											<td class="compare-item"><span class="compare-value">для взрослых</span></td>
-										</tr>
-										<tr class="compare-row">
-											<td class="compare-item"><span class="compare-item-name">Тип</span></td>
-											<td class="compare-item item-clone"></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-										</tr>
-										<tr class="compare-row">
-											<td class="compare-item"><span class="compare-item-name">Тип привода</span></td>
-											<td class="compare-item item-clone"></td>
-											<td class="compare-item"><span class="compare-value">горный (MTB), кросс-кантри </span></td>
-											<td class="compare-item"><span class="compare-value">горный (MTB</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-										</tr>
-									</tbody>
-									<tbody class="compare-body compare_group">
-										<tr class="compare-row table-title">
-											<td colspan="100" class="compare-item">
-												<div class="text">Тормоза</div>
-											</td>
-											<!--2-ой td нужен для правильного отображения-->
-											<td class="compare-item"></td>
-										</tr>
-										<tr class="compare-row">
-											<td class="compare-item"><span class="compare-item-name">Модель</span></td>
-											<td class="compare-item item-clone"></td>
-											<td class="compare-item"><span class="compare-value">2016 года </span></td>
-											<td class="compare-item"><span class="compare-value">2016 года </span></td>
-											<td class="compare-item"><span class="compare-value">2016 года </span></td>
-											<td class="compare-item"><span class="compare-value">2015 года </span></td>
-											<td class="compare-item"><span class="compare-value">2016 года </span></td>
-										</tr>
-										<tr class="compare-row">
-											<td class="compare-item"><span class="compare-item-name">Возраст</span></td>
-											<td class="compare-item item-clone"></td>
-											<td class="compare-item"><span class="compare-value">для взрослых</span></td>
-											<td class="compare-item"><span class="compare-value">для взрослых</span></td>
-											<td class="compare-item"><span class="compare-value">для овощей</span></td>
-											<td class="compare-item"><span class="compare-value">для взрослых</span></td>
-											<td class="compare-item"><span class="compare-value">для взрослых</span></td>
-										</tr>
-										<tr class="compare-row">
-											<td class="compare-item"><span class="compare-item-name">Тип</span></td>
-											<td class="compare-item item-clone"></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-										</tr>
-										<tr class="compare-row">
-											<td class="compare-item"><span class="compare-item-name">Тип привода</span></td>
-											<td class="compare-item item-clone"></td>
-											<td class="compare-item"><span class="compare-value">горный (MTB), кросс-кантри </span></td>
-											<td class="compare-item"><span class="compare-value">горный (MTB</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-											<td class="compare-item"><span class="compare-value">djledd</span></td>
-										</tr>
-									</tbody>
-									<tbody class="compare-body">
-										<tr class="compare-row">
-											<th class="compare-item compare-bg"></th>
-											<th class="compare-item item-clone"></th>
-											<th class="compare-item">
-												<div class="compare-item-main">
-													<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-														<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-													<div class="hits_coast">
-														<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-														<p>13 435,60 р. <span> 13 435 600 р</span></p>
-													</div><a href="#" class="hits-stat-more">Подробнее</a>
-												</div>
-											</th>
-											<th class="compare-item">
-												<div class="compare-item-main">
-													<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-														<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-													<div class="hits_coast">
-														<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-														<p>13 435,60 р. <span> 13 435 600 р</span></p>
-													</div><a href="#" class="hits-stat-more">Подробнее</a>
-												</div>
-											</th>
-											<th class="compare-item">
-												<div class="compare-item-main">
-													<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-														<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-													<div class="hits_coast">
-														<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-														<p>13 435,60 р. <span> 13 435 600 р</span></p>
-													</div><a href="#" class="hits-stat-more">Подробнее</a>
-												</div>
-											</th>
-											<th class="compare-item">
-												<div class="compare-item-main">
-													<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-														<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-													<div class="hits_coast">
-														<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-														<p>13 435,60 р. <span> 13 435 600 р</span></p>
-													</div><a href="#" class="hits-stat-more">Подробнее</a>
-												</div>
-											</th>
-											<th class="compare-item">
-												<div class="compare-item-main">
-													<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-														<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-													<div class="hits_coast">
-														<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-														<p>13 435,60 р. <span> 13 435 600 р</span></p>
-													</div><a href="#" class="hits-stat-more">Подробнее</a>
-												</div>
-											</th>
-										</tr>
-									</tbody>
-									<tbody class="compare-body">
-										<tr class="compare-row">
-											<td class="compare-item">
-												<ul class="select-u-body">
-													<li class="select-u-item">
-														<label class="input_label"><span class="input_main">
-																<input type="checkbox" value="Показать только отличия" class="input-real"><span class="input-checked"></span></span><span class="input-text">Показать только отличия</span></label>
-													</li>
-												</ul>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-								<div class="main__bar"></div>
-							</div>
-						</div>
-						<div class="compare-mobile-wrap">
-							<div class="mobile-items-wrap">
-								<div class="compare-item">
-									<div class="compare-item-main">
-										<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-											<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-										<div class="hits_coast">
-											<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-											<p>13 435,60 р. <span> 13 435 600 р</span></p>
-										</div><a href="#" class="hits-stat-more">Подробнее</a>
-									</div>
+								<div class="step-wrapper"><span class="step-counter">
+										 
+										02</span>
+									<article class="step-text">
+										<h3 class="title-small">Перейти в корзину и проверить заказ</h3>
+										<p class="text-block black">Для продолжения оформления заказа вам необходимо перейти в «Корзину». Попасть в корзину можно несколькими способами:</p>
+										<ul class="step-list">
+											<li class="step-list-item">Нажать кнопку «В корзину» в карточке товара, после его добавления в «Корзину»</li>
+											<li class="step-list-item">Кликнув на кнопку в правом верхнем углу сайта. При наведении курсора на этот значок, у Вас откроется информация о том, какие товары находятся в «Корзине», а при клике на него, Вы перейдете в саму «Корзину».</li>
+										</ul>
+									</article><img src="img/promo/help.jpg" alt="help" class="step-img">
 								</div>
-								<div class="compare-item">
-									<div class="compare-item-main">
-										<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-											<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-										<div class="hits_coast">
-											<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-											<p>13 435,60 р. <span> 13 435 600 р</span></p>
-										</div><a href="#" class="hits-stat-more">Подробнее</a>
-									</div>
-								</div>
-								<div class="compare-item">
-									<div class="compare-item-main">
-										<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-											<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-										<div class="hits_coast">
-											<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-											<p>13 435,60 р. <span> 13 435 600 р</span></p>
-										</div><a href="#" class="hits-stat-more">Подробнее</a>
-									</div>
-								</div>
-								<div class="compare-item">
-									<div class="compare-item-main">
-										<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-											<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-										<div class="hits_coast">
-											<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-											<p>13 435,60 р. <span> 13 435 600 р</span></p>
-										</div><a href="#" class="hits-stat-more">Подробнее</a>
-									</div>
-								</div>
-							</div>
-							<div class="mobile-compare-wrap">
-								<ul class="select-u-body">
-									<li class="select-u-item">
-										<label class="input_label"><span class="input_main">
-												<input type="checkbox" value="Показать только отличия" class="input-real"><span class="input-checked"></span></span><span class="input-text">Показать только отличия</span></label>
-									</li>
-								</ul>
-								<div class="compare-row table-title">
-									<div class="compare-item">
-										<div class="text">Общие характеристики</div>
-									</div>
-								</div>
-								<div class="compare-group">
-									<div class="compare-item-name">Тип привода</div>
-									<dl class="item-wrap">
-										<dd class="item item-name">STELS Navigator 500 V 26 (2016)</dd>
-										<dt class="item item-value">2016</dt>
-									</dl>
-									<dl class="item-wrap">
-										<dd class="item item-name">STELS Navigator 500 V 26 (2016)</dd>
-										<dt class="item item-value">2016</dt>
-									</dl>
-									<dl class="item-wrap">
-										<dd class="item item-name">STELS Navigator 500 V 26 (2016)</dd>
-										<dt class="item item-value">2016</dt>
-									</dl>
-									<dl class="item-wrap">
-										<dd class="item item-name">STELS Navigator 500 V 26 (2016)</dd>
-										<dt class="item item-value">2016</dt>
-									</dl>
-									<dl class="item-wrap">
-										<dd class="item item-name">STELS Navigator 500 V 26 (2016)</dd>
-										<dt class="item item-value">2016</dt>
-									</dl>
-								</div>
-								<div class="compare-group">
-									<div class="compare-item-name">Рама</div>
-									<dl class="item-wrap">
-										<dd class="item item-name">STELS Navigator 500 V 26 (2016)</dd>
-										<dt class="item item-value">2 трубки и палка</dt>
-									</dl>
-									<dl class="item-wrap">
-										<dd class="item item-name">STELS Navigator 500 V 26 (2016)</dd>
-										<dt class="item item-value">2 трубки и палка</dt>
-									</dl>
-									<dl class="item-wrap">
-										<dd class="item item-name">STELS Navigator 500 V 26 (2016)</dd>
-										<dt class="item item-value">2 трубки и палка</dt>
-									</dl>
-									<dl class="item-wrap">
-										<dd class="item item-name">STELS Navigator 500 V 26 (2016)</dd>
-										<dt class="item item-value">2 трубки и палка</dt>
-									</dl>
-									<dl class="item-wrap">
-										<dd class="item item-name">STELS Navigator 500 V 26 (2016)</dd>
-										<dt class="item item-value">2 трубки и палка</dt>
-									</dl>
-								</div>
-								<div class="compare-row table-title">
-									<div class="compare-item">
-										<div class="text">Не общие характеристики</div>
-									</div>
-								</div>
-								<div class="compare-group">
-									<div class="compare-item-name">Тип привода</div>
-									<dl class="item-wrap">
-										<dd class="item item-name">STELS Navigator 500 V 26 (2016)</dd>
-										<dt class="item item-value">2016</dt>
-									</dl>
-									<dl class="item-wrap">
-										<dd class="item item-name">STELS Navigator 500 V 26 (2016)</dd>
-										<dt class="item item-value">2016</dt>
-									</dl>
-									<dl class="item-wrap">
-										<dd class="item item-name">STELS Navigator 500 V 26 (2016)</dd>
-										<dt class="item item-value">2016</dt>
-									</dl>
-									<dl class="item-wrap">
-										<dd class="item item-name">STELS Navigator 500 V 26 (2016)</dd>
-										<dt class="item item-value">2016</dt>
-									</dl>
-									<dl class="item-wrap">
-										<dd class="item item-name">STELS Navigator 500 V 26 (2016)</dd>
-										<dt class="item item-value">2016</dt>
-									</dl>
-								</div>
-							</div>
-							<div class="mobile-compare-wrap">
-								<ul class="select-u-body">
-									<li class="select-u-item">
-										<label class="input_label"><span class="input_main">
-												<input type="checkbox" value="Показать только отличия" class="input-real"><span class="input-checked"></span></span><span class="input-text">Показать только отличия</span></label>
-									</li>
-								</ul>
-								<div class="mobile-items-wrap">
-									<div class="compare-item">
-										<div class="compare-item-main">
-											<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-												<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-											<div class="hits_coast">
-												<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-												<p>13 435,60 р. <span> 13 435 600 р</span></p>
-											</div><a href="#" class="hits-stat-more">Подробнее</a>
-										</div>
-									</div>
-									<div class="compare-item">
-										<div class="compare-item-main">
-											<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-												<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-											<div class="hits_coast">
-												<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-												<p>13 435,60 р. <span> 13 435 600 р</span></p>
-											</div><a href="#" class="hits-stat-more">Подробнее</a>
-										</div>
-									</div>
-									<div class="compare-item">
-										<div class="compare-item-main">
-											<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-												<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-											<div class="hits_coast">
-												<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-												<p>13 435,60 р. <span> 13 435 600 р</span></p>
-											</div><a href="#" class="hits-stat-more">Подробнее</a>
-										</div>
-									</div>
-									<div class="compare-item">
-										<div class="compare-item-main">
-											<div class="compare-item-close"></div><a href="#" class="hits_block"><img src="img/promo/bike_hit.jpg" alt="#">
-												<p class="hits_name"><a href="#">STELS Navigator 500 V 26 (2016)</a></p></a>
-											<div class="hits_coast">
-												<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
-												<p>13 435,60 р. <span> 13 435 600 р</span></p>
-											</div><a href="#" class="hits-stat-more">Подробнее</a>
-										</div>
-									</div>
-								</div>
-							</div>
+							</section>
 						</div>
 					</div>
 				</section>
