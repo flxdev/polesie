@@ -1361,9 +1361,22 @@ if($('.forgot-pass').length){
         });
     };
 }
-
-
-
+if($('.accordion-container').length){
+$(".set > .head").on("click", function(){
+	if($(this).hasClass('active')){
+	$(this).removeClass("active");
+	$(this).siblings('.content').slideUp(200);
+}else{
+	$(".set > .head").removeClass("active");
+	$(this).addClass("active");
+	$('.content').slideUp(200);
+	$(this).siblings('.content').slideDown(200);
+}
+});
+}
+$('.elem-add').click(function(){
+	console.log('sdsdsdsd');
+})
 //end of document.ready
  });
 var filterItems = function(item){

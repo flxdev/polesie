@@ -1,0 +1,132 @@
+doctype html
+//if lt IE 7 
+  html.ie.ie6(lang='en')  
+//if IE 7 
+  html.ie.ie7(lang='en')  
+//if IE 8 
+  html.ie.ie8(lang='en')  
+// [if (gte IE 9)|!(IE)] <!
+html(lang='ru')
+  // <![endif]
+  head
+    include ./includes/_head.jade
+  body
+    #wrap
+      // header
+      include ./includes/_headmenu.jade
+
+      .content_main-wrapper
+        section
+          ul.breadcrums
+              a.home-btn(href="#")
+                  i.home-img
+                      svg#Layer_home(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='9px', y='5px', viewbox='0 0 14.1 13', style='enable-background:new 0 0 14.1 13;', xml:space='preserve')
+                        style(type='text/css').
+                          .sthome{fill-rule:evenodd;clip-rule:evenodd;fill:#989898;}
+                        path.sthome(d='M7.1,0l4.8,4.1L14,5.8c0,0,0.2,0.4,0,0.7c-0.3,0.4-0.8,0.2-0.8,0.2l-0.5-0.2v5.8c0,0.3-0.3,0.6-0.6,0.6h-3V8h-4\
+                        v5h-3c-0.3,0-0.6-0.3-0.6-0.6V6.6L0.9,6.8c0,0-0.6,0-0.8-0.2c-0.2-0.3,0-0.9,0-0.9l2-1.6L7.1,0z')
+              li.bread-item
+                  a(href="#") Спорт и туризм
+                  .bread-arrow
+                      svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                        style(type='text/css').
+                          .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                        path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                  .bread__add-menu-wrap
+                    .bread__add-container
+                      ul.add-list
+                        li.add-list-item
+                          a(href="#") Товары для детей
+                        li.add-list-item
+                          a(href="#") Мода и красота
+                        li.add-list-item
+                          a(href="#") Электроника и техника
+                        li.add-list-item
+                          a(href="#") Всякие гадости
+                  
+              li.bread-item
+                a(href="#") Спорт и туризм
+                i.bread-arrow
+                    svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                      style(type='text/css').
+                        .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                      path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                .bread__add-menu-wrap
+                  .bread__add-container
+                    ul.add-list
+                      li.add-list-item
+                        a(href="#") Товары для детей
+                      li.add-list-item
+                        a(href="#") Мода и красота
+                      li.add-list-item
+                        a(href="#") Электроника и техника
+                      li.add-list-item
+                        a(href="#") Ldt jlbyflwfnbrkfccybws rrr
+              li.bread-item
+                  a(href="#") Спорт и туризм
+        section
+          h1.section-title Отмена заказа
+          .section__wrapper
+              .aside__menu
+                aside.presonal-aside
+                  .moblie_btn.selection_item
+                      span Показать меню
+                      .bread-arrow
+                        svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                          style(type='text/css').
+                            .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                          path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                  .selection_wrapper.js-toggle-target
+                    ul
+                      ul.aside-menu-item
+                        a(href="#") Помощь
+                      ul.aside-menu-item.active  
+                        a(href="#") История заказов
+                      ul.aside-menu-item 
+                        a(href="#") Отложенные
+                      ul.aside-menu-item 
+                        a(href="#") Личные данные
+                      ul.aside-menu-item 
+                        a(href="#") Подписка
+                      ul.aside-menu-item 
+                        svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 21 21',width='21px', height='22px', style='enable-background:new 0 0 21 21;', xml:space='preserve')
+                          style(type='text/css').
+                            .st0{fill:#9C9B9B;}
+                          g
+                            g
+                              path.st0(d='M11.8,11.8c0.7,0,1.3-0.6,1.3-1.3c0-0.7-0.6-1.3-1.3-1.3c-0.7,0-1.3,0.6-1.3,1.3\
+                              C10.5,11.2,11.1,11.8,11.8,11.8z M20,1L9.2,0C8.5,0,8,0.3,8,1v13H4v-2l-4,3l4,3v-2h4l-0.1,3.7V21h11.8c0.7,0,1.3-0.6,1.3-1.3V2.6\
+                              C21,1.9,20.7,1,20,1z M20,20H9V1l11,1V20z M4,4h3V3H4.3C3.6,3,3,3.6,3,4.4V10l1,0V4z M3.9,21H7v-1H3C3,20.7,3.2,21,3.9,21z')
+
+                        a(href="#") Выйти
+              .section__content
+                .checkout-content
+                  .offer-form-inner
+                    form(action="", name='order-cancel').form-feed.js-form-email
+                      .form-block
+                        .form-block-title
+                          |Почему вы решили отменить заказ?
+                        .form-block-content
+                          .input-wrapper
+                            label.input-label 
+                              span.text Укажите причину
+                            textarea.input-main(name="",  rows="3", placeholder = 'Например, в нём уже нет необходимости')
+                      input.hits-stat-more.enter-btn(type="submit", value = 'Отменить')
+                a(href="#").product-learn-more
+                  svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='18px',height='18px', viewbox='0 0 18 18', style='enable-background:new 0 0 18 18;', xml:space='preserve')
+                    style(type='text/css').
+                      .stmore{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}
+                    g
+                      g
+                        path.stmore(d='M9,0C4,0,0,4,0,9c0,5,4,9,9,9c5,0,9-4,9-9C18,4,14,0,9,0z M9,17c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8\
+                        c4.4,0,8,3.6,8,8C17,13.4,13.4,17,9,17z M10.4,5L6,9l4.4,4l0.6-0.6L7.3,9L11,5.6L10.4,5z')
+                  |Вернуться назад
+
+
+
+
+      
+      .mask-js
+      // footer
+      include ./includes/_footer.jade
+    include ./includes/_index-modals.jade

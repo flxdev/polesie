@@ -1212,6 +1212,7 @@ input:focus:-moz-placeholder {
     > li {
       display: table-cell;
       border-right: 1px solid $yellowLight;
+      @include clearfix;
       &:nth-child(n+6){
         @include r(1054){
           display: none;
@@ -1244,7 +1245,7 @@ input:focus:-moz-placeholder {
         text-decoration: none;
         text-align: center;
         padding: 11px 0;
-        display: block;
+        display: inline-block;
         width:100%;
         letter-spacing: 1px;
         @include r(768){
@@ -2169,6 +2170,7 @@ input:focus:-moz-placeholder {
 .hits_coast span, .hits_coast_new span {
   color: #9d9c9c;
   font-size: 14px;
+  font-weight: 300;
 }
 
 .hits_coast {
@@ -3387,7 +3389,7 @@ footer {
 .section__content{
   display: block;
   overflow:hidden;
-  @include x-rem(padding, 1px 1px 70px 1px);
+  @include x-rem(padding, 1px 1px 140px 1px);
   @include x-rem(margin, -1px -1px -70px -1px);
   @include r(768){
     display: inline-block;
@@ -3740,11 +3742,12 @@ footer {
     &:before,&:after{
       content: '';
       display: inline-block;
-      @include x-rem(width, 12px);
-      height: 2px;
+      @include x-rem(width, 14px);
+      height: 1px;
       background-color:#9d9c9c; 
       position: absolute;
-      top:40%;
+      top:50%;
+      transform: translateY(-50%);
       left: 0;
     }
     &:before{
@@ -4580,7 +4583,7 @@ footer {
   transition: color.3s;
   svg{
     transform:translateY(4px); 
-     @include x-rem(margin-left,7px);
+     @include x-rem(margin-right,7px);
   }
   .stmore{
     transition: fill .3s;
@@ -5984,7 +5987,51 @@ footer {
       &:nth-child(3){
         padding-left: 10%;
       }
+    }
+  }
+  &.tab-orders{
+    .item{
+      &:first-child{
+        padding-left: 5%;
+          @include r(1150){
+          padding-left: 2%;
+        }
+      }
 
+      &:nth-child(2){
+        padding-left: 5%;
+      }
+      &:nth-child(3){
+        padding-left: 11.5%;
+      }
+      &:nth-child(4){
+        padding-left: 12%;
+      }
+      &:nth-child(5){
+        padding-left: 9%;
+      }
+      &:nth-child(6){
+        padding-left: 10%;
+      }
+    }
+  }
+  &.tab-order-inner{
+    .item{
+      &:first-child{
+        padding-left: 60%;
+        @include r(1150){
+          padding-left: 50%;
+        }
+      }
+      &:nth-child(2){
+        padding-left: 10%;
+      }
+      &:nth-child(3){
+        padding-left: 10%;
+        @include r(1150){
+          padding-left: 15%;
+        }
+      }
     }
   }
 }
@@ -6078,25 +6125,7 @@ footer {
         display:inline-block;
       }
   }
-  .number,.tot-price{
-    @include r(768){
-        display: block !important;
-        width:100%;
-      }
-  }
-  .curr-price{
-    @include r(800){
-        display: none !important;
-      }
-  }
   .elem-add{
-    display: inline-block;
-    @include x-rem(padding-left,20px);
-    font-size: 0;
-    display: table-cell;
-    vertical-align: top;
-    text-align: center;
-    width:15%;
     @include r(1040){
         display: table-cell;
         width:10%;
@@ -6108,11 +6137,8 @@ footer {
        @include r(480){
         @include x-rem(padding-top,50px);
       }
-    .add{
-     @include x-rem(width,30px);
-      @include x-rem(height,50px);
-      display: inline-block;
-      @include r(1040){
+      .add{
+        @include r(1040){
         display: block;
         width:100%;
         @include x-rem(height,40px);
@@ -6121,6 +6147,50 @@ footer {
         @include x-rem(height,50px);
         @include x-rem(min-width,28px);
       }
+    }
+  }
+  .number,.tot-price{
+    @include r(768){
+        display: block !important;
+        width:100%;
+      }
+  }
+  .curr-price{
+    @include r(800){
+        display: none !important;
+      }
+  }
+  
+  .elem-img,.curr-price,.number,.tot-price,.add{
+    display: inline-block;
+    float: left;
+    
+    .curr-price{
+      padding-left: 5%;
+    }
+    .hits_coast{
+        p{
+          text-align: right;
+          span{
+            display: block;
+          }
+        }
+      }
+
+  }
+
+}
+.elem-add{
+    @include x-rem(padding-left,20px);
+    font-size: 0;
+    display: table-cell;
+    vertical-align: top;
+    text-align: center;
+    width:15%;  
+    .add{
+     @include x-rem(width,30px);
+      @include x-rem(height,50px);
+      display: inline-block;
       a{
         display: inline-block;
         width:100%;
@@ -6152,25 +6222,6 @@ footer {
       }
     }
   }
-  .elem-img,.curr-price,.number,.tot-price,.add{
-    display: inline-block;
-    float: left;
-    
-    .curr-price{
-      padding-left: 5%;
-    }
-    .hits_coast{
-        p{
-          text-align: right;
-          span{
-            display: block;
-          }
-        }
-      }
-
-  }
-
-}
 .tab-btns{
   display: inline-block;
   width:100%;
@@ -6324,7 +6375,6 @@ footer {
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .offer-container{
   @include x-rem(width,460px);
-  @include x-rem(padding-top,10px);
   display: inline-block;
   float:left;
   @include clearfix;
@@ -6481,7 +6531,6 @@ footer {
 }
 .offer-form-inner{
   border: 2px solid $yellowHov;
-  @include x-rem(margin-top,10px);
   @include x-rem(margin-bottom,30px);
   @include x-rem(border-radius,3px);
   @include x-rem(padding,35px);
@@ -6791,3 +6840,277 @@ footer {
     }
   }
 }
+//++++++++++++++++++++++++++++
+//8-1 ORDERS
+//++++++++++++++++++++++++++++++++++
+.orders-man-wrapper{
+  @include x-rem(padding-bottom,70px);
+  .tab-orders{
+    padding-top: 0;
+  }
+}
+.accordion-container{
+position: relative;
+width: 100%;
+height: auto;
+border:1px solid $border;
+
+}
+.set{
+position: relative;
+width: 100%;
+height: auto;
+&:not(:last-child){
+  border-bottom:1px solid $border;
+  }
+  .hits_coast{
+    @include x-rem(font-size, 14px);
+  }
+  .head{
+    .bread-arrow,.order-number,.order-date,.hits_coast,.order-pay,.order-status,.elem-add,.order-total{
+      display:table-cell;
+      float:left;
+    }
+    .bread-arrow{
+        width:3%;
+        height:100%;
+        float:left;
+        margin-left: 0;
+         @include r(570){
+        width:10%;
+      }
+    }
+    .order-number{
+      width: 12%;
+      color:#000;
+      @include x-rem(font-size, 16px);
+      @include r(570){
+        width:20%;
+      }
+    }
+    .order-date{
+      width: 9%;
+      color:#000;
+      @include x-rem(letter-spacing, 1px);
+      @include r(570){
+        width:20%;
+      }
+    }
+    .order-total{
+      width: 15%;
+      text-align: center;
+      @include r(570){
+        width:20%;
+        text-align: right;
+      }
+    }
+    .hits_coast{
+      width: 15%;
+      text-align: right;
+      line-height:1;
+      @include r(570){
+        width:30%;
+      }
+      span{
+        @include x-rem(margin-top, 4px);
+        display: block;
+      }
+    }
+    .order-pay,.order-status{
+      text-align:center;
+      
+    }
+    .order-pay{
+      width:25%;
+      @include r(570){
+        @include x-rem(margin-top, 4px);
+        width:30%;
+      }
+      &.payed{
+        color:#49b210;
+      }
+      &.no-payed{
+        color:$red;
+      }
+    }
+    .order-status{
+      width:15%;
+      text-align: left;
+     @include r(570){
+      @include x-rem(margin-top, 4px);
+        width:30%;
+        text-align: center;
+      }
+    }
+    .elem-add{
+      width: 5%;
+      padding: 0;
+      @include r(570){
+      @include x-rem(margin-top, 10px);
+        width:35%;
+        .add{
+          height:20px;
+        }
+      }
+      .add-remove{
+        a{
+          background-position: top center;
+        }   
+      }
+    }
+    .cancel{
+      color:$letters2;
+    }
+  }
+}
+.set > .head{
+@include x-rem(padding, 23px 10px 0 18px);
+display: table;
+width:100%;
+cursor:pointer;
+@include clearfix;
+text-decoration: none;
+transition:all 0.2s linear;
+border-bottom: 2px solid transparent;
+@include r(768){
+  @include x-rem(padding, 13px 5px 5px 9px);
+}
+  svg{
+    transition:fill 0.2s linear;
+  }
+  &:hover{
+    background: #fafafa;
+    .bre-arr{
+      fill:$red;
+      transition:fill 0.2s linear;
+    }
+  }
+}
+.set > .head.active{
+border-bottom-color:$red;
+transition:all .3s;
+  svg{
+      transform: scale(1, -1);
+      transition:transform .3s linear;
+    }
+    +.content{
+      border-bottom-color:$red;
+      transition:border .3s;
+    }
+}
+
+.content{
+width: 100%;
+height: auto;
+background-color: #fff;
+border-bottom: 2px solid transparent;
+display:none;
+transition:border .3s;
+  .tab-item-wrap{
+     @include x-rem(padding,  0 50px);
+     @include r(1040){
+      @include x-rem(padding,  0 10px);
+    }
+  }
+  .elem-value{
+    width:45%;
+    vertical-align: top;
+    text-align:center;
+    @include r(900){
+      @include x-rem(padding, 5px 18px);
+    }
+  }
+  .tot-price{
+    float: right;
+  }
+  .tab-element .curr-price{
+    @include r(800){
+      display: block!important;
+    }
+  }
+  .tot-price,.curr-price,.elem-value{
+    display: table-cell;
+    @include r(900){
+      display: block;
+      width:100%;
+      float:right;
+      text-align: right;
+    }
+  }
+  .elem-price{
+    display: table;
+    float:right;
+    width:45%;
+    @include r(1150){
+      width:55%;
+    }
+     @include r(800){
+      width:45%;
+    }
+  }
+  .cart_content,.cart_incart{
+    @include x-rem(min-width, 190px);
+    text-align: center;
+    @include r(920){
+      min-width:100%;
+      @include x-rem(margin,  15px 0);
+    }
+  }
+  .selection_find-clear{
+    @include x-rem(height, 31px);
+    @include r(768){
+      min-width:100%;
+      @include x-rem(margin,  15px 0);
+    }
+    @include r(480){
+      margin:0 auto;
+      display: block;
+      max-width:150px;
+      min-width:0;
+      text-align: center;
+    }
+  }
+  .tab-btns{
+     @include x-rem(padding,  15px 50px);
+     border:none;
+      @include r(1040){
+      @include x-rem(padding,  15px 10px);
+    }
+  }
+  .price-calc-wrap{
+    max-width:25%;
+    float:right;
+    @include r(940){
+      max-width:40%;
+      @include x-rem(padding-left,  15px);
+    }
+    @include r(768){
+      max-width:50%;
+    }
+    @include r(480){
+      max-width:100%;
+      padding-left:0;
+    }
+  }
+}
+.btns-wrapper{
+  display: inline-block;
+  float:left;
+  max-width:75%;
+  @include r(768){
+      max-width:50%;
+    }
+    @include r(480){
+      min-width:100%;
+    }
+  .cart_buttons{
+    padding: 0;
+  }
+  .cancel-wrap{
+    display: inline-block;
+    @include r(920){
+      display: block;
+    }
+  }
+}
+
