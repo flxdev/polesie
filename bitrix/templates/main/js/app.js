@@ -7,18 +7,6 @@ $(window).on('load',function(){
 	}
 });
 $(document).ready(function () {
-
-/*	 $('.main__scroller ').baron({
-        bar: '.main__bar',
-        barOnCls: 'baron',
-        direction: 'h',
-        cssGuru: true,
-        impact: 'scroller',
-    })
-	 $('.main__scroller ').resize(function(){
-	$(this).baron().dispose().update();
-	console.log('update');
-})*/
 var Comparescroll = function(){
 	var target = $('.compare-wrapper');
 	var targetW = $('.compare_inner').width() - 250;
@@ -584,23 +572,38 @@ mobileSub();
 
 //input blocks
 	(function(){
-		var input = $('.line-search-form').find('input[type=search]'),
-			form = $('.line-search-form').find("form"),
+		var input = $('input[type=search]'),
+			form = $("form"),
 			category = $('.select-container'),
-			container =$('.line-search-form') ;
+			item = category.find('.section-item'),
+			container =$('.line-search-form') ,
+			trText = $('.search_drop').find('span');
+
 
 			input.focus(function(){
 				form.css('border-color','#fff445');
 				$(this).css('border-right-color','#fff445');
-				category.fadeIn();
+				category.fadeIn('fast');
 
 			})
 			container.focusout(function(){
-				console.log(2)
 				form.css('border-color','#eaeaea');
-				input.css('border-right-color','#eaeaea');
+				$(this).find(input).css('border-right-color','#eaeaea');
+				category.fadeOut('fast');
+
 			})
-			
+			item.each(function(){
+				var _= $(this);
+				_.click(function(e){
+					e.preventDefault();
+					var text = _.find('label').text();
+					trText.text(text);
+					setTimeout(function(){
+						_.parents('.line-search-form').find(input).focus();
+					},100);
+				})
+			})
+
 	})();
 
 // hover card
@@ -731,6 +734,12 @@ mobileSub();
 	});
 	$('.compare-wrapper ').matchHeight({
 		 property: 'height'
+	});
+	$('.content-section .product-delivery').matchHeight({
+		 property: 'min-height'
+	});
+	$('.news-small-wrap  .news_block').matchHeight({
+		 property: 'min-height'
 	});
 
 	//images or links draggeble
@@ -1242,9 +1251,36 @@ $(".set > .head").on("click", function(){
 }
 });
 }
-$('.elem-add').click(function(){
-	console.log('sdsdsdsd');
-})
+
+if($('#map').length){
+ var myMap;
+
+ymaps.ready(init);
+
+function init () {
+
+    myMap = new ymaps.Map('map', {
+
+        center: [52.203855, 24.328998], 
+        zoom: 13,
+        controls: ['zoomControl', 'fullscreenControl']
+    }, {
+
+    }),
+     myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+
+        }, {
+        	iconLayout: 'default#image',
+	        iconImageHref: 'images/myIcon.gif',
+	        iconImageHref: 'img/pin.svg',
+	        // Размеры метки.
+	        iconImageSize:[24, 30],
+	        iconImageOffset: [-10, -42]
+        });
+     
+myMap.geoObjects.add(myPlacemark);
+    };
+}
 //end of document.ready
  });
 var filterItems = function(item){

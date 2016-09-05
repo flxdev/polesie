@@ -1,0 +1,213 @@
+doctype html
+//if lt IE 7 
+  html.ie.ie6(lang='en')  
+//if IE 7 
+  html.ie.ie7(lang='en')  
+//if IE 8 
+  html.ie.ie8(lang='en')  
+// [if (gte IE 9)|!(IE)] <!
+html(lang='ru')
+  // <![endif]
+  head
+    include ./includes/_head.jade
+  body
+    #wrap
+      // header
+      include ./includes/_headmenu.jade
+
+      .content_main-wrapper
+        section
+          ul.breadcrums
+              a.home-btn(href="#")
+                  i.home-img
+                      svg#Layer_home(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='9px', y='5px', viewbox='0 0 14.1 13', style='enable-background:new 0 0 14.1 13;', xml:space='preserve')
+                        style(type='text/css').
+                          .sthome{fill-rule:evenodd;clip-rule:evenodd;fill:#989898;}
+                        path.sthome(d='M7.1,0l4.8,4.1L14,5.8c0,0,0.2,0.4,0,0.7c-0.3,0.4-0.8,0.2-0.8,0.2l-0.5-0.2v5.8c0,0.3-0.3,0.6-0.6,0.6h-3V8h-4\
+                        v5h-3c-0.3,0-0.6-0.3-0.6-0.6V6.6L0.9,6.8c0,0-0.6,0-0.8-0.2c-0.2-0.3,0-0.9,0-0.9l2-1.6L7.1,0z')
+              li.bread-item
+                  a(href="#") Спорт и туризм
+                  .bread-arrow
+                      svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                        style(type='text/css').
+                          .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                        path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                  .bread__add-menu-wrap
+                    .bread__add-container
+                      ul.add-list
+                        li.add-list-item
+                          a(href="#") Товары для детей
+                        li.add-list-item
+                          a(href="#") Мода и красота
+                        li.add-list-item
+                          a(href="#") Электроника и техника
+                        li.add-list-item
+                          a(href="#") Всякие гадости
+                  
+              li.bread-item
+                a(href="#") Спорт и туризм
+                i.bread-arrow
+                    svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                      style(type='text/css').
+                        .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                      path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                .bread__add-menu-wrap
+                  .bread__add-container
+                    ul.add-list
+                      li.add-list-item
+                        a(href="#") Товары для детей
+                      li.add-list-item
+                        a(href="#") Мода и красота
+                      li.add-list-item
+                        a(href="#") Электроника и техника
+                      li.add-list-item
+                        a(href="#") Ldt jlbyflwfnbrkfccybws rrr
+              li.bread-item
+                  a(href="#") Спорт и туризм
+        section
+          h1.section-title Личные данные
+          .section__wrapper
+              .aside__menu
+                aside.presonal-aside
+                  .moblie_btn.selection_item
+                      span Показать меню
+                      .bread-arrow
+                        svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                          style(type='text/css').
+                            .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                          path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                  .selection_wrapper.js-toggle-target
+                    .company-list.company-tel
+                      span Помощь
+                    ul
+                      ul.aside-menu-item
+                        a(href="#") Об интернет-магазине
+                      ul.aside-menu-item.active  
+                        a(href="#") Как заказать
+                      ul.aside-menu-item 
+                        a(href="#") Доставка и оплата
+                      ul.aside-menu-item 
+                        a(href="#") Возврат
+                      ul.aside-menu-item 
+                        a(href="#") Подписка
+                      ul.aside-menu-item 
+                        a(href="#") Оферта
+                      ul.aside-menu-item 
+                        a(href="#") Частые вопросы
+                    .company-list.company-tel
+                      span Информация
+                    ul
+                      ul.aside-menu-item
+                        a(href="#") ТЦ «Полесье»
+                      ul.aside-menu-item.active  
+                        a(href="#") Новости и акции
+                      ul.aside-menu-item 
+                        a(href="#") Вакансии
+                      ul.aside-menu-item 
+                        a(href="#") Поставщикам
+                      ul.aside-menu-item 
+                        a(href="#") Подписка
+                      ul.aside-menu-item 
+                        a(href="#") Бренды
+                      ul.aside-menu-item 
+                        a(href="#") Контакты
+              .section__content
+                  section.content-section
+                    h2.section-title «Полесье» — один из крупнейших торговых центров Беларуси
+                    p.text-block.gray Торговый центр «Полесье» представляет собой современный торговый комплекс общей площадью более 9000 кв.м. Это три этажа с торговыми залами продовольственных и промышленных товаров, где каждого посетителя удивит необыкновенная широта ассортимента, сконцентрированного в одном торговом объекте. Рядом расположена стоянка на 300 парковочных мест.   
+                    img.step-img(src="img/promo/help.jpg", alt="help")
+                    .step-decribe.gray Открытие ТЦ «Полесье» собрало всех жителей города Кобрин, а так же гостей из Брестской и Минской областей
+                    p.text-block.black Компания Полесье хорошо известна на рынке России, Беларуси, стран СНГ и Европы как производитель высококачественных пластмассовых игрушек из экологически чистых материалов с использованием передовых технологий. Яркие цвета, неповторимый дизайн, гибкая система скидок и индивидуальный подход позволяют нам занимать одно из лидирующих мест на рынке.
+                    p.text-block.black Мы не просто производим и продаем детские игрушки, а помогаем родителям решить задачи, связанные с досугом и развитием ребенка. Создавая этот сайт, мы стремились предоставить Вам возможность узнать историю предприятия и основные этапы становления коллектива, оперативно знакомиться с нашей продукцией и получать достоверную информацию о новинках.
+                  section.content-section
+                    h2.section-title Маркированный список
+                    .col-m
+                      ul.step-list
+                        li.step-list-item Нажать кнопку «В корзину» в карточке товара, после его добавления в «Корзину»
+                        li.step-list-item Кликнув на кнопку в правом верхнем углу сайта. При наведении курсора на этот значок, у Вас откроется информация о том
+                    .col-m
+                      ul.step-list
+                        li.step-list-item Нажать кнопку «В корзину» в карточке товара, после его добавления в «Корзину»
+                        li.step-list-item Кликнув на кнопку в правом верхнем углу сайта. При наведении курсора на этот значок, у Вас откроется информация о том
+                        li.step-list-item Кликнув на кнопку в правом верхнем углу сайта. При наведении курсора на этот значок, у Вас откроется информация о том
+                  section.content-section
+                    h2.section-title Огромный ассортимент
+                    .col-s.product-delivery
+                      .product-image
+                        img(src="img/promo/icon_1.svg", alt="")
+                      .product-content
+                        span.name Продовольственныепродукты
+                        p.product-content-text Широкий выбор продуктов питания на любой вкус
+                    .col-s.product-delivery
+                      .product-image
+                        img(src="img/promo/icon_2.svg", alt="")
+                      .product-content
+                        span.name Кафе и кофейни
+                        p.product-content-text Многочисленные кофейни и кафе 
+                    .col-s.product-delivery
+                      .product-image
+                        img(src="img/promo/icon_3.svg", alt="")
+                      .product-content
+                        span.name Мебель и интерьер
+                        p.product-content-text Более 5 тыс. позиций мебели и предметов интерьера
+                    .col-s.product-delivery
+                      .product-image
+                        img(src="img/promo/icon_4.svg", alt="")
+                      .product-content
+                        span.name Строительные материалы и бытовая химия 
+                        p.product-content-text Товары для обустройства дома и поддержания в нем чистоты
+                    .col-s.product-delivery
+                      .product-image
+                        img(src="img/promo/icon_5.svg", alt="")
+                      .product-content
+                        span.name Одежда
+                        p.product-content-text Модные коллекции одежды для всей семьи 
+                    .col-s.product-delivery
+                      .product-image
+                        img(src="img/promo/icon_6.svg", alt="")
+                      .product-content
+                        span.name Обувь
+                        p.product-content-text Огромный выбор разных моделей обуви для взрослых и детей
+                    .col-s.product-delivery
+                      .product-image
+                        img(src="img/promo/icon_7.svg", alt="")
+                      .product-content
+                        span.name Игрушки
+                        p.product-content-text Более 1 220 игрушек и игр, из которых 560 — игрушки производства «Полесье» 
+                  section.content-section
+                    h2.section-title Нумерованный список
+                    .step-wrapper
+                      span.step-counter
+                        | 01
+                      article.step-text
+                        h3.title-small Добавить товар в корзину
+                        p.text-block.black В карточке товара, который Вам понравился, выберите подходящие параметры и нажмите кнопку «В корзину». Чтобы подобрать товар наведите курсор на интересующий вас параметр.
+                    .step-wrapper
+                      span.step-counter 
+                        | 02
+                      article.step-text
+                        h3.title-small Перейти в корзину и проверить заказ
+                        p.text-block.black Для продолжения оформления заказа вам необходимо перейти в «Корзину». Попасть в корзину можно несколькими способами:
+                        ul.step-list
+                          li.step-list-item Нажать кнопку «В корзину» в карточке товара, после его добавления в «Корзину»
+                          li.step-list-item Кликнув на кнопку в правом верхнем углу сайта. При наведении курсора на этот значок, у Вас откроется информация о том, какие товары находятся в «Корзине», а при клике на него, Вы перейдете в саму «Корзину».
+                    .step-wrapper
+                      span.step-counter 
+                        | 03
+                      article.step-text
+                        h3.title-small 3 этаж
+                        p.text-block.black Для продолжения оформления заказа вам необходимо перейти 
+                    article.text-article Клиент вправе отказаться от заказанного товара ненадлежащего качества в любое время до его получения, а после получения  — в течение 7 дней, не считая дня покупки. 
+                    .form-block
+                      .form-block-title
+                        |Миссия нашей компании
+                      .form-block-content
+                        p.text-block.black Мы не просто производим и продаем детские игрушки, а помогаем родителям решить задачи, связанные с досугом и развитием ребенка. Создавая этот сайт, мы стремились предоставить Вам возможность узнать историю предприятия и основные этапы становления коллектива, оперативно знакомиться с нашей продукцией и получать достоверную информацию о новинках.
+
+
+
+      
+      .mask-js
+      // footer
+      include ./includes/_footer.jade
+    include ./includes/_index-modals.jade

@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<!--if lt IE 7 html.ie.ie6(lang='en')  
+-->
+<!--if IE 7 html.ie.ie7(lang='en')  
+-->
+<!--if IE 8 html.ie.ie8(lang='en')  
+-->
+<!-- [if (gte IE 9)|!(IE)] <!-->
+<html lang="ru">
+	<!-- <![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>Полесье Онлайн-гипермаркет</title>
+		<meta name="description" content="#">
+		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="css/screen.css">
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+		<script src="js/common.js"></script>
+	</head>
+	<body>
+		<div id="wrap">
+			<!-- header-->
+			<div class="header">
+				<header>
+					<!-- top line-->
+					<div class="top-line">
+						<div class="top-line-region">
+							<p><a href="#" data-target=".regions_hidden" class="js-modal-trigger">Минск, Минская область</a></p>
+						</div>
+						<div class="top-line-nav">
+							<nav>
+								<ul>
+									<li class="top-item"><a href="#">Доставка и оплата</a></li>
+									<li class="top-item"><a href="#">Частые вопросы</a></li>
+									<li class="top-item"><a href="#">Новости и акции</a></li>
+									<li class="dropdown-btn"><a href="#">Ещё
+											<div class="icon">
+												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" viewbox="0 0 15 3" style="enable-background:new 0 0 15 3;" xml:space="preserve">
+													<style type="text/css">.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#3B3B3B;}</style>
+													<g>
+														<g>
+															<path d="M1.5,0C0.7,0,0,0.7,0,1.5C0,2.3,0.7,3,1.5,3C2.3,3,3,2.3,3,1.5C3,0.7,2.3,0,1.5,0z M7.5,0C6.7,0,6,0.7,6,1.5                        C6,2.3,6.7,3,7.5,3C8.3,3,9,2.3,9,1.5C9,0.7,8.3,0,7.5,0z M13.5,0C12.7,0,12,0.7,12,1.5C12,2.3,12.7,3,13.5,3                        C14.3,3,15,2.3,15,1.5C15,0.7,14.3,0,13.5,0z" class="st1"></path>
+														</g>
+													</g>
+												</svg>
+											</div></a>
+										<div class="drop-menu-wrapper">
+											<ul class="drop-line-nav">
+												<li><a href="#">Как заказать</a></li>
+												<li><a href="#">Возврат</a></li>
+												<li><a href="#">Оферта</a></li>
+												<li><a href="#">Контакты</a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="top-line-call">
+							<p><span>+375 29 605 05 05</span> - или <a href="#">обратный звонок</a></p>
+						</div>
+					</div>
+					<!-- line-->
+					<div class="line">
+						<!-- logo-->
+						<div class="line-wrap-logo">
+							<div class="wrap-logo"><img src="img/logo.svg" alt="Полесье" class="logo">
+								<div class="logo-market">
+									<p class="market">Market</p>
+									<p class="bigmarket">Онлайн-гипермаркет</p>
+								</div>
+							</div>
+							<div class="wrap-catalog-btn">
+								<p>Каталог продукции</p>
+							</div>
+						</div>
+						<!-- search-->
+						<div class="line-search-form">
+							<form action="" method="post">
+								<input type="submit" value="Найти">
+								<input type="search" name="search" placeholder="Поиск по 200 000 товарам, разделам и артикулам" class="search">
+							</form>
+							<div class="select-container"><a href="#" class="search_drop"> <span>По тексту </span>
+									<div class="img">
+										<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 8 4" width="9px" height="5px" style="enable-background:new 0 0 8 4;" xml:space="preserve">
+											<path d="M8,0H0l4,4L8,0z"></path>
+										</svg>
+									</div></a>
+								<div class="section">
+									<div class="section-item">
+										<input id="dva1" type="radio" checked="checked" name="dva">
+										<label for="dva1">По тексту</label>
+									</div>
+									<div class="section-item">
+										<input id="dva2" type="radio" name="dva">
+										<label for="dva2">По каталогу</label>
+									</div>
+								</div>
+							</div>
+							<!-- cart_list_hidden-->
+							<div style="display: none" class="line_search_hidden search-catalog">
+								<div class="cart_list_block_scroll search_scroll">
+									<div class="search_list">
+										<ul>
+											<li><a href="#">Детские велосипеды</a></li>
+											<li><a href="#">Велосипеды</a></li>
+											<li><a href="#">Велосипедные аксессуары</a></li>
+										</ul>
+									</div>
+									<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
+										<div class="cart_list_descr">
+											<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
+											<p>Цвет: черный</p>
+											<p>Кол-во: 1 шт.</p>
+											<div class="cart_list_coast">
+												<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
+												<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
+										<div class="cart_list_descr">
+											<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
+											<p>Цвет: черный</p>
+											<p>Кол-во: 1 шт.</p>
+											<div class="cart_list_coast">
+												<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
+												<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
+										<div class="cart_list_descr">
+											<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
+											<p>Цвет: черный</p>
+											<p>Кол-во: 1 шт.</p>
+											<div class="cart_list_coast">
+												<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
+												<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
+										<div class="cart_list_descr">
+											<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
+											<p>Цвет: черный</p>
+											<p>Кол-во: 1 шт.</p>
+											<div class="cart_list_coast">
+												<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
+												<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- cart_list_hidden-->
+							<div style="display: none" class="line_search_hidden search-text">
+								<div class="cart_list_block_scroll">
+									<div class="cart_list_block"><img src="img/promo/search-text.jpg" alt="#">
+										<div class="cart_list_descr">
+											<p class="search_date">06 июля 2016 года</p>
+											<p class="search_list_name">Новое поступление детских велосипедов</p>
+											<p class="short_descr">В нашем магазине обновление ассорти- мента — более 120 новых моделей детских и подростковых велосипедов...</p>
+										</div>
+									</div>
+									<div class="cart_list_block"><img src="img/promo/search-text.jpg" alt="#">
+										<div class="cart_list_descr">
+											<p class="search_date">06 июля 2016 года</p>
+											<p class="cart_list_name">Новое поступление детских велосипедов</p>
+											<p class="short_descr">В нашем магазине обновление ассорти- мента — более 120 новых моделей детских и подростковых велосипедов...</p>
+										</div>
+									</div>
+									<div class="cart_list_block"><img src="img/promo/search-text.jpg" alt="#">
+										<div class="cart_list_descr">
+											<p class="search_date">06 июля 2016 года</p>
+											<p class="cart_list_name">Новое поступление детских велосипедов</p>
+											<p class="short_descr">В нашем магазине обновление ассорти- мента — более 120 новых моделей детских и подростковых велосипедов...</p>
+										</div>
+									</div>
+									<div class="cart_list_block"><img src="img/promo/search-text.jpg" alt="#">
+										<div class="cart_list_descr">
+											<p class="search_date">06 июля 2016 года</p>
+											<p class="cart_list_name">Новое поступление детских велосипедов</p>
+											<p class="short_descr">В нашем магазине обновление ассорти- мента — более 120 новых моделей детских и подростковых велосипедов...</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- tools-->
+						<div class="mobile-search">
+							<div class="mobile_form-wrapper">
+								<form action="">
+									<input type="text" placeholder="Поиск пок каталогу" class="mobile-search-input">
+									<input type="submit" class="mobile-search-submit">
+								</form>
+							</div>
+						</div>
+						<div class="line-tools"><a href="#" data-title="Список сравнения пуст" class="tools-comparison"><i class="counter"> <span>12</span></i></a><a href="#" data-title="Список отложенных товаров пуст" class="tools-defer"><i class="counter"> <span>12</span></i></a><a href="#" class="tools-search js-search-btn"></a>
+							<!-- Если человек еще не вошел, то на .acc-text вешаем класс .no-login-->
+							<div class="bread-item"><a href="#" class="acc-text">Василий Солодарь</a>
+								<div class="bread__add-menu-wrap">
+									<div class="bread__add-container">
+										<ul class="add-list">
+											<!--на элемент списка, соотв текущей странице вешаем active-->
+											<li class="add-list-item"><a href="#">Помощь</a></li>
+											<li class="add-list-item"><a href="#">История заказов</a></li>
+											<li class="add-list-item"><a href="#">Отложенные</a></li>
+											<li class="add-list-item"><a href="#">Личные данные</a></li>
+											<li class="add-list-item active"><a href="#">Подписка</a></li>
+											<li class="add-list-item"><a href="#">Выйти</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="line-cart"><a href="#" class="product-buy-btn cart">
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="26px" height="20px" viewbox="0 0 23.3 18.1" style="enable-background:new 0 0 23.3 18.1;" xml:space="preserve">
+									<style type="text/css">.stcart{fill:#3B3B3B;}</style>
+									<g>
+										<g>
+											<path d="M11.3,14c-0.6-0.3-0.6-1.9-0.6-1.9s9.8,0,10,0c0.3,0,0.8,0.1,1-1s1.4-8,1.4-8H8.7c-1.3-3.2-3.2-3-3.2-3H1.6                c0,0-1.9,0.2-1.2,2c0.5,0.8,2,0.7,2.3-0.2c0.1-0.4,0-0.8,0-0.8h3c0,0,1.1,0.3,1.5,1.3c1.7,4.2,2.3,9.9,2.7,11.2                C10.2,14.8,11,15,11,15h2h1.4h3.5h2.6v-1 M10.5,11.1c-0.3-1.6-1-4.8-1.5-7h12.7l-1,7H10.5z" class="stcart"></path>
+										</g>
+									</g>
+									<path d="M12.5,14.3c-1,0-1.9,0.8-1.9,1.9c0,1,0.8,1.9,1.9,1.9c1,0,1.9-0.8,1.9-1.9C14.3,15.1,13.5,14.3,12.5,14.3z            M12.5,17.3c-0.6,0-1.1-0.5-1.1-1.1s0.5-1.1,1.1-1.1s1.1,0.5,1.1,1.1S13.1,17.3,12.5,17.3z" class="stcart"></path>
+									<path d="M19.9,14.3c-1,0-1.9,0.8-1.9,1.9c0,1,0.8,1.9,1.9,1.9c1,0,1.9-0.8,1.9-1.9S21,14.3,19.9,14.3z M19.9,17.3            c-0.6,0-1.1-0.5-1.1-1.1s0.5-1.1,1.1-1.1s1.1,0.5,1.1,1.1C21.1,16.8,20.6,17.3,19.9,17.3z" class="stcart"></path>
+								</svg>Корзинa<span>0</span></a>
+							<!-- cart_list_hidden-->
+							<div class="cart_list-wrapper">
+								<div class="cart_list_hidden">
+									<div class="cart_list_block_scroll">
+										<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
+											<div class="cart_list_descr">
+												<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
+												<p>Цвет: черный</p>
+												<p>Кол-во: 1 шт.</p>
+												<div class="cart_list_coast">
+													<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
+													<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
+												</div>
+											</div>
+										</div>
+										<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
+											<div class="cart_list_descr">
+												<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
+												<p>Цвет: черный</p>
+												<p>Кол-во: 1 шт.</p>
+												<div class="cart_list_coast">
+													<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
+													<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
+												</div>
+											</div>
+										</div>
+										<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
+											<div class="cart_list_descr">
+												<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
+												<p>Цвет: черный</p>
+												<p>Кол-во: 1 шт.</p>
+												<div class="cart_list_coast">
+													<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
+													<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
+												</div>
+											</div>
+										</div>
+										<div class="cart_list_block"><img src="img/promo/cart_list.jpg" alt="#">
+											<div class="cart_list_descr">
+												<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
+												<p>Цвет: черный</p>
+												<p>Кол-во: 1 шт.</p>
+												<div class="cart_list_coast">
+													<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
+													<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="cart_total">
+										<p>Итого: <span>4 466,60 р. <span> 44 666 000 р</span></span></p>
+									</div>
+									<div class="cart_buttons"><a href="#" class="cart_incart">Перейти в корзину</a><a href="#" class="cart_content">Оформить заказ</a></div>
+								</div>
+							</div>
+							<div class="cart_list-empty">
+								<div class="cart_list_hidden">
+									<p>Ваша корзина совершенно пуста</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- main-nav-->
+					<div class="main-nav">
+						<nav class="nav">
+							<div class="js-mobile-menu-btn"><a href="#">Все разделы каталога
+									<div class="icon arr-r">
+										<svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve">
+											<style type="text/css">.ftr-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}</style>
+											<path d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5" class="ftr-arr"></path>
+										</svg>
+									</div></a></div>
+							<div class="js-mobile-menu-btn mobile-back is-hidden"><a href="#">Назад
+									<div class="icon arr-r">
+										<svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve">
+											<style type="text/css">.ftr-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}</style>
+											<path d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5" class="ftr-arr"></path>
+										</svg>
+									</div></a></div>
+							<ul class="is-hidden">
+								<!--в menu-item лучше использовать неразрывные пробелы-->
+								<li class="menu-item"><a href="#">Твары для детей</a></li>
+								<li class="menu-item"><a href="#">Мода и красота</a></li>
+								<li class="menu-item"><a href="#">Спорт и туризм</a>
+									<!--если внутри есть выпадающее меню - вешаем класс-->
+								</li>
+								<li class="menu-item dropdown"><a href="#">Электроника и техника</a>
+									<div class="main-nav-dropmenu">
+										<div class="nav-main-wrap">
+											<div class="nav-main">
+												<ul>
+													<li class="sub-item"><a href="#">Мебель, оборудование для сада</a></li>
+													<li class="sub-item"><a href="#">Электрика и освещение</a></li>
+													<li class="sub-item"><a href="#">Садоводство и озеленение</a></li>
+													<li class="sub-item"><a href="#">Электроинструмент</a>
+														<div class="drop-nav-dropmenu">
+															<ul class="menu-item-dropable">
+																<li><a href="#">Дрели, шуруповёрты, молотки</a></li>
+																<li><a href="#">Шлифовальные станки и машины</a></li>
+																<li><a href="#">Пилы и лобзики</a></li>
+																<li><a href="#">Отрезные станки и ножницы</a></li>
+																<li><a href="#">Рубанки, фрезерные станки</a></li>
+																<li><a href="#">Фены строительные <span>-5%</span></a></li>
+																<li><a href="#">Лебёдки</a></li>
+																<li><a href="#">Компрессоры, пылесосы</a></li>
+																<li><a href="#">Сварочное оборудование</a></li>
+																<li><a href="#">Расходные материалы <span>-5%</span></a></li>
+															</ul>
+														</div>
+													</li>
+													<li class="sub-item"><a href="#">Инструмент ручной</a>
+														<div class="drop-nav-dropmenu">
+															<ul class="menu-item-dropable">
+																<li><a href="#">Дрели, шуруповёрты, молотки</a></li>
+																<li><a href="#">Шлифовальные станки и машины</a></li>
+																<li><a href="#">Пилы и лобзики</a></li>
+																<li><a href="#">Отрезные станки и ножницы</a></li>
+																<li><a href="#">Рубанки, фрезерные станки</a></li>
+																<li><a href="#">Фены строительные <span>-5%</span></a></li>
+																<li><a href="#">Лебёдки</a></li>
+																<li><a href="#">Компрессоры, пылесосы</a></li>
+																<li><a href="#">Сварочное оборудование</a></li>
+																<li><a href="#">Расходные материалы <span>-5%</span></a></li>
+															</ul>
+														</div>
+													</li>
+													<li class="sub-item"><a href="#">Текстиль для дома, рукоделие</a></li>
+													<li class="sub-item"><a href="#">Домашний декор</a></li>
+													<li class="sub-item"><a href="#">Бытовая химия, СМС</a></li>
+													<li class="sub-item"><a href="#">Хозтовары, садовый инвентарь</a></li>
+													<li class="sub-item"><a href="#">Садоводство и озеленение</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="main-nav-featur">
+											<div class="featur-blocks-wrap">
+												<div class="themed_block"><img src="img/promo/themed101.jpg" alt="#">
+													<p class="themed_name"><a href="#" tabindex="0">Мягкая игрушка Hasbro Игривый щенок [B0449]</a></p>
+													<p class="themed_cat">Мягкие игрушки</p>
+													<p class="themed_coast">3 798,00 р.</p>
+												</div>
+												<div class="themed_block"><img src="img/promo/themed101.jpg" alt="#">
+													<p class="themed_name"><a href="#" tabindex="0">Мягкая игрушка Hasbro Игривый щенок [B0449]</a></p>
+													<p class="themed_cat">Мягкие игрушки</p>
+													<p class="themed_coast">3 798,00 р.</p>
+												</div>
+												<div class="themed_block"><img src="img/promo/themed101.jpg" alt="#">
+													<p class="themed_name"><a href="#" tabindex="0">Мягкая игрушка Hasbro Игривый щенок [B0449]</a></p>
+													<p class="themed_cat">Мягкие игрушки</p>
+													<p class="themed_coast">3 798,00 р.</p>
+												</div>
+											</div>
+											<div class="featur-brands">
+												<ul>
+													<li><img src="img/promo/brand1.jpg" alt="#"></li>
+													<li><img src="img/promo/brand2.jpg" alt="#"></li>
+													<li><img src="img/promo/brand3.jpg" alt="#"></li>
+													<li><img src="img/promo/brand4.jpg" alt="#"></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="menu-item dropdown"><a href="#">Для дома и сада</a>
+									<div class="main-nav-dropmenu">
+										<div class="nav-main-wrap">
+											<div class="nav-main">
+												<ul>
+													<li><a href="#">Мебель, оборудование для сада</a></li>
+													<li><a href="#">Электрика и освещение</a></li>
+													<li><a href="#">Садоводство и озеленение</a></li>
+													<li><a href="#">Электроинструмент</a>
+														<div class="drop-nav-dropmenu">
+															<ul class="menu-item-dropable">
+																<li><a href="#">Дрели, шуруповёрты, молотки</a></li>
+																<li><a href="#">Шлифовальные станки и машины</a></li>
+																<li><a href="#">Пилы и лобзики</a></li>
+																<li><a href="#">Отрезные станки и ножницы</a></li>
+																<li><a href="#">Рубанки, фрезерные станки</a></li>
+																<li><a href="#">Фены строительные <span>-5%</span></a></li>
+																<li><a href="#">Лебёдки</a></li>
+																<li><a href="#">Компрессоры, пылесосы</a></li>
+																<li><a href="#">Сварочное оборудование</a></li>
+																<li><a href="#">Расходные материалы <span>-5%</span></a></li>
+															</ul>
+														</div>
+													</li>
+													<li><a href="#">Инструмент ручной</a></li>
+													<li><a href="#">Текстиль для дома, рукоделие</a></li>
+													<li><a href="#">Домашний декор</a></li>
+													<li><a href="#">Бытовая химия, СМС</a></li>
+													<li><a href="#">Хозтовары, садовый инвентарь</a></li>
+													<li><a href="#">Садоводство и озеленение</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="main-nav-featur">
+											<div class="featur-blocks-wrap">
+												<div class="themed_block"><img src="img/promo/themed101.jpg" alt="#">
+													<p class="themed_name"><a href="#" tabindex="0">Мягкая игрушка Hasbro Игривый щенок [B0449]</a></p>
+													<p class="themed_cat">Мягкие игрушки</p>
+													<p class="themed_coast">3 798,00 р.</p>
+												</div>
+												<div class="themed_block"><img src="img/promo/themed101.jpg" alt="#">
+													<p class="themed_name"><a href="#" tabindex="0">Мягкая игрушка Hasbro Игривый щенок [B0449]</a></p>
+													<p class="themed_cat">Мягкие игрушки</p>
+													<p class="themed_coast">3 798,00 р.</p>
+												</div>
+												<div class="themed_block"><img src="img/promo/themed101.jpg" alt="#">
+													<p class="themed_name"><a href="#" tabindex="0">Мягкая игрушка Hasbro Игривый щенок [B0449]</a></p>
+													<p class="themed_cat">Мягкие игрушки</p>
+													<p class="themed_coast">3 798,00 р.</p>
+												</div>
+											</div>
+											<div class="featur-brands">
+												<ul>
+													<li><img src="img/promo/brand1.jpg" alt="#"></li>
+													<li><img src="img/promo/brand2.jpg" alt="#"></li>
+													<li><img src="img/promo/brand3.jpg" alt="#"></li>
+													<li><img src="img/promo/brand4.jpg" alt="#"></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="menu-item"><a href="#">Автотовары</a></li>
+								<li class="menu-item"><a href="#">Ремонт&nbsp;и&nbsp;стройка</a></li>
+								<li class="menu-item"><a href="#" class="sale">Распродажа	</a></li>
+								<div class="dropdown-btn js-menu_add-btn"><a href="">Еще
+										<div class="icon">
+											<svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 15 3" style="enable-background:new 0 0 15 3;" xml:space="preserve">
+												<style type="text/css">.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#3B3B3B;}</style>
+												<g>
+													<g>
+														<path d="M1.5,0C0.7,0,0,0.7,0,1.5C0,2.3,0.7,3,1.5,3C2.3,3,3,2.3,3,1.5C3,0.7,2.3,0,1.5,0z M7.5,0C6.7,0,6,0.7,6,1.5                      C6,2.3,6.7,3,7.5,3C8.3,3,9,2.3,9,1.5C9,0.7,8.3,0,7.5,0z M13.5,0C12.7,0,12,0.7,12,1.5C12,2.3,12.7,3,13.5,3                      C14.3,3,15,2.3,15,1.5C15,0.7,14.3,0,13.5,0z" class="st1"></path>
+													</g>
+												</g>
+											</svg>
+										</div></a>
+									<div class="drop-menu-wrapper">
+										<ul class="drop-line-nav js-container"></ul>
+									</div>
+								</div>
+							</ul>
+						</nav>
+					</div>
+				</header>
+			</div>
+			<div class="content_main-wrapper">
+				<section>
+					<ul class="breadcrums"><a href="#" class="home-btn"><i class="home-img">
+								<svg id="Layer_home" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="9px" y="5px" viewbox="0 0 14.1 13" style="enable-background:new 0 0 14.1 13;" xml:space="preserve">
+									<style type="text/css">.sthome{fill-rule:evenodd;clip-rule:evenodd;fill:#989898;}</style>
+									<path d="M7.1,0l4.8,4.1L14,5.8c0,0,0.2,0.4,0,0.7c-0.3,0.4-0.8,0.2-0.8,0.2l-0.5-0.2v5.8c0,0.3-0.3,0.6-0.6,0.6h-3V8h-4                        v5h-3c-0.3,0-0.6-0.3-0.6-0.6V6.6L0.9,6.8c0,0-0.6,0-0.8-0.2c-0.2-0.3,0-0.9,0-0.9l2-1.6L7.1,0z" class="sthome"></path>
+								</svg></i></a>
+						<li class="bread-item"><a href="#">Спорт и туризм</a>
+							<div class="bread-arrow">
+								<svg id="Layer_arr" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve">
+									<style type="text/css">.bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}</style>
+									<path d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5" class="bre-arr"></path>
+								</svg>
+							</div>
+							<div class="bread__add-menu-wrap">
+								<div class="bread__add-container">
+									<ul class="add-list">
+										<li class="add-list-item"><a href="#">Товары для детей</a></li>
+										<li class="add-list-item"><a href="#">Мода и красота</a></li>
+										<li class="add-list-item"><a href="#">Электроника и техника</a></li>
+										<li class="add-list-item"><a href="#">Всякие гадости</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="bread-item"><a href="#">Спорт и туризм</a><i class="bread-arrow">
+								<svg id="Layer_arr" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve">
+									<style type="text/css">.bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}</style>
+									<path d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5" class="bre-arr"></path>
+								</svg></i>
+							<div class="bread__add-menu-wrap">
+								<div class="bread__add-container">
+									<ul class="add-list">
+										<li class="add-list-item"><a href="#">Товары для детей</a></li>
+										<li class="add-list-item"><a href="#">Мода и красота</a></li>
+										<li class="add-list-item"><a href="#">Электроника и техника</a></li>
+										<li class="add-list-item"><a href="#">Ldt jlbyflwfnbrkfccybws rrr</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+						<li class="bread-item"><a href="#">Спорт и туризм</a></li>
+					</ul>
+				</section>
+				<section>
+					<h1 class="section-title">Личные данные</h1>
+					<div class="section__wrapper">
+						<div class="aside__menu">
+							<aside class="presonal-aside">
+								<div class="moblie_btn selection_item"><span>Показать меню</span>
+									<div class="bread-arrow">
+										<svg id="Layer_arr" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve">
+											<style type="text/css">.bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}</style>
+											<path d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5" class="bre-arr"></path>
+										</svg>
+									</div>
+								</div>
+								<div class="selection_wrapper js-toggle-target">
+									<ul>
+										<ul class="aside-menu-item"><a href="#">Помощь</a></ul>
+										<ul class="aside-menu-item active"> <a href="#">История заказов</a></ul>
+										<ul class="aside-menu-item"> <a href="#">Отложенные</a></ul>
+										<ul class="aside-menu-item"> <a href="#">Личные данные</a></ul>
+										<ul class="aside-menu-item"> <a href="#">Подписка</a></ul>
+										<ul class="aside-menu-item"> 
+											<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 21 21" width="21px" height="22px" style="enable-background:new 0 0 21 21;" xml:space="preserve">
+												<style type="text/css">.st0{fill:#9C9B9B;}</style>
+												<g>
+													<g>
+														<path d="M11.8,11.8c0.7,0,1.3-0.6,1.3-1.3c0-0.7-0.6-1.3-1.3-1.3c-0.7,0-1.3,0.6-1.3,1.3                              C10.5,11.2,11.1,11.8,11.8,11.8z M20,1L9.2,0C8.5,0,8,0.3,8,1v13H4v-2l-4,3l4,3v-2h4l-0.1,3.7V21h11.8c0.7,0,1.3-0.6,1.3-1.3V2.6                              C21,1.9,20.7,1,20,1z M20,20H9V1l11,1V20z M4,4h3V3H4.3C3.6,3,3,3.6,3,4.4V10l1,0V4z M3.9,21H7v-1H3C3,20.7,3.2,21,3.9,21z" class="st0"></path>
+													</g>
+												</g>
+											</svg><a href="#">Выйти</a>
+										</ul>
+									</ul>
+								</div>
+							</aside>
+						</div>
+						<div class="section__content">
+							<div class="offer-form-inner offer-form-small">
+								<div class="product_tabs-wrapper">
+									<!--active для вывода сообщения-->
+									<div class="msg msg-err">
+										<div class="message-title"> 
+											<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" x="0px" y="0px" viewbox="0 0 43 43" style="enable-background:new 0 0 43 43;" xml:space="preserve">
+												<style type="text/css">.stfeed{fill-rule:evenodd;clip-rule:evenodd;fill:#E00000;}</style>
+												<g>
+													<g>
+														<path d="M21.5,0C9.6,0,0,9.6,0,21.5C0,33.4,9.6,43,21.5,43C33.4,43,43,33.4,43,21.5C43,9.6,33.4,0,21.5,0z M21.5,41                              C10.7,41,2,32.3,2,21.5C2,10.7,10.7,2,21.5,2C32.3,2,41,10.7,41,21.5C41,32.3,32.3,41,21.5,41z M20.6,28.1c-1.3,0-2.3,1-2.3,2.3                              c0,1,0.8,1.9,1.9,1.9c1.2,0,2.3-1,2.3-2.2C22.5,29,21.7,28.1,20.6,28.1z M20,25.9h2.7L26.4,12h-3.8L20,25.9z" class="stfeed"></path>
+													</g>
+												</g>
+											</svg>Произошла ошибка
+										</div>
+									</div>
+									<div class="msg msg-succ active">
+										<div class="message-title">
+											<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" x="0px" y="0px" viewbox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve">
+												<style type="text/css">.stf{fill-rule:evenodd;clip-rule:evenodd;fill:#49B210;}</style>
+												<g>
+													<g>
+														<path d="M22,0C9.8,0,0,9.8,0,22c0,12.2,9.8,22,22,22c12.2,0,22-9.8,22-22C44,9.8,34.2,0,22,0z M22,42C11,42,2,33,2,22                              C2,11,11,2,22,2s20,9,20,20C42,33,33,42,22,42z M30.7,12.8L18.1,29.1l-4.2-6.9c-0.4-0.5-1-0.6-1.5-0.2c-0.5,0.4-0.6,1-0.2,1.5                              l4.9,8c0.2,0.3,0.6,0.4,0.9,0.4c0.3,0,0.7-0.1,0.9-0.4l13.5-17.4c0.4-0.5,0.3-1.1-0.2-1.5C31.7,12.3,31,12.4,30.7,12.8z" class="stf"></path>
+													</g>
+												</g>
+											</svg>Данные успешно сохранены
+										</div>
+									</div>
+									<form action="/" class="form-feed">
+										<div class="form-block">
+											<div class="form-block-title">Настройка подписки</div>
+											<div class="form-block-body">
+												<div class="selection_body">
+													<div class="seclect-name">Как вам удобно получить новости и информацию о скидках?</div>
+													<ul class="select-u-body">
+														<li class="select-u-item">
+															<label class="input_label"><span class="input_main">
+																	<input name="who" type="checkbox" value="email" class="input-real"><span class="input-checked"></span></span><span class="input-text">На E-mail</span></label>
+														</li>
+														<li class="select-u-item">
+															<label class="input_label"><span class="input_main">
+																	<input name="who" type="checkbox" value="sms" class="input-real"><span class="input-checked"></span></span><span class="input-text">С помощью SMS</span></label>
+														</li>
+													</ul>
+												</div>
+												<div class="selection_body">
+													<div class="seclect-name">Отметьте рубрики, которые вам будет интересно читать?</div>
+													<ul class="select-u-body">
+														<li class="select-u-item">
+															<label class="input_label"><span class="input_main">
+																	<input name="who" type="checkbox" value="email" class="input-real"><span class="input-checked"></span></span><span class="input-text">Акции и скидки</span></label>
+														</li>
+														<li class="select-u-item">
+															<label class="input_label"><span class="input_main">
+																	<input name="who" type="checkbox" value="sms" class="input-real"><span class="input-checked"></span></span><span class="input-text">Новости</span></label>
+														</li>
+													</ul>
+												</div>
+												<div class="selection_body">
+													<div class="seclect-name">Отметьте категории товаров, про которые вы будете получать рассылку?</div>
+													<ul class="select-u-body">
+														<li class="select-u-item">
+															<label class="input_label"><span class="input_main">
+																	<input name="who" type="checkbox" value="email" class="input-real"><span class="input-checked"></span></span><span class="input-text">Товары для детей</span></label>
+														</li>
+														<li class="select-u-item">
+															<label class="input_label"><span class="input_main">
+																	<input name="who" type="checkbox" value="sms" class="input-real"><span class="input-checked"></span></span><span class="input-text">Мода и красота</span></label>
+														</li>
+														<li class="select-u-item">
+															<label class="input_label"><span class="input_main">
+																	<input name="who" type="checkbox" value="sms" class="input-real"><span class="input-checked"></span></span><span class="input-text">Спорт и туризм</span></label>
+														</li>
+														<li class="select-u-item">
+															<label class="input_label"><span class="input_main">
+																	<input name="who" type="checkbox" value="sms" class="input-real"><span class="input-checked"></span></span><span class="input-text">Электроника и техника</span></label>
+														</li>
+														<li class="select-u-item">
+															<label class="input_label"><span class="input_main">
+																	<input name="who" type="checkbox" value="sms" class="input-real"><span class="input-checked"></span></span><span class="input-text">Для дома и сада</span></label>
+														</li>
+														<li class="select-u-item">
+															<label class="input_label"><span class="input_main">
+																	<input name="who" type="checkbox" value="sms" class="input-real"><span class="input-checked"></span></span><span class="input-text">Автотовары</span></label>
+														</li>
+														<li class="select-u-item">
+															<label class="input_label"><span class="input_main">
+																	<input name="who" type="checkbox" value="sms" class="input-real"><span class="input-checked"></span></span><span class="input-text">Ремонт и стройка</span></label>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<button type="submit" class="hits-stat-more">Сохранить изменения</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="mask-js"></div>
+			<!-- footer-->
+			<footer>
+				<div class="footer">
+					<div class="footer__content-wrapper">
+						<div class="footer_contacts">
+							<h3>Получайте полезную информацию о&nbsp;скидках</h3>
+							<!-- footer-form-->
+							<div class="footer-form">
+								<form action="" method="post">
+									<input type="email" name="name" placeholder="Ваш e-mail" class="blacktext">
+									<input type="submit" value="Подписаться" class="blacktext">
+								</form>
+							</div>
+							<!-- footer_soc-->
+							<div class="footer_soc">
+								<h3>Мы в соцсетях</h3>
+								<ul>
+									<li><a href="#"><img src="img/main/facebook.svg" alt="facebook"></a></li>
+									<li><a href="#"><img src="img/main/youtube.svg" alt="youtube"></a></li>
+									<li><a href="#"><img src="img/main/vk.svg" alt="vk"></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer__menu-wrapper">
+							<div class="footer_help">
+								<h3 class="js-content-trigger">Помощь
+									<div class="icon">
+										<svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve">
+											<style type="text/css">.ftr-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}</style>
+											<path d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5" class="ftr-arr"></path>
+										</svg>
+									</div>
+								</h3>
+								<ul>
+									<li><a href="#">Об интернет-магазине</a></li>
+									<li><a href="#">Как заказать</a></li>
+									<li><a href="#">Доставка и оплата</a></li>
+									<li><a href="#">Возврат</a></li>
+									<li><a href="#">Оферта</a></li>
+									<li><a href="#">Частые вопросы</a></li>
+								</ul>
+							</div>
+							<!-- information-->
+							<div class="footer_info">
+								<h3 class="js-content-trigger">Информация
+									<div class="icon">
+										<svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve">
+											<style type="text/css">.ftr-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}</style>
+											<path d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5" class="ftr-arr"></path>
+										</svg>
+									</div>
+								</h3>
+								<ul>
+									<li><a href="#">ТЦ «Полесье»</a></li>
+									<li><a href="#">Новости и акции</a></li>
+									<li><a href="#">Вакансии</a></li>
+									<li><a href="#">Поставщикам</a></li>
+									<li><a href="#">Бренды</a></li>
+									<li><a href="#">Контакты</a></li>
+								</ul>
+							</div>
+							<!-- catalog-->
+							<div class="footer_catalog">
+								<h3 class="js-content-trigger">Каталог
+									<div class="icon">
+										<svg id="Layer_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve">
+											<style type="text/css">.ftr-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}</style>
+											<path d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5" class="ftr-arr"></path>
+										</svg>
+									</div>
+								</h3>
+								<ul>
+									<li><a href="#">Товары для детей</a></li>
+									<li><a href="#">Мода и красота</a></li>
+									<li><a href="#">Спорт и туризм</a></li>
+									<li><a href="#">Электроника и техника</a></li>
+									<li><a href="#">Для дома и сада</a></li>
+									<li><a href="#">Ремонт и стройка</a></li>
+									<li><a href="#">Распродажа</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- block VK-->
+					<div class="footer_VK"><img src="img/promo/vk.jpg" alt="vk"></div>
+				</div>
+				<div class="footer_line">
+					<!-- carts-->
+					<div class="footer_carts">
+						<ul>
+							<li><img src="img/promo/cart1.jpg" alt="webpay"></li>
+							<li><img src="img/promo/cart2.jpg" alt="dss"></li>
+							<li><img src="img/promo/cart3.jpg" alt="MasterCard"></li>
+							<li><img src="img/promo/cart4.jpg" alt="Maestro"></li>
+							<li><img src="img/promo/cart5.jpg" alt="VISA"></li>
+						</ul>
+					</div>
+					<!-- copy-->
+					<div class="footer_copy">© 2016, СООО «ПП Полесье»</div>
+					<!-- developer-->
+					<div class="footer_developer">
+						<p>Разработка сайта: <a href="#">Flex Media</a></p>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<!-- !!!! ATTENTION !!!!!! hidden blocks !!!! ATTENTION !!!!!!-->
+		<div class="regions_hidden hidden_bg">
+			<div class="hidden-block">
+				<div class="hidden-block-close button_close"></div>
+				<h2 class="hidden-title">Область доставки</h2>
+				<div class="regions_map"><img src="img/map2x.png" alt="map-region"></div>
+				<div class="regions">
+					<h3>Выберите область, куда необходимо доставить заказ</h3>
+					<form action="/" method="/" class="region_form">
+						<label>
+							<input name="region" type="radio" value="brest" checked="">Брестская область
+						</label>
+						<label>
+							<input name="region" type="radio" value="Vitebsk">Витебская область
+						</label>
+						<label>
+							<input name="region" type="radio" value="Gomel">Гомельская область
+						</label>
+						<label>
+							<input name="region" type="radio" value="Grodno">Гродненская область
+						</label>
+						<label>
+							<input name="region" type="radio" value="Minsk">Минск, Минская область
+						</label>
+						<label>
+							<input name="region" type="radio" value="Mogilev">Могилевская область
+						</label>
+						<input type="submit" value="Выбрать">
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- SUCCSES-->
+		<div class="success_hidden hidden_bg">
+			<div class="hidden-block">
+				<div class="hidden-block-close button_close"></div>
+				<h2 class="hidden-title">Спасибо</h2>
+				<p class="title-text">
+					Вы успешно подписались на рассылку информации о скидках и распродажах торгового центра «Полесье».
+					Настроить подписку вы можете в <a href="#">Личном кабинете.</a>
+				</p>
+				<p class="btn-wrap button_close"><a href="#" class="block-btn">Закрыть</a></p>
+			</div>
+		</div>
+		<div class="product_hidden hidden_bg">
+			<div class="hidden-block">
+				<div class="hidden-block-close button_close"></div>
+				<div class="product-galery-wrap">
+					<div class="product-much-cont active">
+						<div class="product-modal-slider">
+							<div class="product-slider-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-slider-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-slider-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-slider-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-slider-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-slider-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-slider-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+						</div>
+						<div class="product-madd-slider">
+							<div class="product-add-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-add-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-add-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-add-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-add-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-add-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+							<div class="product-add-item"><img src="img/promo/product.jpg" alt="velasaped"></div>
+						</div>
+						<div class="features__nav-modal"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="offer_hidden hidden_bg">
+			<div class="hidden-block">
+				<div class="hidden-block-close button_close"></div>
+				<h2 class="modal-title text-left">Товар добавлен в корзину</h2>
+				<p class="items-counter">В вашей корзине <span> 1 </span>товар.</p>
+				<div class="modal-items-wrapper">
+					<div class="modal-item">
+						<div class="modal-item-img"><img src="img/promo/product.jpg" alt="velasaped"></div>
+						<div class="modal-item-info">
+							<p class="main-title">STELS Navigator 500 V 26 (2016)</p>
+							<p class="product-option"><span>Цвет</span>: <span> голубой</span></p>
+							<p class="product-option"><span>Размер рамы</span>: <span>  21”</span></p>
+							<p class="product-option"><span>Кол-во </span>: <span> 1 шт.</span></p>
+						</div>
+						<div class="modal-item-price">
+							<div class="hits_coast">
+								<p class="hits_coast">13 435,60 р. <span> 13 435 600 р</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="modal-item">
+						<div class="modal-item-img"><img src="img/promo/product.jpg" alt="velasaped"></div>
+						<div class="modal-item-info">
+							<p class="main-title">STELS Navigator 500 V 26 (2016)</p>
+							<p class="product-option"><span>Цвет</span>: <span> голубой</span></p>
+							<p class="product-option"><span>Размер рамы</span>: <span>  21”</span></p>
+							<p class="product-option"><span>Кол-во </span>: <span> 1 шт.</span></p>
+						</div>
+						<div class="modal-item-price">
+							<div class="hits_coast">
+								<p class="hits_coast">13 435,60 р. <span> 13 435 600 р</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="modal-item">
+						<div class="modal-item-img"><img src="img/promo/product.jpg" alt="velasaped"></div>
+						<div class="modal-item-info">
+							<p class="main-title">STELS Navigator 500 V 26 (2016)</p>
+							<p class="product-option"><span>Цвет</span>: <span> голубой</span></p>
+							<p class="product-option"><span>Размер рамы</span>: <span>  21”</span></p>
+							<p class="product-option"><span>Кол-во </span>: <span> 1 шт.</span></p>
+						</div>
+						<div class="modal-item-price">
+							<div class="hits_coast">
+								<p class="hits_coast">13 435,60 р. <span> 13 435 600 р</span></p>
+							</div>
+						</div>
+						<div class="modal-item"></div>
+						<div class="modal-item-img"><img src="img/promo/product.jpg" alt="velasaped"></div>
+						<div class="modal-item-info">
+							<p class="main-title">STELS Navigator 500 V 26 (2016)</p>
+							<p class="product-option"><span>Цвет</span>: <span> голубой</span></p>
+							<p class="product-option"><span>Размер рамы</span>: <span>  21”</span></p>
+							<p class="product-option"><span>Кол-во </span>: <span> 1 шт.</span></p>
+						</div>
+						<div class="modal-item-price">
+							<div class="hits_coast">
+								<p class="hits_coast">13 435,60 р. <span> 13 435 600 р</span></p>
+							</div>
+						</div>
+						<div class="modal-item"></div>
+						<div class="modal-item-img"><img src="img/promo/product.jpg" alt="velasaped"></div>
+						<div class="modal-item-info">
+							<p class="main-title">STELS Navigator 500 V 26 (2016)</p>
+							<p class="product-option"><span>Цвет</span>: <span> голубой</span></p>
+							<p class="product-option"><span>Размер рамы</span>: <span>  21”</span></p>
+							<p class="product-option"><span>Кол-во </span>: <span> 1 шт.</span></p>
+						</div>
+						<div class="modal-item-price">
+							<div class="hits_coast">
+								<p class="hits_coast">13 435,60 р. <span> 13 435 600 р</span></p>
+							</div>
+						</div>
+						<div class="modal-item"></div>
+						<div class="modal-item-img"><img src="img/promo/product.jpg" alt="velasaped"></div>
+						<div class="modal-item-info">
+							<p class="main-title">STELS Navigator 500 V 26 (2016)</p>
+							<p class="product-option"><span>Цвет</span>: <span> голубой</span></p>
+							<p class="product-option"><span>Размер рамы</span>: <span>  21”</span></p>
+							<p class="product-option"><span>Кол-во </span>: <span> 1 шт.</span></p>
+						</div>
+						<div class="modal-item-price">
+							<div class="hits_coast">
+								<p class="hits_coast">13 435,60 р. <span> 13 435 600 р</span></p>
+							</div>
+						</div>
+						<div class="modal-item"></div>
+						<div class="modal-item-img"><img src="img/promo/product.jpg" alt="velasaped"></div>
+						<div class="modal-item-info">
+							<p class="main-title">STELS Navigator 500 V 26 (2016)</p>
+							<p class="product-option"><span>Цвет</span>: <span> голубой</span></p>
+							<p class="product-option"><span>Размер рамы</span>: <span>  21”</span></p>
+							<p class="product-option"><span>Кол-во </span>: <span> 1 шт.</span></p>
+						</div>
+						<div class="modal-item-price">
+							<div class="hits_coast">
+								<p class="hits_coast">13 435,60 р. <span> 13 435 600 р</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-add"><a href="#" class="block-btn">Перейти к корзине</a><a href="#" class="product-learn-more button_close">
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px" viewbox="0 0 18 18" style="enable-background:new 0 0 18 18;" xml:space="preserve">
+							<style type="text/css">.stmore{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style>
+							<g>
+								<g>
+									<path d="M9,0C4,0,0,4,0,9c0,5,4,9,9,9c5,0,9-4,9-9C18,4,14,0,9,0z M9,17c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8              c4.4,0,8,3.6,8,8C17,13.4,13.4,17,9,17z M10.4,5L6,9l4.4,4l0.6-0.6L7.3,9L11,5.6L10.4,5z" class="stmore"></path>
+								</g>
+							</g>
+						</svg>Продолжить покупки</a></div>
+			</div>
+		</div>
+		<div class="consult_hidden hidden_bg">
+			<div class="hidden-block">
+				<div class="hidden-block-close button_close"></div>
+				<h2 class="hidden-title">Консультация</h2>
+				<form action="/" class="form-feed">
+					<div class="input-wrapper">
+						<label class="input-label"> <span class="text">Ваше имя</span></label>
+						<input type="text" name="" placeholder="Иванов Степан Иванович" class="input-main input-from">
+					</div>
+					<div class="input-wrapper">
+						<label class="input-label"> <span class="text">E-mail</span></label>
+						<input type="email" name="" placeholder="info@mail.com" class="input-main input-from">
+					</div>
+					<div class="input-wrapper">
+						<label class="input-label"><span class="text"> Отзыв</span></label>
+						<input type="tell" name="" placeholder="+375 29 000-00-00" class="input-main input-from">
+					</div>
+					<div class="input-wrapper">
+						<label class="input-label"> <span class="text">Вопрос</span></label>
+						<textarea name="" rows="3" placeholder="Опишите" class="input-main input-small"></textarea>
+					</div>
+					<input type="submit" placeholder="Задать вопрос" class="hits-stat-more">
+				</form>
+			</div>
+		</div>
+		<div class="oneclick_hidden hidden_bg">
+			<div class="hidden-block">
+				<div class="hidden-block-close button_close"></div>
+				<h2 class="hidden-title">Купить в 1 клик</h2>
+				<form action="/" class="form-feed">
+					<div class="input-wrapper">
+						<label class="input-label"> <span class="text">Ваше имя</span></label>
+						<input type="text" name="" placeholder="Иванов Степан Иванович" class="input-main input-from">
+					</div>
+					<div class="input-wrapper">
+						<label class="input-label"> <span class="text">Телефон</span></label>
+						<input type="tel" name="" placeholder="+375 29 000-00-00" class="input-main input-from">
+					</div>
+					<div class="input-wrapper">
+						<label class="input-label"> <span>Сообщение</span></label>
+						<textarea name="" rows="3" placeholder="Оставьте сообщение" class="input-main input-small"></textarea>
+					</div>
+					<input type="submit" placeholder="Отправить" data-target=".success_hidden" class="hits-stat-more js-modal-trigger button_close">
+				</form>
+			</div>
+		</div>
+		<div class="login_hidden hidden_bg">
+			<div class="hidden-block">
+				<div class="hidden-block-close button_close"></div>
+				<h2 class="hidden-title">Личный кабинет</h2>
+				<div class="tab-form-wrapper">
+					<form action="/" class="form-feed">
+						<div class="form-block">
+							<div class="form-block-content">
+								<div class="input-wrapper">
+									<label class="input-label"> <span class="text">E-mail</span></label>
+									<input type="email" name="" placeholder="info@mail.com" class="input-main input-from">
+								</div>
+								<div class="input-wrapper">
+									<label class="input-label"> <span class="text">Пароль</span></label>
+									<input type="password" name="" placeholder="Пароль" class="input-main input-from"><a href="#" data-target=".password_hidden" class="forgot-pass js-modal-trigger button_close">Забыли пароль?</a>
+								</div>
+							</div>
+						</div>
+						<button type="submit" class="hits-stat-more enter-btn">Войти</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="password_hidden hidden_bg">
+			<div class="hidden-block">
+				<div class="hidden-block-close button_close"></div>
+				<h2 class="hidden-title">Восстановление пароля     </h2>
+				<div class="tab-form-wrapper">
+					<form action="" name="pass-forgotten" class="form-feed js-form-email">
+						<div class="form-block">
+							<div class="form-block-content">
+								<div class="input-text">Изменение пароля будет возможно после того, как вы перейдете по ссылке, которая будет отправлена вам на указанный e-mail</div>
+								<div class="input-wrapper">
+									<label class="input-label"> <span class="text">E-mail</span></label>
+									<input type="email" name="" placeholder="info@mail.com" data-validation="email" class="input-main input-from">
+								</div>
+							</div>
+						</div>
+						<input type="submit" value="Отправить" data-target=".password-succes_hidden" class="hits-stat-more enter-btn js-modal-trigger">
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="password-succes_hidden hidden_bg">
+			<div class="hidden-block">
+				<div class="hidden-block-close button_close"></div>
+				<h2 class="hidden-title">Восстановление пароля   </h2>
+				<div class="tab-form-wrapper">
+					<div class="form-feed">
+						<div class="form-block">
+							<div class="form-block-content">
+								<div class="input-text">В течение 5 минут на указанный e-mail будет выслано письмо с вашими регистрационными данными</div>
+							</div>
+						</div>
+						<button class="hits-stat-more button_close">Закрыть</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--if lt IE 9
+		script(src='libs/html5shiv/es5-shim.min.js')
+		script(src='libs/html5shiv/html5shiv.min.js')
+		script(src='libs/html5shiv/html5shiv-printshiv.min.js')
+		script(src='libs/respond/respond.min.js')
+		-->
+	</body>
+</html>

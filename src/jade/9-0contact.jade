@@ -1,0 +1,241 @@
+doctype html
+//if lt IE 7 
+  html.ie.ie6(lang='en')  
+//if IE 7 
+  html.ie.ie7(lang='en')  
+//if IE 8 
+  html.ie.ie8(lang='en')  
+// [if (gte IE 9)|!(IE)] <!
+html(lang='ru')
+  // <![endif]
+  head
+    include ./includes/_head.jade
+  body
+    #wrap
+      // header
+      include ./includes/_headmenu.jade
+
+      .content_main-wrapper
+        section
+          ul.breadcrums
+              a.home-btn(href="#")
+                  i.home-img
+                      svg#Layer_home(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='9px', y='5px', viewbox='0 0 14.1 13', style='enable-background:new 0 0 14.1 13;', xml:space='preserve')
+                        style(type='text/css').
+                          .sthome{fill-rule:evenodd;clip-rule:evenodd;fill:#989898;}
+                        path.sthome(d='M7.1,0l4.8,4.1L14,5.8c0,0,0.2,0.4,0,0.7c-0.3,0.4-0.8,0.2-0.8,0.2l-0.5-0.2v5.8c0,0.3-0.3,0.6-0.6,0.6h-3V8h-4\
+                        v5h-3c-0.3,0-0.6-0.3-0.6-0.6V6.6L0.9,6.8c0,0-0.6,0-0.8-0.2c-0.2-0.3,0-0.9,0-0.9l2-1.6L7.1,0z')
+              li.bread-item
+                  a(href="#") Спорт и туризм
+                  .bread-arrow
+                      svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                        style(type='text/css').
+                          .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                        path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                  .bread__add-menu-wrap
+                    .bread__add-container
+                      ul.add-list
+                        li.add-list-item
+                          a(href="#") Товары для детей
+                        li.add-list-item
+                          a(href="#") Мода и красота
+                        li.add-list-item
+                          a(href="#") Электроника и техника
+                        li.add-list-item
+                          a(href="#") Всякие гадости
+                  
+              li.bread-item
+                a(href="#") Спорт и туризм
+                i.bread-arrow
+                    svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                      style(type='text/css').
+                        .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                      path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                .bread__add-menu-wrap
+                  .bread__add-container
+                    ul.add-list
+                      li.add-list-item
+                        a(href="#") Товары для детей
+                      li.add-list-item
+                        a(href="#") Мода и красота
+                      li.add-list-item
+                        a(href="#") Электроника и техника
+                      li.add-list-item
+                        a(href="#") Ldt jlbyflwfnbrkfccybws rrr
+              li.bread-item
+                  a(href="#") Спорт и туризм
+        section
+          h1.section-title Контакты
+          main.section__wrapper
+            .col-l
+              .col-m
+                h3.company-name СООО Полесье
+                p.company-address 225306, Республика Беларусь,
+                  br
+                  |Брестская область, г. Кобрин, ул. Николаева, 50
+                .col-l
+                  .col-s
+                    span.col-title Телефоны
+                    a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                    a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                    a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                    a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                    a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                  .col-s
+                    span.col-title E-mail
+                    a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+                    a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+                  .col-s
+                    span.col-title Обработка заявок
+                    p.company-time
+                      span.day Пн-Пт:
+                      | с 09
+                      sup 00 
+                      |до 18
+                      sup 00
+                    p.company-time
+                      span.day Сб:
+                      | с 10
+                      sup 00 
+                      |до 17
+                      sup 00
+                    p.company-time
+                      span.day Вс:
+                      | Выходной
+                    p.company-time
+                      | Заказы через сайт принимаем круглосуточно
+                a( href='#',data-target='.offer_hidden').js-modal-trigger.hits-stat-more
+                  | Обратный звонок
+
+
+
+              .col-m
+                #map(style='width: auto; height: 400px')
+            .col-l
+              .col-m
+                .product_tabs-wrapper
+                  #brand.wrap_brand
+                    .tabs
+                      span.tab Офис
+                      span.tab Сбыт в Беларуси
+                      span.tab Сбыт в РФ и Казахстане
+                    #tab_item.tab_content
+                      .tab_item
+                        .col-s
+                          .contact-wrap
+                            span.col-title Секретарь
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                          .contact-wrap
+                            span.col-title Факс
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                        .col-s
+                          .contact-wrap
+                            span.col-title Бухгалтерия по зарплате
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                          .contact-wrap
+                            span.col-title Бухгалтерия
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                        .col-s
+                          .contact-wrap
+                            span.col-title Отдел кадров
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                          .contact-wrap
+                            span.col-title Отдел снабжения
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                          .contact-wrap
+                            span.col-title Отдел по внешнеэконо- мическим связям
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                      .tab_item
+                        .col-m
+                          .contact-wrap
+                            span.col-title Секретарь
+                            span.contact-name Винокуров Дмитрий Викторович
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                            a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+                          .contact-wrap
+                            span.col-title Факс
+                            span.contact-name Винокуров Дмитрий Викторович
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                            a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+
+                        .col-m
+                          .contact-wrap
+                            span.col-title Бухгалтерия по зарплате
+                            span.contact-name Винокуров Дмитрий Викторович
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                            a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+                          .contact-wrap
+                            span.col-title Бухгалтерия
+                            span.contact-name Винокуров Дмитрий Викторович
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                            a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+                          .contact-wrap
+                            span.col-title Отдел кадров
+                            span.contact-name Винокуров Дмитрий Викторович
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                            a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+                          .contact-wrap
+                            span.col-title Отдел снабжения
+                            span.contact-name Винокуров Дмитрий Викторович
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                            a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+                          .contact-wrap
+                            span.col-title Отдел по внешнеэконо- мическим связям
+                            span.contact-name Винокуров Дмитрий Викторович
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                            a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+                      .tab_item
+                        .col-m
+                          .contact-wrap
+                            span.col-title Секретарь
+                            span.contact-name Винокуров Дмитрий Викторович
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                            a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+                          .contact-wrap
+                            span.col-title Факс
+                            span.contact-name Винокуров Дмитрий Викторович
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                            a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+
+                        .col-m
+                          .contact-wrap
+                            span.col-title Бухгалтерия по зарплате
+                            span.contact-name Винокуров Дмитрий Викторович
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                            a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+                          .contact-wrap
+                            span.col-title Бухгалтерия
+                            span.contact-name Винокуров Дмитрий Викторович
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                            a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+                          .contact-wrap
+                            span.col-title Отдел кадров
+                            span.contact-name Винокуров Дмитрий Викторович
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                            a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+                          .contact-wrap
+                            span.col-title Отдел снабжения
+                            span.contact-name Винокуров Дмитрий Викторович
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                            a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+                          .contact-wrap
+                            span.col-title Отдел по внешнеэконо- мическим связям
+                            span.contact-name Винокуров Дмитрий Викторович
+                            a.company-list.company-tel(href="tel:+37525000399") +375 (29) 102 08 90
+                            a.company-list.company-mail(href="mailto:office@pppolesie.com") office@pppolesie.com
+              .col-m.company-ip
+                h3.company-name Реквизиты
+                p.company-address
+                  | ИНН 7707018446, КПП 771401001, ОКПО 17549291
+                p.company-address
+                  | ОКВЭД 51.70; 45.21.1; 45.21.7; 74.20.11
+                p.company-address
+                  | р/с № 40702810000000000581 в Центральном филиале АБ «БелСвиссБанк» г. Кобрин
+                p.company-address
+                  | к/с № 30101810400000000132, БИК 044599132
+
+      
+      .mask-js
+      // footer
+      include ./includes/_footer.jade
+    include ./includes/_index-modals.jade

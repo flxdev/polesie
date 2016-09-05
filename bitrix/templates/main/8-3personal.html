@@ -19,6 +19,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="css/screen.css">
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 		<script src="js/common.js"></script>
 	</head>
 	<body>
@@ -86,7 +87,7 @@
 							</form>
 							<div class="select-container"><a href="#" class="search_drop"> <span>По тексту </span>
 									<div class="img">
-										<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 8 4" style="enable-background:new 0 0 8 4;" xml:space="preserve">
+										<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 8 4" width="9px" height="5px" style="enable-background:new 0 0 8 4;" xml:space="preserve">
 											<path d="M8,0H0l4,4L8,0z"></path>
 										</svg>
 									</div></a>
@@ -191,7 +192,44 @@
 								</div>
 							</div>
 						</div>
-						<div class="line-cart"><a href="#" class="cart">Корзина <span>0</span></a>
+						<!-- tools-->
+						<div class="mobile-search">
+							<div class="mobile_form-wrapper">
+								<form action="">
+									<input type="text" placeholder="Поиск пок каталогу" class="mobile-search-input">
+									<input type="submit" class="mobile-search-submit">
+								</form>
+							</div>
+						</div>
+						<div class="line-tools"><a href="#" data-title="Список сравнения пуст" class="tools-comparison"><i class="counter"> <span>12</span></i></a><a href="#" data-title="Список отложенных товаров пуст" class="tools-defer"><i class="counter"> <span>12</span></i></a><a href="#" class="tools-search js-search-btn"></a>
+							<!-- Если человек еще не вошел, то на .acc-text вешаем класс .no-login-->
+							<div class="bread-item"><a href="#" class="acc-text">Василий Солодарь</a>
+								<div class="bread__add-menu-wrap">
+									<div class="bread__add-container">
+										<ul class="add-list">
+											<!--на элемент списка, соотв текущей странице вешаем active-->
+											<li class="add-list-item"><a href="#">Помощь</a></li>
+											<li class="add-list-item"><a href="#">История заказов</a></li>
+											<li class="add-list-item"><a href="#">Отложенные</a></li>
+											<li class="add-list-item"><a href="#">Личные данные</a></li>
+											<li class="add-list-item active"><a href="#">Подписка</a></li>
+											<li class="add-list-item"><a href="#">Выйти</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="line-cart"><a href="#" class="product-buy-btn cart">
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="26px" height="20px" viewbox="0 0 23.3 18.1" style="enable-background:new 0 0 23.3 18.1;" xml:space="preserve">
+									<style type="text/css">.stcart{fill:#3B3B3B;}</style>
+									<g>
+										<g>
+											<path d="M11.3,14c-0.6-0.3-0.6-1.9-0.6-1.9s9.8,0,10,0c0.3,0,0.8,0.1,1-1s1.4-8,1.4-8H8.7c-1.3-3.2-3.2-3-3.2-3H1.6                c0,0-1.9,0.2-1.2,2c0.5,0.8,2,0.7,2.3-0.2c0.1-0.4,0-0.8,0-0.8h3c0,0,1.1,0.3,1.5,1.3c1.7,4.2,2.3,9.9,2.7,11.2                C10.2,14.8,11,15,11,15h2h1.4h3.5h2.6v-1 M10.5,11.1c-0.3-1.6-1-4.8-1.5-7h12.7l-1,7H10.5z" class="stcart"></path>
+										</g>
+									</g>
+									<path d="M12.5,14.3c-1,0-1.9,0.8-1.9,1.9c0,1,0.8,1.9,1.9,1.9c1,0,1.9-0.8,1.9-1.9C14.3,15.1,13.5,14.3,12.5,14.3z            M12.5,17.3c-0.6,0-1.1-0.5-1.1-1.1s0.5-1.1,1.1-1.1s1.1,0.5,1.1,1.1S13.1,17.3,12.5,17.3z" class="stcart"></path>
+									<path d="M19.9,14.3c-1,0-1.9,0.8-1.9,1.9c0,1,0.8,1.9,1.9,1.9c1,0,1.9-0.8,1.9-1.9S21,14.3,19.9,14.3z M19.9,17.3            c-0.6,0-1.1-0.5-1.1-1.1s0.5-1.1,1.1-1.1s1.1,0.5,1.1,1.1C21.1,16.8,20.6,17.3,19.9,17.3z" class="stcart"></path>
+								</svg>Корзинa<span>0</span></a>
 							<!-- cart_list_hidden-->
 							<div class="cart_list-wrapper">
 								<div class="cart_list_hidden">
@@ -253,17 +291,6 @@
 								</div>
 							</div>
 						</div>
-						<!-- tools-->
-						<div class="mobile-search">
-							<div class="mobile_form-wrapper">
-								<form action="">
-									<input type="text" placeholder="Поиск пок каталогу" class="mobile-search-input">
-									<input type="submit" class="mobile-search-submit">
-								</form>
-							</div>
-						</div>
-						<div class="line-tools"><a href="#" data-title="Список сравнения пуст" class="tools-comparison"></a><a href="#" data-title="Список отложенных товаров пуст" class="tools-defer"></a><a href="#" class="tools-search js-search-btn"></a><a href="#" class="account"><span>Личный кабинет</span></a></div>
-						<!-- cart-->
 					</div>
 					<!-- main-nav-->
 					<div class="main-nav">
@@ -532,13 +559,10 @@
 						<div class="section__content">
 							<div class="orders-man-wrapper">
 								<div class="tab-cart-wrap">
-									<div class="tab-head tab-orders">
-										<div class="item">№ Заказа</div>
-										<div class="item">Дата</div>
-										<div class="item">Количество</div>
-										<div class="item">Сумма</div>
-										<div class="item">Оплата</div>
-										<div class="item">Статус</div>
+									<div class="tab-head tab-orders-liked">
+										<div class="item">Название товара</div>
+										<div class="item">Наличие</div>
+										<div class="item">Цена</div>
 									</div>
 									<div class="tab-item-wrap">
 										<div class="tab-element elem-liked">

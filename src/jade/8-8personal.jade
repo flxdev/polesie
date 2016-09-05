@@ -1,0 +1,215 @@
+doctype html
+//if lt IE 7 
+  html.ie.ie6(lang='en')  
+//if IE 7 
+  html.ie.ie7(lang='en')  
+//if IE 8 
+  html.ie.ie8(lang='en')  
+// [if (gte IE 9)|!(IE)] <!
+html(lang='ru')
+  // <![endif]
+  head
+    include ./includes/_head.jade
+  body
+    #wrap
+      // header
+      include ./includes/_headmenu.jade
+
+      .content_main-wrapper
+        section
+          ul.breadcrums
+              a.home-btn(href="#")
+                  i.home-img
+                      svg#Layer_home(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='9px', y='5px', viewbox='0 0 14.1 13', style='enable-background:new 0 0 14.1 13;', xml:space='preserve')
+                        style(type='text/css').
+                          .sthome{fill-rule:evenodd;clip-rule:evenodd;fill:#989898;}
+                        path.sthome(d='M7.1,0l4.8,4.1L14,5.8c0,0,0.2,0.4,0,0.7c-0.3,0.4-0.8,0.2-0.8,0.2l-0.5-0.2v5.8c0,0.3-0.3,0.6-0.6,0.6h-3V8h-4\
+                        v5h-3c-0.3,0-0.6-0.3-0.6-0.6V6.6L0.9,6.8c0,0-0.6,0-0.8-0.2c-0.2-0.3,0-0.9,0-0.9l2-1.6L7.1,0z')
+              li.bread-item
+                  a(href="#") Спорт и туризм
+                  .bread-arrow
+                      svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                        style(type='text/css').
+                          .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                        path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                  .bread__add-menu-wrap
+                    .bread__add-container
+                      ul.add-list
+                        li.add-list-item
+                          a(href="#") Товары для детей
+                        li.add-list-item
+                          a(href="#") Мода и красота
+                        li.add-list-item
+                          a(href="#") Электроника и техника
+                        li.add-list-item
+                          a(href="#") Всякие гадости
+                  
+              li.bread-item
+                a(href="#") Спорт и туризм
+                i.bread-arrow
+                    svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                      style(type='text/css').
+                        .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                      path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                .bread__add-menu-wrap
+                  .bread__add-container
+                    ul.add-list
+                      li.add-list-item
+                        a(href="#") Товары для детей
+                      li.add-list-item
+                        a(href="#") Мода и красота
+                      li.add-list-item
+                        a(href="#") Электроника и техника
+                      li.add-list-item
+                        a(href="#") Ldt jlbyflwfnbrkfccybws rrr
+              li.bread-item
+                  a(href="#") Спорт и туризм
+        section
+          h1.section-title Личные данные
+          .section__wrapper
+              .aside__menu
+                aside.presonal-aside
+                  .moblie_btn.selection_item
+                      span Показать меню
+                      .bread-arrow
+                        svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                          style(type='text/css').
+                            .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                          path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                  .selection_wrapper.js-toggle-target
+                    ul
+                      ul.aside-menu-item
+                        a(href="#") Помощь
+                      ul.aside-menu-item.active  
+                        a(href="#") История заказов
+                      ul.aside-menu-item 
+                        a(href="#") Отложенные
+                      ul.aside-menu-item 
+                        a(href="#") Личные данные
+                      ul.aside-menu-item 
+                        a(href="#") Подписка
+                      ul.aside-menu-item 
+                        svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 21 21',width='21px', height='22px', style='enable-background:new 0 0 21 21;', xml:space='preserve')
+                          style(type='text/css').
+                            .st0{fill:#9C9B9B;}
+                          g
+                            g
+                              path.st0(d='M11.8,11.8c0.7,0,1.3-0.6,1.3-1.3c0-0.7-0.6-1.3-1.3-1.3c-0.7,0-1.3,0.6-1.3,1.3\
+                              C10.5,11.2,11.1,11.8,11.8,11.8z M20,1L9.2,0C8.5,0,8,0.3,8,1v13H4v-2l-4,3l4,3v-2h4l-0.1,3.7V21h11.8c0.7,0,1.3-0.6,1.3-1.3V2.6\
+                              C21,1.9,20.7,1,20,1z M20,20H9V1l11,1V20z M4,4h3V3H4.3C3.6,3,3,3.6,3,4.4V10l1,0V4z M3.9,21H7v-1H3C3,20.7,3.2,21,3.9,21z')
+
+                        a(href="#") Выйти
+              .section__content
+                .offer-form-inner.offer-form-small
+                  .product_tabs-wrapper
+                    //active для вывода сообщения
+                    .msg.msg-err
+                      .message-title 
+                        svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink',width='30px', height='30px', x='0px', y='0px', viewbox='0 0 43 43', style='enable-background:new 0 0 43 43;', xml:space='preserve')
+                          style(type='text/css').
+                            .stfeed{fill-rule:evenodd;clip-rule:evenodd;fill:#E00000;}
+                          g
+                            g
+                              path.stfeed(d='M21.5,0C9.6,0,0,9.6,0,21.5C0,33.4,9.6,43,21.5,43C33.4,43,43,33.4,43,21.5C43,9.6,33.4,0,21.5,0z M21.5,41\
+                              C10.7,41,2,32.3,2,21.5C2,10.7,10.7,2,21.5,2C32.3,2,41,10.7,41,21.5C41,32.3,32.3,41,21.5,41z M20.6,28.1c-1.3,0-2.3,1-2.3,2.3\
+                              c0,1,0.8,1.9,1.9,1.9c1.2,0,2.3-1,2.3-2.2C22.5,29,21.7,28.1,20.6,28.1z M20,25.9h2.7L26.4,12h-3.8L20,25.9z')
+                        |Произошла ошибка
+                    .msg.msg-succ.active
+                      .message-title
+                        svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink',width='30px', height='30px', x='0px', y='0px', viewbox='0 0 44 44', style='enable-background:new 0 0 44 44;', xml:space='preserve')
+                          style(type='text/css').
+                            .stf{fill-rule:evenodd;clip-rule:evenodd;fill:#49B210;}
+                          g
+                            g
+                              path.stf(d='M22,0C9.8,0,0,9.8,0,22c0,12.2,9.8,22,22,22c12.2,0,22-9.8,22-22C44,9.8,34.2,0,22,0z M22,42C11,42,2,33,2,22\
+                              C2,11,11,2,22,2s20,9,20,20C42,33,33,42,22,42z M30.7,12.8L18.1,29.1l-4.2-6.9c-0.4-0.5-1-0.6-1.5-0.2c-0.5,0.4-0.6,1-0.2,1.5\
+                              l4.9,8c0.2,0.3,0.6,0.4,0.9,0.4c0.3,0,0.7-0.1,0.9-0.4l13.5-17.4c0.4-0.5,0.3-1.1-0.2-1.5C31.7,12.3,31,12.4,30.7,12.8z')
+                        | Данные успешно сохранены
+                     form(action="/").form-feed
+                      .form-block
+                        .form-block-title
+                          | Настройка подписки
+                        .form-block-body
+                          .selection_body
+                            .seclect-name Как вам удобно получить новости и информацию о скидках?
+                            ul.select-u-body
+                              li.select-u-item
+                                label.input_label
+                                  span.input_main
+                                    input.input-real(name = 'who', type="checkbox", value = 'email')
+                                    span.input-checked
+                                  span.input-text На E-mail
+                              li.select-u-item
+                                label.input_label
+                                  span.input_main
+                                    input.input-real(name = 'who', type="checkbox", value = 'sms')
+                                    span.input-checked
+                                  span.input-text С помощью SMS
+                          .selection_body
+                            .seclect-name Отметьте рубрики, которые вам будет интересно читать?
+                            ul.select-u-body
+                              li.select-u-item
+                                label.input_label
+                                  span.input_main
+                                    input.input-real(name = 'who', type="checkbox", value = 'email')
+                                    span.input-checked
+                                  span.input-text Акции и скидки
+                              li.select-u-item
+                                label.input_label
+                                  span.input_main
+                                    input.input-real(name = 'who', type="checkbox", value = 'sms')
+                                    span.input-checked
+                                  span.input-text Новости
+                          .selection_body
+                            .seclect-name Отметьте категории товаров, про которые вы будете получать рассылку?
+                            ul.select-u-body
+                              li.select-u-item
+                                label.input_label
+                                  span.input_main
+                                    input.input-real(name = 'who', type="checkbox", value = 'email')
+                                    span.input-checked
+                                  span.input-text Товары для детей
+                              li.select-u-item
+                                label.input_label
+                                  span.input_main
+                                    input.input-real(name = 'who', type="checkbox", value = 'sms')
+                                    span.input-checked
+                                  span.input-text Мода и красота
+                              li.select-u-item
+                                label.input_label
+                                  span.input_main
+                                    input.input-real(name = 'who', type="checkbox", value = 'sms')
+                                    span.input-checked
+                                  span.input-text Спорт и туризм
+                              li.select-u-item
+                                label.input_label
+                                  span.input_main
+                                    input.input-real(name = 'who', type="checkbox", value = 'sms')
+                                    span.input-checked
+                                  span.input-text Электроника и техника
+                              li.select-u-item
+                                label.input_label
+                                  span.input_main
+                                    input.input-real(name = 'who', type="checkbox", value = 'sms')
+                                    span.input-checked
+                                  span.input-text Для дома и сада
+                              li.select-u-item
+                                label.input_label
+                                  span.input_main
+                                    input.input-real(name = 'who', type="checkbox", value = 'sms')
+                                    span.input-checked
+                                  span.input-text Автотовары
+                              li.select-u-item
+                                label.input_label
+                                  span.input_main
+                                    input.input-real(name = 'who', type="checkbox", value = 'sms')
+                                    span.input-checked
+                                  span.input-text Ремонт и стройка
+
+                      button.hits-stat-more(type="submit") Сохранить изменения
+
+      
+      .mask-js
+      // footer
+      include ./includes/_footer.jade
+    include ./includes/_index-modals.jade

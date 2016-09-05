@@ -101,9 +101,9 @@ html(lang='ru')
                         a(href="#") Выйти
               .section__content
                 .checkout-content
-                  .offer-form-inner
+                  .offer-form-inner.offer-form-small
                     form(action="", name='order-cancel').form-feed.js-form-email
-                      .form-block
+                      form
                         .form-block-title
                           |Почему вы решили отменить заказ?
                         .form-block-content
@@ -111,8 +111,8 @@ html(lang='ru')
                             label.input-label 
                               span.text Укажите причину
                             textarea.input-main(name="",  rows="3", placeholder = 'Например, в нём уже нет необходимости')
-                      input.hits-stat-more.enter-btn(type="submit", value = 'Отменить')
-                a(href="#").product-learn-more
+                        input.hits-stat-more.enter-btn(type="submit", value = 'Отменить')
+                a(href="#").product-learn-more.go-back-btn
                   svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='18px',height='18px', viewbox='0 0 18 18', style='enable-background:new 0 0 18 18;', xml:space='preserve')
                     style(type='text/css').
                       .stmore{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}
