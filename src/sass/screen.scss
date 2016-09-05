@@ -6939,7 +6939,7 @@ footer {
     @include x-rem(margin,20px 0);
   }
   .step-list{
-    @include x-rem(margin,20px 0 0)
+    @include x-rem(margin,15px 0 0)
     list-style:none;
   }
   .step-fact{
@@ -6987,7 +6987,6 @@ footer {
 //8-1 ORDERS
 //++++++++++++++++++++++++++++++++++
 .orders-man-wrapper{
-  @include x-rem(padding-bottom,70px);
   .tab-orders{
     padding-top: 0;
   }
@@ -7604,11 +7603,89 @@ transition:border .3s;
   width:100%;
   .themed_more a{
     @include x-rem(width,170px);
-    @include x-rem(margin,20px auto);
+    margin:0 auto;
   }
 }
 .descr{
   text-overflow: ellipsis;
   overflow-x: hidden;
   white-space: nowrap;
+}
+.sale-wrap{
+  padding-top:0;
+  @include x-rem(padding-bottom,30px);
+  border-bottom:1px solid $border;
+  &:not(:first-child){
+    @include x-rem(padding-top,30px);
+  }
+  .section-title{
+    margin-top:0;
+    line-height:1;
+    @include x-rem(font-size,22px);
+  }
+}
+.vacancy-name{
+  display: table-cell;
+  @include x-rem(font-size,16px);
+  vertical-align: top;
+}
+.vacancy-date{
+  float:right;
+}
+.accordion-container{
+  .vacancy-head{
+     @include x-rem(padding,20px 15px);
+  }
+}
+.vacancy-inner{
+  @include x-rem(padding,5px 20px 40px 20px);
+  @include clearfix;
+  .hits-stat-more{
+   float:right;
+     @include r(570){
+      float:none;
+      display: inline-block;
+      margin:20px auto;
+    }
+  }
+}
+.vacancy-inner-cont{
+  width:70.5%;
+  display: inline-block;
+  float:left;
+  @include r(570){
+    width:100%;
+  }
+}
+.vacancy-contact{
+  @include x-rem(padding,20px);
+  @include x-rem(border-radius,3px);
+  display: inline-block;
+  width:100%;
+  border:1px solid $border;
+  .vacancy-name{
+    @include x-rem(max-width,210px);
+    @include x-rem(padding-right,50px);
+    @include x-rem(font-size,14px);
+    font-weight:600;
+    float:left;
+      @include r(570){
+      min-width:100%;
+    }
+  }
+  .contact-wrap{
+    display: block;
+    overflow: hidden;
+    margin-bottom:0;
+    @include r(570){
+      min-width:100%;
+    }
+    .company-tel{
+      display: inline-block;
+      float:left;
+      &:not(:first-child){
+        padding-left:5px;
+      }
+    }
+  }
 }
