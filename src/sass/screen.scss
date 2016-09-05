@@ -2187,6 +2187,8 @@ input:focus:-moz-placeholder {
   text-align: left;
   height: 26px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  width:100%;
 }
 
 .hits_coast_new {
@@ -2438,7 +2440,7 @@ input:focus:-moz-placeholder {
 .brand_block {
   display: table-cell;
   position: relative;
-
+    @include clearfix;
   a {
     text-decoration: none;
   }
@@ -3472,12 +3474,15 @@ footer {
         }
     }
   }
+  .section-title{
+    font-family: $ProximaSemibold;
+  }
 }
 .content-categories{
   display: inline-block;
   width:100%;
   font-size: 0;
-   @include x-rem(padding-bottom, 15px);
+   @include x-rem(padding-bottom, 20px);
    border-bottom:1px solid $border;
 }
 .categoties-name{
@@ -6870,6 +6875,9 @@ footer {
        padding-right: 0;
     }
   }
+  .tab_item{
+    padding:0;
+  }
   .product-image{
     @include x-rem(width,37px);
   }
@@ -6892,6 +6900,8 @@ footer {
     margin-top: 0;
     @include x-rem(margin-bottom,22px);
     line-height: 1;
+    font-family:$ProximaSemibold;
+    font-weight: 300;
   }
   .text-article{
     background-color: #fdf9d3;
@@ -6968,6 +6978,9 @@ footer {
       left:0;
       @include x-rem(top,7px);
     }
+  }
+  .product_tabs-wrapper{
+    margin:0;
   }
 }
 //++++++++++++++++++++++++++++
@@ -7454,4 +7467,148 @@ transition:border .3s;
       }
     }
   }
+}
+.brands-main-wrap{
+  @include clearfix;
+  .brand_block_wrap{
+    display: inline-block;
+    width:25%;
+    float:left;
+    @include x-rem(margin-bottom,30px);
+    .brand_block{
+      display: inline-block;
+    }
+    @include r(570){
+      width:50%;
+      text-align: center;
+    }
+  }
+  .brand_block_wrap{
+    &:nth-child(4n){
+      .brand_block{
+        float:right;
+      }
+      @include r(570){
+        .brand_block{
+          float:none;
+        }
+      }
+    }
+    &:nth-child(4n-1){
+      text-align: center;
+      
+    }
+    &:nth-child(4n-2){
+      @include x-rem(padding-left,14px);
+    }
+      
+  }
+}
+.brand-naw-wrap{
+  display:table;
+  width:100%;
+  @include x-rem(margin,20px 0);
+  @include r(840){
+    display: none;
+  }
+   .nav-item{
+    display: table-cell;
+    text-align: right;
+    border-bottom:2px solid transparent;
+    @include x-rem(min-width,20px);
+    .nav-item-link{
+      color:$letters;
+    }
+    &:first-child{
+      text-align: left;
+      @include x-rem(max-width,50px);
+    }
+    &.active{
+      .nav-item-link{
+        border-bottom:2px solid $yellowHov;
+        font-weight: 600;
+      } 
+    }
+  }
+}
+.brand-main-list{
+  list-style: none;
+  width:100%;
+  .main-list-item{
+    width:100%;
+    @include x-rem(margin-bottom,20px);
+    @include clearfix;
+    .main-letter{
+      font-weight: 600;
+      display: inline-block;
+      width:100%;
+      @include x-rem(margin-bottom,15px);
+    }
+    .inner-list{
+      width:25%;
+      display: inline-block;
+      float:left;
+      list-style: none;
+      @include r(570){
+        width:50%;
+         @include x-rem(margin-top,10px);
+      }
+      .inner-list-item{
+        @include x-rem(padding-right,10px);
+        &:not(:last-child){
+          @include x-rem(margin-bottom,10px);
+        }
+      }
+      .brand-name{
+        color:$letters;
+        display: inline-block;
+        width:100%;
+      }
+    }
+  }
+}
+.brand-description{
+  @include x-rem(margin-bottom,45px);
+  .brand-description-img{
+    display: inline-block;
+    float:left;
+    @include x-rem(padding,0 40px);
+    @include x-rem(margin-right,15px);
+    img{
+      display: inline-block;
+      @include x-rem(max-width,152px);
+    }
+    @include r(480){
+      width:100%;
+      margin-left:0;
+      text-align: center;
+      @include x-rem(margin-bottom,15px);
+    }
+  }
+  .brand-description-text{
+    display: block;
+    overflow: hidden;
+    color:$letters2;
+    @include x-rem(font-size,16px);
+    @include r(480){
+      width:100%;
+    }
+  }
+}
+.discount-brand-inner{
+  padding-bottom:0;
+  border-bottom:none;
+}
+.themed-more-wrap{
+  display: inline-block;
+  width:100%;
+  .themed_more a{
+    @include x-rem(width,170px);
+    @include x-rem(margin,20px auto);
+  }
+}
+.descr{
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  white-space: nowrap;
 }
