@@ -54,23 +54,24 @@
       // search
       .line-search-form
         form(action='', method='post')
-          input(type='submit', value='Найти')
+          input(type='submit', value='Найти')     
           input.search(type='search', name='search', placeholder='Поиск по 200 000 товарам, разделам и артикулам')
+          .select-container
+            a.search_drop(href='#') 
+              span По тексту 
+              .img
+                svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 8 4', width='9px',height='5px',style='enable-background:new 0 0 8 4;', xml:space='preserve')
+                 path(d='M8,0H0l4,4L8,0z')
+            .section-wrap
+              .section
+                .section-item
+                  input#dva1(type='radio', checked='checked', name='dva')
+                  label(for='dva1') По тексту
+                .section-item
+                  input#dva2(type='radio', name='dva')
+                  label(for='dva2') По каталогу
           
-        .select-container
-          a.search_drop(href='#') 
-            span По тексту 
-            .img
-              svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 8 4', width='9px',height='5px',style='enable-background:new 0 0 8 4;', xml:space='preserve')
-               path(d='M8,0H0l4,4L8,0z')
-          .section
-            .section-item
-              input#dva1(type='radio', checked='checked', name='dva')
-              label(for='dva1') По тексту
-            .section-item
-              input#dva2(type='radio', name='dva')
-              label(for='dva2') По каталогу
-              
+
               
         // cart_list_hidden
         .line_search_hidden.search-catalog(style='display: none')
@@ -84,7 +85,7 @@
                 li
                   a(href='#') Велосипедные аксессуары
             .cart_list_block
-              img(src='img/promo/cart_list.jpg', alt='#')
+              img(src='img/promo/bike_hit.jpg', alt='#')
               .cart_list_descr
                 p.cart_list_name Samsung Galaxy S6 Edge 32Gb
                 p Цвет: черный
@@ -97,7 +98,7 @@
                     | 13 435,60 р. 
                     span  13 435 600 р
             .cart_list_block
-              img(src='img/promo/cart_list.jpg', alt='#')
+              img(src='img/promo/bike_hit.jpg', alt='#')
               .cart_list_descr
                 p.cart_list_name Samsung Galaxy S6 Edge 32Gb
                 p Цвет: черный
@@ -110,7 +111,7 @@
                     | 13 435,60 р. 
                     span  13 435 600 р
             .cart_list_block
-              img(src='img/promo/cart_list.jpg', alt='#')
+              img(src='img/promo/bike_hit.jpg', alt='#')
               .cart_list_descr
                 p.cart_list_name Samsung Galaxy S6 Edge 32Gb
                 p Цвет: черный
@@ -139,14 +140,14 @@
         .line_search_hidden.search-text(style='display: none')
           .cart_list_block_scroll
             .cart_list_block
-              img(src='img/promo/search-text.jpg', alt='#')
+              img(src='img/promo/bike_hit.jpg', alt='#')
               .cart_list_descr
                 p.search_date 06 июля 2016 года
                 p.search_list_name Новое поступление детских велосипедов
                 p.short_descr
                   | В нашем магазине обновление ассорти- мента — более 120 новых моделей детских и подростковых велосипедов...
             .cart_list_block
-              img(src='img/promo/search-text.jpg', alt='#')
+              img(src='img/promo/bike_hit.jpg', alt='#')
               .cart_list_descr
                 p.search_date 06 июля 2016 года
                 p.cart_list_name Новое поступление детских велосипедов
@@ -222,7 +223,7 @@
           .cart_list_hidden
             .cart_list_block_scroll
               .cart_list_block
-                img(src='img/promo/cart_list.jpg', alt='#')
+                img(src='img/promo/bike_hit.jpg', alt='#')
                 .cart_list_descr
                   p.cart_list_name Samsung Galaxy S6 Edge 32Gb
                   p Цвет: черный
@@ -235,7 +236,7 @@
                       | 13 435,60 р. 
                       span  13 435 600 р
               .cart_list_block
-                img(src='img/promo/cart_list.jpg', alt='#')
+                img(src='img/promo/bike_hit.jpg', alt='#')
                 .cart_list_descr
                   p.cart_list_name Samsung Galaxy S6 Edge 32Gb
                   p Цвет: черный
@@ -248,7 +249,7 @@
                       | 13 435,60 р. 
                       span  13 435 600 р
               .cart_list_block
-                img(src='img/promo/cart_list.jpg', alt='#')
+                img(src='img/promo/bike_hit.jpg', alt='#')
                 .cart_list_descr
                   p.cart_list_name Samsung Galaxy S6 Edge 32Gb
                   p Цвет: черный
@@ -261,7 +262,7 @@
                       | 13 435,60 р. 
                       span  13 435 600 р
               .cart_list_block
-                img(src='img/promo/cart_list.jpg', alt='#')
+                img(src='img/promo/bike_hit.jpg', alt='#')
                 .cart_list_descr
                   p.cart_list_name Samsung Galaxy S6 Edge 32Gb
                   p Цвет: черный

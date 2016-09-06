@@ -2,31 +2,52 @@
 .regions_hidden.hidden_bg
   .hidden-block
     .hidden-block-close.button_close
-    h2.hidden-title Область доставки
+    h2. Область доставки
     .regions_map
       img(src='img/map2x.png', alt='map-region')
     .regions
       h3 Выберите область, куда необходимо доставить заказ
       form.region_form(action='/', method='/')
-        label
-          input(name='region', type='radio', value='brest', checked='')
-          | Брестская область
-        label
-          input(name='region', type='radio', value='Vitebsk')
-          | Витебская область
-        label
-          input(name='region', type='radio', value='Gomel')
-          | Гомельская область
-        label
-          input(name='region', type='radio', value='Grodno')
-          | Гродненская область
-        label
-          input(name='region', type='radio', value='Minsk')
-          | Минск, Минская область
-        label
-          input(name='region', type='radio', value='Mogilev')
-          | Могилевская область
-        input(type='submit', value='Выбрать')
+        .form-block-content
+          ul.select-u-body
+            li.select-u-item
+              label.input_label
+                span.input_main
+                  input.input-real(name = 'who', type="radio", value = 'fiz')
+                  span.input-checked
+                span.input-text Брестская область
+            li.select-u-item
+              label.input_label
+                span.input_main
+                  input.input-real(name = 'who', type="radio", value = 'jur')
+                  span.input-checked
+                span.input-text Витебская область
+            li.select-u-item
+              label.input_label
+                span.input_main
+                  input.input-real(name = 'who', type="radio", value = 'jur')
+                  span.input-checked
+                span.input-text Гомельская область
+            li.select-u-item
+              label.input_label
+                span.input_main
+                  input.input-real(name = 'who', type="radio", value = 'jur')
+                  span.input-checked
+                span.input-text Гродненская область
+            li.select-u-item
+              label.input_label
+                span.input_main
+                  input.input-real(name = 'who', type="radio", value = 'jur')
+                  span.input-checked
+                span.input-text Минск, Минская область
+            li.select-u-item
+              label.input_label
+                span.input_main
+                  input.input-real(name = 'who', type="radio", value = 'jur')
+                  span.input-checked
+                span.input-text Могилевская область 
+        button.hits-stat-more(type="submit") Выбрать   
+
 // SUCCSES
 .success_hidden.hidden_bg
   .hidden-block
