@@ -329,6 +329,29 @@
           .form-block-content
             .input-text В течение 5 минут на указанный e-mail будет выслано письмо с вашими регистрационными данными
         button.hits-stat-more.button_close Закрыть
+.vacancy_hidden.hidden_bg
+  .hidden-block
+    .hidden-block-close.button_close
+    h2.hidden-title Отклик на вакансию
+    span.small-title Инженер-проектировщик
+    form(action="/").vacancy-form
+      .input-wrapper
+        label.input-label 
+          span.text Ваше имя
+        input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович')
+      .input-wrapper
+        label.input-label 
+          span.text E-mail
+        input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com' ,data-validation="email")
+      .input-wrapper
+        label.input-label 
+          span.text Телефон
+        input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00')
+      .input-wrapper
+        label.input-label 
+          span Прикрепите резюме
+        input(type="file")
+      input.hits-stat-more(type="submit", placeholder = 'Откликнуться',data-target=".success_hidden").js-modal-trigger.button_close
 
 
 

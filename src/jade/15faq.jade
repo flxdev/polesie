@@ -1,0 +1,181 @@
+doctype html
+//if lt IE 7 
+  html.ie.ie6(lang='en')  
+//if IE 7 
+  html.ie.ie7(lang='en')  
+//if IE 8 
+  html.ie.ie8(lang='en')  
+// [if (gte IE 9)|!(IE)] <!
+html(lang='ru')
+  // <![endif]
+  head
+    include ./includes/_head.jade
+  body
+    #wrap
+      // header
+      include ./includes/_headmenu.jade
+
+      .content_main-wrapper
+        section
+          ul.breadcrums
+              a.home-btn(href="#")
+                  i.home-img
+                      svg#Layer_home(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='9px', y='5px', viewbox='0 0 14.1 13', style='enable-background:new 0 0 14.1 13;', xml:space='preserve')
+                        style(type='text/css').
+                          .sthome{fill-rule:evenodd;clip-rule:evenodd;fill:#989898;}
+                        path.sthome(d='M7.1,0l4.8,4.1L14,5.8c0,0,0.2,0.4,0,0.7c-0.3,0.4-0.8,0.2-0.8,0.2l-0.5-0.2v5.8c0,0.3-0.3,0.6-0.6,0.6h-3V8h-4\
+                        v5h-3c-0.3,0-0.6-0.3-0.6-0.6V6.6L0.9,6.8c0,0-0.6,0-0.8-0.2c-0.2-0.3,0-0.9,0-0.9l2-1.6L7.1,0z')
+              li.bread-item
+                  a(href="#") Спорт и туризм
+                  .bread-arrow
+                      svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                        style(type='text/css').
+                          .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                        path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                  .bread__add-menu-wrap
+                    .bread__add-container
+                      ul.add-list
+                        li.add-list-item
+                          a(href="#") Товары для детей
+                        li.add-list-item
+                          a(href="#") Мода и красота
+                        li.add-list-item
+                          a(href="#") Электроника и техника
+                        li.add-list-item
+                          a(href="#") Всякие гадости
+                  
+              li.bread-item
+                a(href="#") Спорт и туризм
+                i.bread-arrow
+                    svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                      style(type='text/css').
+                        .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                      path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                .bread__add-menu-wrap
+                  .bread__add-container
+                    ul.add-list
+                      li.add-list-item
+                        a(href="#") Товары для детей
+                      li.add-list-item
+                        a(href="#") Мода и красота
+                      li.add-list-item
+                        a(href="#") Электроника и техника
+                      li.add-list-item
+                        a(href="#") Ldt jlbyflwfnbrkfccybws rrr
+              li.bread-item
+                  a(href="#") Спорт и туризм
+        section
+          h1.section-title Новости и акции
+          .section__wrapper
+              .aside__menu
+                aside.presonal-aside
+                  .moblie_btn.selection_item
+                      span Показать меню
+                      .bread-arrow
+                        svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                          style(type='text/css').
+                            .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                          path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                  .selection_wrapper.js-toggle-target
+                    .company-list.company-tel
+                      span Помощь
+                    ul
+                      li.aside-menu-item
+                        a(href="#") Об интернет-магазине
+                      li.aside-menu-item.active  
+                        a(href="#") Как заказать
+                      li.aside-menu-item 
+                        a(href="#") Доставка и оплата
+                      li.aside-menu-item 
+                        a(href="#") Возврат
+                      li.aside-menu-item 
+                        a(href="#") Подписка
+                      li.aside-menu-item 
+                        a(href="#") Оферта
+                      li.aside-menu-item 
+                        a(href="#") Частые вопросы
+                    .company-list.company-tel
+                      span Информация
+                    ul
+                      li.aside-menu-item
+                        a(href="#") ТЦ «Полесье»
+                      li.aside-menu-item.active  
+                        a(href="#") Новости и акции
+                      li.aside-menu-item 
+                        a(href="#") Вакансии
+                      li.aside-menu-item 
+                        a(href="#") Поставщикам
+                      li.aside-menu-item 
+                        a(href="#") Подписка
+                      li.aside-menu-item 
+                        a(href="#") Бренды
+                      li.aside-menu-item 
+                        a(href="#") Контакты
+              .section__content
+                section.content-section
+                  h2.section-title Помогаем разобраться в любой мелочи
+                  p.text-block.gray Появились вопросы? Не стесняйтесь, напишите нам. Наши специалисты с радостью помогут решить все вопросы и разобраться в любой мелочи.
+                  .btn-wrap
+                    a(href="#").hits-stat-more(data-target=".consult_hidden").js-modal-trigger Задать вопрос
+                  .accordion-container
+                    .set
+                      .head.vacancy-head
+                        i.bread-arrow
+                          svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='14px', height='8px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                            style(type='text/css').
+                              .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                            path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+
+                        .vacancy-name
+                          | Можно забрать покупку самостоятельно?
+                        time.vacancy-date.gray
+                          | 23 мая, 2016 года
+                      .content
+                        .vacancy-inner
+                          .vacancy-inner-cont.text
+                            p.text-block Появились вопросы? Не стесняйтесь, напишите нам. Наши специалисты с радостью помогут решить все вопросы и разобраться в любой мелочи. Появились вопросы? Не стесняйтесь, напишите нам. Наши специалисты с радостью помогут решить все вопросы и разобраться в любой мелочи. Появились вопросы? Не стесняйтесь, напишите нам. Наши специалисты с радостью помогут решить все вопросы и разобраться в любой мелочи. Появились вопросы? Не стесняйтесь, напишите нам. Наши специалисты с радостью помогут решить все вопросы и разобраться в любой мелочи.
+
+                    .set
+                      .head.vacancy-head
+                        i.bread-arrow
+                          svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='14px', height='8px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                            style(type='text/css').
+                              .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                            path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+
+                        .vacancy-name
+                          | Можно ли получить скидку, если я постоянный клиент?
+                        time.vacancy-date.gray
+                          | 23 мая, 2007 года
+                      .content
+                        .vacancy-inner
+                          .vacancy-inner-cont.text
+                            p.text-block Появились вопросы? Не стесняйтесь, напишите нам. Наши специалисты с радостью помогут решить все вопросы и разобраться в любой мелочи. Появились вопросы? Не стесняйтесь, напишите нам. Наши специалисты с радостью помогут решить все вопросы и разобраться в любой мелочи. Появились вопросы? Не стесняйтесь, напишите нам. Наши специалисты с радостью помогут решить все вопросы и разобраться в любой мелочи. Появились вопросы? Не стесняйтесь, напишите нам. Наши специалисты с радостью помогут решить все вопросы и разобраться в любой мелочи.
+                    .set
+                      .head.vacancy-head
+                        i.bread-arrow
+                          svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='14px', height='8px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                            style(type='text/css').
+                              .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                            path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+
+                        .vacancy-name
+                          | Вы принимаете оплату только в белорусских рублях?
+                        time.vacancy-date.gray
+                          | 13 мая, 2016 года
+                      .content
+                        .vacancy-inner
+                          .vacancy-inner-cont.text
+                            p.text-block Появились вопросы? Не стесняйтесь, напишите нам. Наши специалисты с радостью помогут решить все вопросы и разобраться в любой мелочи. Появились вопросы? Не стесняйтесь, напишите нам. Наши специалисты с радостью помогут решить все вопросы и разобраться в любой мелочи. Появились вопросы? Не стесняйтесь, напишите нам. Наши специалисты с радостью помогут решить все вопросы и разобраться в любой мелочи. Появились вопросы? Не стесняйтесь, напишите нам. Наши специалисты с радостью помогут решить все вопросы и разобраться в любой мелочи.
+
+
+
+                          
+
+                       
+
+      
+      .mask-js
+      // footer
+      include ./includes/_footer.jade
+    include ./includes/_index-modals.jade
