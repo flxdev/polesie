@@ -365,6 +365,12 @@ body {
 .line-wrap-logo {
   display: table-cell;
   vertical-align: top;
+  @include r(1050){
+    @include x-rem(width,305px)
+  }
+  @include r(920){
+    width:auto;
+  }
   @include r(768){
     @include x-rem(padding-left,10px)
     padding-right: 0;
@@ -649,7 +655,7 @@ input:focus:-moz-placeholder {
 
 .line-tools {
   display: table-cell;
-  padding:0 2% 0 1%;
+  padding:0 1% 0 1%;
   vertical-align: top;
   @include r(768){
     vertical-align: middle;
@@ -895,6 +901,10 @@ input:focus:-moz-placeholder {
   display: table-cell;
   vertical-align: top;
   position: relative;
+  @include x-rem(width,145px);
+  @include r(1050){
+      @include x-rem(width,110px);
+    }
   @include r(768){
       vertical-align: middle;
     }
@@ -918,7 +928,7 @@ input:focus:-moz-placeholder {
     -webkit-border-radius: 3px;
     transition:all .3s;
     cursor: pointer;
-    @include r(1024){
+    @include r(1055){
         padding-left: 14px;
       }
     @include r(768){
@@ -951,7 +961,7 @@ input:focus:-moz-placeholder {
     svg{
       @include x-rem(left,13px);
       margin-top: 0;
-      @include r(1040){
+      @include r(1055){
       display: none;
       }
       @include r(768){
@@ -4752,6 +4762,7 @@ footer {
   opacity: 0;
   @include x-rem(top,50px);
   visibility: hidden;
+  right:0;
   transform: translateY(-5%);
   transition: all .3s;
   z-index: 1;
@@ -5613,6 +5624,7 @@ footer {
 }
 .compare-wrapper{
   overflow-x: scroll; 
+  overflow-y: hidden;
   @include x-rem(padding-bottom, 40px);
   @include x-rem(margin-bottom, -20px);
 }
