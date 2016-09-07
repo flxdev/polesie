@@ -77,15 +77,35 @@ html(lang='ru')
               a.selection_find-clear(href='#') Очистить сравнение
             .compare-main-wrap
               .compare_fakehead
+                .compare_fakehead-inner
+                  //здесь тоже самое, что и с таблицей row-fixed & .row-2/3/4
+                  table.compare_inner
+                    tbody.compare-body
+                      tr.compare-row
+                        td.compare-item
+                          span.compare-item-name Модель
+                        td.compare-item.item-clone
+                        td.compare-item
+                          span.compare-value Велосипед Cronus Extreme
+                        td.compare-item
+                          span.compare-value Stels Navigator 530 MD (2016) 
+                        td.compare-item
+                          span.compare-value Greenway 6035M Windrunner
+                        td.compare-item
+                          span.compare-value Stels Navigator 650 MD 27.5 (2016)
+                        td.compare-item
+                          span.compare-value Stels Navigator 650 MD 27.5 (2016)
+                        td.compare-item
+                          span.compare-value Stels Navigator 650 MD 27.5 (2016)
               .compare-wrapper
                 .compare-scroll-cont
                   .compare-scroll-inner
                     .compare-scroller
                 //если элементов в сравнении <4  добавляем .row-fixed
-                table.compare_inner.row-fixed
+                table.compare_inner
                   tbody.compare-body
                     //   и .row-2/3/4 сюда
-                    tr.compare-row.row-4
+                    tr.compare-row
                       th.compare-item.compare-bg
                       th.compare-item.item-clone
                       th.compare-item
@@ -148,21 +168,36 @@ html(lang='ru')
                               | 13 435,60 р. 
                               span  13 435 600 р
                           a(href="#").hits-stat-more Подробнее
-                      //- th.compare-item
-                      //-   .compare-item-main
-                      //-     .compare-item-close
-                      //-     a(href="#").hits_block
-                      //-       img(src='img/promo/bike_hit.jpg', alt='#')
-                      //-       p.hits_name
-                      //-         a(href='#') STELS Navigator 500 V 26 (2016)
-                      //-     .hits_coast
-                      //-       p.hits_coast_new
-                      //-         | 10 435,60 р. 
-                      //-         span  10 435 600 р
-                      //-       p
-                      //-         | 13 435,60 р. 
-                      //-         span  13 435 600 р
-                      //-     a(href="#").hits-stat-more Подробнее
+                      th.compare-item
+                        .compare-item-main
+                          .compare-item-close
+                          a(href="#").hits_block
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            p.hits_name
+                              a(href='#') STELS Navigator 500 V 26 (2016)
+                          .hits_coast
+                            p.hits_coast_new
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                            p
+                              | 13 435,60 р. 
+                              span  13 435 600 р
+                          a(href="#").hits-stat-more Подробнее
+                      th.compare-item
+                        .compare-item-main
+                          .compare-item-close
+                          a(href="#").hits_block
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            p.hits_name
+                              a(href='#') STELS Navigator 500 V 26 (2016)
+                          .hits_coast
+                            p.hits_coast_new
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                            p
+                              | 13 435,60 р. 
+                              span  13 435 600 р
+                          a(href="#").hits-stat-more Подробнее
                   tbody.compare-body
                     tr.compare-row
                       td.compare-item
@@ -194,6 +229,8 @@ html(lang='ru')
                         span.compare-value 2015 года 
                       td.compare-item
                         span.compare-value 2016 года 
+                      td.compare-item
+                        span.compare-value 2016 года 
                     tr.compare-row
                       td.compare-item
                         span.compare-item-name Возраст
@@ -208,6 +245,8 @@ html(lang='ru')
                         span.compare-value для взрослых
                       td.compare-item
                         span.compare-value для взрослых
+                      td.compare-item
+                        span.compare-value 2016 года 
                     tr.compare-row
                       td.compare-item
                         span.compare-item-name Тип
@@ -222,6 +261,8 @@ html(lang='ru')
                         span.compare-value djledd
                       td.compare-item
                         span.compare-value djledd
+                      td.compare-item
+                        span.compare-value 2016 года 
                     tr.compare-row
                       td.compare-item
                         span.compare-item-name Тип привода
@@ -236,6 +277,8 @@ html(lang='ru')
                         span.compare-value djledd
                       td.compare-item
                         span.compare-value djledd
+                      td.compare-item
+                        span.compare-value 2016 года 
                   tbody.compare-body.compare_group
                     tr.compare-row.table-title
                       td.compare-item(colspan='100')
@@ -257,6 +300,8 @@ html(lang='ru')
                         span.compare-value 2015 года 
                       td.compare-item
                         span.compare-value 2016 года 
+                      td.compare-item
+                        span.compare-value 2016 года 
                     tr.compare-row
                       td.compare-item
                         span.compare-item-name Возраст
@@ -271,6 +316,8 @@ html(lang='ru')
                         span.descr-i.yes
                       td.compare-item
                         span.compare-value для взрослых
+                      td.compare-item
+                        span.compare-value 2016 года 
                     tr.compare-row
                       td.compare-item
                         span.compare-item-name Тип
@@ -285,6 +332,72 @@ html(lang='ru')
                         span.compare-value djledd
                       td.compare-item
                         span.compare-value djledd
+                      td.compare-item
+                        span.compare-value 2016 года 
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Тип
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value 2016 года 
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Тип
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value 2016 года 
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Тип
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value 2016 года 
+                    tr.compare-row
+                      td.compare-item
+                        span.compare-item-name Тип
+                      td.compare-item.item-clone
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value djledd
+                      td.compare-item
+                        span.compare-value 2016 года 
                     tr.compare-row
                       td.compare-item
                         span.compare-item-name Тип привода
@@ -299,6 +412,8 @@ html(lang='ru')
                         span.compare-value djledd
                       td.compare-item
                         span.compare-value djledd
+                      td.compare-item
+                        span.compare-value 2016 года 
                   tbody.compare-body.compare_group
                     tr.compare-row.table-title
                       td.compare-item(colspan='100')
@@ -320,6 +435,8 @@ html(lang='ru')
                         span.compare-value 2015 года 
                       td.compare-item
                         span.compare-value 2016 года 
+                      td.compare-item
+                        span.compare-value 2016 года 
                     tr.compare-row
                       td.compare-item
                         span.compare-item-name Возраст
@@ -334,6 +451,8 @@ html(lang='ru')
                         span.compare-value для взрослых
                       td.compare-item
                         span.compare-value для взрослых
+                      td.compare-item
+                        span.compare-value 2016 года 
                     tr.compare-row
                       td.compare-item
                         span.compare-item-name Тип
@@ -348,6 +467,8 @@ html(lang='ru')
                         span.compare-value djledd
                       td.compare-item
                         span.compare-value djledd
+                      td.compare-item
+                        span.compare-value 2016 года 
                     tr.compare-row
                       td.compare-item
                         span.compare-item-name Тип привода
@@ -362,6 +483,8 @@ html(lang='ru')
                         span.compare-value djledd
                       td.compare-item
                         span.compare-value djledd
+                      td.compare-item
+                        span.compare-value 2016 года 
                   tbody.compare-body
                     tr.compare-row
                       th.compare-item.compare-bg

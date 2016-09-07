@@ -137,10 +137,17 @@ $(window).on('load',function(){
 			filterItems($(this));
 		})
 	}
+	if($('.compare_fakehead-inner').length){
+		$(".headhesive").addClass('is-hidden');
+	}
 });
 $(document).ready(function () {
+	if($('.compare_fakehead-inner').length){
+		$(".headhesive").addClass('is-hidden');
+	}
 var Comparescroll = function(){
 	var target = $('.compare-wrapper');
+	var target2 = $('.compare_fakehead-inner');
 	var targetW = $('.compare_inner').width() - 250;
 	var scroler = $('.compare-scroller');
 
@@ -149,13 +156,60 @@ var Comparescroll = function(){
 	
 	$('.compare-scroll-inner').on('scroll',function(e){
 			var scroll = $(this).scrollLeft();
-		console.log(scroll);
-
 			target.scrollLeft(scroll);
-
+			target2.scrollLeft(scroll);
 	})
 }
+		
+
 Comparescroll();
+if($('.compare_fakehead-inner').length){
+	var head = $('.compare_fakehead'),
+		headName = head.find('.compare-item-name'),
+		scrollC = $('.compare-scroll-cont'),
+		table = $('.compare_inner').find('.compare_group').first();
+		scT = table.offset().top,
+		cBot = $('.compare-wrapper')[0].getBoundingClientRect().bottom,
+		tableName = $('.compare_group').each(function(){
+			$(this).find('.table-title .text').text()
+		});
+		
+
+
+	$(window).on('scroll',function(){
+		var wTop = $(window).scrollTop() + $(window).height();
+			console.log(cBot, wTop, scT);
+			if(wTop > scT+150 && wTop < cBot- 70){
+				scrollC.addClass('pos-b').removeClass('pos-c');
+				
+				console.log(1);
+			}
+			else if( wTop > cBot- 70){
+				console.log(2);
+				scrollC.addClass('pos-c').removeClass('pos-b');
+			}
+
+			else{
+				console.log('top')
+				
+				scrollC.removeClass('pos-b').removeClass('pos-c');
+			}
+			
+	});
+	$(window).on('scroll',function(){
+		var scT2 = table.offset().top - $(window).scrollTop();
+		console.log(scT2);
+		if(scT2 < 50){
+
+			head.addClass('is-visible');
+		}else{
+
+			head.removeClass('is-visible');
+		}
+
+		});
+
+	}
 
 
 $(function() {
@@ -234,6 +288,7 @@ var mobileMain = function(){
 
 		}
 }
+
 mobileMain();
 var mobileSub = function(){
 		var subItem = $('.sub-item > a');
@@ -273,7 +328,7 @@ var mobileSub = function(){
 mobileSub();
 	// Create a new instance of Headhesive
 	var options = {
-		offset: 500
+		offset: 400
 	};
 	var header = new Headhesive('.header', options);
 	
@@ -313,7 +368,36 @@ mobileSub();
          }
         
     });
+    // 2-0 2-2 all items
+	if($('.js-all-title').length){
+		var cont = $('.selection_body'),
+			trigger = $('.js-all-title'),
+			target = $('.js-all-inner');
+			сontainer= $('.select-all-cont');
 
+			trigger.each(function(){
+				var _ = $(this);
+				_.click(function(){
+					var currTarg = _.parent().find(target);
+					if(currTarg.hasClass('active')){
+							currTarg.removeClass('active');
+					}
+					else{
+						
+						currTarg.addClass('active');
+					}
+				$(document).mouseup(function (e){ 
+					if (!currTarg.is(e.target) 
+					    && currTarg.has(e.target).length === 0 && !_.is(e.target)) {
+						currTarg.removeClass('active');
+						console.log(1);
+					}
+				});
+			});
+		});
+
+
+	}
 	//SLICK slider
 	$('.slick-slider').slick({
 		accessibility: true,
@@ -756,16 +840,6 @@ mobileSub();
 	})();
 
 
-	/*$('.top-line-nav nav > ul > li:last-child').mouseover(function(){
-		$(".drop-line-nav").css("display"," block");
-		$('.top-line-nav nav > ul > li:last-child').find('a').first().css("color","#ff0000");
-	});
-
-	$('.drop-line-nav').mouseout(function(){
-		$('.drop-line-nav').hide();
-		$('.top-line-nav nav > ul > li:last-child').find('a').first().css("color","#3c3c3c");
-	});*/
-
 //++++++++++++++++++++++++
 //modal open/close
 //++++++++++++++++++++++++++++++
@@ -1022,7 +1096,7 @@ var clearItems = function(block){
  			target.toggleClass('active');
  			_.toggleClass('active');
 
- 			item.on('click',function(){
+ 			item.on('click',function(e){
 
  				var _ = $(this),
  					altLext = _.data('text');
@@ -1030,15 +1104,21 @@ var clearItems = function(block){
  				textCont.text(altLext);
 
  				_.parent().addClass('active').siblings().removeClass('active');
- 				
+ 				e.preventDefault();
  				setTimeout(function(){
 
  					target.removeClass('active');
  					trigger.removeClass('active');
 
  				},500);
- 				
  			});
+ 				$(document).mouseup(function (e){ 
+					if (!trigger.is(e.target) 
+					    && trigger.has(e.target).length === 0 && !item.is(e.target) ) {
+						target.removeClass('active');
+ 						trigger.removeClass('active');
+					}
+				});
 
  		});
  	};
