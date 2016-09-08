@@ -317,13 +317,49 @@ body {
 }
 
 .regions_map {
-  max-width: 600px;
+  width: 600px;
   display: inline-block;
   vertical-align: top;
-  img {
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
+  @include x-rem(padding, 0 90px);
+  #map_main{
+    display: inline-block;
+    #map-border{
+      fill:#c9c3b9;
+    }
+    .map-zone{
+      cursor: pointer;
+      .map-zone-bg{
+        fill-opacity:0.8;
+        transition: fill .3s;
+      }
+      .map-zone-circ{
+        fill:$letters;
+        fill-opacity:.6;
+        transition: fill .3s;y:1;
+      }
+      .map-zone-text{
+        font-family: $ProximaRegular;
+        font-weight: 300;
+        fill:$letters;
+        @include x-rem(letter-spacing, 1px);
+        transition: fill .3s;
+      }
+      &:hover{
+        .map-zone-bg{
+        fill:$yellowHov;
+        }
+      }
+      &.active{
+        .map-zone-bg{
+          fill-opacity:.6;
+          fill:$red;
+        }
+        .map-zone-text,.map-zone-circ{
+          fill:$white;
+          fill-opacity:1;
+        }
+      }
+    }
   }
 }
 
@@ -5953,12 +5989,11 @@ footer {
   position: relative;
   overflow: hidden;
 }
-.compare-scroll-cont{
-  @include x-rem(max-width,1280px);
-  margin: 0 auto;
+.compare-scroll-outer{
   position: absolute;
   top:20%;
   z-index: 4;
+  width:100%;
   &.pos-b{
     position: fixed;
     bottom: 2%;
@@ -5969,6 +6004,10 @@ footer {
     @include x-rem(bottom,20px);
     top:auto;
   }
+}
+.compare-scroll-cont{
+  @include x-rem(max-width,1280px);
+  margin: 0;
    .compare-scroll-inner{
     @include x-rem(margin-left,250px);
     @include x-rem(height,20px);
