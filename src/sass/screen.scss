@@ -317,10 +317,17 @@ body {
 }
 
 .regions_map {
-  width: 600px;
+  @include x-rem(width, 600px);
   display: inline-block;
   vertical-align: top;
   @include x-rem(padding, 0 90px);
+  @include r(928){
+    @include x-rem(padding, 0 );
+    @include x-rem(width, 300px);
+  }
+   @include r(638){
+    display: none;
+  }
   #map_main{
     display: inline-block;
     #map-border{
@@ -355,8 +362,8 @@ body {
           fill:$red;
         }
         .map-zone-text,.map-zone-circ{
-          fill:$white;
-          fill-opacity:1;
+        fill-opacity:1;
+        fill:$white;
         }
       }
     }
@@ -379,6 +386,10 @@ body {
   }
   .hits-stat-more{
    @include x-rem(margin-top, 5px);
+     @include r(638){
+      @include x-rem(margin, 5px auto);
+      float:none;
+    }
   }
 }
 
@@ -494,6 +505,7 @@ input:focus:-moz-placeholder {
     z-index: 10;
     background-color: $white;
     @include x-rem(padding, 0 6px)
+    cursor:pointer;
     a{
       display: inline-block;
       text-decoration:none;
@@ -539,6 +551,7 @@ input:focus:-moz-placeholder {
         background-color:$white;
         position: relative;
         overflow: hidden;
+        cursor: pointer;
         font-weight: 300;
         input{
           position: absolute;
@@ -709,6 +722,7 @@ input:focus:-moz-placeholder {
     display: inline-block;
     @include x-rem(margin-top,10px);
     @include x-rem(max-width,152px);
+    cursor:pointer;
     &:hover{
       .acc-text{
         color:$red;
@@ -938,6 +952,7 @@ input:focus:-moz-placeholder {
   vertical-align: top;
   position: relative;
   @include x-rem(width,145px);
+  cursor: pointer;
   @include r(1050){
       @include x-rem(width,110px);
     }
@@ -963,7 +978,7 @@ input:focus:-moz-placeholder {
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     transition:all .3s;
-    cursor: pointer;
+    
     @include r(1055){
         padding-left: 14px;
       }

@@ -108,24 +108,14 @@ var mapArea = function(){
 			  		}
 			  	})
 			});
-		inputs.each(function(){
+		$(".input_label").each(function(){
 			  	var _ = $(this);
 			  	_.click(function(){
-			  		var area = _.attr('value');
-			  		var zone = document.getElementsByClassName('map-zone');
-			  		var val2 = zone.data('area');
-			  		console.log(val2);
-			  		/*zone.each(function(){
-			  			var val = $(this).data('area');
-			  			if(val == area ){
-			  				$(this)[0].classList.add("active");
-			 				 $(this).siblings().removeClass('active');
-			  			}
-			  		});*/
+			  		var area = $(this).find("input").attr('value');
+			  		var zone = $('#map_main');
+			  		zone.find("[data-area=" + area + "]").addClass("active").siblings().removeClass("active");
 			  	})
-
 			  });
-
 	}
 	mapArea();
 $(function() {
@@ -1333,6 +1323,19 @@ if($('.forgot-pass').length){
         });
     };
 }
+var form_main = $('.form-feed');
+if (form_main.length) {
+    form_main.each(function () {
+        var form_this = $(this);
+        $.validate({
+            form : form_this,
+            borderColorOnError : true,
+            scrollToTopOnError : false,
+        });
+    });
+};
+
+
 if($('.accordion-container').length){
 $(".set > .head").on("click", function(){
 	if($(this).hasClass('active')){

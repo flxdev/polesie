@@ -102,15 +102,15 @@ html(lang='ru')
                             .input-wrapper
                               label.input-label 
                                 span.text Ваше имя
-                              input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович')
+                              input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович',data-validation="length required", data-validation-length="min2",data-validation-error-msg="Имя не должно быть короче 2 букв и не содержать цифры")
                             .input-wrapper
                               label.input-label 
                                 span.text E-mail
-                              input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com')
+                              input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com',data-validation="email",data-validation-error-msg="E-mail должен содержать @")
                             .input-wrapper
                               label.input-label 
                                 span.text Телефон
-                              input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00')
+                              input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00',data-validation="custom",data-validation-regexp="^[-0-9()+ ]+$",data-validation-error-msg="Введите свой телефонный номер в формате +375ХХХХХХХХХ")
                             .input-wrapper
                               label.input-label 
                                 span.text Область
@@ -142,46 +142,46 @@ html(lang='ru')
                             .input-wrapper
                               label.input-label 
                                 span.text Город
-                              input.input-main.input-from(type='text',name="", placeholder = 'Минск')
+                              input.input-main.input-from(type='text',name="", placeholder = 'Минск',data-validation="length required", data-validation-length="min2",data-validation-error-msg="Название города не должно содержать цифр")
                             .input-wrapper
                               label.input-label 
                                 span.text Улица
-                              input.input-main.input-from(type='text',name="", placeholder = 'Улица')
+                              input.input-main.input-from(type='text',name="", placeholder = 'Улица',data-validation="length required", data-validation-length="min2")
                             .input-wrapper
                               .home-wrap
                                 label.input-label
                                   span.text Дом
-                                input.input-main.input-from(type='text',name="", placeholder = 'Дом')
+                                input.input-main.input-from(type='number',name="", placeholder = 'Дом',data-validation="length number", data-validation-length="max4",data-validation-error-msg="Номер должен содержать только цифры")
                               .home-wrap
                                 label.input-label
                                   span.text Корпус
-                                input.input-main.input-from(type='text',name="", placeholder = 'Корпус')
+                                input.input-main.input-from(type='number',name="", placeholder = 'Корпус',data-validation="length number",data-validation-length="max4",data-validation-error-msg="Номер должен содержать только цифры")
                               .home-wrap
                                 label.input-label
                                   span.text Квартира
-                                input.input-main.input-from(type='text',name="", placeholder = 'Квартира')
+                                input.input-main.input-from(type='number',name="", placeholder = 'Квартира',data-validation="length number",data-validation-length="max4") 
                           //для юр лиц   
                           .wrapper-who.wrapper-jur
                             .input-wrapper
                               label.input-label 
                                 span.text Название компании
-                              input.input-main.input-from(type='text',name="", placeholder = 'ООО «Юнитрейд»')
+                              input.input-main.input-from(type='text',name="", placeholder = 'ООО «Юнитрейд»',data-validation="length required", data-validation-length="min2",data-validation-error-msg="Название не долно быть короче 2х символов")
                             .input-wrapper
                               label.input-label 
                                 span.text Контактное илцо
-                              input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович')
-                            .input-wrapper
-                              label.input-label 
-                                span.text E-mail
-                              input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com')
+                              input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович',data-validation="length required", data-validation-length="min2",data-validation-error-msg="Имя не должно быть короче 2 букв и не содержать цифры")
                             .input-wrapper
                               label.input-label 
                                 span.text УНП
-                              input.input-main.input-from(type='number',name="", placeholder = '1475854')
+                              input.input-main.input-from(type='number',name="", placeholder = '1475854',data-validation="number", data-validation-allowing="range[1;100",data-validation-error-msg="УНП Долэен состоять только из цифр")
+                            .input-wrapper
+                              label.input-label 
+                                span.text E-mail
+                              input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com',data-validation="email",data-validation-error-msg="E-mail должен содержать @")
                             .input-wrapper
                               label.input-label 
                                 span.text Телефон
-                              input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00')
+                              input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00',data-validation="custom",data-validation-regexp="^[-0-9()+ ]+$",data-validation-error-msg="Введите свой телефонный номер в формате +375ХХХХХХХХХ")
                             .input-wrapper
                               label.input-label 
                                 span.text Область
@@ -213,24 +213,24 @@ html(lang='ru')
                             .input-wrapper
                               label.input-label 
                                 span.text Город
-                              input.input-main.input-from(type='text',name="", placeholder = 'Минск')
+                              input.input-main.input-from(type='text',name="", placeholder = 'Минск',data-validation="length required", data-validation-length="min2",data-validation-error-msg="Название города не должно содержать цифр")
                             .input-wrapper
                               label.input-label 
                                 span.text Улица
-                              input.input-main.input-from(type='text',name="", placeholder = 'Улица')
+                              input.input-main.input-from(type='text',name="", placeholder = 'Улица',data-validation="length required", data-validation-length="min2")
                             .input-wrapper
                               .home-wrap
                                 label.input-label
                                   span.text Дом
-                                input.input-main.input-from(type='text',name="", placeholder = 'Дом')
+                                input.input-main.input-from(type='number',name="", placeholder = 'Дом',data-validation="length number", data-validation-length="max4",data-validation-error-msg="Номер должен содержать только цифры")
                               .home-wrap
                                 label.input-label
                                   span.text Корпус
-                                input.input-main.input-from(type='text',name="", placeholder = 'Корпус')
+                                input.input-main.input-from(type='number',name="", placeholder = 'Корпус',data-validation="length number",data-validation-length="max4",data-validation-error-msg="Номер должен содержать только цифры")
                               .home-wrap
                                 label.input-label
                                   span.text Офис
-                                input.input-main.input-from(type='text',name="", placeholder = 'Офис')
+                                input.input-main.input-from(type='number',name="", placeholder = 'Офис',data-validation="length number",data-validation-length="max4",data-validation-error-msg="Номер должен содержать только цифры")
                       .form-block
                         .form-block-title
                           |Придумайте пароль
@@ -238,11 +238,11 @@ html(lang='ru')
                           .input-wrapper
                               label.input-label 
                                 span.text Пароль
-                              input.input-main.input-from(type='password',name="")
+                              input.input-main.input-from(type='password',name="pass",data-validation=" required")
                           .input-wrapper
                               label.input-label 
                                 span.text Повторите пароль
-                              input.input-main.input-from(type='password',name="")
+                              input.input-main.input-from(name="repeat" data-validation="confirmation" data-validation-confirm="pass")
                       .form-block
                         .form-block-title
                           | Введите проверочный код

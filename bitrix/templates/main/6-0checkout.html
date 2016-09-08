@@ -656,37 +656,37 @@
 																<div class="wrapper-who wrapper-fiz">
 																	<div class="input-wrapper">
 																		<label class="input-label"> <span class="text">Ваше имя</span></label>
-																		<input type="text" name="" placeholder="Иванов Степан Иванович" class="input-main input-from">
+																		<input type="text" name="" placeholder="Иванов Степан Иванович" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Имя не должно быть короче 2 букв и не содержать цифры" class="input-main input-from">
 																	</div>
 																	<div class="input-wrapper">
 																		<label class="input-label"> <span class="text">E-mail</span></label>
-																		<input type="email" name="" placeholder="info@mail.com" class="input-main input-from">
+																		<input type="email" name="" placeholder="info@mail.com" data-validation="email" data-validation-error-msg="E-mail должен содержать @" class="input-main input-from">
 																	</div>
 																	<div class="input-wrapper">
 																		<label class="input-label"> <span class="text">Телефон</span></label>
-																		<input type="tel" name="" placeholder="+375 29 000-00-00" class="input-main input-from">
+																		<input type="tel" name="" placeholder="+375 29 000-00-00" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Введите свой телефонный номер в формате +375ХХХХХХХХХ" class="input-main input-from">
 																	</div>
 																</div>
 																<div class="wrapper-who wrapper-jur">
 																	<div class="input-wrapper">
 																		<label class="input-label"> <span class="text">Название компании</span></label>
-																		<input type="text" name="" placeholder="ООО «Юнитрейд»" class="input-main input-from">
+																		<input type="text" name="" placeholder="ООО «Юнитрейд»" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Название не долно быть короче 2х символов" class="input-main input-from">
 																	</div>
 																	<div class="input-wrapper">
 																		<label class="input-label"> <span class="text">Контактное илцо</span></label>
-																		<input type="text" name="" placeholder="Иванов Степан Иванович" class="input-main input-from">
+																		<input type="text" name="" placeholder="Иванов Степан Иванович" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Имя не должно быть короче 2 букв и не содержать цифры" class="input-main input-from">
 																	</div>
 																	<div class="input-wrapper">
 																		<label class="input-label"> <span class="text">УНП</span></label>
-																		<input type="number" name="" placeholder="1475854" class="input-main input-from">
+																		<input type="number" name="" placeholder="1475854" data-validation="number" data-validation-allowing="range[1;100" data-validation-error-msg="УНП Долэен состоять только из цифр" class="input-main input-from">
 																	</div>
 																	<div class="input-wrapper">
 																		<label class="input-label"> <span class="text">E-mail</span></label>
-																		<input type="email" name="" placeholder="info@mail.com" class="input-main input-from">
+																		<input type="email" name="" placeholder="info@mail.com" data-validation="email" data-validation-error-msg="E-mail должен содержать @" class="input-main input-from">
 																	</div>
 																	<div class="input-wrapper">
 																		<label class="input-label"> <span class="text">Телефон</span></label>
-																		<input type="tel" name="" placeholder="+375 29 000-00-00" class="input-main input-from">
+																		<input type="tel" name="" placeholder="+375 29 000-00-00" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Введите свой телефонный номер в формате +375ХХХХХХХХХ" class="input-main input-from">
 																	</div>
 																</div>
 															</div>
@@ -770,30 +770,30 @@
 																	</div>
 																	<div class="input-wrapper">
 																		<label class="input-label"> <span class="text">Город</span></label>
-																		<input type="text" name="" placeholder="Минск" class="input-main input-from">
+																		<input type="text" name="" placeholder="Минск" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Название города не должно содержать цифр" class="input-main input-from">
 																	</div>
 																	<div class="input-wrapper">
 																		<label class="input-label"> <span class="text">Улица</span></label>
-																		<input type="text" name="" placeholder="Улица" class="input-main input-from">
+																		<input type="text" name="" placeholder="Улица" data-validation="length required" data-validation-length="min2" class="input-main input-from">
 																	</div>
 																	<div class="input-wrapper">
 																		<div class="home-wrap">
 																			<label class="input-label"><span class="text">Дом</span></label>
-																			<input type="text" name="" placeholder="Дом" class="input-main input-from">
+																			<input type="number" name="" placeholder="Дом" data-validation="length number" data-validation-length="max4" data-validation-error-msg="Номер должен содержать только цифры" class="input-main input-from">
 																		</div>
 																		<div class="home-wrap">
 																			<label class="input-label"><span class="text">Корпус</span></label>
-																			<input type="text" name="" placeholder="Корпус" class="input-main input-from">
+																			<input type="number" name="" placeholder="Корпус" data-validation="length number" data-validation-length="max4" data-validation-error-msg="Номер должен содержать только цифры" class="input-main input-from">
 																		</div>
 																		<div class="home-wrap">
 																			<label class="input-label"><span class="text">Офис</span></label>
-																			<input type="text" name="" placeholder="Офис" class="input-main input-from">
+																			<input type="number" name="" placeholder="Офис" data-validation="length number" data-validation-length="max4" data-validation-error-msg="Номер должен содержать только цифры" class="input-main input-from">
 																		</div>
 																		<!--  
 																		.home-wrap
 																		  label.input-label
 																		    span.text Квартира
-																		  input.input-main.input-from(type='text',name="", placeholder = 'Квартира')  
+																		  input.input-main.input-from(type='text',name="", placeholder = 'Квартира',data-validation="length number",data-validation-length="max4")  
 																		-->
 																	</div>
 																</div>
@@ -860,11 +860,11 @@
 															<div class="form-block-content">
 																<div class="input-wrapper">
 																	<label class="input-label"> <span class="text">E-mail</span></label>
-																	<input type="email" name="" placeholder="info@mail.com" class="input-main input-from">
+																	<input type="email" name="" placeholder="info@mail.com" data-validation="email" data-validation-error-msg="E-mail должен содержать @" class="input-main input-from">
 																</div>
 																<div class="input-wrapper">
 																	<label class="input-label"> <span class="text">Пароль</span></label>
-																	<input type="password" name="" placeholder="Пароль" class="input-main input-from"><a href="#" class="forgot-pass">Забыли пароль?</a>
+																	<input type="password" name="" placeholder="Пароль" data-validation="required" data-validation-error-msg="Неверный пароль" class="input-main input-from"><a href="#" class="forgot-pass">Забыли пароль?</a>
 																</div>
 															</div>
 														</div>
@@ -879,7 +879,7 @@
 																<div class="input-text">Изменение пароля будет возможно после того, как вы перейдете по ссылке, которая будет отправлена вам на указанный e-mail</div>
 																<div class="input-wrapper">
 																	<label class="input-label"> <span class="text">E-mail</span></label>
-																	<input type="email" name="" placeholder="info@mail.com" data-validation="email" class="input-main input-from">
+																	<input type="email" name="" placeholder="info@mail.com" data-validation="email" data-validation-error-msg="E-mail должен содержать @" class="input-main input-from">
 																</div>
 															</div>
 														</div>
