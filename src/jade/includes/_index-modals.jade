@@ -746,6 +746,14 @@
       a(href='#') Личном кабинете.
     p.btn-wrap.button_close
       a.block-btn(href='#') Закрыть
+.vacancy-success_hidden.hidden_bg
+  .hidden-block
+    .hidden-block-close.button_close
+    h2.hidden-title Спасибо
+    p.title-text
+      |Спасибо, что выбрали нашу компанию. После изучения вашего резюме, наш специалист свяжется с вами для обсуждения всех нюансов
+    p.btn-wrap.button_close
+      a.block-btn(href='#') Закрыть
 .product_hidden.hidden_bg
   .hidden-block
     .hidden-block-close.button_close
@@ -963,20 +971,20 @@
       .input-wrapper
         label.input-label 
           span.text Ваше имя
-        input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович')
+        input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович',data-validation="length required", data-validation-length="min2",data-validation-error-msg="Имя не должно быть короче 2 букв и не содержать цифры")
       .input-wrapper
         label.input-label 
           span.text E-mail
-        input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com')
+        input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com',data-validation="email",data-validation-error-msg="E-mail должен содержать @")
       .input-wrapper
         label.input-label
-          span.text  Отзыв
+          span.text Телефон
         input.input-main.input-from(type='tell',name="", placeholder = '+375 29 000-00-00')
       .input-wrapper
         label.input-label 
           span.text Вопрос
-        textarea.input-main.input-small(name="", rows="3", placeholder = 'Опишите')
-      input.hits-stat-more(type="submit", placeholder = 'Задать вопрос')
+        textarea.input-main.input-small(name="", rows="3", placeholder = 'Опишите',data-validation="length required", data-validation-length="min10",data-validation-error-msg="Заполните поле")
+     input.hits-stat-more(type="submit", placeholder = 'Задать вопрос')
 .oneclick_hidden.hidden_bg
   .hidden-block
     .hidden-block-close.button_close
@@ -985,16 +993,16 @@
       .input-wrapper
         label.input-label 
           span.text Ваше имя
-        input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович')
+        input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович',data-validation="length required", data-validation-length="min2",data-validation-error-msg="Имя не должно быть короче 2 букв и не содержать цифры")
       .input-wrapper
         label.input-label 
           span.text Телефон
-        input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00')
+        input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00',data-validation="custom",data-validation-regexp="^[-0-9()+ ]+$",data-validation-error-msg="Введите свой телефонный номер в формате +375ХХХХХХХХХ")
       .input-wrapper
         label.input-label 
           span Сообщение
-        textarea.input-main.input-small(name="", rows="3", placeholder = 'Оставьте сообщение')
-      input.hits-stat-more(type="submit", placeholder = 'Отправить',data-target=".success_hidden").js-modal-trigger.button_close
+        textarea.input-main.input-small(name="", rows="3", placeholder = 'Оставьте сообщение',data-validation="length required",data-validation-length="min10",data-validation-error-msg="Текст не должен быть короче 10ти символов")
+      input.hits-stat-more(type="submit", placeholder = 'Отправить').button_close
 .login_hidden.hidden_bg
   .hidden-block
     .hidden-block-close.button_close
@@ -1006,11 +1014,11 @@
             .input-wrapper
               label.input-label 
                 span.text E-mail
-              input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com')
+              input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com',data-validation="email",data-validation-error-msg="E-mail должен содержать @")
             .input-wrapper
               label.input-label 
                 span.text Пароль
-              input.input-main.input-from(type='password',name="", placeholder = 'Пароль')
+              input.input-main.input-from(type='password',name="", placeholder = 'Пароль',data-validation=" required",data-validation-error-msg="Это обязательное поле")
               a(href="#",data-target=".password_hidden").forgot-pass.js-modal-trigger.button_close Забыли пароль?
         button.hits-stat-more.enter-btn(type="submit") Войти
 .password_hidden.hidden_bg
@@ -1018,15 +1026,15 @@
     .hidden-block-close.button_close
     h2.hidden-title Восстановление пароля     
     .tab-form-wrapper
-       form(action="", name='pass-forgotten').form-feed.js-form-email
+       form(action="", name='pass-forgotten').form-feed
         .form-block
           .form-block-content
             .input-text Изменение пароля будет возможно после того, как вы перейдете по ссылке, которая будет отправлена вам на указанный e-mail
             .input-wrapper
               label.input-label 
                 span.text E-mail
-              input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com' ,data-validation="email")
-        input.hits-stat-more.enter-btn.js-modal-trigger(type="submit", value = 'Отправить',data-target=".password-succes_hidden")
+              input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com',data-validation="email",data-validation-error-msg="E-mail должен содержать @")
+        input.hits-stat-more.enter-btn(type="submit", value = 'Отправить')
 .password-succes_hidden.hidden_bg
   .hidden-block
     .hidden-block-close.button_close
@@ -1046,20 +1054,20 @@
       .input-wrapper
         label.input-label 
           span.text Ваше имя
-        input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович')
+        input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович',data-validation="length required", data-validation-length="min2",data-validation-error-msg="Имя не должно быть короче 2 букв и не содержать цифры")
       .input-wrapper
         label.input-label 
           span.text E-mail
-        input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com' ,data-validation="email")
+        input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com'  ,data-validation="email",data-validation-error-msg="E-mail должен содержать @")
       .input-wrapper
         label.input-label 
           span.text Телефон
-        input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00')
+        input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00',data-validation="custom",data-validation-regexp="^[-0-9()+ ]+$",data-validation-error-msg="Введите свой телефонный номер в формате +375ХХХХХХХХХ")
       .input-wrapper
         label.input-label 
           span Прикрепите резюме
         input(type="file")
-      input.hits-stat-more(type="submit", placeholder = 'Откликнуться',data-target=".success_hidden").js-modal-trigger.button_close
+      input.hits-stat-more(type="submit",  value = 'Откликнуться').button_close
 
 
 

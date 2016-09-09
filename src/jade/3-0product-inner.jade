@@ -467,7 +467,7 @@ html(lang='ru')
                             .video-item-img
                               img(src="https://img.youtube.com/vi/jZ46cL4_QeQ/mqdefault.jpg", alt="velasaped")
                             .video-item-decribe
-                              .item-date
+                              time.item-date
                                 |06 июля, 2016 года
                               .item-title
                                 |Обзор Stels Navigator 500
@@ -477,7 +477,7 @@ html(lang='ru')
                             .video-item-img
                               img(src="https://img.youtube.com/vi/Mg-RPTiVa_Q/mqdefault.jpg", alt="velasaped")
                             .video-item-decribe
-                              .item-date
+                              time.item-date
                                 |06 июля, 2016 года
                               .item-title
                                 |Обзор Stels Navigator 500
@@ -487,7 +487,7 @@ html(lang='ru')
                             .video-item-img
                               img(src="https://img.youtube.com/vi/WtodhmCyFdM/mqdefault.jpg", alt="velasaped")
                             .video-item-decribe
-                              .item-date
+                              time.item-date
                                 |06 июля, 2016 года
                               .item-title
                                 |Обзор Stels Navigator 500
@@ -497,7 +497,7 @@ html(lang='ru')
                             .video-item-img
                               img(src="https://img.youtube.com/vi/gWNHql50zxk/mqdefault.jpg", alt="velasaped")
                             .video-item-decribe
-                              .item-date
+                              time.item-date
                                 |06 июля, 2016 года
                               .item-title
                                 |Обзор Stels Navigator 500
@@ -638,40 +638,44 @@ html(lang='ru')
                             .input-wrapper
                               label.input-label
                                 span.text  Отзыв
-                              textarea.input-main.input-big(name="",  rows="10", placeholder = 'Поделитесь впечатлением о товаре')
+                              textarea.input-main.input-big(name="",  rows="10", placeholder = 'Поделитесь впечатлением о товаре',data-validation="length required", data-validation-length="min10",data-validation-error-msg="Текст не должен быть короче 10ти символов")
                             .input-wrapper
                               label.input-label
                                 span.text  Оцените товар по 5-ти бальной шкале
                                 .rev-stars
-                                  a#rev-star-1.rev-star(href='', data-num='1',style = 'background-image: url(../img/utility/star-gray.svg)')
-                                  a#rev-star-2.rev-star(href='', data-num='2',style = 'background-image: url(../img/utility/star-gray.svg)')
-                                  a#rev-star-3.rev-star(href='', data-num='3',style = 'background-image: url(../img/utility/star-gray.svg)')
-                                  a#rev-star-4.rev-star(href='', data-num='4',style = 'background-image: url(../img/utility/star-gray.svg)')
-                                  a#rev-star-5.rev-star(href='', data-num='5',style = 'background-image: url(../img/utility/star-gray.svg)')
+                                  a#rev-star-1.rev-star(href='', data-num='1',style = 'background-image: url(img/utility/star-gray.svg)')
+                                  a#rev-star-2.rev-star(href='', data-num='2',style = 'background-image: url(img/utility/star-gray.svg)')
+                                  a#rev-star-3.rev-star(href='', data-num='3',style = 'background-image: url(img/utility/star-gray.svg)')
+                                  a#rev-star-4.rev-star(href='', data-num='4',style = 'background-image: url(img/utility/star-gray.svg)')
+                                  a#rev-star-5.rev-star(href='', data-num='5',style = 'background-image: url(img/utility/star-gray.svg)')
                                   input.rev-hidden(type="text")
                           .form-col
                             .input-wrapper
                               label.input-label 
                                 span.text Преимущества
-                              textarea.input-main.input-small(name="",  rows="3", placeholder = 'Опишите достоинства товара')
+                              textarea.input-main.input-small(name="",  rows="3", placeholder = 'Опишите достоинства товара',
+                              data-validation="length required",data-validation-length="min10",data-validation-error-msg="Текст не должен быть короче 10ти символов")
                             .input-wrapper
                               label.input-label 
                                 span.text Недостатки
-                              textarea.input-main.input-small(name="", rows="3", placeholder = 'Опишите, что вам в нем не понравилось')
+                              textarea.input-main.input-small(name="", rows="3", placeholder = 'Опишите, что вам в нем не понравилось',data-validation="length required",data-validation-length="min10",data-validation-error-msg="Текст не должен быть короче 10ти символов")
                             .input-wrapper
-                              div.dropzone
+                              .dropzone
+
+
                           span.fed-talk Оставвьте ваши данные
-                          .form-col
-                            .input-wrapper
-                              label.input-label 
-                                span.text Ваше имя
-                              input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович')
-                          .form-col
-                            .input-wrapper
-                              label.input-label 
-                                span.text E-mail
-                              input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com')
-                              span.add-info E-mail не публикуется на сайте
+                          .form-row
+                            .form-col
+                              .input-wrapper
+                                label.input-label 
+                                  span.text Ваше имя
+                                input.input-main.input-from(type='text',name="", placeholder = 'Иванов Степан Иванович',data-validation="length required", data-validation-length="min2",data-validation-error-msg="Имя не должно быть короче 2 букв и не содержать цифры")
+                            .form-col
+                              .input-wrapper
+                                label.input-label 
+                                  span.text E-mail
+                                input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com',data-validation="email",data-validation-error-msg="E-mail должен содержать @")
+                                span.add-info E-mail не публикуется на сайте
                           input.hits-stat-more(type="submit", placeholder = 'Отправить')
             //end of tabs
             section.discount.hits

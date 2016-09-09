@@ -1259,7 +1259,7 @@ var clearItems = function(block){
 
 		btn.each(function(){
 			var item = $(this);
-			
+			/*item.parents('.input-wrapper').addClass('has-error');*/
 			item.click(function(event){
 				event.preventDefault();
 				var _ = $(this),
@@ -1279,11 +1279,13 @@ var clearItems = function(block){
 						_.click(function(){
 							var value = _.val();
 							var targetToText = _.parents().find(item);
+							inp.removeClass('error');
+							item.removeClass('has-error');
 
 							targetToText.find('span').text(value);
 							
 							setTimeout(function(){
-								targetToText.removeClass('active').addClass('is-checked');
+								targetToText.removeClass('active').addClass('is-checked').parents('.input-wrapper').removeClass('has-error').addClass('has-success');
 							}, 300)
 
 						});
@@ -1298,17 +1300,18 @@ var clearItems = function(block){
 					event.preventDefault()
 					
 					inp.prop('checked',false);
-					item.removeClass('active').removeClass('is-checked').find('span').text(text);
+					item.removeClass('active').removeClass('is-checked').find('span').text(text).parents('.input-wrapper').addClass('has-error').removeClass('has-success');
 					
 				})
+				$(document).mouseup(function (e){ 
+					var div = $(".select-check");
+					if (!div.is(e.target) 
+					    && div.has(e.target).length === 0) {
+						div.find(btn).removeClass('active');
+					}
+				});
 			});
-			$(document).mouseup(function (e){ 
-				var div = $(".select-check");
-				if (!div.is(e.target) 
-				    && div.has(e.target).length === 0) {
-					div.find(btn).removeClass('active'); 
-				}
-			});
+
 		});
 
 	}
@@ -1368,7 +1371,17 @@ function number() {
 	});
 }
 number();
-
+function getChar(event) {
+		if (event.which == null) {
+			if (event.keyCode < 32) return null;
+			return String.fromCharCode(event.keyCode) // IE
+		}
+		if (event.which != 0 && event.charCode != 0) {
+			if (event.which < 32) return null;
+			return String.fromCharCode(event.which) 
+		}
+		return null;
+	}
 //fancybox
    $('.fancybox').fancybox({
    	openEffect  : 'elastic',
@@ -1385,6 +1398,7 @@ number();
     }
    });
 $('.rev-star').click(function() {
+	$(this).closest('.input-wrapper').addClass('has-success');
   num = parseInt($(this).data("num"));
   i = 1;
   for (i = 1; i <= num; i++) {
@@ -1415,7 +1429,8 @@ if($('.video-playlist-cont').length){
 		})
 	})
 }
-if($('.forgot-pass').length){
+// FORMS STARTS HERE
+if($('.js-forgoten-pass-wrap').length){
 
 	var block = $('.js-forgoten-pass-wrap');
 	var btn = $('.forgot-pass');
@@ -1443,7 +1458,6 @@ if($('.forgot-pass').length){
         form_validate.each(function () {
             var form_this = $(this);
             $.validate({
-            		lang: 'ru',
                 form : form_this,
                 borderColorOnError : true,
                 scrollToTopOnError : false,
@@ -1463,11 +1477,68 @@ if (form_main.length) {
             form : form_this,
             borderColorOnError : true,
             scrollToTopOnError : false,
+            onSuccess: function($form){
+
+                 if(form_this.find('.select-check').length){
+					if(!form_this.find('.select-check').parents('.input-wrapper').hasClass('has-success')){
+						form_this.find('.select-check').parents('.input-wrapper').addClass('has-error');
+						console.log('find')
+							return false;
+					}
+				}
+				if(form_this.find('.rev-stars').length){
+					if(!form_this.find('.rev-stars').closest('.input-wrapper').hasClass('has-success')){
+						form_this.find('.rev-stars').closest('.input-wrapper').addClass('has-error');
+						console.log('find')
+							return false;
+					}
+				}
+            }
+
         });
     });
 };
+var form_mail = $('.password_hidden .form-feed');
+//modal password form
+if (form_mail.length) {
 
-
+    form_mail.each(function () {
+        var form_this = $(this);
+        $.validate({
+            form : form_this,
+            borderColorOnError : true,
+            scrollToTopOnError : false,
+            onSuccess: function($form){
+                 $(this).parents('.password_hidden').removeClass('active');
+                 $('body').find('.password-success_hidden').addClass('active');
+            }
+        });
+    });
+};
+var form_vac = $('.vacancy_hidden .vacancy-form');
+//modal password form
+if (form_vac.length) {
+    form_vac.each(function () {
+        var form_this = $(this);
+        $.validate({
+            form : form_this,
+            borderColorOnError : true,
+            scrollToTopOnError : false,
+            onSuccess: function($form){
+                 $(this).parents('.vacancy_hidden').removeClass('active');
+                 $('body').find('.vacancy-success_hidden').addClass('active');
+            }
+        });
+    });
+};
+$(".dropzone").dropzone({ 
+	url: "/file/post",
+	dictDefaultMessage: 'Загрузить фото <span class = "fsize">(не более 5Мб)</span> ',
+	dictFileTooBig : 'Файл слишком большой',
+	dictResponseError : 'Сервер ответил с ошибкой',
+	maxFilesize: '5',
+	addRemoveLinks :true
+	 });
 if($('.accordion-container').length){
 $(".set > .head").on("click", function(){
 	if($(this).hasClass('active')){

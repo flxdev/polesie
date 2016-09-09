@@ -99,7 +99,7 @@ gulp.task('sass:build', function () {
         //.pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(prefixer({
-            browsers: ['> 1%', 'last 3 versions', 'Opera 12.1', 'IE 9', 'IE 10'],
+            browsers: ['> 1%', 'last 3 versions', 'Opera 12.1', 'IE 9', 'IE 10', 'IE 11'],
             cascade: false
         }))
         .pipe(cssmin())

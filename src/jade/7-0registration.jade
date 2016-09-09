@@ -173,7 +173,7 @@ html(lang='ru')
                             .input-wrapper
                               label.input-label 
                                 span.text УНП
-                              input.input-main.input-from(type='number',name="", placeholder = '1475854',data-validation="number", data-validation-allowing="range[1;100",data-validation-error-msg="УНП Долэен состоять только из цифр")
+                              input.input-main.input-from(type='number',name="", placeholder = '1475854',data-validation="number",data-validation-error-msg="УНП Долэен состоять только из цифр")
                             .input-wrapper
                               label.input-label 
                                 span.text E-mail
@@ -217,7 +217,7 @@ html(lang='ru')
                             .input-wrapper
                               label.input-label 
                                 span.text Улица
-                              input.input-main.input-from(type='text',name="", placeholder = 'Улица',data-validation="length required", data-validation-length="min2")
+                              input.input-main.input-from(type='text',name="", placeholder = 'Улица',data-validation="length required", data-validation-length="min2",data-validation-error-msg="Название улицы не должно содержать цифр")
                             .input-wrapper
                               .home-wrap
                                 label.input-label
@@ -238,7 +238,7 @@ html(lang='ru')
                           .input-wrapper
                               label.input-label 
                                 span.text Пароль
-                              input.input-main.input-from(type='password',name="pass",data-validation=" required")
+                              input.input-main.input-from(type='password',name="pass",data-validation=" required",data-validation-error-msg="Это обязательное поле")
                           .input-wrapper
                               label.input-label 
                                 span.text Повторите пароль

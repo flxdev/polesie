@@ -883,6 +883,14 @@
 				<p class="btn-wrap button_close"><a href="#" class="block-btn">Закрыть</a></p>
 			</div>
 		</div>
+		<div class="vacancy-success_hidden hidden_bg">
+			<div class="hidden-block">
+				<div class="hidden-block-close button_close"></div>
+				<h2 class="hidden-title">Спасибо</h2>
+				<p class="title-text">Спасибо, что выбрали нашу компанию. После изучения вашего резюме, наш специалист свяжется с вами для обсуждения всех нюансов</p>
+				<p class="btn-wrap button_close"><a href="#" class="block-btn">Закрыть</a></p>
+			</div>
+		</div>
 		<div class="product_hidden hidden_bg">
 			<div class="hidden-block">
 				<div class="hidden-block-close button_close"></div>
@@ -1030,22 +1038,22 @@
 				<form action="/" class="form-feed">
 					<div class="input-wrapper">
 						<label class="input-label"> <span class="text">Ваше имя</span></label>
-						<input type="text" name="" placeholder="Иванов Степан Иванович" class="input-main input-from">
+						<input type="text" name="" placeholder="Иванов Степан Иванович" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Имя не должно быть короче 2 букв и не содержать цифры" class="input-main input-from">
 					</div>
 					<div class="input-wrapper">
 						<label class="input-label"> <span class="text">E-mail</span></label>
-						<input type="email" name="" placeholder="info@mail.com" class="input-main input-from">
+						<input type="email" name="" placeholder="info@mail.com" data-validation="email" data-validation-error-msg="E-mail должен содержать @" class="input-main input-from">
 					</div>
 					<div class="input-wrapper">
-						<label class="input-label"><span class="text"> Отзыв</span></label>
+						<label class="input-label"><span class="text">Телефон</span></label>
 						<input type="tell" name="" placeholder="+375 29 000-00-00" class="input-main input-from">
 					</div>
 					<div class="input-wrapper">
 						<label class="input-label"> <span class="text">Вопрос</span></label>
-						<textarea name="" rows="3" placeholder="Опишите" class="input-main input-small"></textarea>
+						<textarea name="" rows="3" placeholder="Опишите" data-validation="length required" data-validation-length="min10" data-validation-error-msg="Заполните поле" class="input-main input-small"></textarea>
 					</div>
-					<input type="submit" placeholder="Задать вопрос" class="hits-stat-more">
 				</form>
+				<input type="submit" placeholder="Задать вопрос" class="hits-stat-more">
 			</div>
 		</div>
 		<div class="oneclick_hidden hidden_bg">
@@ -1055,17 +1063,17 @@
 				<form action="/" class="form-feed">
 					<div class="input-wrapper">
 						<label class="input-label"> <span class="text">Ваше имя</span></label>
-						<input type="text" name="" placeholder="Иванов Степан Иванович" class="input-main input-from">
+						<input type="text" name="" placeholder="Иванов Степан Иванович" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Имя не должно быть короче 2 букв и не содержать цифры" class="input-main input-from">
 					</div>
 					<div class="input-wrapper">
 						<label class="input-label"> <span class="text">Телефон</span></label>
-						<input type="tel" name="" placeholder="+375 29 000-00-00" class="input-main input-from">
+						<input type="tel" name="" placeholder="+375 29 000-00-00" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Введите свой телефонный номер в формате +375ХХХХХХХХХ" class="input-main input-from">
 					</div>
 					<div class="input-wrapper">
 						<label class="input-label"> <span>Сообщение</span></label>
-						<textarea name="" rows="3" placeholder="Оставьте сообщение" class="input-main input-small"></textarea>
+						<textarea name="" rows="3" placeholder="Оставьте сообщение" data-validation="length required" data-validation-length="min10" data-validation-error-msg="Текст не должен быть короче 10ти символов" class="input-main input-small"></textarea>
 					</div>
-					<input type="submit" placeholder="Отправить" data-target=".success_hidden" class="hits-stat-more js-modal-trigger button_close">
+					<input type="submit" placeholder="Отправить" class="hits-stat-more button_close">
 				</form>
 			</div>
 		</div>
@@ -1079,11 +1087,11 @@
 							<div class="form-block-content">
 								<div class="input-wrapper">
 									<label class="input-label"> <span class="text">E-mail</span></label>
-									<input type="email" name="" placeholder="info@mail.com" class="input-main input-from">
+									<input type="email" name="" placeholder="info@mail.com" data-validation="email" data-validation-error-msg="E-mail должен содержать @" class="input-main input-from">
 								</div>
 								<div class="input-wrapper">
 									<label class="input-label"> <span class="text">Пароль</span></label>
-									<input type="password" name="" placeholder="Пароль" class="input-main input-from"><a href="#" data-target=".password_hidden" class="forgot-pass js-modal-trigger button_close">Забыли пароль?</a>
+									<input type="password" name="" placeholder="Пароль" data-validation=" required" data-validation-error-msg="Это обязательное поле" class="input-main input-from"><a href="#" data-target=".password_hidden" class="forgot-pass js-modal-trigger button_close">Забыли пароль?</a>
 								</div>
 							</div>
 						</div>
@@ -1097,17 +1105,17 @@
 				<div class="hidden-block-close button_close"></div>
 				<h2 class="hidden-title">Восстановление пароля     </h2>
 				<div class="tab-form-wrapper">
-					<form action="" name="pass-forgotten" class="form-feed js-form-email">
+					<form action="" name="pass-forgotten" class="form-feed">
 						<div class="form-block">
 							<div class="form-block-content">
 								<div class="input-text">Изменение пароля будет возможно после того, как вы перейдете по ссылке, которая будет отправлена вам на указанный e-mail</div>
 								<div class="input-wrapper">
 									<label class="input-label"> <span class="text">E-mail</span></label>
-									<input type="email" name="" placeholder="info@mail.com" data-validation="email" class="input-main input-from">
+									<input type="email" name="" placeholder="info@mail.com" data-validation="email" data-validation-error-msg="E-mail должен содержать @" class="input-main input-from">
 								</div>
 							</div>
 						</div>
-						<input type="submit" value="Отправить" data-target=".password-succes_hidden" class="hits-stat-more enter-btn js-modal-trigger">
+						<input type="submit" value="Отправить" class="hits-stat-more enter-btn">
 					</form>
 				</div>
 			</div>
@@ -1135,21 +1143,21 @@
 				<form action="/" class="vacancy-form">
 					<div class="input-wrapper">
 						<label class="input-label"> <span class="text">Ваше имя</span></label>
-						<input type="text" name="" placeholder="Иванов Степан Иванович" class="input-main input-from">
+						<input type="text" name="" placeholder="Иванов Степан Иванович" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Имя не должно быть короче 2 букв и не содержать цифры" class="input-main input-from">
 					</div>
 					<div class="input-wrapper">
 						<label class="input-label"> <span class="text">E-mail</span></label>
-						<input type="email" name="" placeholder="info@mail.com" data-validation="email" class="input-main input-from">
+						<input type="email" name="" placeholder="info@mail.com" data-validation="email" data-validation-error-msg="E-mail должен содержать @" class="input-main input-from">
 					</div>
 					<div class="input-wrapper">
 						<label class="input-label"> <span class="text">Телефон</span></label>
-						<input type="tel" name="" placeholder="+375 29 000-00-00" class="input-main input-from">
+						<input type="tel" name="" placeholder="+375 29 000-00-00" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Введите свой телефонный номер в формате +375ХХХХХХХХХ" class="input-main input-from">
 					</div>
 					<div class="input-wrapper">
 						<label class="input-label"> <span>Прикрепите резюме</span></label>
 						<input type="file">
 					</div>
-					<input type="submit" placeholder="Откликнуться" data-target=".success_hidden" class="hits-stat-more js-modal-trigger button_close">
+					<input type="submit" value="Откликнуться" class="hits-stat-more button_close">
 				</form>
 			</div>
 		</div>
