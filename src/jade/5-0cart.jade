@@ -241,7 +241,6 @@ html(lang='ru')
 
                       .tab_item
                         .tab-cart-wrap
-
                           .tab-head.tab-like
                             .item Название товара
                             .item Наличие
@@ -286,6 +285,16 @@ html(lang='ru')
                                   | В корзину
                                 .add.add-remove
                                   a(href="#")
+                        .tab-btns
+                          a(href="#").product-learn-more
+                            svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='18px',height='18px', viewbox='0 0 18 18', style='enable-background:new 0 0 18 18;', xml:space='preserve')
+                              style(type='text/css').
+                                .stmore{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}
+                              g
+                                g
+                                  path.stmore(d='M9,0C4,0,0,4,0,9c0,5,4,9,9,9c5,0,9-4,9-9C18,4,14,0,9,0z M9,17c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8\
+                                  c4.4,0,8,3.6,8,8C17,13.4,13.4,17,9,17z M10.4,5L6,9l4.4,4l0.6-0.6L7.3,9L11,5.6L10.4,5z')
+                            |Продолжить покупки
 
               .price-calc-wrap
                 .cart-buttons
@@ -320,7 +329,7 @@ html(lang='ru')
                     a(href="#").hits-stat-more Оформить заказ
                     a(href="#",data-target =".oneclick_hidden").product-oneclick.btn-width.js-modal-trigger Купить в 1 клик
             //end of tabs
-            section.discount.hits
+            section.discount.hits.btop
               h2 Хиты этой недели
               .discount-slider.discount-hoverable
                 .slick-slider-discount-hits
@@ -434,7 +443,7 @@ html(lang='ru')
                             span  10 435 600 р
                           p.hits_coast
                             | 13 435,60 р. 
-                            span  13 435 600 р
+                            span  13 435 600 
                         .hits_tools
                           .hits-wrap
                             .hits_comparison.add.active

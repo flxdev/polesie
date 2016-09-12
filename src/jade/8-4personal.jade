@@ -133,7 +133,7 @@ html(lang='ru')
                                       l4.9,8c0.2,0.3,0.6,0.4,0.9,0.4c0.3,0,0.7-0.1,0.9-0.4l13.5-17.4c0.4-0.5,0.3-1.1-0.2-1.5C31.7,12.3,31,12.4,30.7,12.8z')
                                 | Данные успешно сохранены
                           .tab-form-wrapper
-                             form(action="/").form-feed
+                             form(action="/").form-feed.form-noborder
                               .form-block
                                 .form-block-title
                                   |Ваша контактная информация
@@ -201,7 +201,7 @@ html(lang='ru')
                                           span.text Квартира
                                         input.input-main.input-from(type='text',name="", placeholder = 'Квартира',data-validation="length number", data-validation-length="max4",data-validation-error-msg="Номер должен содержать только цифры")  
 
-                              button.hits-stat-more(type="submit") Сохранить изменения
+                                  button.hits-stat-more(type="submit") Сохранить изменения
                         .tab_item
                           .msg.msg-err
                             .message-title 
@@ -226,7 +226,7 @@ html(lang='ru')
                                     l4.9,8c0.2,0.3,0.6,0.4,0.9,0.4c0.3,0,0.7-0.1,0.9-0.4l13.5-17.4c0.4-0.5,0.3-1.1-0.2-1.5C31.7,12.3,31,12.4,30.7,12.8z')
                               | Данные успешно сохранены
                           .tab-form-wrapper.js-form-login
-                             form(action="/").form-feed
+                             form(action="/").form-feed.form-noborder
                               .form-block
                                 .form-block-title
                                   |Изменить старый пароль на новый 
@@ -243,7 +243,7 @@ html(lang='ru')
                                       label.input-label 
                                         span.text Повторите новый пароль
                                       input.input-main.input-from(type='password',name="",data-validation="required", data-validation-error-msg="Это обязательное поле")
-                              button.hits-stat-more.enter-btn(type="submit") Изменить пароль
+                                  button.hits-stat-more.enter-btn(type="submit") Изменить пароль
 
 
 

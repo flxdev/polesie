@@ -6,8 +6,8 @@ footer
           | Получайте полезную информацию о&nbsp;скидках
         // footer-form
         .footer-form
-          form(action='', method='post')
-            input.blacktext(type='email', name='name', placeholder='Ваш e-mail')
+          form(action='', method='post').form-subscribe
+            input.blacktext(type='email', name='name', placeholder='Ваш e-mail',data-validation="email",data-validation-error-msg="E-mail должен содержать @")
             input.blacktext(type='submit', value='Подписаться')
         // footer_soc
         .footer_soc

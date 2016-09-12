@@ -177,7 +177,7 @@
         a(href="#",data-title='Список сравнения пуст').tools-comparison
           i.counter 
             span 12
-        a(href="#",data-title='Список отложенных товаров пуст').tools-defer
+        a(href="#",data-title='Список отложенных товаров пуст').tools-defer.empty
           i.counter 
             span 12
         a(href="#").tools-search.js-search-btn
@@ -203,7 +203,7 @@
                 li.add-list-item
                   a(href="#") Выйти
       .line-cart
-        a( href='#').product-buy-btn.cart
+        a( href='#',data-title = 'Ваша корзина совершенно пуста').product-buy-btn.cart.empty
           svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='26px',height='20px', viewbox='0 0 23.3 18.1', style='enable-background:new 0 0 23.3 18.1;', xml:space='preserve')
             style(type='text/css').
               .stcart{fill:#3B3B3B;}

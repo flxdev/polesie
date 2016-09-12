@@ -108,6 +108,18 @@ var mapArea = function(){
 			  		}
 			  	})
 			});
+		$(document).on("mouseenter", ".map-zone", function() {
+			var val = $(this).data('area');
+
+			  	inputs.each(function(){
+			  		var _ = $(this),
+			  		area = _.attr('value');
+
+			  		if(area == val ){
+			  			_.parents('.select-u-item').addClass('hover').siblings().removeClass('hover');
+			  		}
+			  	})
+			});
 		$(".input_label").each(function(){
 			  	var _ = $(this);
 			  	_.click(function(){
@@ -768,8 +780,8 @@ mobileSub();
 					slider.slick('unslick');
 				}
 			});
-
-		$('.button_close').click(function(){
+	});
+$('.button_close').click(function(){
 			var target = $(this).parents('.hidden_bg').removeClass('active');
 			var slider =$(this).parent().find('.slick-slider');
 			slider.slick('unslick');
@@ -777,8 +789,6 @@ mobileSub();
 			 $("html").css("overflow-y","scroll");
 			}
 		});
-	});
-
 	
 
 
@@ -1379,6 +1389,38 @@ if (form_mail.length) {
             onSuccess: function($form){
                  $(this).parents('.password_hidden').removeClass('active');
                  $('body').find('.password-success_hidden').addClass('active');
+            }
+        });
+    });
+};
+var form_call = $('.call-form');
+//modal password form
+if (form_call.length) {
+
+    form_call.each(function () {
+        var form_this = $(this);
+        $.validate({
+            form : form_this,
+            borderColorOnError : true,
+            scrollToTopOnError : false,
+            onSuccess: function($form){
+                 $(this).parents('.call_hidden').removeClass('active');
+                 $('body').find('.call-success_hidden').addClass('active');
+            }
+        });
+    });
+};
+var form_subscribe = $('.form-subscribe');
+//modal password form
+if (form_subscribe.length) {
+    form_subscribe.each(function () {
+        var form_this = $(this);
+        $.validate({
+            form : form_this,
+            borderColorOnError : true,
+            scrollToTopOnError : false,
+            onSuccess: function($form){
+                 $('body').find('.success_hidden').addClass('active');
             }
         });
     });

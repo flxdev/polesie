@@ -306,7 +306,7 @@ body {
   }
 }
 
-.regions_hidden {
+.regions_hidden, {
   background: rgba(0, 0, 0, 0.15);
   .hidden-block{
     text-align: left;
@@ -316,7 +316,12 @@ body {
         text-align: left !important;
     }
   }
-
+}
+.oneclick_hidden{
+  .hidden-title{
+      @include x-rem(font-size,28px);
+      @include x-rem(letter-spacing,1.5px);
+    }
 }
 
 .regions_map {
@@ -787,6 +792,7 @@ input:focus:-moz-placeholder {
   position: absolute;
   background-color: $yellowHov;
   color:#000;
+  font-style:normal;
   @include x-rem(font-size,12px);
   font-weight: 600;
   @include x-rem(padding,5px);
@@ -873,7 +879,7 @@ input:focus:-moz-placeholder {
   }
 }
 
-.cart:hover::after, .tools-defer:hover::after, .tools-comparison:hover::after {
+.cart.empty:hover::after, .tools-defer.empty:hover::after, .tools-comparison.empty:hover::after {
   content: attr(data-title);
   background: #fff;
   text-align: center;
@@ -884,6 +890,7 @@ input:focus:-moz-placeholder {
   display: inline-block;
   padding: 20px 10px;
   top: 50px;
+  color:$letters;
   width: 156px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -1072,7 +1079,7 @@ input:focus:-moz-placeholder {
 .cart_list_hidden {
   width:100%;
   background:#fff;
-  padding: 17px 17px 30px;
+  padding: 17px 17px 30px 20px;
   box-sizing: border-box;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -1112,9 +1119,8 @@ input:focus:-moz-placeholder {
   display: inline-block;
   vertical-align: top;
   width: 75%;
-  padding: 0 14px;
+  padding: 0 14px 0 16px;
   box-sizing: border-box;
-
   p {
     line-height: 1.4;
   }
@@ -1123,7 +1129,7 @@ input:focus:-moz-placeholder {
 .cart_list_name {
   font-size: 16px;
   color: #000;
-  padding: 3px 0;
+  padding: 0 0 3px 0;
 }
 
 .cart_list_coast {
@@ -1160,7 +1166,7 @@ input:focus:-moz-placeholder {
 }
 
 .cart_buttons {
-  padding-top: 28px;
+  padding: 28px 10px 0 10px;
 
   a {
     text-decoration: none;
@@ -1169,7 +1175,7 @@ input:focus:-moz-placeholder {
     -webkit-border-radius: 3px;
     line-height: 35px;
     padding: 0 18px;
-    margin: 0 13px;
+    margin: 0 10px;
     display: inline-block;
   }
 }
@@ -2187,7 +2193,7 @@ input:focus:-moz-placeholder {
       span{
         color: $white;
         width: 100%;
-        @include x-rem(line-height,30px);
+        @include x-rem(line-height,28px);
         display: inline-block;
         @include x-rem(font-size,14px);
         text-align:center;
@@ -2347,12 +2353,18 @@ input:focus:-moz-placeholder {
   color: #000000;
   font-size: 14px;
   text-decoration: none;
-
+  transition: color .3s;
   span {
     color: #9d9c9c;
   }
 }
-
+.hits_review{
+  &:hover{
+    a{
+      color:$red;
+    }
+  }
+}
 .hits_stat {
   overflow: hidden;
   display: none;
@@ -2402,6 +2414,19 @@ input:focus:-moz-placeholder {
 /* section @brands@ */
 .index-brands{
   .tabs{
+    .tab{
+      transition: color .3s;
+      &:hover{
+        color:$red !important;
+        border: none !important;
+      }
+      &.active{
+        &:hover{
+          border-bottom: 1px solid $red !important;
+          color:$letters !important;
+        }
+      }
+    }  
     span{
       @include r(768){
         &:nth-child(n+4){
@@ -2459,6 +2484,7 @@ input:focus:-moz-placeholder {
             display:block;
           }
         }
+
     }
     .tabs{
       padding-bottom: 0;
@@ -2521,6 +2547,7 @@ input:focus:-moz-placeholder {
 #brand .tabs span:hover {
   padding-bottom: 5px;
   border-bottom: 2px solid $red;
+
 }
 
 .wrap_brand .tab.active {
@@ -2543,11 +2570,17 @@ input:focus:-moz-placeholder {
   display: table-cell;
   position: relative;
     @include clearfix;
+    &:hover{
+      p{
+        color:$red;
+      }
+    }
   a {
     text-decoration: none;
   }
 
   p {
+    transition: color .3s;
     color: #9d9c9c;
     font-size: 14px;
     text-align: center;
@@ -3187,7 +3220,10 @@ footer {
   &.success_hidden,.vacancy-success_hidden{
     .hidden-block{
       @include x-rem(width,500px);
-
+    .hidden-title{
+      @include x-rem(font-size,28px);
+      line-height:1;
+      }
     }
   }
   &.product_hidden{
@@ -3243,9 +3279,20 @@ footer {
 }
 
 .headhesive {
-  .wrap-logo, .main-nav, .top-line {
+  .wrap-logo,.main-nav, .top-line {
     display: none;
   }
+  /* .main-nav{
+    transform: translate3d(0,-105%,0);
+    transition: all .3s;
+    background: #fff !important;
+    border-color: transparent !important;
+    &.active{
+      transform: translate3d(0,0,0);
+      background: $yellow !important;
+      border-color: $menuBorder !important;
+    }
+  } */
 
   .wrap-catalog-btn {
     display: inline-block;
@@ -3264,6 +3311,9 @@ footer {
     z-index: 40;
     max-width: 1280px;
     margin: 0 auto;
+    position: relative;
+    z-index: 5;
+    background: #fff;
     .line-search-form{
       width:47%;
       @include r(820){
@@ -3278,7 +3328,6 @@ footer {
     left: 0;
     right: 0;
     border-bottom: 2px solid $menuBorder;
-
   }
 
   .nav {
@@ -3400,7 +3449,7 @@ footer {
   @include x-rem(padding-left,35px);
   position: relative;
   color:$grey;
-  position: relative;
+  cursor: pointer;
     @include r(768){
     display: inline-block;
   }
@@ -3471,6 +3520,7 @@ footer {
     @include x-rem(padding,10px 10px 10px 20px);
     background: $white;
     transition: background .3s;
+    cursor: pointer;
     a{
       display: inline-block;
       width:100%;
@@ -3501,7 +3551,7 @@ footer {
   color: $letters;
   @include x-rem(margin,5px 0 20px 0);
   @include x-rem(letter-spacing,1px);
-  font-family: $ProximaLight;
+  font-family: $ProximaRegular;
   font-weight: 400;
 }
 .section__wrapper{
@@ -3566,11 +3616,15 @@ footer {
 .section__content{
   display: block;
   overflow:hidden;
+  max-width:100%;
   @include x-rem(padding, 1px 1px 140px 1px);
   @include x-rem(margin, -1px -1px -70px -1px);
   @include r(768){
     display: inline-block;
     width:100%;
+  }
+  .news_date{
+    color:$letters2;
   }
   .banners__inner{
     width:100%;
@@ -3622,6 +3676,13 @@ footer {
   font-size: 0;
    @include x-rem(padding-bottom, 20px);
    border-bottom:1px solid $border;
+   &.brand-categories{
+    .categories_item{
+      &:nth-child(n+5){
+         @include x-rem(padding-top,35px);
+      }
+    }
+   }
 }
 .categoties-name{
   @include x-rem(margin,0 0 40px 0);
@@ -3862,7 +3923,7 @@ footer {
   width:100%;
   position: relative;
   @include x-rem(margin-bottom, 20px);
-  &:hover{
+  &:hover,&.hover{
     .input-text{
       color:$red;
       transition: color .3s;
@@ -4067,14 +4128,20 @@ footer {
         
        }
       }
-
-      &.active{
+      
+      &.active,&:hover{
         span{
           color:$red;
         }
         .bread-arrow{
           svg{
             fill:$red;
+          }
+        }
+      }
+      &.active{
+        .bread-arrow{
+          svg{
             transform: rotate(180deg)
           }
         }
@@ -4164,10 +4231,15 @@ footer {
   @include x-rem(padding,30px 0 20px);
   @include x-rem(border-radius, 2px);
   border-radius: 2px;
-  transition: box-shadow .3s ease;
+  transition: all .3s ease;
+  @include clearfix;
+  &:not(:last-child){
+    border-bottom: 1px solid $border; 
+  }
   &:hover{
   box-shadow: 0.5px 0.866px 5px 0px rgba( 0, 0, 0 ,.24);
-  transition: box-shadow .3s ease;
+
+  border-bottom-color: transparent; 
   .hits_name{
     a{
       color:$red;
@@ -4414,7 +4486,7 @@ footer {
   .hits_raiting-star-wrap{
     display: inline-block ;
     @include x-rem(height,15px);
-    @include x-rem(width,82px);
+    @include x-rem(width,81px);
     background-image: url(../img/utility/star-gray.svg);
     background-repeat: repeat-x;
     text-align: left;
@@ -4523,6 +4595,7 @@ footer {
   float:left;
   width:25%;
   @include x-rem(padding,1px);
+  @include x-rem(margin-bottom,40px);
   @include x-rem(height, 370px);
   img{
     max-width:100%;
@@ -4823,6 +4896,7 @@ footer {
     }
   }
   .product-small-title{
+    font-family: $ProximaSemibold;
     @include x-rem(margin-bottom,10px)
   }
   .hits_coast{
@@ -4915,10 +4989,12 @@ footer {
     @include x-rem(border-radius,3px);
     transition:border .3s;
     &.active,&.is-checked{
-      border:1px solid #000;
       span{
         color:#000;
       }
+    }
+    &.active{
+      border:1px solid #000;
     }
     span{
       display: inline-block;
@@ -4978,8 +5054,11 @@ footer {
     input{
       position: absolute;
       opacity: 0;
-      &:checked +span:before{
-        opacity: 1;
+      &:checked +span{
+        font-weight: 600;
+        &:before{
+          opacity: 1;
+        }
       }
     }
     span{
@@ -5035,19 +5114,30 @@ footer {
 .product-button-wrap{
   @include clearfix;
 }
+.descr-r{
+  .number{
+    @include r(1250){
+    float: none;
+    @include clearfix;
+    display: table;
+    width:100%;
+    @include x-rem(margin-bottom,20px);
+    }
+  }
+  .number__minus, .number__plus, .number__input {
+    @include r(1250){
+      display: table-cell;
+      width:33.3% !important;
+    }
+  }
+}
 .number{
   font-size: 0;
   position: relative;
   @include x-rem(border-radius,3px);
   border: 1px solid $border;
   float: left;
-  @include r(1250){
-    float: none;
-    @include clearfix;
-    display: table;
-    width:100%;
-    @include x-rem(margin-bottom,20px);
-  }
+  
 }
 .number__minus, .number__plus {
     @include x-rem(width,37px);
@@ -5062,15 +5152,11 @@ footer {
 .number__minus, .number__plus, .number__input {
     float: left;
     display: block;
-    @include r(1250){
-      display: table-cell;
-      width:33.3% !important;
-    }
+    
 }
 
 .number__input {
     background-color: #fff;
-    font-family: 'museosanscyrl_300', Arial, sans-serif;
     font-size: 14px;
     vertical-align: top;
     height: 35px;
@@ -5136,6 +5222,9 @@ footer {
   .hidden-block{
     min-width:auto !important;
     @include x-rem(padding,45px);
+    @include r(570){
+      @include x-rem(padding,45px 10px 15px);
+    }
   }
 }
 .modal-title,.items-counter{
@@ -5147,6 +5236,10 @@ footer {
 .items-counter{
   @include x-rem(font-size,16px);
   @include x-rem(margin,10px 0 20px);
+}
+.modal-items-wrapper{
+  overflow-y: auto;
+  @include x-rem(max-height,450px);
 }
 .modal-item{
   display: block;
@@ -5165,6 +5258,9 @@ footer {
   }
   .modal-item-img{
     width:15%;
+    @include r(570){
+      width:20%;
+    }
     img{
       display: block;
       margin: 0 auto;
@@ -5173,6 +5269,10 @@ footer {
   }
   .modal-item-price{
     width:20%;
+    @include r(570){
+      width:100%;
+      text-align: right;
+    }
   }
   .modal-item-info{
     width:65%;
@@ -5289,6 +5389,10 @@ footer {
          right:0;
          top:0;
          overflow: hidden;
+         display: none;
+         @include r(600){
+            display: block;
+          }
          .bread-arr{
           @include x-rem(margin-top,10px);
           transform:rotate(270deg);
@@ -5523,8 +5627,8 @@ footer {
   opacity: 0.5;
 }
 .feedback-form-wrapper{
- @include x-rem(padding,10px 0 20px);
- @include x-rem(margin-bottom,40px);
+ @include x-rem(padding,10px 0 40px);
+ @include x-rem(margin-bottom,60px);
  border-bottom:1px solid $border;
  border-top:1px solid $border;
 }
@@ -5561,7 +5665,7 @@ footer {
 }
 .fed-talk{
   @include x-rem(font-size,16px );
-  @include x-rem(margin-bottom,10px );
+  @include x-rem(margin,10px 0);
   display: block;
 }
 .form-feed{
@@ -5676,6 +5780,7 @@ footer {
   @include x-rem(margin-bottom,25px );
   position: relative;
   @include clearfix;
+  text-align:left;
   .form-error{
     color:$red;
     @include x-rem(font-size,12px );
@@ -5714,10 +5819,10 @@ footer {
     @include x-rem(border-radius,3px);
     @include x-rem(padding,13px );
     &.input-big{
-      @include x-rem(min-height,196px );
+      @include x-rem(height,196px );
     }
     &.input-small{
-      @include x-rem(min-height,75px );
+      @include x-rem(height,75px );
     }
     &.input-from{
       @include x-rem(padding, 5px 15px );
@@ -5725,6 +5830,11 @@ footer {
     &.error{
       border-color:$red;
     }
+  }
+}
+.form-col-special{
+  .input-wrapper:first-child{
+    @include x-rem(margin-bottom,11px );
   }
 }
 .add-info{
@@ -6291,7 +6401,7 @@ footer {
 .price-calc-wrap{
   display: block;
   overflow: hidden;
-  @include r(900){
+  @include r(910){
         width: 100%;
       }
 
@@ -6304,6 +6414,7 @@ footer {
       float: right;
       @include r(900){
         margin: 0;
+        min-width:100%;
         }
       }
   }
@@ -6370,7 +6481,9 @@ footer {
       }
     }
     &.price-total{
-      @include x-rem(margin-top, 25px);
+      @include x-rem(padding-top, 15px);
+      @include x-rem(margin-top, 15px);
+      border-top: 1px solid $border;
     }
     .total-count {
         color:#000;
@@ -6412,13 +6525,16 @@ footer {
   &.tab-cart{
     .item{
       &:first-child{
-        padding-left: 10%;
+        padding-left: 8.5%;
       }
       &:nth-child(2){
-        padding-left: 13%;
+        padding-left: 20%;
+        @include r(1200){
+          padding-left: 15%;
+        }
       }
       &:nth-child(3){
-        padding-left: 10%;
+        padding-left: 11%;
       }
       &:nth-child(4){
         padding-left: 10%;
@@ -6434,7 +6550,7 @@ footer {
         padding-left: 25%;
       }
       &:nth-child(3){
-        padding-left: 10%;
+        padding-left: 13%;
       }
     }
   }
@@ -6547,7 +6663,7 @@ footer {
       }
   }
   .elem-price{
-    width:55%;
+    width:58%;
     vertical-align: top;
     @include clearfix;
     display: inline-block;
@@ -6555,7 +6671,7 @@ footer {
     @include r(1040){
         width:60%;
       }
-    @include r(900){
+    @include r(910){
         display: table-cell !important;;
         width:50%;
         float:right!important;
@@ -6619,7 +6735,7 @@ footer {
       }
   }
   .curr-price{
-    @include r(800){
+    @include r(815){
         display: none !important;
       }
   }
@@ -6690,7 +6806,6 @@ footer {
   width:100%;
   @include clearfix;
   @include x-rem(padding,20px 0 30px);
-  border-bottom: 1px solid $border;
   .product-learn-more{
     svg{
       @include x-rem(margin-right,10px);
@@ -6741,7 +6856,7 @@ footer {
   display: inline-block;
   float: left;
   width:70%;
-  @include r(900){
+  @include r(910){
     width: 100%;
   }
   .product_tabs-wrapper{
@@ -6832,6 +6947,9 @@ footer {
       }
     }
    }
+}
+.btop{
+  border-top:1px solid $border;
 }
 //++++++++++++++++++++++++++++++++++++++++++++++++++
 //6-0 COMPARE
@@ -7040,9 +7158,7 @@ footer {
   }
 
 }
-.enter-btn{
-      @include x-rem(padding,7.5px 100px);
-    }
+
 .form-block{
   @include x-rem(padding-top,30px);
   @include x-rem(padding-bottom,20px);
@@ -7097,6 +7213,12 @@ footer {
     padding-right: 0;
   }
 }
+.block-login{
+  border: 0;
+  .title-text{
+    padding:25px 0 0 0 !important;
+  }
+}
 .form-block-content{
   display: block;
   overflow: hidden;
@@ -7130,6 +7252,14 @@ footer {
   }
   .input-wrapper{
     @include x-rem(margin-bottom,20px);
+  }
+  .hits-stat-more{
+    margin:0;
+    float:left;
+    padding:.4375rem 3.5125rem;
+  }
+  .input-text{
+    @include x-rem(margin-bottom,15px);
   }
 }
 .home-wrap{
@@ -7200,15 +7330,30 @@ footer {
   float:right;
   transform: translateY(-125%);
   @include x-rem(margin-right,15px);
+  @include x-rem(padding-left,5px);
   font-weight: bold;
+  background: #fff;
 }
-/* .input-text{
-  color:$letters;
-  @include x-rem(padding-bottom,15px);
-} */
-.forgoten-pass-succes{
+
+.forgoten-pass-succes,.form-noborder{
   .form-block{
     border:none;
+  }
+}
+.form-noborder{
+  .form-block{
+    padding-bottom: 0;
+  }
+  .hits-stat-more{
+    @include x-rem(margin-top,25px);
+    @include r(1040){
+      margin: 25px auto;
+      float: none;
+    }
+    &.btn-big{
+      @include x-rem(width,200px);
+      margin: 0;
+    }
   }
 }
 .capcha-container{
@@ -7277,6 +7422,7 @@ footer {
   }
   .form-block{
     padding-right: 0;
+    border: 0;
     .text-block{
        padding-right: 0;
     }
@@ -7584,7 +7730,7 @@ transition:border .3s;
     float: right;
   }
   .tab-element .curr-price{
-    @include r(800){
+    @include r(810){
       display: block!important;
     }
   }
@@ -7640,6 +7786,7 @@ transition:border .3s;
   .price-calc-wrap{
     max-width:25%;
     float:right;
+    @include x-rem(margin-top, 5px);
     @include r(940){
       max-width:40%;
       @include x-rem(padding-left,  15px);
@@ -7650,6 +7797,9 @@ transition:border .3s;
     @include r(480){
       max-width:100%;
       padding-left:0;
+    }
+    .price{
+      @include x-rem(margin-bottom, 2px);
     }
   }
 }
@@ -8047,7 +8197,15 @@ transition:border .3s;
 .vacancy-date{
   float:right;
 }
-
+.accordion-container{
+  &.accordion-noborder{
+    border-left: none;
+    border-right: none;
+    .head.active{
+      border-bottom-color:transparent; 
+    }
+  }
+}
 .accordion-container{
   .vacancy-head{
      @include x-rem(padding,20px 15px);
@@ -8068,6 +8226,7 @@ transition:border .3s;
   @include clearfix;
   .hits-stat-more{
    float:right;
+   margin:0;
      @include r(570){
       float:none;
       display: inline-block;
@@ -8121,6 +8280,15 @@ transition:border .3s;
         padding-left:5px;
       }
     }
+    .contact-name{
+      @include x-rem(font-size,14px);
+    }
+  }
+}
+.consult_hidden{
+  .hits-stat-more{
+    float:none;
+    margin:0 auto;
   }
 }
 .small-title{
@@ -8128,10 +8296,11 @@ transition:border .3s;
   font-weight: 600;
   margin:20px 0;
 }
-.vacancy-form{
-  @include x-rem(min-width,300px);
-  @include x-rem(max-width,370px);
-  text-align: left;
+.vacancy-form,.call-form{
+  @include x-rem(width,370px);
+  @include r(480){
+    @include x-rem(width,300px);
+  }
   .hits-stat-more{
   @include x-rem(margin,25px auto 0);
   float:none !important;

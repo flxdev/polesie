@@ -411,7 +411,7 @@ html(lang='ru')
                                             img(src='img/promo/cart5.jpg', alt='VISA')
                                           .card
                                             img(src='img/promo/cart-bel.jpg', alt='BelCard')
-                              .form-block
+                              .form-block.form-noborder
                                 .form-block-title
                                   | Оставьте комментарий
                                 .form-block-content
@@ -420,10 +420,10 @@ html(lang='ru')
                                       span Комментарий
                                     textarea.input-main.input-small(name="", rows="3", placeholder = 'Ваши пожелания к заказу')
 
-                              button.hits-stat-more(type="submit") Подтвердить заказ
+                                  button.hits-stat-more(type="submit") Подтвердить заказ
                         .tab_item
                           .tab-form-wrapper.js-form-login
-                             form(action="/").form-feed
+                             form(action="/").form-feed.form-noborder
                               .form-block
                                 .form-block-title
                                   |Заполните регистра- ционные данные
@@ -437,9 +437,9 @@ html(lang='ru')
                                       span.text Пароль
                                     input.input-main.input-from(type='password',name="", placeholder = 'Пароль',data-validation="required",data-validation-error-msg="Неверный пароль")
                                     a(href="#").forgot-pass Забыли пароль?
-                              button.hits-stat-more.enter-btn(type="submit") Войти
+                                  button.hits-stat-more.btn-big(type="submit") Войти
                           .tab-form-wrapper.js-forgoten-pass-wrap
-                             form(action="", name='pass-forgotten').form-feed.js-form-email
+                             form(action="", name='pass-forgotten').form-feed.js-form-email.form-noborder
                               .form-block
                                 .form-block-title
                                   |Восстановление пароля
@@ -449,7 +449,7 @@ html(lang='ru')
                                     label.input-label 
                                       span.text E-mail
                                     input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com' ,data-validation="email",data-validation-error-msg="E-mail должен содержать @")
-                              input.hits-stat-more.enter-btn(type="submit", value = 'Отправить')
+                                  input.hits-stat-more(type="submit", value = 'Отправить')
                           .tab-form-wrapper.js-forgoten-pass-succes
                             .form-feed
                               .form-block

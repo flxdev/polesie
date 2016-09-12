@@ -362,7 +362,7 @@ html(lang='ru')
 
                   .sort_view_wrap
                     .sort-view-item.sort-row.active
-                      a(href="#")
+                      a(href="#" ,title="Таблица")
                         svg#Layer_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 14 14', style='enable-background:new 0 0 14 14;', xml:space='preserve')
                           style(type='text/css').
                             .st0{fill-rule:evenodd;clip-rule:evenodd;}
@@ -373,7 +373,7 @@ html(lang='ru')
                               C8,5.3,8.7,6,9.5,6h3C13.3,6,14,5.3,14,4.5v-3C14,0.7,13.3,0,12.5,0z M12.5,8h-3C8.7,8,8,8.7,8,9.5v3C8,13.3,8.7,14,9.5,14h3\
                               c0.8,0,1.5-0.7,1.5-1.5v-3C14,8.7,13.3,8,12.5,8z')
                     .sort-view-item.sort-block
-                      a(href="#")
+                      a(href="#", title="Список")
                         svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='15px', y='15px', viewbox='0 0 15 14', style='enable-background:new 0 0 15 14;', xml:space='preserve')
                           style(type='text/css').
                             .stview{fill-rule:evenodd;clip-rule:evenodd;}
@@ -669,6 +669,7 @@ html(lang='ru')
                           .pgn{fill-rule:evenodd;clip-rule:evenodd;fill:#121313;}
                         path.pgn(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
                     .pagin_item-wrap
+                        //.active для активной страницы
                         - var pText = ['1','2','3','4','5','6']
                         each p in pText
                           .pagin_item
