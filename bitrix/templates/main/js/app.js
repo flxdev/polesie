@@ -23,6 +23,7 @@ if($('.compare_inner').length){
 		
 		$('.compare-scroll-inner').on('scroll',function(e){
 				var scroll = $(this).scrollLeft();
+				console.log(scroll);
 				target.scrollLeft(scroll);
 				target2.scrollLeft(scroll);
 		})
@@ -32,7 +33,6 @@ if($('.compare_inner').length){
 
 if($('.compare_inner.row-fixed').length){
 	$('.compare-scroll-outer').hide();
-	console.log('fix')
 }
 
 
@@ -48,18 +48,15 @@ if($('.compare_fakehead-inner').length){
 
 	$(window).on('scroll',function(){
 		var wTop = $(window).scrollTop() + $(window).height();
-			console.log(cBot, wTop, scT);
 			if(wTop > scT+150 && wTop < cBot- 70){
 				scrollC.addClass('pos-b').removeClass('pos-c');
 				
-				console.log(1);
 			}
 			else if( wTop > cBot- 70){
 				console.log(2);
 				scrollC.addClass('pos-c').removeClass('pos-b');
 			}
 			else{
-				console.log('top')
 				
 				scrollC.removeClass('pos-b').removeClass('pos-c');
 			}
@@ -568,6 +565,7 @@ mobileSub();
 		arrows: true,
 		slidesToShow: 7,
 		draggable: false,
+		variableWidth: true,
 		responsive: [
     {
       breakpoint: 1260,
@@ -663,14 +661,18 @@ mobileSub();
 	$("#brand").find('.tab_item').not(":first").hide();
 
 	$("#brand .tab").click(function() {
+		
 		$("#brand .tab").removeClass("active").eq($(this).index()).addClass("active");
-		$("#brand").find('.tab_item').hide().eq($("#brand .active").index()).fadeIn().find('.slick-slider').slick('setPosition');
-		if($(this).is(':last-child')){
-			$("#brand").find('.tabs_consult').last().addClass('active').siblings().removeClass('active');
-		}else{
-			$("#brand").find('.tabs_consult').first().addClass('active').siblings().removeClass('active');
+			$("#brand").find('.tab_item').hide().eq($("#brand .active").index()).fadeIn().find('.slick-slider').slick('setPosition');
+			if($(this).is(':last-child')){
+				$("#brand").find('.tabs_consult').last().addClass('active').siblings().removeClass('active');
+			}else{
+				$("#brand").find('.tabs_consult').first().addClass('active').siblings().removeClass('active');
 
-		}
+			}
+		/*setTimeout(function(){
+
+			},100);	*/
 
 	}).eq(0).addClass("active");
 
@@ -969,9 +971,17 @@ var priceFilter = function(val){
 	}
 }
 
-$('.price-wrapper .price').on('input change',function(e){
-
-	console.log($(this).val().length)
+$('.price-wrapper .price').on('input change',function(){
+	
+	$(this)[0].onkeypress = function(e) {
+		e = e || event;
+		if (e.ctrlKey || e.altKey || e.metaKey) return;
+		var chr = getChar(e);
+		if (chr == null) return;
+		if (chr < '0' || chr > '9') {
+			return false;
+		}
+	}
 	priceFilter($(this));
 });
 
@@ -1370,14 +1380,6 @@ if (form_main.length) {
                  if(form_this.find('.select-check').length){
 					if(!form_this.find('.select-check').parents('.input-wrapper').hasClass('has-success')){
 						form_this.find('.select-check').parents('.input-wrapper').addClass('has-error');
-						console.log('find')
-							return false;
-					}
-				}
-				if(form_this.find('.rev-stars').length){
-					if(!form_this.find('.rev-stars').closest('.input-wrapper').hasClass('has-success')){
-						form_this.find('.rev-stars').closest('.input-wrapper').addClass('has-error');
-						console.log('find')
 							return false;
 					}
 				}
