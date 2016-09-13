@@ -38,6 +38,10 @@ input::-webkit-inner-spin-button {
     background: $letters2;
 }
 }
+:-ms-input-placeholder { 
+color: $letters2 !important;
+}
+
 a{
   text-decoration: none; 
 }
@@ -198,7 +202,6 @@ body {
   }
   &:first-child {
     font-family: $ProximaSemibold;
-    font-weight: bold;
   }
     .drop-line-nav li{
       &:first-child{
@@ -271,6 +274,7 @@ body {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   width:100%;
+  list-style: none;
   li {
     border-left: 2px solid #fff;
     &:hover {
@@ -338,6 +342,7 @@ body {
   }
   #map_main{
     display: inline-block;
+    @include x-rem(height, 370px);
     #map-border{
       fill:#c9c3b9;
     }
@@ -390,7 +395,8 @@ body {
   }
   .select-u-item{
     margin: 0;
-    @include x-rem(margin-bottom,15px);
+    width:100% !important;
+
   }
   .hits-stat-more{
    @include x-rem(margin-top, 5px);
@@ -1240,7 +1246,7 @@ input:focus:-moz-placeholder {
       a{
         color: #000;
         font-size: 17px;
-        font-weight: 700;
+        font-family: $ProximaSemibold;
         text-decoration: none;
         text-align: right;
         width:100%;
@@ -1251,7 +1257,7 @@ input:focus:-moz-placeholder {
       .icon{
         display: inline-block;
         width:20px;
-        height:100%;
+        @include x-rem(height, 7px);
         margin-left: 2px;
         @include r(960){
           display: none;
@@ -1292,7 +1298,9 @@ input:focus:-moz-placeholder {
     }
     > li {
       display: table-cell;
-      border-right: 1px solid $yellowLight;
+      &:not(:nth-last-child(2)){
+        border-right: 1px solid $yellowLight;
+      }
       @include clearfix;
       &:nth-child(n+6){
         @include r(1154){
@@ -1442,6 +1450,7 @@ input:focus:-moz-placeholder {
       padding:0;
     }
   .menu-item-dropable{
+    list-style: none;
     a{
       font-family: $ProximaLight;
       font-weight: 300;
@@ -1665,7 +1674,7 @@ input:focus:-moz-placeholder {
       outline: 0;
       cursor:pointer;
       position: relative;
-      z-index: 4;
+      z-index: 2;
       &:hover{
         .icon{
           .st0{
@@ -1689,8 +1698,9 @@ input:focus:-moz-placeholder {
     }
     .carousel-next{
       float:right;
-      @include x-rem(margin-right, 20px);
+      @include x-rem(width, 40px);
       svg{
+          
           transform: rotate(270deg);
           transform-origin: 50% 100%;
         }
@@ -1698,7 +1708,9 @@ input:focus:-moz-placeholder {
     }
     .carousel-prev{
       float:left;
+      @include x-rem(width, 40px);
       svg{
+
           transform: rotate(-270deg);
           transform-origin: 50% 100%;
         }
@@ -1717,7 +1729,7 @@ input:focus:-moz-placeholder {
 
   h3 {
     color:$letters;
-    padding-left: 45px;
+    padding-left: 50px;
     font-size: 28px;
     line-height: 1.3;
     font-weight: normal;
@@ -1732,7 +1744,7 @@ input:focus:-moz-placeholder {
   }
 
   .promo-add-text{
-    padding-left: 45px;
+    padding-left: 50px;
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 16px;
@@ -1744,7 +1756,7 @@ input:focus:-moz-placeholder {
   }
 
   .promo-link__wrapper{
-    margin-left: 45px;
+    margin-left: 50px;
     width: 132px;
     height: 31px;
     position: absolute;
@@ -2011,6 +2023,7 @@ input:focus:-moz-placeholder {
   .features--img {
     padding-left: 35px;
     display: inline-block;
+    @include x-rem(height, 40px);
     @include r(570){
     display: block;
     padding: 0;
@@ -2055,6 +2068,9 @@ input:focus:-moz-placeholder {
     @include r(768){
       position: relative;
     }
+  }
+  .news-slider{
+    @include x-rem(padding, 10px 0 40px);
   }
 }
 
@@ -2125,16 +2141,19 @@ input:focus:-moz-placeholder {
   margin: 3px;
 }
 .slick-prev {
-  top: -65px;
+  top: -50px;
 }
-
+.slick-next, .slick-prev {
+  @include x-rem(width,40px);
+  @include x-rem(height,40px);
+}
 .slick-next {
-  top: -65px;
+  top: -50px;
   right: 0px;
 }
 
 .slick-prev {
-  right: 31px;
+  right: 40px;
   left:auto;
 }
 
@@ -2145,8 +2164,8 @@ input:focus:-moz-placeholder {
   background: url(../img/main/scroll.svg);
   background-size: 83px 37px;
   position: absolute;
-  top: 50%;
-  left: -21px;
+  top: 30%;
+  right: 0;
   margin-top: -9px;
   background-position: -41px;
   transition: all .3s;
@@ -2159,8 +2178,8 @@ input:focus:-moz-placeholder {
   background: url(../img/main/scroll.svg);
   background-size: 83px 37px;
   position: absolute;
-  top: 50%;
-  left: -30px;
+  top: 30%;
+  right:0;
   margin-top: -9px;
   background-position: 0px;
 }
@@ -2608,14 +2627,13 @@ input:focus:-moz-placeholder {
 
   h2 {
     padding-bottom: 15px;
+    font-family: $ProximaRegular;
   }
 
   h3 {
     color: #000;
     font-size: 17px;
     padding-bottom: 9px;
-    font-weight: bold;
-
     /* Proxima Nova Semibold */
     font-family: $ProximaSemibold;
   }
@@ -3018,7 +3036,8 @@ footer {
         }
     }
     img {
-      width: 30px;
+      @include x-rem(height,30px);
+      @include x-rem(width,30px);
     }
   }
 }
@@ -3217,7 +3236,7 @@ footer {
       }
     }
   }
-  &.success_hidden,.vacancy-success_hidden{
+  &.success_hidden,&.vacancy-success_hidden{
     .hidden-block{
       @include x-rem(width,500px);
     .hidden-title{
@@ -3692,7 +3711,8 @@ footer {
   width:25%;
   display: inline-block;
   vertical-align: top;
-  @include x-rem(padding, 0 8px 15px 0);
+  @include x-rem(padding, 0 8px 0 0);
+  @include x-rem(margin-bottom,15px);
   float: left;
   &:hover{
     .discount_name{
@@ -4224,6 +4244,52 @@ footer {
 .products_wrap{
   @include x-rem(padding-top, 15px);
   @include clearfix;
+  .item-grid-wrap{
+    display: inline-block;
+    float:left;
+    width:25%;
+    @include x-rem(padding,1px);
+    @include x-rem(margin-bottom,40px);
+    @include x-rem(height, 370px);
+    img{
+    max-width:100%;
+    display: block;
+    margin:0 auto; 
+  }
+  .hits_tools{
+    margin:0;
+    @include x-rem(padding,8px 0);
+    display: none;
+  }
+  .hits-wrap{
+    a{
+      vertical-align: sub;
+    }
+  }
+    @include r(1108){
+      width:33.3%;
+    }
+     @include r(970){
+      width:50%;
+    }
+    @include r(769){
+      width:33.3%;
+    }
+    @include r(731){
+      width:50%;
+    }
+    @include r(500){
+      width:100%;
+    }
+  }
+  .hits_stat{
+    .stat_yes{
+      display: none;
+      &.active{
+        display: inline-block;
+      }
+    }
+  }
 }
 .product_item{
   display: inline-block;
@@ -4590,52 +4656,7 @@ footer {
 //+++++++++++++++++++++++++++++++++++
 //grid-item
 //+++++++++++++++++++++++++++++++++++
-.item-grid-wrap{
-  display: inline-block;
-  float:left;
-  width:25%;
-  @include x-rem(padding,1px);
-  @include x-rem(margin-bottom,40px);
-  @include x-rem(height, 370px);
-  img{
-    max-width:100%;
-    display: block;
-    margin:0 auto; 
-  }
-  .hits_tools{
-    margin:0;
-    @include x-rem(padding,8px 0);
-    display: none;
-  }
-  .hits-wrap{
-    a{
-      vertical-align: sub;
-    }
-  }
-  @include r(1108){
-    width:33.3%;
-  }
-   @include r(970){
-    width:50%;
-  }
-  @include r(769){
-    width:33.3%;
-  }
-  @include r(731){
-    width:50%;
-  }
-  @include r(500){
-    width:100%;
-  }
-}
-.hits_stat{
-  .stat_yes{
-    display: none;
-    &.active{
-      display: inline-block;
-    }
-  }
-}
+
 //++++++++++++++++++++++++++++++++++++
 //product-inner page
 //+++++++++++++++++++++++++++++++++++++
@@ -7194,12 +7215,20 @@ footer {
     padding-right: 0;
   }
 }
+.form-submit{
+  width:94%;
+  float:left;
+  @include r(900){
+    width:100%;
+  }
+}
 .form-block-title{
   display: inline-block;
   width:40%;
   float:left;
   @include x-rem(padding-right,55px);
   @include x-rem(font-size,16px);
+  @include x-rem(min-height,1px);
   color:#000;
   font-weight: 600;
   @include r(1240){

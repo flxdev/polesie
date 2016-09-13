@@ -96,7 +96,7 @@ var mapArea = function(){
 		$(document).on("click", ".map-zone", function() {
 			var val = $(this).data('area');
 			
-			  $(this)[0].classList.add("active");
+			  $(this).addClass("active");
 			  $(this).siblings().removeClass('active');
 
 			  	inputs.each(function(){
@@ -119,6 +119,12 @@ var mapArea = function(){
 			  			_.parents('.select-u-item').addClass('hover').siblings().removeClass('hover');
 			  		}
 			  	})
+			});
+		$(document).on("mouseleave", "#map_main", function() {
+			  	inputs.each(function(){
+			  		var _ = $(this);
+			  			_.parents('.select-u-item').removeClass('hover');
+			  	});
 			});
 		$(".input_label").each(function(){
 			  	var _ = $(this);
@@ -741,19 +747,23 @@ mobileSub();
 		});
 		more.on('mouseenter', function(event){
 			
-			parent = $(this).parent(),
-			list = parent.find('.drop-menu-wrapper');
+
+			list = $(this).parent().find('.drop-menu-wrapper');
 
 			$(this).addClass('active');
 			list.fadeIn('fast');
 
-		parent.on('mouseleave', function(){
-			list = $(this).find('.drop-menu-wrapper');
+		list.on('mouseleave', function(){
+
 			more.removeClass('active');
-			list.fadeOut('fast');
+			$(this).fadeOut('fast');
 		});
 
+
 		});
+
+		
+		
 		
 	})();
 
@@ -1394,7 +1404,6 @@ if (form_mail.length) {
     });
 };
 var form_call = $('.call-form');
-//modal password form
 if (form_call.length) {
 
     form_call.each(function () {
@@ -1411,7 +1420,6 @@ if (form_call.length) {
     });
 };
 var form_subscribe = $('.form-subscribe');
-//modal password form
 if (form_subscribe.length) {
     form_subscribe.each(function () {
         var form_this = $(this);
@@ -1426,7 +1434,6 @@ if (form_subscribe.length) {
     });
 };
 var form_vac = $('.vacancy_hidden .vacancy-form');
-//modal password form
 if (form_vac.length) {
     form_vac.each(function () {
         var form_this = $(this);
