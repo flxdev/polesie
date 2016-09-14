@@ -18,6 +18,7 @@
 		<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="format-detection" content="telephone=no">
 		<link rel="stylesheet" href="css/screen.css">
 		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 		<script src="js/common.js"></script>
@@ -25,7 +26,7 @@
 	<body>
 		<div id="wrap">
 			<!-- header-->
-			<div class="header">
+			<div class="header cd-auto-hide-header">
 				<header>
 					<!-- top line-->
 					<div class="top-line">
@@ -1601,7 +1602,7 @@
 						<input type="email" name="" placeholder="info@mail.com" data-validation="email" data-validation-error-msg="E-mail должен содержать @" class="input-main input-from">
 					</div>
 					<div class="input-wrapper">
-						<label class="input-label"><span class="text">Телефон</span></label>
+						<label class="input-label"><span>Телефон</span></label>
 						<input type="tell" name="" placeholder="+375 29 000-00-00" data-validation="custom required" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Введите свой телефонный номер в формате +375ХХХХХХХХХ" class="input-main input-from">
 					</div>
 					<div class="input-wrapper">
