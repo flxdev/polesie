@@ -233,8 +233,8 @@ html(lang='ru')
                                   c4.4,0,8,3.6,8,8C17,13.4,13.4,17,9,17z M10.4,5L6,9l4.4,4l0.6-0.6L7.3,9L11,5.6L10.4,5z')
                             |Продолжить покупки
                           .promo-form-wrap
-                            form.promo-form(action="/")
-                              input.promo-imput(type="text", placeholder = 'Введите промокод')
+                            form.promo-form(action="/").form-feed
+                              input.promo-imput(type="text", placeholder = 'Введите промокод',data-validation = 'required',data-validation-error-msg="Поле не может быть пустым")
                               button.promo-submit(type='submit') Применить
 
 

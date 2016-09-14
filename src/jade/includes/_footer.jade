@@ -5,10 +5,9 @@ footer
         h3
           | Получайте полезную информацию о&nbsp;скидках
         // footer-form
-        .footer-form
-          form(action='', method='post').form-subscribe
-            input.blacktext(type='email', name='name', placeholder='Ваш e-mail',data-validation="email",data-validation-error-msg="E-mail должен содержать @")
-            input.blacktext(type='submit', value='Подписаться')
+        form(action='', method='post').footer-form.form-subscribe
+          input.blacktext(type='email', name='name', placeholder='Ваш e-mail',data-validation="email",data-validation-error-msg="Неверный E-mail")
+          input.blacktext(type='submit', value='Подписаться')
         // footer_soc
         .footer_soc
           h3 Мы в соцсетях

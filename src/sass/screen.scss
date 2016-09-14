@@ -18,7 +18,13 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
-
+input[type="password"]
+{
+font:small-caption;font-size:16px;
+}
+input::-ms-clear {
+    display: none
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -54,7 +60,7 @@ body {
   -ms-scrollbar-3dlight-color:transparent;
   scrollbar-base-color: white;
   scrollbar-face-color:grey;
-  scrollbar-arrow-color:white;
+  // scrollbar-arrow-color:white;
   -ms-scroll-limit-x-max:1800;
   input:focus:required:invalid, textarea:focus:required:invalid, input:required:valid, textarea:required:valid {}
 }
@@ -2916,6 +2922,13 @@ footer {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+  @include x-rem(font-size,14px);
+  &.has-error{
+    border-color: $red;
+    input[type=submit]{
+      border-color: $red;
+    }
+  }
   @include r(420){
         border-color: transparent;
       }
@@ -3702,6 +3715,7 @@ footer {
   }
   .section-title{
     font-family: $ProximaSemibold;
+    @include x-rem(font-size,22px);
   }
 }
 .content-categories{
@@ -4249,6 +4263,7 @@ footer {
   @include x-rem(border-radius, 3px);
   @include x-rem(letter-spacing,1px);
   border:none;
+  @include x-rem(font-size,14px);
   @include r(1040){
     @include x-rem(margin-top,15px);
     @include x-rem(padding,4px 10px);
@@ -4262,8 +4277,6 @@ footer {
     display: inline-block;
     float:left;
     @include x-rem(padding,1px);
-    @include x-rem(margin-bottom,40px);
-    @include x-rem(height, 370px);
     img{
     max-width:100%;
     display: block;
@@ -4285,6 +4298,8 @@ footer {
   @include clearfix;
   .item-grid-wrap{
     width:25%;
+    @include x-rem(margin-bottom,40px);
+    @include x-rem(height, 370px);
     @include r(1108){
       width:33.3%;
     }
@@ -4972,10 +4987,11 @@ footer {
     }
   }
   &.go-back-btn{
-    @include x-rem(margin-top,30px)
+    @include x-rem(margin-top,30px);
   }
 }
 .product-delivery{
+  @include x-rem(font-size,14px);
   &:not(:last-child){
     @include x-rem(margin-bottom,12px);
   }
@@ -5855,6 +5871,8 @@ footer {
     border: 1px solid $border;
     @include x-rem(border-radius,3px);
     @include x-rem(padding,13px );
+    @include x-rem(height,34px );
+    box-shadow:none;
     &.input-big{
       @include x-rem(height,196px );
     }
@@ -6026,6 +6044,7 @@ footer {
 //++++++++++++++++++++++
 .compare_tabs{
   width:100%;
+  @include x-rem(font-size,14px);
   .compare_tab-item{
     display: inline-block;
     @include x-rem(padding,10px 0);
@@ -6152,7 +6171,9 @@ footer {
 }
 
 .compare-item{
-  min-width:209px;
+  @include x-rem(width,209px);
+  @include x-rem(min-width,209px);
+  @include x-rem(max-width,209px);
   text-align: left;
   vertical-align: top;
   position: relative;
@@ -6167,48 +6188,48 @@ footer {
     top: auto;
     left:0;
     background: #fff;
-    }
-    &.item-clone{
-      @include x-rem(width,250px);
-      @include x-rem(min-width,250px);
-
-    }
-    .hits-stat-more{
-    position: absolute;
-    bottom: 3px;
-    }
-    .hits_name{
-      font-weight: 100;
-    }
-     .hits_coast{
-      @include x-rem(margin,10px 0);
-     }
-     .compare-item-close{
-      @include x-rem(width,12px);
-      @include x-rem(height,12px);
-      @include x-rem(right,15px);
-      @include x-rem(top,15px);
-      position: absolute;
-      opacity: .5;
-      background: url(../img/utility/close.svg);
-      background-repeat: no-repeat;
-      background-position: center center;
-      z-index: 1;
-      cursor: pointer;
-     }
-     .select-u-body{
-      position: absolute;
-      @include x-rem(top,-35px);
-      z-index: 5;
-     }
-     .compare-item-name{
-      @include x-rem(padding-left,20px);
-      font-weight: bold;
-     }
-     .compare-value{
-      font-weight: 100;
-     }
   }
+  &.item-clone{
+    @include x-rem(width,250px);
+    @include x-rem(min-width,250px);
+    @include x-rem(max-width,250px);
+  }
+  .hits-stat-more{
+  position: absolute;
+  bottom: 3px;
+  }
+  .hits_name{
+    font-weight: 100;
+  }
+   .hits_coast{
+    @include x-rem(margin,10px 0);
+   }
+   .compare-item-close{
+    @include x-rem(width,12px);
+    @include x-rem(height,12px);
+    @include x-rem(right,15px);
+    @include x-rem(top,15px);
+    position: absolute;
+    opacity: .5;
+    background: url(../img/utility/close.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 1;
+    cursor: pointer;
+   }
+   .select-u-body{
+    position: absolute;
+    @include x-rem(top,-35px);
+    z-index: 5;
+   }
+   .compare-item-name{
+    @include x-rem(padding-left,20px);
+    font-weight: bold;
+   }
+   .compare-value{
+    font-weight: 100;
+   }
+}
 .compare-item-main{
   @include x-rem(padding-bottom,50px);
   @include x-rem(max-height,400px);
@@ -6388,7 +6409,7 @@ footer {
     background-position: bottom center;
     @include x-rem(background-size, 14px 14px);
     @include x-rem(height, 14px);
-    @include x-rem(width, 20px);
+    @include x-rem(width, 32px);
     @include x-rem(padding, 0 2px);
     &.compare{
       background-image: url(../img/main/comparison.svg);
@@ -6551,6 +6572,7 @@ footer {
 .print-btn{
   color:#000;
   @include x-rem(padding-left, 30px);
+  @include x-rem(background-size, 15px 15px);
   background-image: url(../img/features/print.svg);
   background-repeat: no-repeat;
   background-position: left center;
@@ -6871,6 +6893,12 @@ footer {
     width:100%;
     display: table;
     border:1px solid $border;
+    position: relative;
+    .help-block{
+      position: absolute;
+      bottom: -25px;
+      left: 5px;
+    }
   }
   .promo-submit{
     display: table-cell;
@@ -6878,6 +6906,7 @@ footer {
     width:30%;
     border-left:1px solid $border;
     @include x-rem(padding,7px 16px);
+    cursor: pointer;
     color:$letters;
     @include r(570){
      @include x-rem(padding,7px);
@@ -7137,6 +7166,7 @@ footer {
   .price-total{
     margin-top: 0!important;
     border-top: 1px solid $border;
+    @include x-rem(padding-top,35px);
     .price-name{
       @include x-rem(margin-top,3px);
     }
@@ -7240,10 +7270,18 @@ footer {
   }
 }
 .form-submit{
-  width:94%;
+  width:100%;
   float:left;
+  @include x-rem(padding-top,30px);
+  border-top:1px solid $border;
+  .hits-stat-more{
+    transform: translateX(-10%);
+  }
   @include r(900){
-    width:100%;
+    @include x-rem(padding-bottom,30px);
+    .hits-stat-more{
+      transform: translateX(0);
+    }
   }
 }
 .form-block-title{
@@ -7467,6 +7505,7 @@ footer {
 .content-section{
   padding-right:20%;
   @include clearfix;
+  font-size: 0;
   &:not(:first-child){
     @include x-rem(padding-top,20px);
   }
@@ -7544,7 +7583,8 @@ footer {
     @include x-rem(margin,20px 0);
   }
   .step-list{
-    @include x-rem(margin,15px 0 0)
+    @include x-rem(margin,15px 0 0);
+    @include x-rem(font-size,14px);
     list-style:none;
   }
   .step-fact{
@@ -7564,6 +7604,7 @@ footer {
     }
     .section-title{
       @include x-rem(margin-bottom,20px);
+      
       display: inline-block;
       font-family: $ProximaRegular;
       font-weight: 600;
@@ -8022,6 +8063,7 @@ transition:border .3s;
     text-align: center;
     color:$white;
     @include x-rem(padding,40px 60px);
+    @include x-rem(font-size,14px);
     @include r(1040){
       @include x-rem(padding,40px 10px);
     }
@@ -8126,7 +8168,10 @@ transition:border .3s;
     border-bottom:2px solid transparent;
     @include x-rem(min-width,20px);
     .nav-item-link{
+      @include x-rem(min-width,10px);
       color:$letters;
+      text-align: center;
+      display: inline-block;
     }
     &:first-child{
       text-align: left;
@@ -8262,6 +8307,7 @@ transition:border .3s;
 .accordion-container{
   .vacancy-head{
      @include x-rem(padding,20px 15px);
+     @include x-rem(font-size,14px);
      @include r(570){
         @include x-rem(padding,10px 7px);
       }

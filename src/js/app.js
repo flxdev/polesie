@@ -462,22 +462,22 @@ mobileSub();
 		draggable: false,
 		responsive: [
 
-    {
-      breakpoint: 980,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 660,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-      }
-    }
-    ]
+	    {
+	      breakpoint: 980,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 2
+	      }
+	    },
+	    {
+	      breakpoint: 660,
+	      settings: {
+	        slidesToShow: 1,
+	        slidesToScroll: 1,
+	        arrows: false,
+	      }
+	    }
+	   ]
 	});
 
 	if($('.discount').hasClass('discount-inner')){
@@ -1456,6 +1456,8 @@ $(".form-col .dropzone").dropzone({
 	dictDefaultMessage: 'Загрузить фото <span class = "fsize">(не более 5Мб)</span> ',
 	dictFileTooBig : 'Файл слишком большой',
 	dictResponseError : 'Сервер ответил с ошибкой',
+	dictInvalidFileType: 'Неверный тип файла',
+	acceptedFiles: ".jpeg,.jpg,.png,.gif",
 	maxFilesize: '5',
 	addRemoveLinks :true
 	 });
@@ -1466,7 +1468,9 @@ $(".vacancy-form .dropzone").dropzone({
 	dictDefaultMessage: 'Прикрепите резюме ',
 	dictFileTooBig : 'Файл слишком большой',
 	dictResponseError : 'Сервер ответил с ошибкой',
+	dictInvalidFileType: 'Неверный тип файла',
 	maxFilesize: '5',
+	acceptedFiles: ".doc,.docx,.pdf,.txt",
 	addRemoveLinks :true
 	 });
 
@@ -1506,7 +1510,7 @@ function init () {
 	        iconImageHref: 'images/myIcon.gif',
 	        iconImageHref: 'img/pin.svg',
 	        // Размеры метки.
-	        iconImageSize:[24, 30],
+	        iconImageSize:[22, 30],
 	        iconImageOffset: [-10, -42]
         });
      
