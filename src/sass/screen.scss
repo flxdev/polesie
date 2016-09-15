@@ -845,7 +845,7 @@ input:focus:-moz-placeholder {
   line-height: 0.6;
   @include x-rem(top,-10px);
   @include x-rem(right,-10px);
-}
+  }
 }
 
 //mobile searsh
@@ -925,7 +925,7 @@ input:focus:-moz-placeholder {
   }
 }
 
-.cart.empty:hover::after, .tools-defer.empty:hover::after, .tools-comparison.empty:hover::after {
+.cart:hover::after, .tools-defer:hover::after, .tools-comparison:hover::after {
   content: attr(data-title);
   background: #fff;
   text-align: center;
@@ -2041,6 +2041,7 @@ input:focus:-moz-placeholder {
     top:28%;
     @include x-rem(height, 40px)
     width:100%;
+    visibility: hidden;
     z-index: 1;
     @include r(480){
       top:32%;
@@ -2053,6 +2054,7 @@ input:focus:-moz-placeholder {
       background: none;
       outline: 0;
       cursor:pointer;
+      visibility: visible;
       &:hover{
         .icon{
           .st0{
@@ -2437,7 +2439,7 @@ input:focus:-moz-placeholder {
 }
 
 .hits_coast span, .hits_coast_new span {
-  color: #9d9c9c !important;
+  color: #9d9c9c;
   font-size: 14px;
   font-weight: 300;
 }
@@ -2447,9 +2449,6 @@ input:focus:-moz-placeholder {
   line-height: 1.3;
   font-size: 17px;
   font-weight: bold;
-
-  /* Proxima Nova Semibold */
-
   .old {
     text-decoration: line-through;
   }
@@ -2560,7 +2559,7 @@ input:focus:-moz-placeholder {
       }
     }  
     span{
-      @include r(768){
+      @include r(825){
         &:nth-child(n+4){
             display:none;
           }
@@ -2599,7 +2598,7 @@ input:focus:-moz-placeholder {
   }
   .dropdown-btn{
     display:none;
-     @include r(768){
+     @include r(825){
         display: inline-block;
       }
     
@@ -2758,22 +2757,28 @@ input:focus:-moz-placeholder {
   width: 182px;
   padding: 0px 8px;
   box-sizing: border-box;
+  a{
+    color:#000;
+  }
   img {
     margin: 0 auto;
+    max-width: 100%;
+    display: block;
     padding-bottom: 14px;
+  }
+  &:hover {
+    .themed_name{
+      color: $red;
+    }
   }
 }
 
-.themed_name a {
+.themed_name {
   color: #000;
   font-size: 16px;
   text-decoration: none;
   line-height: 1.3;
   font-family: $ProximaRegular;
-
-  &:hover {
-    color: $red;
-  }
 }
 
 .themed_cat {
@@ -2980,6 +2985,7 @@ footer {
       width:100%;
       line-height:3;
       cursor: pointer;
+      @include x-rem(padding-left,7px);
      @include x-rem(font-size, 18px);
      border-bottom: 1px solid rgba(143, 143, 143, 0.53);
     }
@@ -4388,6 +4394,25 @@ footer {
       vertical-align: sub;
     }
   }
+  .hits_coast{
+    span{
+      @include r(768){
+        display: block;
+      }
+    }
+  }
+   @include r(768){
+      .hits_block_wrap{
+        &:hover{
+          .hits_tools,.hits_stat{
+            display: none;
+          }
+          .hits_descr{
+            height: 26px;
+          }
+        }
+      }                
+    }
   }
 .products_wrap{
   @include x-rem(padding-top, 15px);
@@ -5027,7 +5052,7 @@ footer {
     @include x-rem(height,85px);
     overflow: hidden;
     text-overflow: ellipsis;
-    @include x-rem(margin-bottom,10px);
+    @include x-rem(margin-bottom,5px);
     @include r(570){
       @include x-rem(height,45px);
     }
