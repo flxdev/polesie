@@ -56,7 +56,14 @@ button{
   outline: 0;
   border:0;
 }
+
 body {
+/*   position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height:100vh; */
   -ms-scrollbar-3dlight-color:transparent;
   scrollbar-base-color: white;
   scrollbar-face-color:grey;
@@ -75,16 +82,21 @@ body {
 a, img {
   outline: none;
 }
-
+/* #outwrap{
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x:hidden;
+  -webkit-overflow-scrolling: touch;
+} */
 #wrap {
   max-width: 1280px;
-  margin: 0 auto;
+  margin:0 auto;
   @include r(1280){
     padding: 0 8px;
   }
   @include r(1040){
     padding: 0 10px;
-    overflow: hidden;
+    overflow-x: hidden;
   }
   @include r(480){
     padding: 0 5px;
@@ -103,7 +115,7 @@ a, img {
 }
 .cd-auto-hide-header.is-hidden {
   @include r(770){
-    transform: translateY(-100%);
+    transform: translate3d(0,-100%,0);
   } 
 }
 header{
@@ -1670,6 +1682,9 @@ input:focus:-moz-placeholder {
   padding-top: 15px;
   font-size: 0;
   overflow: hidden;
+  @include r(768){
+    padding: 0 ; 
+  }
 }
 
 .promo-slider {
@@ -1683,16 +1698,17 @@ input:focus:-moz-placeholder {
     width:100%;
     height:380px;
   }
-  @include r(768){
-    width:100%;
-    height:380px;
-  }
   @include r(480){
-    width:100%;
     height:250px;
   }
   .slick-track{
-    height:100%;
+    height:400px;
+   @include r(980){
+      height:380px;
+    }
+    @include r(480){
+      height:250px;
+    }
   }
   .galery__nav{
     position: absolute;
@@ -1701,7 +1717,7 @@ input:focus:-moz-placeholder {
     width:100%;
     .slick-arrow{
       display: inline-block;
-      @include x-rem(width, 15px);
+      @include x-rem(width, 40px);
       @include x-rem(height, 40px);
       border:none;
       background: none;
@@ -1709,6 +1725,9 @@ input:focus:-moz-placeholder {
       cursor:pointer;
       position: relative;
       z-index: 2;
+      @include r(480){
+        @include x-rem(width, 20px);
+      }
       &:hover{
         .icon{
           .st0{
@@ -1723,6 +1742,9 @@ input:focus:-moz-placeholder {
         svg{
           width:40px;
           height:15px;
+          @include r(480){
+            display: none;
+          }
         }
         .st0{
           fill:$white;
@@ -1732,9 +1754,7 @@ input:focus:-moz-placeholder {
     }
     .carousel-next{
       float:right;
-      @include x-rem(width, 40px);
-      svg{
-          
+      svg{ 
           transform: rotate(270deg);
           transform-origin: 50% 100%;
         }
@@ -1742,38 +1762,43 @@ input:focus:-moz-placeholder {
     }
     .carousel-prev{
       float:left;
-      @include x-rem(width, 40px);
       svg{
 
           transform: rotate(-270deg);
           transform-origin: 50% 100%;
         }
-
+    }
+  }
+  .slick-dots{
+    left:0;
+    @include r(480){
+      margin:0;
+      right: 0;
     }
   }
   .slide {
     position: relative;
     outline: none;
+    background-size:cover;
+    background-position: center center;
     a{
       @include clearfix;
       display: block;
       height:100%;
     }
   }
-
   h3 {
     color:$letters;
     padding-left: 50px;
     font-size: 28px;
     line-height: 1.3;
     font-weight: normal;
-    &:first-child{
-      margin-top: 40px;
-    }
+    margin-top: 40px;
+    @include x-rem(width,400px);
     @include r(480){
-    margin-top: 10px;
+    margin-top: 15px;
+    padding-left: 15px;
   }
-
     /* Proxima Nova Regular */
   }
 
@@ -1785,7 +1810,9 @@ input:focus:-moz-placeholder {
     line-height: 1.3;
     font-weight: normal;
     color:$letters;
-
+    @include r(480){
+      padding-left: 15px;
+    }
     /* Proxima Nova Regular */
   }
 
@@ -1799,6 +1826,9 @@ input:focus:-moz-placeholder {
     background: $red;
     border-radius: 3px;
     z-index: 2;
+    @include r(480){
+      margin-left: 15px;
+    }
     .sale{
       transform: skew(10deg);
       display: inline-block;
@@ -1813,22 +1843,6 @@ input:focus:-moz-placeholder {
     }
   }
 
-  img {
-    position: absolute;
-    bottom: 0;
-    z-index: -1;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    height:100%;
-    @include r(980){
-      height:auto;
-      width:100%;
-    }
-    @include r(480){
-      height:100%;
-    }
-  }
 }
 
 .promo-banners {
@@ -1858,6 +1872,9 @@ input:focus:-moz-placeholder {
       opacity: .8;
       transition: opacity .3s;
     }
+    @include r(480){
+      @include x-rem(padding, 0 8px);
+    }
   }
 
   h3 {
@@ -1881,6 +1898,9 @@ input:focus:-moz-placeholder {
     max-width:279px;
     display: block;
     margin:30px auto ;
+    @include r(480){
+      @include x-rem(max-width, 150px);
+    }
   }
 
   .ban_1 {
@@ -1897,16 +1917,21 @@ input:focus:-moz-placeholder {
     @include r(980){
     width:50%;
     float: left;
-    height: 410px;
     padding: 0 6px 0 0; 
    }
    @include r(480){
+      height:350px;
+    }
+   @include r(370){
       width:100%;
       margin-bottom: 10px;
     }
    img{
     @include r(1230){
       width:100%;
+      }
+    @include r(370){
+      max-width:80%;
       }
     }
   }
@@ -1934,7 +1959,11 @@ input:focus:-moz-placeholder {
     padding:0 0 0 6px;
   }
   @include r(480){
+      height:175px;
+    }
+  @include r(370){
     width:100%;
+    padding: 0;
   }
   img{
     margin:15px auto;
@@ -1948,21 +1977,44 @@ input:focus:-moz-placeholder {
     display: inline-block;
     float: left;
     @include r(980){
-    padding-left: 20px;
-  }
-  }
+      padding-left: 20px;
+    }
+    @include r(480){
+      padding-left: 5px;
+      }
+    @include r(370){
+        padding-left: 10px;
+      }
+    }
+
     h3, p {
       text-align: left;
       width: 130px;
       line-height: 1.3;
       display: inline-block;
+      @include r(480){
+        @include x-rem(width,110px);
+      }
+      @include r(370){
+        @include x-rem(width,130px);
+      }
     }
     img{
-    position: absolute;
-    right:30px;
-    margin:0;
-    bottom:20px;
-  }
+      position: absolute;
+      right:30px;
+      margin:0;
+      bottom:20px;
+      @include x-rem(width,90px);
+      @include r(480){
+        right: 5px;
+        @include x-rem(width,55px);
+        bottom:40px;
+      }
+      @include r(370){
+        right:15px;
+        @include x-rem(width,70px);
+      }
+    }
   }
 }
 
@@ -1976,9 +2028,13 @@ input:focus:-moz-placeholder {
   -moz-box-shadow: 0px 1px 1px rgba(128, 128, 128, 0.9);
   -webkit-box-shadow: 0px 1px 1px rgba(128, 128, 128, 0.9);
   height: 74px;
-  @include r(570){
-    height: 150px;
-  }
+  @include r(1040){
+    @include x-rem(padding, 0 22px);
+    box-shadow: 0px 1px 4px rgba(128, 128, 128, 0.9);
+   }
+   @include r(480){
+    height: 100px;
+   }
 }
 .features__nav,.features__nav-modal{
     position: absolute;
@@ -1986,9 +2042,9 @@ input:focus:-moz-placeholder {
     @include x-rem(height, 40px)
     width:100%;
     z-index: 1;
-    @include r(570){
-    top:40%;
-  }
+    @include r(480){
+      top:32%;
+     }
     .slick-arrow{
       display: inline-block;
       @include x-rem(width, 15px);
@@ -2044,10 +2100,13 @@ input:focus:-moz-placeholder {
   border-left: none;
   width: 25%;
   display: inline-block;
+  @include r(1040){
+    border-color:transparent;
+  }
   @include r(570){
-    height: 150px;
     text-align: center;
   }
+
     &:first-child {
         border-left: 1px solid #eaeaea;
       }
@@ -2055,17 +2114,24 @@ input:focus:-moz-placeholder {
         border-right: 1px solid transparent;
       }
   .features--img {
-    padding-left: 35px;
     display: inline-block;
     @include x-rem(height, 40px);
-    @include r(570){
-    display: block;
-    padding: 0;
-  }
-    svg{
-      display: inline-block;
+    @include x-rem(width, 35px);
+    @include x-rem(margin-left, 20px);
     vertical-align: middle;
-    @include x-rem(width, 40px);
+    @include r(480){
+      width:100%;
+      display: block;
+      @include x-rem(height, 30px);
+      margin:0 5px;
+    }
+    img{
+      display: inline-block;
+      width:100%;
+      height: 100%;
+    }
+    @include r(570){
+    vertical-align: middle;
     }
   }
 
@@ -2079,9 +2145,12 @@ input:focus:-moz-placeholder {
     line-height: 1.3;
     @include r(900){
       width: 63%;
-    text-align: center;
-    padding: 0;
-  }
+      text-align: center;
+      padding: 0;
+    }
+    @include r(480){
+      vertical-align: middle;
+    }
   }
 }
 

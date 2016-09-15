@@ -525,7 +525,7 @@ mobileSub();
 	      }
 	    },
 	    {
-	      breakpoint: 768,
+	      breakpoint: 780,
 	      settings: {
 	        slidesToShow: 2,
 	        slidesToScroll: 1
@@ -577,14 +577,6 @@ mobileSub();
         arrows: false,
       }
     },
-    {
-      breakpoint: 330,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-      }
-    }
     ]
 	});
 	$('.slick-slider-discount-news').slick({
@@ -1039,7 +1031,8 @@ var mobileSearch = function(){
 		var trigger = $('.js-search-btn'),
 			target =$('.mobile-search');
 
-		trigger.on('click', function(){
+		trigger.on('click', function(e){
+			e.preventDefault();
 
 			target.toggleClass('active');
 			
@@ -1596,15 +1589,14 @@ window.addEventListener('scroll', function() {
     body.classList.remove('disable-hover')
   },300);
 }, false);
-
+//mobile sticky header
 jQuery(document).ready(function($){
+
 	var mainHeader = $('#wrap .cd-auto-hide-header'),
 		secondaryNavigation = $('.cd-secondary-nav'),
-		//this applies only if secondary nav is below intro section
 		belowNavHeroContent = $('.sub-nav-hero'),
 		headerHeight = mainHeader.height();
 	
-	//set scrolling variables
 	var scrolling = false,
 		previousTop = 0,
 		currentTop = 0,
@@ -1627,7 +1619,7 @@ jQuery(document).ready(function($){
 		var currentTop = $(window).scrollTop();
 
 		( belowNavHeroContent.length > 0 ) 
-			? checkStickyNavigation(currentTop) // secondary navigation below intro
+			? checkStickyNavigation(currentTop)
 			: checkSimpleNavigation(currentTop);
 
 	   	previousTop = currentTop;
@@ -1635,13 +1627,11 @@ jQuery(document).ready(function($){
 	}
 
 	function checkSimpleNavigation(currentTop) {
-		//there's no secondary nav or secondary nav is below primary nav
 	    if (previousTop - currentTop > scrollDelta) {
-	    	//if scrolling up...
 	    	mainHeader.removeClass('is-hidden');
 	    } else if( currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
-	    	//if scrolling down...
 	    	mainHeader.addClass('is-hidden');
+	    	$('.mobile-search').removeClass('active');
 	    }
 	}
 });
