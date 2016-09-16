@@ -984,11 +984,9 @@ var priceFilter = function(val){
 
 	if(val.val().length > 0){
 		parent.addClass('checked');
-		console.log($(this).val())
 	}
 	else {
 		parent.removeClass('checked');
-		console.log($(this).length)
 	}
 }
 
@@ -1138,36 +1136,36 @@ var clearItems = function(block){
 		});
 	})
 	if($(window).width() > 835){
-		trigger.data('target','.product_hidden')
+		trigger.data('target','.product_hidden');
 	trigger.click(function(){
 
 		var currslide = $(this).find('.slick-active').data('slick-index');
+		$(this).clone().appendTo('.product_hidden .product-galery-wrap')
 
-		$('.product-modal-slider').slick({
-			arrows: true,
-			slidesToShow: 1,
-			asNavFor: $('.product-madd-slider'),
-			infinite: false,
-			appendArrows: $('.features__nav-modal'),
-	  		nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st0" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
-	  		prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st0" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
-		});
+		// $('.product-modal-slider').slick({
+		// 	arrows: true,
+		// 	slidesToShow: 1,
+		// 	asNavFor: $('.product-madd-slider'),
+		// 	infinite: false,
+		// 	appendArrows: $('.features__nav-modal'),
+	 //  		nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st0" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
+	 //  		prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st0" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
+		// });
 
-		$('.product-madd-slider').slick({
-			asNavFor: $('.product-modal-slider'),
-			slidesToShow: 5,
-			slidesToScroll: 1,
-			infinite: false,
-			draggable: false,
-			arrows:false,
-			focusOnSelect: true,
-		});
+		// $('.product-madd-slider').slick({
+		// 	asNavFor: $('.product-modal-slider'),
+		// 	slidesToShow: 5,
+		// 	slidesToScroll: 1,
+		// 	infinite: false,
+		// 	draggable: false,
+		// 	arrows:false,
+		// 	focusOnSelect: true,
+		// });
 		$('.product-modal-slider').slick('slickGoTo', currslide);
 	});
 	}
 
 	else{
-		console.log(100)
 		trigger.data('target','')
 	}
 }
@@ -1302,12 +1300,68 @@ function getChar(event) {
 		return null;
 	}
 //fancybox
+(function ($, F) {
+
+    F.transitions.resizeIn = function() {
+
+        var previous = F.previous,
+            current  = F.current,
+            startPos = previous.wrap.stop(true).position(),
+            endPos   = $.extend({opacity : 1}, current.pos);
+
+        startPos.width  = previous.wrap.width();
+        startPos.height = previous.wrap.height();
+
+        previous.wrap.stop(true).trigger('onReset').remove();
+
+        delete endPos.position;
+
+        current.inner.hide();
+
+        current.wrap.css(startPos).animate(endPos, {
+            duration : current.nextSpeed,
+            easing   : current.nextEasing,
+            step     : F.transitions.step,
+            complete : function() {
+                F._afterZoomIn();
+
+                current.inner.fadeIn("fast");
+            }
+        });
+    };
+     F.transitions.slidebottomIn = function() {
+
+        F.wrap.addClass('slidebottom');
+
+        setTimeout(function(){
+            F.wrap.addClass('slidebottom-transitions');
+            F.wrap.addClass('show');
+            F._afterZoomIn();
+        });
+
+    }
+    F.transitions.slidebottomOut = function() {
+        
+        F.wrap.removeClass('show');
+
+        setTimeout(function(){
+            F.wrap.removeClass('slidebottom slidebottom-transitions');
+            F._afterZoomOut();
+        }, 500);
+
+    };
+
+}(jQuery, jQuery.fancybox));
    $('.fancybox').fancybox({
-   	openEffect  : 'elastic',
+   		openMethod: 'slidebottomIn',
+        closeMethod: 'slidebottomOut',
       closeBtn: true,
       padding : 40,
-      nextEffect: 'fade',
-      prevEffect: 'fade',
+      nextEffect: 'slide',
+      nextMethod : 'resizeIn',
+      nextSpeed  : 250,
+      prevMethod : false,
+      autoSize	: true,
    	 helpers:  {
         overlay : {
             css : {
@@ -1316,6 +1370,28 @@ function getChar(event) {
         }
     }
    });
+/*  $('.fancybox-thumb').fancybox({
+   		openMethod: 'slidebottomIn',
+        closeMethod: 'slidebottomOut',
+      closeBtn: true,
+      padding : 40,
+      nextEffect: 'slide',
+      nextMethod : 'resizeIn',
+      nextSpeed  : 250,
+      prevMethod : false,
+      autoSize	: true,
+   	 helpers:  {
+        overlay : {
+            css : {
+                'background' : 'rgba(74,74,74,.34)'
+            }
+        },
+        thumbs:{
+			width	: 50,
+			height	: 50,
+		}
+    }
+   });*/
 $('.rev-star').click(function() {
 	$(this).closest('.input-wrapper').addClass('has-success');
   num = parseInt($(this).data("num"));

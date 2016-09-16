@@ -7,6 +7,7 @@
 //= lib/slick.min.js
 //= lib/jquery.matchHeight-min.js
 //= lib/jquery.fancybox.pack.js
+//= lib/jquery.fancybox-thumbs.js
 //= lib/dropzone.min.js
 
 
