@@ -144,123 +144,123 @@ html(lang='ru')
                   .selection_item
                     .selection_item-title
                       span Возраст
-                    .selection_body
+                    .selection_body.selection__checkout
                       ul.select-u-body
                         li.select-u-item
-                          label.input_label
+                          label.input_label(data-id = '1')
                             span.input_main
-                              input.input-real(type="checkbox", value = '2014')
+                              .input-real
                               span.input-checked
                             span.input-text 2014
                         li.select-u-item
-                          label.input_label
+                          label.input_label(data-id = '2')
                             span.input_main
-                              input.input-real(type="checkbox", value = '2015')
+                              .input-real
                               span.input-checked 
                             span.input-text 2015
                         li.select-u-item
-                          label.input_label
+                          label.input_label(data-id = '3')
                             span.input_main
-                              input.input-real(type="checkbox", value = '2016')
+                              .input-real
                               span.input-checked
                             span.input-text 2016
-                        .select-all-cont
-                          span.select-all-title.js-all-title Все Варианты 
-                          .icon
-                            svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='18px', viewbox='0 0 15 3', style='enable-background:new 0 0 15 3;', xml:space='preserve')
-                              style(type='text/css').
-                                .st1{fill-rule:evenodd;clip-rule:evenodd;fill:#3B3B3B;}
+                      .select-all-cont
+                        span.select-all-title.js-all-title Все Варианты 
+                        .icon
+                          svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='18px', viewbox='0 0 15 3', style='enable-background:new 0 0 15 3;', xml:space='preserve')
+                            style(type='text/css').
+                              .st1{fill-rule:evenodd;clip-rule:evenodd;fill:#3B3B3B;}
+                            g
                               g
-                                g
-                                  path.st1(d='M1.5,0C0.7,0,0,0.7,0,1.5C0,2.3,0.7,3,1.5,3C2.3,3,3,2.3,3,1.5C3,0.7,2.3,0,1.5,0z M7.5,0C6.7,0,6,0.7,6,1.5\
-                                  C6,2.3,6.7,3,7.5,3C8.3,3,9,2.3,9,1.5C9,0.7,8.3,0,7.5,0z M13.5,0C12.7,0,12,0.7,12,1.5C12,2.3,12.7,3,13.5,3\
-                                  C14.3,3,15,2.3,15,1.5C15,0.7,14.3,0,13.5,0z')
-                          .select-all-inner.js-all-inner
-                            ul.select-u-body
-                              li.select-u-item
-                                label.input_label
-                                  span.input_main
-                                    input.input-real(type="checkbox", checked='checked',value = 'Горный')
-                                    span.input-checked
-                                  span.input-text Горный
-                              li.select-u-item
-                                label.input_label
-                                  span.input_main
-                                    input.input-real(type="checkbox", value = 'Городской')
-                                    span.input-checked 
-                                  span.input-text Городской
-                              li.select-u-item
-                                label.input_label
-                                  span.input_main
-                                    input.input-real(type="checkbox", checked='checked',value = 'Гибридный')
-                                    span.input-checked
-                                  span.input-text Гибридный
-                              li.select-u-item
-                                label.input_label
-                                  span.input_main
-                                    input.input-real(type="checkbox", value = 'Шоссейный')
-                                    span.input-checked
-                                  span.input-text Шоссейный
-                              li.select-u-item
-                                label.input_label
-                                  span.input_main
-                                    input.input-real(type="checkbox", value = 'Комфортный')
-                                    span.input-checked
-                                  span.input-text Комфортный
-                              li.select-u-item
-                                label.input_label
-                                  span.input_main
-                                    input.input-real(type="checkbox", value = 'Комфортный')
-                                    span.input-checked
-                                  span.input-text Комфортный
-                              li.select-u-item
-                                label.input_label
-                                  span.input_main
-                                    input.input-real(type="checkbox", value = 'Комфортный')
-                                    span.input-checked
-                                  span.input-text Комфортный
-                              li.select-u-item
-                                label.input_label
-                                  span.input_main
-                                    input.input-real(type="checkbox", value = 'Комфортный')
-                                    span.input-checked
-                                  span.input-text Комфортный
-                              li.select-u-item
-                                label.input_label
-                                  span.input_main
-                                    input.input-real(type="checkbox", value = 'Комфортный')
-                                    span.input-checked
-                                  span.input-text Комфортный
-                              li.select-u-item
-                                label.input_label
-                                  span.input_main
-                                    input.input-real(type="checkbox", value = 'Комфортный')
-                                    span.input-checked
-                                  span.input-text Комфортный
-                              li.select-u-item
-                                label.input_label
-                                  span.input_main
-                                    input.input-real(type="checkbox", value = 'Комфортный')
-                                    span.input-checked
-                                  span.input-text Комфортный
-                              li.select-u-item
-                                label.input_label
-                                  span.input_main
-                                    input.input-real(type="checkbox", value = 'Комфортный')
-                                    span.input-checked
-                                  span.input-text Комфортный
-                              li.select-u-item
-                                label.input_label
-                                  span.input_main
-                                    input.input-real(type="checkbox", value = 'Комфортный')
-                                    span.input-checked
-                                  span.input-text Комфортный
-                              li.select-u-item
-                                label.input_label
-                                  span.input_main
-                                    input.input-real(type="checkbox", value = 'Комфортный')
-                                    span.input-checked
-                                  span.input-text Комфортный
+                                path.st1(d='M1.5,0C0.7,0,0,0.7,0,1.5C0,2.3,0.7,3,1.5,3C2.3,3,3,2.3,3,1.5C3,0.7,2.3,0,1.5,0z M7.5,0C6.7,0,6,0.7,6,1.5\
+                                C6,2.3,6.7,3,7.5,3C8.3,3,9,2.3,9,1.5C9,0.7,8.3,0,7.5,0z M13.5,0C12.7,0,12,0.7,12,1.5C12,2.3,12.7,3,13.5,3\
+                                C14.3,3,15,2.3,15,1.5C15,0.7,14.3,0,13.5,0z')
+                        .select-all-inner.js-all-inner
+                          ul.select-u-body
+                            li.select-u-item
+                              label.input_label(data-id = '1')
+                                span.input_main
+                                  input.input-real(type="checkbox", checked='checked',value = 'Горный')
+                                  span.input-checked
+                                span.input-text 2014
+                            li.select-u-item
+                              label.input_label(data-id = '2')
+                                span.input_main
+                                  input.input-real(type="checkbox", value = 'Городской')
+                                  span.input-checked 
+                                span.input-text 2015
+                            li.select-u-item
+                              label.input_label(data-id = '3')
+                                span.input_main
+                                  input.input-real(type="checkbox", checked='checked',value = 'Гибридный')
+                                  span.input-checked
+                                span.input-text 2016
+                            li.select-u-item
+                              label.input_label(data-id = '4')
+                                span.input_main
+                                  input.input-real(type="checkbox", value = 'Шоссейный')
+                                  span.input-checked
+                                span.input-text Шоссейный
+                            li.select-u-item
+                              label.input_label(data-id = '5')
+                                span.input_main
+                                  input.input-real(type="checkbox", value = 'Комфортный')
+                                  span.input-checked
+                                span.input-text Комфортный
+                            li.select-u-item
+                              label.input_label
+                                span.input_main
+                                  input.input-real(type="checkbox", value = 'Комфортный')
+                                  span.input-checked
+                                span.input-text Комфортный
+                            li.select-u-item
+                              label.input_label
+                                span.input_main
+                                  input.input-real(type="checkbox", value = 'Комфортный')
+                                  span.input-checked
+                                span.input-text Комфортный
+                            li.select-u-item
+                              label.input_label
+                                span.input_main
+                                  input.input-real(type="checkbox", value = 'Комфортный')
+                                  span.input-checked
+                                span.input-text Комфортный
+                            li.select-u-item
+                              label.input_label
+                                span.input_main
+                                  input.input-real(type="checkbox", value = 'Комфортный')
+                                  span.input-checked
+                                span.input-text Комфортный
+                            li.select-u-item
+                              label.input_label
+                                span.input_main
+                                  input.input-real(type="checkbox", value = 'Комфортный')
+                                  span.input-checked
+                                span.input-text Комфортный
+                            li.select-u-item
+                              label.input_label
+                                span.input_main
+                                  input.input-real(type="checkbox", value = 'Комфортный')
+                                  span.input-checked
+                                span.input-text Комфортный
+                            li.select-u-item
+                              label.input_label
+                                span.input_main
+                                  input.input-real(type="checkbox", value = 'Комфортный')
+                                  span.input-checked
+                                span.input-text Комфортный
+                            li.select-u-item
+                              label.input_label
+                                span.input_main
+                                  input.input-real(type="checkbox", value = 'Комфортный')
+                                  span.input-checked
+                                span.input-text Комфортный
+                            li.select-u-item
+                              label.input_label
+                                span.input_main
+                                  input.input-real(type="checkbox", value = 'Комфортный')
+                                  span.input-checked
+                                span.input-text Комфортный
                   .selection_item
                     .selection_item-title
                       span Класс

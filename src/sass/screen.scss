@@ -3300,6 +3300,7 @@ footer {
     transition: all .3s;
     .hidden-block{
       opacity:1;
+      visibility: visible;
       transform: translateY(0);
       transition: all .5s;
       transition-delay: .5s;
@@ -3313,6 +3314,7 @@ footer {
     @include x-rem(padding,50px 20px);
     position: relative;
     opacity:0;
+    visibility: hidden;
     transform: translateY(50%);
     transition: all .3s;
     @include r(480){
@@ -4120,10 +4122,10 @@ footer {
     top:0;
     left: 0;
     opacity: 0;
-    &:checked +.input-checked:before{
+    &:checked +.input-checked:before,&.active +.input-checked:before{
       opacity: 1;
     }
-    &:checked +.input-checked{
+    &:checked +.input-checked,&.active +.input-checked{
       border: 1px solid rgba(0,0,0,.8);
     }
   }
@@ -4985,8 +4987,8 @@ footer {
 }
 
 .product-madd-slider,.features__nav-modal{
-  opacity:1 !important;
-  visibility: visible!important;
+  opacity:1 ;
+  visibility: visible;
 }
 .product-status-wrap{
   position: relative;
@@ -8649,13 +8651,11 @@ transition:border .3s;
   transform: translateY(50%);
   opacity: 0;
 }
-
 .slidebottom-transitions{
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .slidebottom.show {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
