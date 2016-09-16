@@ -1192,14 +1192,16 @@ if($('.sort_wrapper').length){
 	})
 	var modalOff = function(){
 		if($(window).width() < 835){
-			trigger.removeClass('js-modal-trigger');
+			trigger.removeClass('js-modal-trigger').removeAttr('data-target');
 		}
 		else{
-			trigger.addClass('js-modal-trigger');
+			trigger.addClass('js-modal-trigger').attr('data-target','.product_hidden');
 		}
 	}
 	modalOff();
-	$(window).resize(modalOff);
+	$(window).resize(function(){
+		modalOff();
+	});
 
 		if(trigger.hasClass('js-modal-trigger')){
 			console.log('has');

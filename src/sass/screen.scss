@@ -4721,7 +4721,6 @@ footer {
       background-image: url(../img/utility/star-yellow.svg);
       background-repeat: repeat-x;
       @include x-rem(height,15px);
-      width:75%;  
       display: inline-block;  
       background-size: 15px 15px;
     }
@@ -4985,10 +4984,11 @@ footer {
     }
   }
 }
-
-.product-madd-slider,.features__nav-modal{
-  opacity:1 ;
-  visibility: visible;
+.product_hidden.active{
+  .product-madd-slider,.features__nav-modal{
+    opacity:1 !important ;
+    visibility: visible !important;
+  }
 }
 .product-status-wrap{
   position: relative;
@@ -5306,7 +5306,12 @@ footer {
     @include clearfix;
     display: table;
     width:100%;
-    @include x-rem(margin-bottom,20px);
+    }
+    @include r(1040){
+      width:48%;
+      margin-right:2%;
+      display: inline-block;
+      float: left;
     }
   }
   .number__minus, .number__plus, .number__input {
@@ -5381,6 +5386,26 @@ footer {
     float:none;
     @include x-rem(padding, 7.5px 45px 7.5px 45px);
     text-align: center;
+  }
+}
+.product-button-wrap{
+  .product-buy-btn{
+     @include r(1040){
+      width:48%;
+      margin-left: 2%;
+      padding:0;
+      @include x-rem(padding, 7.5px 0);
+      text-align: center;
+      float:left;
+      svg{
+        position: static;
+        display: inline-block;
+        vertical-align: sub;
+        transform: scale(1.3);
+        margin-right: 10px;
+        height:14px;
+      }
+    }
   }
 }
 .product-oneclick{
@@ -6272,7 +6297,7 @@ footer {
   &>.compare-body{
       .compare-bg{
         height:400px;
-        z-index: 3;
+        z-index: 2;
     }
   }
 }
