@@ -59,7 +59,7 @@
           input(type='submit', value='Найти')     
           input.search(type='search', name='search', placeholder='Поиск по 200 000 товарам, разделам и артикулам')
           .select-container
-            a.search_drop(href='#') 
+            .search_drop
               span По тексту 
               .img
                 svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 8 4', width='9px',height='5px',style='enable-background:new 0 0 8 4;', xml:space='preserve')
@@ -310,10 +310,13 @@
           //в menu-item лучше использовать неразрывные пробелы
           li.menu-item
             a(href='#') Твары для детей
+              i.menu-arrow
           li.menu-item
             a(href='#') Мода и красота
+              i.menu-arrow
           li.menu-item
             a(href='#') Спорт и туризм
+              i.menu-arrow
             //если внутри есть выпадающее меню - вешаем класс
           li.menu-item.dropdown
             a(href='#') Электроника и техника
@@ -425,6 +428,7 @@
                       img(src='img/promo/brand4.jpg', alt='#')
           li.menu-item.dropdown
             a(href='#') Для дома и сада
+              i.menu-arrow
             .main-nav-dropmenu
               .nav-main-wrap
                 .nav-main
@@ -507,9 +511,11 @@
                       img(src='img/promo/brand4.jpg', alt='#')
           li.menu-item
             a(href='#') Автотовары
+              i.menu-arrow
           li.menu-item
 
             a(href='#') Ремонт&nbsp;и&nbsp;стройка
+              i.menu-arrow
           li.menu-item
             a.sale(href='#') Распродажа	
           .dropdown-btn.js-menu_add-btn

@@ -475,6 +475,10 @@ body {
   @include r(768){
     @include x-rem(padding-left,10px)
     padding-right: 0;
+    @include x-rem(width,205px)
+  }
+  @include r(690){
+    width:auto;
   }
   @include r(482){
       padding-top: 6px;
@@ -560,7 +564,7 @@ input:focus:-moz-placeholder {
     background-color: $white;
     @include x-rem(padding, 0 6px)
     cursor:pointer;
-    a{
+    .search_drop{
       display: inline-block;
       text-decoration:none;
       color: #000;
@@ -605,7 +609,7 @@ input:focus:-moz-placeholder {
         background-color:$white;
         position: relative;
         overflow: hidden;
-        cursor: pointer;
+        
         font-weight: 300;
         input{
           position: absolute;
@@ -615,15 +619,14 @@ input:focus:-moz-placeholder {
           height:100%;
           opacity:0;
           top:0;
+          cursor: pointer;
           z-index: 2;
           &:checked +label{
             font-weight: 600;
               &:before{
               display: block;
             }
-          }
-
-            
+          }  
         }
         label{
           display: inline-block;
@@ -656,7 +659,23 @@ input:focus:-moz-placeholder {
     }
   }
     &:hover{
-      a{
+      .search_drop{
+        color:$red;
+      }
+      .img{
+        svg{
+        fill:$red;
+        }
+      }
+    }
+    &.active{
+      .section-wrap{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition: all.3s;
+      }
+      .search_drop{
         color:$red;
       }
       .img{
@@ -664,12 +683,6 @@ input:focus:-moz-placeholder {
         transform: rotate(180deg);
         fill:$red;
         }
-      }
-      .section-wrap{
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-        transition: all.3s;
       }
     }
   }
@@ -765,8 +778,6 @@ input:focus:-moz-placeholder {
   @include r(768){
     vertical-align: middle;
     padding:0;
-  }
-  @include r(700){
     @include x-rem(width,150px);
   }
   @include r(482){
@@ -1016,9 +1027,8 @@ input:focus:-moz-placeholder {
     }
   @include r(768){
       vertical-align: middle;
-    }
-  @include r(652){
-    @include x-rem(width,50px);
+       @include x-rem(width,50px);
+
   }
   @include r(482){
       color:transparent !important;
@@ -1354,6 +1364,7 @@ input:focus:-moz-placeholder {
         display: block;
         background: $white;
         border-bottom: 1px solid $border;
+        @include x-rem(padding-left,10px);
         &:hover{
           a{
             background: $white;
@@ -1368,7 +1379,7 @@ input:focus:-moz-placeholder {
         color: #000000;
          @include x-rem(font-size, 16px)
         font-weight: 600;
-        transition: color.3s;
+        transition: all.3s;
         font-family:$ProximaRegular;
         text-decoration: none;
         text-align: center;
@@ -1376,9 +1387,27 @@ input:focus:-moz-placeholder {
         display: inline-block;
         width:100%;
         letter-spacing: 1px;
+        .menu-arrow{
+          display: none;
+          float:right;
+          background: url(../img/arrow.svg) no-repeat center center;
+          @include x-rem(width,20px);
+          @include x-rem(height,25px);
+          @include x-rem(margin-right,10px);
+          will-change:transform;
+          transition:transform .3s;;
+          @include r(850){
+            display: inline-block;
+          }
+        }
         @include r(850){
           text-align: left;
           padding: 12px 5px;
+        }
+        &.active{
+          .menu-arrow{
+            transform:scale(1,-1);
+          }
         }
       }
 
@@ -1472,7 +1501,7 @@ input:focus:-moz-placeholder {
     display: block;
     @include r(768){
       display: none;
-      @include x-rem(margin-left,10px);
+      
     }
   }
 }
@@ -1536,6 +1565,7 @@ input:focus:-moz-placeholder {
       border-left: 2px solid $red;
         @include r(768){
         border-left: 2px solid transparent;
+        background: #fff;
       }
     }
   }
@@ -2246,14 +2276,14 @@ input:focus:-moz-placeholder {
   margin: 3px;
 }
 .slick-prev {
-  top: -50px;
+  top: -65px;
 }
 .slick-next, .slick-prev {
   @include x-rem(width,40px);
   @include x-rem(height,40px);
 }
 .slick-next {
-  top: -50px;
+  top: -65px;
   right: 0px;
 }
 
@@ -2600,20 +2630,25 @@ input:focus:-moz-placeholder {
       text-decoration: none;
     }
   }
+  .drop-menu-wrapper{
+    @include x-rem(width,170px );
+    top:-30px;
+    left:20px;
+  }
   .dropdown-btn{
     display:none;
+    position: relative;
      @include r(825){
         display: inline-block;
       }
     
     .tab{
       display: none;
-      @include x-rem(padding,5px );
-      @include r(768){
+      @include x-rem(padding,5px 5px 5px 15px );
         &:nth-child(n+4){
             display:block;
           }
-        }
+
       @include r(480){
         &:nth-child(n+2){
             display:block;
@@ -5124,6 +5159,8 @@ footer {
 }
 .product-delivery{
   @include x-rem(font-size,14px);
+  float:none !important;
+  vertical-align: top;
   &:not(:last-child){
     @include x-rem(margin-bottom,12px);
   }
@@ -7008,7 +7045,7 @@ footer {
         display: inline-block;
         width:100%;
         height:100%;
-        @include x-rem(background-size,18px 18px);
+        @include x-rem(background-size,22px 22px);
         background-position: center center;
         background-repeat: no-repeat;
       }
