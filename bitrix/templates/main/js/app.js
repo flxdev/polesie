@@ -1086,7 +1086,7 @@ $('.price-min')[0].onkeypress = function(e) {
 	}
 }
 
-if(('.selection_wrapper').length){
+if(('.selection_find-block').length){
 
 	var clearItems = function(block){
 		var selBody = block.parents('.selection_wrapper'),
@@ -1106,7 +1106,7 @@ if(('.selection_wrapper').length){
 	    	
 	    });
 
-	    $('.selection_find-clear').click(function(event){
+	    $('.selection_wrapper .selection_find-clear').click(function(event){
 	    	event.preventDefault();
 	    	clearItems($(this));
 	    });
@@ -1233,14 +1233,7 @@ if($('.sort_wrapper').length){
 		        slidesToShow: 3,
 		        slidesToScroll: 1,
 		      }
-		    },
-		     {
-		      breakpoint: 520,
-		      settings: {
-		        slidesToShow: 2,
-		        slidesToScroll: 1,
-		      }
-		    },
+		    }
 			]
 		});
 	}, 10);
@@ -1262,6 +1255,7 @@ if($('.sort_wrapper').length){
 
 		});
 	})
+
 	var modalOff = function(){
 		if($(window).width() < 835){
 			trigger.removeClass('js-modal-trigger').removeAttr('data-target');
@@ -1356,7 +1350,7 @@ if($('.sort_wrapper').length){
 					var _ = $(this);
 					var targetToText = _.parent('.select-check').find(item);
 					event.preventDefault()
-					
+					console.log(2)
 					inp.prop('checked',false);
 					item.removeClass('active').removeClass('is-checked').find('span').text(text).parents('.input-wrapper').addClass('has-error').removeClass('has-success');
 					

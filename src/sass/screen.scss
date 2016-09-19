@@ -2366,7 +2366,7 @@ input:focus:-moz-placeholder {
   .status_item{
     display: inline-block;
     @include x-rem(min-width, 50px);
-    @include x-rem(height, 32px);
+    @include x-rem(height, 34px);
     border:2px solid $white;
     transform: skew(-10deg);
     @include x-rem(margin,0 3px);
@@ -2378,7 +2378,7 @@ input:focus:-moz-placeholder {
       span{
         color: $white;
         width: 100%;
-        @include x-rem(line-height,28px);
+        @include x-rem(line-height,32px);
         display: inline-block;
         @include x-rem(font-size,14px);
         text-align:center;
@@ -2503,6 +2503,7 @@ input:focus:-moz-placeholder {
   color: #9d9c9c;
   font-size: 14px;
   font-weight: 300;
+  padding-left: 3px;
 }
 
 .hits_coast {
@@ -6096,6 +6097,12 @@ footer {
       right:2px;
       @include x-rem(top,35px);
     }
+    .selects{
+      border-color: $red;
+    }
+  }
+  .select-list{
+    padding:0 4px;
   }
   .input-label{
     display: inline-block;
