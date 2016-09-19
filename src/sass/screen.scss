@@ -64,6 +64,8 @@ body {
   bottom: 0;
   right: 0;
   height:100vh; */
+  -webkit-font-smoothing: antialiased;
+  background: #f1f1f1;
   -ms-scrollbar-3dlight-color:transparent;
   scrollbar-base-color: white;
   scrollbar-face-color:grey;
@@ -89,17 +91,18 @@ a, img {
   -webkit-overflow-scrolling: touch;
 } */
 #wrap {
-  max-width: 1280px;
+  max-width: 1360px;
   margin:0 auto;
-  @include r(1280){
-    padding: 0 8px;
+  background:#fff;
+  @include x-rem(padding,0 40px);
+  @include r(1200){
+    @include x-rem(padding,0 20px);
   }
   @include r(1040){
-    padding: 0 10px;
     overflow-x: hidden;
   }
   @include r(480){
-    padding: 0 5px;
+    padding: 0 10px;
   }
   .header{
     @include r(770){
@@ -203,7 +206,7 @@ body {
 }
 
 .top-line-region {
-  padding-right: 144px;
+  padding-right: 130px;
   @include r(1150){
     padding-right: 40px;
   }
@@ -211,6 +214,7 @@ body {
     position: relative;
     padding-right: 24px;
     color:$letters;
+    @include x-rem(letter-spacing,1px);
     &:after {
       content: "";
       width: 14px;
@@ -225,15 +229,16 @@ body {
   }
 }
 .top-line-nav{
-  @include r(840){
+  @include r(850){
     display: none;
   }
 }
 .top-line-nav nav > ul > li {
   display: inline-block;
-  padding-right: 27px;
+  padding-right: 18px;
   vertical-align: top;
   position: relative;
+  @include x-rem(letter-spacing,1px);
   //hide 3rd block that appended in dropdonw
   &:nth-child(3){
     @include r(1054){
@@ -252,12 +257,13 @@ body {
       }
   }
   &.dropdown-btn{
+    cursor: pointer;
     .icon{
       width:20px;
       height:30px;
       display: inline-block;
-     position: absolute;
-      right: 0;
+      position: absolute;
+      right: -10px;
       top:0;
       z-index: 1;
     }
@@ -298,9 +304,9 @@ body {
 }
 
 .drop-menu-wrapper{
-  padding-top: 22px;
+  padding-top: 23px;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   width: 150px;
   top: 0;
   display: none;
@@ -466,8 +472,9 @@ body {
 .line-wrap-logo {
   display: table-cell;
   vertical-align: top;
+  @include x-rem(width,325px);
   @include r(1050){
-    @include x-rem(width,305px)
+    @include x-rem(width,305px);
   }
   @include r(920){
     width:auto;
@@ -533,9 +540,9 @@ input:focus:-moz-placeholder {
 
 .line-search-form {
   display: table-cell;
-  vertical-align: top;
+  vertical-align: middle;
   position: relative;
-  width:37%;
+  width:35%;
   @include r(900){
     width:38%;
   }
@@ -557,7 +564,7 @@ input:focus:-moz-placeholder {
   }
   .select-container{
     position: absolute;
-    top:10px;
+    top:14px;
     right:24%;
     display: none;
     z-index: 10;
@@ -702,7 +709,7 @@ input:focus:-moz-placeholder {
       border: none;
       outline: none;
       display: inline-block;
-      line-height: 38px;
+      line-height: 35px;
       background: $white;
     }
     &[type='search'] {
@@ -746,7 +753,7 @@ input:focus:-moz-placeholder {
   right: 0;
   left: 0;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
 }
 
 .search_list {
@@ -773,10 +780,12 @@ input:focus:-moz-placeholder {
 
 .line-tools {
   display: table-cell;
-  padding:0 1% 0 1%;
-  vertical-align: top;
+  padding:0 2% 0 2%;
+  vertical-align: middle;
+  @include r(1270){
+    padding:0 1% 0 1%;
+  }
   @include r(768){
-    vertical-align: middle;
     padding:0;
     @include x-rem(width,150px);
   }
@@ -787,9 +796,12 @@ input:focus:-moz-placeholder {
   .bread-item{
     float: right;
     display: inline-block;
-    @include x-rem(margin-top,10px);
+    @include x-rem(margin,10px 20px 0 0 );
     @include x-rem(max-width,152px);
     cursor:pointer;
+    @include r(1270){
+      @include x-rem(margin,10px 0 0 0 );
+    }
     &:hover{
       .acc-text{
         color:$red;
@@ -904,8 +916,11 @@ input:focus:-moz-placeholder {
   vertical-align: top;
   width: 16px;
   height: 16px;
-  margin: 14px;
+  margin: 14px 18px;
   cursor: pointer;
+  @include r(1280){
+    margin: 14px;
+  }
   @include r(482){
     display:none;
   }
@@ -1018,7 +1033,7 @@ input:focus:-moz-placeholder {
 
 .line-cart {
   display: table-cell;
-  vertical-align: top;
+  vertical-align: middle;
   position: relative;
   @include x-rem(width,145px);
   cursor: pointer;
@@ -1040,7 +1055,7 @@ input:focus:-moz-placeholder {
     font-weight: bold;
     background: $red;
     position: relative;
-    padding: 10px 12px 10px 47px;
+    padding: 8px 12px 8px 49px;
     float:right;
     border-radius: 3px;
     -moz-border-radius: 3px;
@@ -1072,13 +1087,10 @@ input:focus:-moz-placeholder {
   }
 
 }
-
-
-
 .line-cart {
   .cart {
     svg{
-      @include x-rem(left,13px);
+      @include x-rem(left,12px);
       margin-top: 0;
       @include r(1055){
       display: none;
@@ -1112,9 +1124,11 @@ input:focus:-moz-placeholder {
   a span {
     color: $red;
     background: #fff;
-    padding: 2px 6px;
+    padding: 2px 5px;
     font-size: 12px;
-    margin-left: 7px;
+    line-height:1;
+    margin-left: 5px;
+    margin-top: -5px;
     border-radius: 3px;
   }
 
@@ -1152,7 +1166,11 @@ input:focus:-moz-placeholder {
 .cart_list_block {
   padding-bottom: 15px;
   position: relative;
-
+  &:hover{
+    .cart_list_name{
+      color:$red;
+    }
+  }
   &:after {
     content: "";
     background: url("../img/main/del_product.svg");
@@ -1179,6 +1197,7 @@ input:focus:-moz-placeholder {
   box-sizing: border-box;
   p {
     line-height: 1.4;
+    color:$letters;
   }
 }
 
@@ -1186,13 +1205,17 @@ input:focus:-moz-placeholder {
   font-size: 16px;
   color: #000;
   padding: 0 0 3px 0;
+  transition:color .3s;
 }
 
 .cart_list_coast {
   padding-top: 5px;
-
   p {
     font-size: 14px;
+    color:$letters;
+    span{
+      color:$letters2;
+    }
   }
 }
 
@@ -1223,7 +1246,6 @@ input:focus:-moz-placeholder {
 
 .cart_buttons {
   padding: 28px 10px 0 10px;
-
   a {
     text-decoration: none;
     border-radius: 3px;
@@ -1244,6 +1266,10 @@ input:focus:-moz-placeholder {
 .cart_content {
   color: #fff;
   background: $red;
+  transition:background .3s;
+  &:hover{
+    background: #f11b1b;
+  }
 }
 
 /* nav */
@@ -1377,15 +1403,15 @@ input:focus:-moz-placeholder {
         width: 100%;
         height: 100%;
         color: #000000;
-         @include x-rem(font-size, 16px)
-        font-weight: 600;
+        @include x-rem(font-size, 16px)
         transition: all.3s;
-        font-family:$ProximaRegular;
+        font-family:$ProximaSemibold;
         text-decoration: none;
         text-align: center;
-        padding: 11px 0;
+        padding: 15px 0;
         display: inline-block;
         width:100%;
+        line-height:1;
         letter-spacing: 1px;
         .menu-arrow{
           display: none;
@@ -1520,9 +1546,8 @@ input:focus:-moz-placeholder {
   .menu-item-dropable{
     list-style: none;
     a{
-      font-family: $ProximaLight;
+      font-family: $ProximaRegular;
       font-weight: 300;
-      color:$grey;
       @include r(768){
         color:$letters;
       }
@@ -1542,6 +1567,7 @@ input:focus:-moz-placeholder {
       font-weight: bold;
       font-family: $ProximaSemibold;
       text-align: left;
+      font-weight: 300;
       padding-left: 17px;
       line-height: 34px;
       color: #000;
@@ -1591,7 +1617,7 @@ input:focus:-moz-placeholder {
       width: 100%;
       height: 100%;
       display: inline-block;
-      
+      color:$letters;
       span {
         color: #fb0101;
       }
@@ -1630,7 +1656,8 @@ input:focus:-moz-placeholder {
       }
     }
   img {
-    max-width: 100px;
+    width: 100px;
+    opacity: .7;
     @include r(930){
       max-width:75px; 
     }
@@ -1740,11 +1767,18 @@ input:focus:-moz-placeholder {
       height:250px;
     }
   }
+  &:hover{
+    .galery__nav{
+      opacity: 1;
+    }
+  }
   .galery__nav{
     position: absolute;
     top:45%;
     @include x-rem(height, 40px)
     width:100%;
+    opacity: 0;
+    transition: opacity .3s;
     .slick-arrow{
       display: inline-block;
       @include x-rem(width, 40px);
@@ -1757,14 +1791,6 @@ input:focus:-moz-placeholder {
       z-index: 2;
       @include r(480){
         @include x-rem(width, 20px);
-      }
-      &:hover{
-        .icon{
-          .st0{
-          fill:$yellow;
-          transition: fill .3s;
-        }
-        }
       }
       .icon{
         width:100%;
@@ -1793,7 +1819,6 @@ input:focus:-moz-placeholder {
     .carousel-prev{
       float:left;
       svg{
-
           transform: rotate(-270deg);
           transform-origin: 50% 100%;
         }
@@ -1821,7 +1846,7 @@ input:focus:-moz-placeholder {
     color:$letters;
     padding-left: 50px;
     font-size: 28px;
-    line-height: 1.3;
+    line-height: 1.2;
     font-weight: normal;
     margin-top: 40px;
     @include x-rem(width,400px);
@@ -1948,9 +1973,11 @@ input:focus:-moz-placeholder {
     width:50%;
     float: left;
     padding: 0 6px 0 0; 
+    left:0;
    }
    @include r(480){
       height:350px;
+      padding: 0;
     }
    @include r(370){
       width:100%;
@@ -1981,12 +2008,12 @@ input:focus:-moz-placeholder {
     position: relative;
     min-height: 1px;
     overflow: hidden;
-    padding:0 6px;
+    padding:0 0 0 6px;
   @include r(980){
     width:50%;
     float: left;
     height: 50%;
-    padding:0 0 0 6px;
+   
   }
   @include r(480){
       height:175px;
@@ -2189,7 +2216,7 @@ input:focus:-moz-placeholder {
 /* section @discount@ */
 
 .discount {
-  padding-top: 30px;
+  padding-top: 28px;
   font-size: 0;
   &.discount_inner:last-child{
     .discount-slider{
@@ -2198,6 +2225,7 @@ input:focus:-moz-placeholder {
   }
   h2 {
     font-size: 28px;
+    font-weight: 300;
   }
   &.brand{
     @include r(768){
@@ -2206,6 +2234,9 @@ input:focus:-moz-placeholder {
   }
   .news-slider{
     @include x-rem(padding, 10px 0 40px);
+    .slick-arrow{
+      top:-30px;
+    }
   }
 }
 
@@ -2335,7 +2366,7 @@ input:focus:-moz-placeholder {
   .status_item{
     display: inline-block;
     @include x-rem(min-width, 50px);
-    @include x-rem(height, 30px);
+    @include x-rem(height, 32px);
     border:2px solid $white;
     transform: skew(-10deg);
     @include x-rem(margin,0 3px);
@@ -2460,7 +2491,7 @@ input:focus:-moz-placeholder {
 }
 
 .hits_coast_new {
-  color: $red;
+  color: $red !important;
   font-size: 17px;
   line-height: 1.3;
   font-weight: bold;
@@ -2785,6 +2816,7 @@ input:focus:-moz-placeholder {
     color: #000;
     font-size: 17px;
     padding-bottom: 9px;
+    font-weight: 300;
     /* Proxima Nova Semibold */
     font-family: $ProximaSemibold;
   }
@@ -2828,7 +2860,6 @@ input:focus:-moz-placeholder {
 .themed_coast {
   color: #000;
   font-size: 14px;
-  font-weight: bold;
   padding-top: 10px;
   font-family: $ProximaSemibold;
 }
@@ -3478,21 +3509,12 @@ footer {
   .wrap-logo,.main-nav, .top-line {
     display: none;
   }
-  /* .main-nav{
-    transform: translate3d(0,-105%,0);
-    transition: all .3s;
-    background: #fff !important;
-    border-color: transparent !important;
-    &.active{
-      transform: translate3d(0,0,0);
-      background: $yellow !important;
-      border-color: $menuBorder !important;
-    }
-  } */
-
   .wrap-catalog-btn {
     display: inline-block;
     width: 100%;
+  }
+  .line-wrap-logo{
+    width:auto;
   }
 }
 
@@ -4413,6 +4435,7 @@ footer {
   @include x-rem(letter-spacing,1px);
   border:none;
   @include x-rem(font-size,14px);
+  transition: background .3s;
   @include r(1040){
     @include x-rem(margin-top,15px);
     @include x-rem(padding,4px 10px);
@@ -4420,6 +4443,9 @@ footer {
    @include r(570){
     float: right;
     margin:0;
+  }
+  &:hover{
+    background: #f11b1b;
   }
 }
   .item-grid-wrap{
@@ -4908,12 +4934,20 @@ footer {
  .product-much-slider,.product-modal-slider{
     cursor: pointer;
     @include x-rem(padding-bottom,65px);
+    @include r(570){
+      padding:35px 0 0 0;
+      margin:0 !important;
+    }
     .product-slider-item{
       img{
         display: block;
         margin:0 auto;
         max-width:100%;
       }
+    }
+    .slick-dots{
+      margin:20px auto 0;
+      position: static ;
     }
   }
   .product-add-slider,.product-madd-slider{
@@ -4929,11 +4963,8 @@ footer {
       @include r(668){
         @include x-rem(width,370px);
       }
-      @include r(520){
-        @include x-rem(width,270px);
-      }
-      @include r(430){
-        @include x-rem(width,200px);
+      @include r(570){
+        display: none;
       }
       &.active{
         opacity: 1;
@@ -4985,6 +5016,9 @@ footer {
     visibility: visible;
     transition: all .3s;
     }
+    @include r(570){
+      display: none;
+    }
     .slick-arrow{
       @include x-rem(width,65px);
       height:100%;
@@ -5030,9 +5064,12 @@ footer {
   position: relative;
   @include x-rem(padding,22px 30px);
   border-left: 1px solid $border;
+  @include r(1040){
+    border-top: 1px solid $border;
+  }
   @include r(480){
     @include x-rem(padding,12px 10px);
-    border-top: 1px solid $border;
+    
   }
   .hits_stat{
     display: inline-block;
@@ -5117,6 +5154,7 @@ footer {
   }
   .product-small-title{
     font-family: $ProximaSemibold;
+    font-weight: 300;
     @include x-rem(margin-bottom,10px)
   }
   .hits_coast{
@@ -5339,14 +5377,16 @@ footer {
 }
 .descr-r{
   .number{
-    @include r(1250){
+    @include r(1260){
     float: none;
     @include clearfix;
     display: table;
     width:100%;
+    margin-bottom: 15px;
     }
     @include r(1040){
       width:48%;
+      margin-bottom: 0;
       margin-right:2%;
       display: inline-block;
       float: left;
@@ -5420,7 +5460,7 @@ footer {
     transition: fill .3s;
     }
   }
-  @include r(1250){
+  @include r(1260){
     float:none;
     @include x-rem(padding, 7.5px 45px 7.5px 45px);
     text-align: center;
@@ -5621,7 +5661,7 @@ footer {
          padding:10px 20px !important;
           width:auto !important;
           margin: 0 !important;
-          border-bottom: 2px solid transparent;
+          border-bottom: 2px solid $border !important;
         }
       }
       
@@ -5671,7 +5711,7 @@ footer {
         border-right: 1px solid $border;
       }
       &:hover, &.active{
-        border-bottom:2px solid $red; 
+        border-bottom:2px solid $red !important; 
       }
       @include r(572){
       @include x-rem(padding-bottom,10px );
@@ -5714,6 +5754,14 @@ footer {
         }
       }
     }
+    &:nth-child(6){
+      .char-wrapper{
+        border-bottom: 0;
+      }
+      .char-options{
+        @include x-rem(padding-top,20px);
+      }
+    }
    }
    .product-main-characteristic{
     @include clearfix;
@@ -5725,7 +5773,7 @@ footer {
    .char-wrapper{
      border-bottom:1px solid $border;
      @include clearfix;
-      @include x-rem(min-height,250px);
+      @include x-rem(min-height,300px);
    }
    .feedback-container:not(:last-child){
     border-bottom:1px solid $border;
@@ -6045,7 +6093,7 @@ footer {
       @include x-rem(width,18px);
       @include x-rem(height,18px);
       position: absolute;
-      right:0;
+      right:2px;
       @include x-rem(top,35px);
     }
   }
@@ -6154,7 +6202,6 @@ footer {
     @include x-rem(height,350px ); 
     @include r(768){
       @include x-rem(margin-top,10px ); 
-      @include x-rem(height,150px ); 
      } 
   }
   .video-main-cont{
@@ -6875,13 +6922,16 @@ footer {
     padding-top: 0;
     .item{
       &:first-child{
-        padding-left: 10%;
+        padding-left: 8%;
       }
       &:nth-child(2){
-        padding-left: 20%;
+        padding-left: 22%;
       }
       &:nth-child(3){
-        padding-left: 15%;
+        padding-left: 17%;
+        @include r(1150){
+          padding-left: 10%;
+        }
       }
     }
   }

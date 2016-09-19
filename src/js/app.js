@@ -14,11 +14,42 @@ $(window).on('load',function(){
 	 		}
 	 	})
 	}
+	
 	if($('.compare_fakehead-inner').length){
 		$(".headhesive").addClass('is-hidden');
 	}
 });
 $(document).ready(function () {
+setTimeout(function(){
+function grayscale(src) {
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        var imgObj = new Image();
+        imgObj.src = src;
+        canvas.width = imgObj.width;
+        canvas.height = imgObj.height;
+        ctx.drawImage(imgObj, 0, 0);
+        var imgPixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        for (var y = 0; y < imgPixels.height; y++) {
+            for (var x = 0; x < imgPixels.width; x++) {
+                var i = (y * 4) * imgPixels.width + x * 4;
+                var avg = (imgPixels.data[i] + imgPixels.data[i + 1] + imgPixels.data[i + 2]) / 3;
+                imgPixels.data[i] = avg;
+                imgPixels.data[i + 1] = avg;
+                imgPixels.data[i + 2] = avg;
+            }
+        }
+        ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
+        return canvas.toDataURL();
+    }
+    ;$(".featur-brands img").fadeIn(500);
+    // clone image
+    $('.featur-brands img').each(function() {
+        var el = $(this);
+        this.src = grayscale(this.src);
+    });	
+},10);
+
 
 if($('.compare_inner').length){
 	var Comparescroll = function(){
@@ -272,15 +303,16 @@ mobileSub();
 		var head = $('.header'),
 			mask = $('.mask-js'),
 			item = $('nav ul li.dropdown'),
-			target = $('nav').find('.main-nav-dropmenu');
+			target = item.find('.main-nav-dropmenu');
 
 			item.mouseover(function(){
 				if(head.hasClass('headhesive--stick')){
-					mask.fadeIn();
+
+					mask.stop(true,true).fadeIn();
 				}
 			});
-			item.mouseleave(function(){
-					mask.fadeOut();
+			target.mouseleave(function(){
+					mask.stop(true,true).fadeOut();
 			});
 
 	})();
@@ -573,7 +605,6 @@ mobileSub();
 		arrows: true,
 		slidesToShow: 7,
 		draggable: false,
-		variableWidth: true,
 		touchMove: false,
 		responsive: [
     {
@@ -621,6 +652,7 @@ mobileSub();
 		arrows: true,
 		slidesToShow: 5,
 		draggable: false,
+		touchMove: false,
 		responsive: [
     {
       breakpoint: 1260,
@@ -1177,6 +1209,14 @@ if($('.sort_wrapper').length){
 			appendArrows: $('.features__nav'),
 	  		nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st0" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
 	  		prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st0" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
+	  		responsive: [
+		    {
+		      breakpoint: 570,
+		      settings: {
+		        dots: true,
+		      }
+		    }
+			]
 		});
 		$('.product-add-slider').slick({
 			asNavFor: $('.product-much-slider'),
