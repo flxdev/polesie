@@ -4,7 +4,7 @@ $(window).on('load',function(){
 		$('.input_label').each(function(){
 			filterItems($(this));
 		})
-		priceFilter($('.price'));
+
 		var target = $('.selection__checkout > .select-u-body');
 
 		$('.select-all-inner .input_label').each(function(){
@@ -1009,7 +1009,7 @@ var mobileAside = function(){
 
 mobileAside();
 
-if($('.selection_item').length){
+if($('.price-min').length){
 
 	var searchBlk = $('.selection_item-title');
 	
@@ -1029,11 +1029,12 @@ var priceFilter = function(val){
 	else {
 		parent.removeClass('checked');
 	}
-}
 
+}
 $('.price-wrapper .price').on('input change',function(){
-	
-	$(this)[0].onkeypress = function(e) {
+	priceFilter($(this));
+});
+$('.price-min')[0].onkeypress = function(e) {
 		e = e || event;
 		if (e.ctrlKey || e.altKey || e.metaKey) return;
 		var chr = getChar(e);
@@ -1042,9 +1043,19 @@ $('.price-wrapper .price').on('input change',function(){
 			return false;
 		}
 	}
-	priceFilter($(this));
-});
+	$('.price-max')[0].onkeypress = function(e) {
+		e = e || event;
+		if (e.ctrlKey || e.altKey || e.metaKey) return;
+		var chr = getChar(e);
+		if (chr == null) return;
+		if (chr < '0' || chr > '9') {
+			return false;
+		}
+	}
+}
+
 if(('.selection_wrapper').length){
+
 	var clearItems = function(block){
 		var selBody = block.parents('.selection_wrapper'),
 			selInput = selBody.find('input:checked'),
@@ -1067,9 +1078,7 @@ if(('.selection_wrapper').length){
 	    	event.preventDefault();
 	    	clearItems($(this));
 	    });
-
 	}
-}
 
 if($('.select-all-inner').length){
 	function fakeSelect() {
@@ -1547,6 +1556,15 @@ if (form_main.length) {
             borderColorOnError : true,
             scrollToTopOnError : false,
             onSuccess: function($form){
+
+                 if(form_this.find('.select-check').length){
+					if(!form_this.find('.select-check').parents('.input-wrapper').hasClass('has-success')){
+						form_this.find('.select-check').parents('.input-wrapper').addClass('has-error');
+							return false;
+					}
+				}
+            },
+             onError: function($form){
 
                  if(form_this.find('.select-check').length){
 					if(!form_this.find('.select-check').parents('.input-wrapper').hasClass('has-success')){

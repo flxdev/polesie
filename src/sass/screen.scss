@@ -3063,6 +3063,7 @@ footer {
   @include x-rem(font-size,14px);
   &.has-error{
     border-color: $red;
+    box-shadow:none;
     input[type=submit]{
       border-color: $red;
     }
@@ -3096,7 +3097,7 @@ footer {
       }
     &[type="submit"] {
       cursor: pointer;
-      padding: 0 17px;
+      padding: 0 19px;
       font: initial;
       font-family: $ProximaRegular;
       border-left: 2px solid $yellow;
@@ -3891,7 +3892,7 @@ footer {
   vertical-align: top;
   @include x-rem(padding, 0 8px 0 0);
   @include x-rem(margin-bottom,15px);
-  float: left;
+ 
   &:hover{
     .discount_name{
       background: $yellowHov;
@@ -6374,9 +6375,9 @@ footer {
 }
 
 .compare-item{
-  @include x-rem(width,209px);
-  @include x-rem(min-width,209px);
-  @include x-rem(max-width,209px);
+  @include x-rem(width,212px);
+  @include x-rem(min-width,212px);
+  @include x-rem(max-width,212px);
   text-align: left;
   vertical-align: top;
   position: relative;
@@ -7450,7 +7451,7 @@ footer {
   @include r(1040){
     padding-right: 0;
   } 
-  &:nth-last-child(2){
+  &:nth-last-child(1){
     border-bottom:none;
   }
   &:first-child{
@@ -7478,7 +7479,7 @@ footer {
   width:100%;
   float:left;
   @include x-rem(padding-top,30px);
-  border-top:1px solid $border;
+  // border-top:1px solid $border;
   .hits-stat-more{
     transform: translateX(-10%);
   }

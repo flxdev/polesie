@@ -238,11 +238,11 @@ html(lang='ru')
                           .input-wrapper
                               label.input-label 
                                 span.text Пароль
-                              input.input-main.input-from(type='text',name="pass",data-validation=" required",data-validation-error-msg="Это обязательное поле")
+                              input.input-main.input-from(type='password',name="pass",data-validation=" required",data-validation-error-msg="Это обязательное поле")
                           .input-wrapper
                               label.input-label 
                                 span.text Повторите пароль
-                              input.input-main.input-from(name="repeat" data-validation="confirmation" data-validation-confirm="pass")
+                              input.input-main.input-from(type='password',name="repeat" data-validation="confirmation" data-validation-confirm="pass")
                       .form-block
                         .form-block-title
                           | Введите проверочный код
