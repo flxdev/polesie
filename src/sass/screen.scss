@@ -6,6 +6,7 @@
   &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
     color: $grey;
     opacity: 1;
+    line-height:1.2 !important;
   }
   &:focus{
     outline:0;
@@ -180,7 +181,7 @@ body {
 /* top-line */
 
 .top-line {
-  padding-top: 12px;
+  padding-top: 11px;
   padding-bottom: 26px;
   @include r(768){
     display:none;
@@ -564,12 +565,13 @@ input:focus:-moz-placeholder {
   }
   .select-container{
     position: absolute;
-    top:14px;
+    transform: translateY(-121%);
     right:24%;
     display: none;
     z-index: 10;
+    line-height:1;
     background-color: $white;
-    @include x-rem(padding, 0 6px)
+    @include x-rem(padding,6px)
     cursor:pointer;
     .search_drop{
       display: inline-block;
@@ -709,17 +711,17 @@ input:focus:-moz-placeholder {
       border: none;
       outline: none;
       display: inline-block;
-      line-height: 35px;
       background: $white;
+      @include x-rem(height,36px);
     }
     &[type='search'] {
-      padding: 10px 13px;
+      padding: 0 13px;
       line-height:1;
       border-right: 1px solid #eaeaea;
-      display: block;
+      display: inline-block;
       overflow: hidden;
       width: 80%;
-    
+      vertical-align: middle;
       &:focus{
         color:transparent;
       }
@@ -732,7 +734,6 @@ input:focus:-moz-placeholder {
       width:20%;
       cursor: pointer;
       float: right;
-    
       &:hover{
         background-color: $yellowHov;
       }
@@ -2597,10 +2598,14 @@ input:focus:-moz-placeholder {
     font-size: 14px;
     text-decoration: none;
     line-height: 28px;
+    transition: background .3s;
     padding: 0 17px;
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
+    &:hover{
+      background: #f11b1b;
+    }
   }
 }
 
@@ -3008,7 +3013,7 @@ footer {
 }
 
 .footer_info, .footer_help {
-  width: 30%;
+  width: 32%;
   min-width:150px;
   padding-right:10px;
   @include r(1280){
@@ -4700,6 +4705,11 @@ footer {
       .hits-text{
            color:$red;
         }
+      }
+    }
+     &.added{
+        a{
+        background-image:url(../img/main/full_compariso.svg); 
       }
     }
   }
