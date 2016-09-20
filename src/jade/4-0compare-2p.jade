@@ -77,18 +77,19 @@ html(lang='ru')
               a.selection_find-clear(href='#') Очистить сравнение
             .compare-main-wrap
               .compare_fakehead
-                .compare_fakehead-inner
-                  //здесь тоже самое, что и с таблицей row-fixed & .row-2/3/4
-                  table.compare_inner.row-fixed
-                    tbody.compare-body
-                      tr.compare-row.row-2
-                        td.compare-item
-                          span.compare-item-name Модель
-                        td.compare-item.item-clone
-                        td.compare-item
-                          span.compare-value Велосипед Cronus Extreme
-                        td.compare-item
-                          span.compare-value Stels Navigator 530 MD (2016) 
+                .compare_fakehead-outer
+                  .compare_fakehead-inner
+                    //здесь тоже самое, что и с таблицей row-fixed & .row-2/3/4
+                    table.compare_inner.row-fixed
+                      tbody.compare-body
+                        tr.compare-row.row-2
+                          td.compare-item
+                            span.compare-item-name Модель
+                          td.compare-item.item-clone
+                          td.compare-item
+                            a(href="#").compare-value Велосипед Cronus Extreme
+                          td.compare-item
+                            a(href="#").compare-value Stels Navigator 530 MD (2016) 
               .compare-wrapper
                 .compare-scroll-outer
                   .compare-scroll-cont

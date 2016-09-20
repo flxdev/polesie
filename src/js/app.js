@@ -437,6 +437,7 @@ mobileSub();
 		accessibility: true,
 		arrows: true,
 		slidesToShow: 7,
+		slidesToScroll: 7,
 		draggable: false,
 		touchMove: false,
 		responsive: [
@@ -444,14 +445,14 @@ mobileSub();
       breakpoint: 1260,
       settings: {
         slidesToShow: 6,
-        slidesToScroll: 1,
+        slidesToScroll: 7,
       }
     },
     {
       breakpoint: 980,
       settings: {
         slidesToShow: 5,
-        slidesToScroll: 1
+        slidesToScroll: 5
       }
     },
     {
@@ -475,6 +476,7 @@ mobileSub();
 		accessibility: true,
 		arrows: true,
 		slidesToShow: 3,
+		slidesToScroll: 3,
 		draggable: false,
 		touchMove: false,
 		responsive: [
@@ -502,6 +504,7 @@ mobileSub();
 		accessibility: true,
 		arrows: true,
 		slidesToShow: 5,
+		slidesToSscroll: 5,
 		draggable: false,
 		touchMove: false,
 		responsive: [
@@ -509,7 +512,7 @@ mobileSub();
       breakpoint: 1040,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 1
+        slidesToScroll: 4
       }
     },
     {
@@ -542,6 +545,7 @@ mobileSub();
 		accessibility: true,
 		arrows: true,
 		slidesToShow: 4,
+		slidesToScroll: 4,
 		draggable: false,
 		touchMove: false,
 		responsive: [
@@ -549,14 +553,14 @@ mobileSub();
       breakpoint: 1200,
       settings: {
       slidesToShow: 3,
-      slidesToScroll: 1
+      slidesToScroll: 3
       }
     },
     {
       breakpoint: 1020,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 1
+        slidesToScroll: 2
       }
     },
     {
@@ -583,6 +587,7 @@ mobileSub();
 		accessibility: true,
 		arrows: true,
 		slidesToShow: 7,
+		slidesToScroll: 7,
 		draggable: false,
 		touchMove: false,
 		responsive: [
@@ -590,14 +595,14 @@ mobileSub();
       breakpoint: 1260,
       settings: {
         slidesToShow: 6,
-        slidesToScroll: 1,
+        slidesToScroll: 6,
       }
     },
     {
       breakpoint: 980,
       settings: {
         slidesToShow: 5,
-        slidesToScroll: 1
+        slidesToScroll: 5
       }
     },
     {
@@ -630,6 +635,7 @@ mobileSub();
 		accessibility: true,
 		arrows: true,
 		slidesToShow: 5,
+		slidesToScroll: 5,
 		draggable: false,
 		touchMove: false,
 		responsive: [
@@ -637,14 +643,14 @@ mobileSub();
       breakpoint: 1260,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToScroll: 4,
       }
     },
     {
       breakpoint: 980,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 1
+        slidesToScroll: 4
       }
     },
     {
@@ -755,7 +761,6 @@ if($('#brand').length){
 			parent.addClass('active');
 			cart.addClass('active');
 			list.addClass('active');
-			console.log(55)
 		});
 		},timeout);
 		
@@ -768,7 +773,7 @@ if($('#brand').length){
 		$(document).mouseup(function (e) {
 		var container = $(".cart_list-wrapper");
 		if (container.has(e.target).length === 0){
-			container.hide();
+			container.removeClass('active');
 		}
 	});
 	})();
@@ -778,25 +783,35 @@ if($('#brand').length){
 
 		var more = $('.dropdown-btn > a');
 		var items = more.parent().find('.tab');
+		var timeout = 500;
 
 		more.on('click', function(event){
 			event.preventDefault();
 		});
 
+		setTimeout(function(){
+
 		more.on('mouseenter', function(event){
 			
 			var list = $(this).parent().find('.drop-menu-wrapper');
-			
-
 			$(this).addClass('active');
-			list.fadeIn('fast');
+			list.addClass('active');
+				list.on('mouseleave', function(){
+					more.removeClass('active');
+					list.removeClass('active');
+				});
 
-		list.on('mouseleave', function(){
-			more.removeClass('active');
-			list.fadeOut('fast');
+			});
+		
+		},timeout);
+		more.parent().on('mouseleave', function(event){
+			timeout = timeout;
+			$(this).find(more).removeClass('active').parent().find('.drop-menu-wrapper').removeClass('active');
+			
 		});
-
-	});
+		
+		
+		
 
 	items.click(function(){
 		$(this).parents(more).removeClass('active').find('.drop-menu-wrapper').delay(500).fadeOut('fast');		
@@ -1294,9 +1309,10 @@ if($('.sort_wrapper').length){
 					clr = _.parent().find('.js-clear'),
 					text = _.data('placeholder');
 					
-				btn.removeClass('active');
+					// btn.removeClass('active');
+					item.toggleClass('active').parent().siblings().find(btn).removeClass('active');
 
-				item.addClass('active');
+				
 
 				inp.each(function(){
 
