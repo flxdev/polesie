@@ -6986,10 +6986,10 @@ footer {
   &.tab-cart{
     .item{
       &:first-child{
-        padding-left: 8.5%;
+        padding-left: 11%;
       }
       &:nth-child(2){
-        padding-left: 20%;
+        padding-left: 25%;
         @include r(1200){
           padding-left: 15%;
         }
@@ -6998,7 +6998,7 @@ footer {
         padding-left: 5.6%;
       }
       &:nth-child(4){
-        padding-left: 16%;
+        padding-left: 13.5%;
       }
     }
   }
@@ -7092,7 +7092,7 @@ footer {
    }
    @include clearfix;
   .elem-img{
-    width:8%;
+    width:10%;
     float: left;
     img{
       display: block;
@@ -7112,7 +7112,7 @@ footer {
     }
   }
   .elem-name{
-    width:32%;
+    width:37%;
     vertical-align: top;
     display: inline-block;
     @include x-rem(padding, 0 5px 0 15px);
@@ -7127,17 +7127,18 @@ footer {
       }
   }
   .elem-price{
-    width:58%;
+    width:50%;
     vertical-align: top;
     @include clearfix;
     display: inline-block;
     padding-left: 1%;
     @include r(1040){
-        width:60%;
+        width:53%;
+        padding: 0;
       }
     @include r(910){
-        display: table-cell !important;;
-        width:50%;
+        display: table-cell !important;
+        width:48%;
         float:right!important;
          @include x-rem(padding-right,20px);
       }
@@ -7148,10 +7149,10 @@ footer {
       }
     .number{
       vertical-align: top;
-        margin: 0 10%;
-        @include r(1200){
+        margin: 1px 10%;
+        @include r(1220){
           width:auto;
-          margin: 0 5%;
+          margin: 0 6%;
           .number__input, .number__minus, .number__plus{
             @include r(1200){
             display: block;
@@ -7169,9 +7170,10 @@ footer {
       }
   }
   .elem-add{
+    width:9%;
     @include r(1040){
         display: table-cell;
-        width:10%;
+        width:6%;
         vertical-align: top;
          @include x-rem(min-width,18px);
          @include x-rem(margin-right,20px);
@@ -7212,6 +7214,10 @@ footer {
       padding-left: 5%;
     }
     .hits_coast{
+      @include x-rem(font-size,14px);
+      &_new{
+       @include x-rem(font-size,14px);
+      }
         p{
           text-align: right;
           span{
@@ -7224,7 +7230,7 @@ footer {
 
 }
 .elem-add{
-    @include x-rem(padding-left,20px);
+    // @include x-rem(padding-left,20px);
     font-size: 0;
     display: table-cell;
     vertical-align: top;
@@ -7238,7 +7244,7 @@ footer {
         display: inline-block;
         width:100%;
         height:100%;
-        @include x-rem(background-size,22px 22px);
+        background-size:17px 17px;
         background-position: center center;
         background-repeat: no-repeat;
       }
@@ -7280,6 +7286,7 @@ footer {
   display: inline-block;
   float: right;
   width:45%;
+  @include x-rem(margin-bottom,20px);
   @include r(768){
    width: 55%;
   }
