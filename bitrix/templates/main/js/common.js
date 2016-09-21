@@ -1469,16 +1469,19 @@ if($('.sort_wrapper').length){
 
 					if(!_.is(':checked')){
 						_.off('change.offer').on('change.offer', function(){
-							var value = _.parent().find('span').last().text();
+							var value = _.parent().find('span').text();
 							var targetToText = _.parents().find(item);
 							inp.removeClass('error');
 							item.removeClass('has-error');
 
-							targetToText.find('span').last().text(value);
-							
+							targetToText.find('.btn-text').last().text(value);
+							clr.addClass('off');
 							setTimeout(function(){
 								targetToText.removeClass('active').addClass('is-checked').parents('.input-wrapper').removeClass('has-error').addClass('has-success');
 							}, 300)
+							setTimeout(function(){
+								clr.removeClass('off');
+							}, 1000)
 
 						});
 					}
@@ -1488,11 +1491,16 @@ if($('.sort_wrapper').length){
 				});
 				clr.click(function(event){
 					var _ = $(this);
-					var targetToText = _.parent('.select-check').find(item);
-					event.preventDefault()
-					console.log(2)
-					inp.prop('checked',false);
-					item.removeClass('active').removeClass('is-checked').find('span').last().text(text).parents('.input-wrapper').addClass('has-error').removeClass('has-success');
+					if(!$(this).hasClass('off')){
+						var targetToText = _.parent('.select-check').find(item);
+						event.preventDefault()
+						inp.prop('checked',false);
+						item.removeClass('active').removeClass('is-checked').find('.btn-text').text(text).parents('.input-wrapper').addClass('has-error').removeClass('has-success');
+						clearSelect($(this));
+					}
+					else{
+						return false
+					}
 					
 				})
 				$(document).mouseup(function (e){ 
@@ -1505,7 +1513,17 @@ if($('.sort_wrapper').length){
 			});
 
 		});
-
+		var clearSelect = function(btn){
+			var brazzers = btn.closest('.select-check').nextAll('.select-check');
+			brazzers.each(function(){
+				var _ = $(this),
+					targetToText = _.find('.btn-text'),
+					text = _.find('button').data('placeholder'),
+					input = _.find('input');
+				_.find('button').removeClass('active').removeClass('is-checked').find(targetToText).text(text);
+				_.find(input).prop('checked',false);
+			})
+		}
 	}
 	selectProduct();
 //number plus/minus
@@ -1534,9 +1552,6 @@ function number() {
 				val -= 1;
 				input.val(val);
 			};
-			if(val === 0 && !$(this).parents('.js-price').hasClass('order__case')) {
-				return false
-			}
 			input.trigger('change');
 			return false;
 		});

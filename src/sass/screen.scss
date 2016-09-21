@@ -1516,13 +1516,17 @@ input:focus:-moz-placeholder {
   }
 }
 .main-nav-dropmenu {
-  display: none;
+  display: block;
   position: absolute;
   width: 100%;
   margin: 0 auto;
   left: 0;
   right: 0;
   z-index: 4;
+  opacity:0;
+  transform:translateY(-10%);
+  // transform: scale(.7);
+  visibility: hidden;
   border-top: 2px solid $red;
   background: #ffffff;
   border-radius: 3px;
@@ -1531,6 +1535,7 @@ input:focus:-moz-placeholder {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  will-change:transform;
   @include r(768){
     position: static;
     border-top: none;
@@ -1544,7 +1549,8 @@ input:focus:-moz-placeholder {
   > a {
     color: #fff;
     background: #f20101;
-    transition:background .3s;
+    transition: background .3s;
+
     @include r(768){
       background: $white;
       color:$red;
@@ -1552,10 +1558,13 @@ input:focus:-moz-placeholder {
   }
 
   .main-nav-dropmenu {
-    display: block;
+    opacity:1;
+    visibility: visible;
+    transform:translateY(0);
+    transition:all.2s;
+    transition-delay: .25s;
     @include r(768){
       display: none;
-      
     }
   }
 }
@@ -3752,7 +3761,7 @@ footer {
     @include x-rem(width,16px);
     height:1px;
     background: $grey;
-    left: 10%;
+    left: 10px;
     top:50%;
   }
   >a{
@@ -5272,6 +5281,7 @@ footer {
   .hits_descr{
     @include x-rem(height,85px);
     @include x-rem(margin-bottom,5px);
+    white-space: normal;
     @include r(570){
       @include x-rem(height,45px);
     }
@@ -5433,7 +5443,7 @@ footer {
   @include x-rem(top,50px);
   visibility: hidden;
   right:0;
-  transform: translateY(-5%);
+  transform: translateY(-10%);
   transition: all .3s;
   z-index: 1;
   .select-list-inner{
@@ -5595,6 +5605,10 @@ footer {
     transition: fill .3s;
     }
   }
+  &.disabled{
+    pointer-events: none;
+    background: #e00000;
+  }
   @include r(1260){
     float:none;
     @include x-rem(padding, 7.5px 45px 7.5px 45px);
@@ -5633,6 +5647,10 @@ footer {
   &:hover{
     background: $yellowHov;
     transition: background .3s;
+  }
+  &.disabled{
+    pointer-events: none;
+    background: #f5e600;
   }
 }
 .btn-width{
@@ -7327,6 +7345,9 @@ footer {
     @include x-rem(padding,7px 16px);
     cursor: pointer;
     color:$letters;
+    &:hover{
+      background: #fbf8f8;
+    }
     @include r(570){
      @include x-rem(padding,7px);
     }
