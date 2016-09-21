@@ -274,7 +274,7 @@ mobileSub();
 			target = item.find('.main-nav-dropmenu'),
 			subitem = $('.nav-main li');
 			item.mouseenter(function(){
-				$(this).find('.drop-nav-dropmenu').first().parent().addClass('active');
+				$(this).find('.drop-nav-dropmenu').first().parent().addClass('active').siblings().removeClass('active');
 				if(head.hasClass('headhesive--stick')){
 					mask.stop(true,true).fadeIn();
 				}
@@ -1336,13 +1336,13 @@ if($('.sort_wrapper').length){
 					var _ = $(this);
 
 					if(!_.is(':checked')){
-						_.off('click.offer').on('click.offer', function(){
-							var value = _.parent().find('span').text();
+						_.off('change.offer').on('change.offer', function(){
+							var value = _.parent().find('span').last().text();
 							var targetToText = _.parents().find(item);
 							inp.removeClass('error');
 							item.removeClass('has-error');
 
-							targetToText.find('span').text(value);
+							targetToText.find('span').last().text(value);
 							
 							setTimeout(function(){
 								targetToText.removeClass('active').addClass('is-checked').parents('.input-wrapper').removeClass('has-error').addClass('has-success');
@@ -1360,7 +1360,7 @@ if($('.sort_wrapper').length){
 					event.preventDefault()
 					console.log(2)
 					inp.prop('checked',false);
-					item.removeClass('active').removeClass('is-checked').find('span').text(text).parents('.input-wrapper').addClass('has-error').removeClass('has-success');
+					item.removeClass('active').removeClass('is-checked').find('span').last().text(text).parents('.input-wrapper').addClass('has-error').removeClass('has-success');
 					
 				})
 				$(document).mouseup(function (e){ 
