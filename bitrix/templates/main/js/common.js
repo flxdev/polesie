@@ -1468,7 +1468,7 @@ if($('.sort_wrapper').length){
 					var _ = $(this);
 
 					if(!_.is(':checked')){
-						_.click(function(){
+						_.off('click.offer').on('click.offer', function(){
 							var value = _.parent().find('span').text();
 							var targetToText = _.parents().find(item);
 							inp.removeClass('error');

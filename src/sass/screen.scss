@@ -918,7 +918,7 @@ input:focus:-moz-placeholder {
       width:20%;
       background: url(../img/utility/search_2.svg); 
       background-repeat: no-repeat;
-      @include x-rem(background-size,20px 20px);
+      background-size:20px 20px;
       background-position: center center;
     }
     .mobile-search-input{
@@ -1139,7 +1139,7 @@ input:focus:-moz-placeholder {
   a span {
     color: $red;
     background: #fff;
-    padding: 2px 5px;
+    padding: 1px 5px;
     font-size: 12px;
     line-height:1;
     margin-left: 5px;
@@ -1409,6 +1409,7 @@ input:focus:-moz-placeholder {
         }
         @include r(850){
           display: block;
+
         }
       }
       @include r(850){
@@ -1417,6 +1418,7 @@ input:focus:-moz-placeholder {
         background: $white;
         border-bottom: 1px solid $border;
         @include x-rem(padding-left,10px);
+        border-right: 0 !important;
         &:hover{
           a{
             background: $white;
@@ -4117,7 +4119,7 @@ footer {
       @include x-rem(width,14px);
       height:100%;
       background-image: url(../img/arrow.svg);
-      @include x-rem(background-size,14px 8px); 
+      background-size:14px 8px; 
       position: absolute;
       right: 0;
       background-position: center;
@@ -4782,7 +4784,7 @@ footer {
         display: inline-block;
         background-position: left top;
         background-repeat: no-repeat;
-        @include x-rem(background-size,16px 16px);
+        background-size:16px 16px;
        }
       &.active{
         display:inline-block;
@@ -6056,7 +6058,7 @@ footer {
   top:15px;
   right:0;
   background:url(../img/main/close.svg) no-repeat;
-  @include x-rem(background-size,16px 16px);
+  background-size:16px 16px;
   opacity: 0.5;
 }
 .feedback-form-wrapper{
@@ -6290,7 +6292,7 @@ footer {
   float:left;
   background-repeat: no-repeat;
   background-position: left 10px center;
-  @include x-rem(background-size,30px 30px);
+  background-size:30px 30px;
   @include x-rem(padding,7px 0 7px 60px );
   @include x-rem(margin-bottom,13px );
   transition: color .3s;
@@ -6814,7 +6816,7 @@ footer {
     display: inline-block;
     background-repeat: no-repeat;
     background-position: bottom center;
-    @include x-rem(background-size, 14px 14px);
+    background-size: 14px 14px;
     @include x-rem(height, 14px);
     @include x-rem(width, 32px);
     @include x-rem(padding, 0 2px);
@@ -6979,7 +6981,7 @@ footer {
 .print-btn{
   color:#000;
   @include x-rem(padding-left, 30px);
-  @include x-rem(background-size, 15px 15px);
+  background-size: 15px 15px;
   background-image: url(../img/features/print.svg);
   background-repeat: no-repeat;
   background-position: left center;
