@@ -444,29 +444,46 @@ mobileSub();
 	if($('.js-all-title').length){
 		var cont = $('.selection_body'),
 			trigger = $('.js-all-title'),
-			target = $('.js-all-inner');
-			сontainer= $('.select-all-cont');
+			target = $('.js-all-inner'),
+			сontainer= $('.select-all-cont'),
+			timeout = 300;
 
-			trigger.each(function(){
+			setTimeout(function(){
+				trigger.each(function(){
 				var _ = $(this);
-				_.click(function(){
+				_.mouseenter(function(){
 					var currTarg = _.parent().find(target);
-					if(currTarg.hasClass('active')){
-							currTarg.removeClass('active');
-					}
-					else{
-						
-						currTarg.addClass('active');
-					}
-				$(document).mouseup(function (e){ 
-					if (!currTarg.is(e.target) 
-					    && currTarg.has(e.target).length === 0 && !_.is(e.target)) {
-						currTarg.removeClass('active');
-						console.log(1);
-					}
+					currTarg.addClass('active');
+					_.closest('.selection_item').siblings().find(target).removeClass('active');
+					// if(currTarg.hasClass('active')){
+					// 		currTarg.removeClass('active');
+					// }
+					// else{
+					// 	currTarg.addClass('active');
+					// }
+				currTarg.mouseleave(function(){
+					$(this).removeClass('active');
+				})
+				// $(document).mouseup(function (e){ 
+				// 	if (!currTarg.is(e.target) 
+				// 	    && currTarg.has(e.target).length === 0 && !_.is(e.target)) {
+				// 		currTarg.removeClass('active');
+				// 		console.log(1);
+				// 	}
+				// });
+					});
+					
 				});
-			});
-		});
+
+			},timeout)
+				trigger.parent().mouseleave(function(){
+					var currTarg = $(this).parent().find(target);
+					currTarg.removeClass('active');
+					timeout = timeout;
+					console.log(55)
+				})
+
+			
 
 
 	}
@@ -1452,7 +1469,7 @@ if($('.sort_wrapper').length){
 
 					if(!_.is(':checked')){
 						_.click(function(){
-							var value = _.val();
+							var value = _.parent().find('span').text();
 							var targetToText = _.parents().find(item);
 							inp.removeClass('error');
 							item.removeClass('has-error');

@@ -334,7 +334,7 @@ body {
   list-style: none;
   li {
     border-left: 2px solid #fff;
-    transition: all .3s;
+    transition: background .3s ,border .3s;
     &:hover {
       background: #f4f4f4;
       border-left: 2px solid #fb0101;
@@ -3806,8 +3806,9 @@ footer {
     left:-16%;
   }
   .bread__add-container{
-    width:150%;
+    min-width:150%;
     box-shadow: 0 0 10px rgba(0,0,0,.2);
+    display:inline-block;
   }
 }
 .add-list{
@@ -3820,6 +3821,7 @@ footer {
     a{
       display: inline-block;
       width:100%;
+      white-space: nowrap;
       color:$letters;
       transition: color .3s;
     }
@@ -3828,7 +3830,6 @@ footer {
       transition: background .3s;
       a{
         color:$red;
-        transition: color .3s;
       }
     }
     @include r(482){
@@ -4143,11 +4144,13 @@ footer {
     display:none;
     .select-all-cont{
       position: relative;
+      .select-all-maincont{
+        cursor: pointer;
+      }
       .select-all-title{
         @include x-rem(font-size,14px);
         color:$red;
         font-family:$ProximaRegular;
-        cursor: pointer;
       }
       .icon{
           display: inline-block;
@@ -4173,11 +4176,21 @@ footer {
         transform: translateY(-10%);
         will-change:transform;
         transition: all .3s;
+        &:before{
+          content: '';
+          display: inline-block;
+          width:150px;
+          height:200px;
+          position: absolute;
+          left:-150px;
+          top:40px;
+        }
         &.active{
           opacity: 1;
           visibility: visible;
           transform: translateY(0);
           transition: all .3s;
+          transition-delay: .3s;
         }
         .select-u-item{
           width:50%;
