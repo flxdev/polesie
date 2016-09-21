@@ -1497,6 +1497,7 @@ if($('.sort_wrapper').length){
 						inp.prop('checked',false);
 						item.removeClass('active').removeClass('is-checked').find('.btn-text').text(text).parents('.input-wrapper').addClass('has-error').removeClass('has-success');
 						clearSelect($(this));
+						inp.eq(0).trigger('change.sku');
 					}
 					else{
 						return false
@@ -1522,6 +1523,7 @@ if($('.sort_wrapper').length){
 					input = _.find('input');
 				_.find('button').removeClass('active').removeClass('is-checked').find(targetToText).text(text);
 				_.find(input).prop('checked',false);
+
 			})
 		}
 	}
