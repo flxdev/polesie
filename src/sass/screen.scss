@@ -569,6 +569,15 @@ input:focus:-moz-placeholder {
     &[type='search']{
         border-right-color: $yellowHov;
       }
+      &::-webkit-input-placeholder{
+        color:transparent;
+      }
+      &::moz-placeholder{
+        color:transparent;
+      }
+      &::ms-input-placeholder{
+        color:transparent;
+      }
     }
    .select-container{
       display:block;
@@ -4000,7 +4009,7 @@ footer {
    }
 }
 .categoties-name{
-  @include x-rem(margin,0 0 40px 0);
+  @include x-rem(margin,0 0 60px 0);
   @include x-rem(font-size,22px);
   line-height:1;
 }
@@ -4009,7 +4018,7 @@ footer {
   display: inline-block;
   vertical-align: top;
   @include x-rem(padding, 0 8px 0 0);
-  @include x-rem(margin-bottom,30px);
+  @include x-rem(margin-bottom,40px);
   &:hover{
     .discount_name{
       background: $yellowHov;
@@ -4153,6 +4162,7 @@ footer {
     @include x-rem(margin-top,20px);
     //max-min price
     display:none;
+
     .select-all-cont{
       position: relative;
       .select-all-maincont{
@@ -5607,7 +5617,12 @@ footer {
   }
   &.disabled{
     pointer-events: none;
-    background: #e00000;
+    background: $border;
+    color:#000;
+   .stcart{
+      fill:#000;
+      transition: fill .3s;
+      }
   }
   @include r(1260){
     float:none;
@@ -5650,7 +5665,7 @@ footer {
   }
   &.disabled{
     pointer-events: none;
-    background: #f5e600;
+    background: $border;
   }
 }
 .btn-width{
@@ -7643,6 +7658,9 @@ footer {
         .selection_body{
           &:not(:first-child){
             @include x-rem(margin-top,10px);
+          }
+          &.noborder{
+            border-bottom: 0;
           }
         }
       }
