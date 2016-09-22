@@ -979,7 +979,7 @@
         label.input-label 
           span.text Вопрос
         textarea.input-main.input-small(name="", rows="3", placeholder = 'Опишите',data-validation="length required", data-validation-length="min10",data-validation-error-msg="Заполните поле")
-     input.hits-stat-more(type="submit", placeholder = 'Задать вопрос')
+     input.hits-stat-more(type="submit", value = 'Задать вопрос')
 .oneclick_hidden.hidden_bg
   .hidden-block
     .hidden-block-close.button_close
@@ -1018,8 +1018,8 @@
      .input-wrapper
         label.input-label 
           span Сообщение
-        textarea.input-main.input-small(name="", rows="3", placeholder = 'Оставьте сообщение',data-validation="length",data-validation-length="min10",data-validation-error-msg="Текст не должен быть короче 10ти символов")
-     input.hits-stat-more(type="submit", placeholder = 'Отправить').button_close
+        textarea.input-main.input-small(name="", rows="3", placeholder = 'Оставьте сообщение')
+     input.hits-stat-more(type="submit", value = 'Отправить').button_close
 .login_hidden.hidden_bg
   .hidden-block
     .hidden-block-close.button_close
@@ -1047,7 +1047,7 @@
     .hidden-block-close.button_close
     h2.hidden-title Восстановление пароля     
     .tab-form-wrapper
-       form(action="", name='pass-forgotten').form-feed
+       form(action="", name='pass-forgotten').form-feed.form-noborder
         .form-block
           .form-block-content
             .input-text Изменение пароля будет возможно после того, как вы перейдете по ссылке, которая будет отправлена вам на указанный e-mail
@@ -1061,7 +1061,7 @@
     .hidden-block-close.button_close
     h2.hidden-title Восстановление пароля   
     .tab-form-wrapper
-      .form-feed
+      .form-feed.form-noborder
         .form-block
           .form-block-content
             .input-text В течение 5 минут на указанный e-mail будет выслано письмо с вашими регистрационными данными
@@ -1069,7 +1069,7 @@
 .vacancy_hidden.hidden_bg
   .hidden-block
     .hidden-block-close.button_close
-    h2.hidden-title Отклик на вакансию
+    h1.hidden-title Отклик на вакансию
     span.small-title Инженер-проектировщик
     form(action="/").vacancy-form
       .input-wrapper

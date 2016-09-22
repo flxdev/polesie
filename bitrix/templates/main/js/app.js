@@ -322,7 +322,8 @@ mobileSub();
 				_.mouseenter(function(){
 					var currTarg = _.parent().find(target);
 					currTarg.addClass('active');
-					_.closest('.selection_item').siblings().find(target).removeClass('active');
+
+					_.addClass('active').closest('.selection_item').siblings().find(target).removeClass('active');
 					// if(currTarg.hasClass('active')){
 					// 		currTarg.removeClass('active');
 					// }
@@ -331,6 +332,7 @@ mobileSub();
 					// }
 				currTarg.mouseleave(function(){
 					$(this).removeClass('active');
+					trigger.removeClass('active');
 				})
 				// $(document).mouseup(function (e){ 
 				// 	if (!currTarg.is(e.target) 
@@ -347,8 +349,8 @@ mobileSub();
 				trigger.parent().mouseleave(function(){
 					var currTarg = $(this).parent().find(target);
 					currTarg.removeClass('active');
+					trigger.removeClass('active');
 					timeout = timeout;
-					console.log(55)
 				})
 
 			

@@ -139,7 +139,13 @@ header{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  user-select:none;
   @include clearfix;
+  .input-wrapper{
+    textarea{
+      height:110px !important;
+    }
+  }
 }
 .fancybox-opened .fancybox-skin{
   background: #ffffff;
@@ -375,6 +381,7 @@ body {
     .hidden-title{
       @include x-rem(font-size,28px);
       @include x-rem(padding-bottom,30px);
+      @include x-rem(letter-spacing,1.5px);
         text-align: left !important;
     }
   }
@@ -866,8 +873,8 @@ input:focus:-moz-placeholder {
     }
   }
   .bread__add-container{
-    width: 120% !important;
-    @include x-rem(min-width,150px);
+    // width: 120% !important;
+    // @include x-rem(min-width,150px);
     @include r(1040){
         transform: translateX(-50%);
     }
@@ -2366,7 +2373,7 @@ input:focus:-moz-placeholder {
   top: -65px;
 }
 .slick-next, .slick-prev {
-  @include x-rem(width,40px);
+  @include x-rem(width,38px);
   @include x-rem(height,34px);
 }
 .slick-next {
@@ -2375,13 +2382,13 @@ input:focus:-moz-placeholder {
 }
 
 .slick-prev {
-  right: 40px;
+  right: 39px;
   left:auto;
 }
 
 .slick-next:before {
   content: '';
-  width: 41px;
+  width: 38px;
   height: 34px;
   background: url(../img/main/scroll.svg);
   background-size: 83px 34px;
@@ -2391,19 +2398,25 @@ input:focus:-moz-placeholder {
   margin-top: -9px;
   background-position: -41px;
   transition: all .3s;
+  cursor:pointer;
+  border-top-right-radius: 3px; 
+  border-bottom-right-radius: 3px; 
 }
 
 .slick-prev:before {
   content: '';
-  width: 41px;
+  cursor:pointer;
+  width: 38px;
   height: 34px;
   background: url(../img/main/scroll.svg);
-  background-size: 83px 34px;
+  background-size: 80px 34px;
   position: absolute;
   top: 30%;
-  right:0;
+  right:-1px;
   margin-top: -9px;
-  background-position: 0px;
+  background-position: -2px;
+  border-top-left-radius: 3px; 
+  border-bottom-left-radius: 3px; 
 }
 .slick-dots{
   @include r(570){
@@ -2718,6 +2731,7 @@ input:focus:-moz-placeholder {
       color: #000;
       cursor: pointer;
       margin-right: 30px;
+      @include x-rem(letter-spacing,.8px);
       @include r(1040){
         margin-right: 2%;
       }
@@ -2868,6 +2882,7 @@ input:focus:-moz-placeholder {
   vertical-align: middle;
   display: block;
   max-width: 100%;
+  max-height: 60px;
   margin: 0 auto;
 }
 
@@ -3470,12 +3485,15 @@ footer {
     width:auto;
     @include x-rem(min-height,150px);
     display: inline-block;
-    @include x-rem(padding,50px 20px);
+    @include x-rem(padding,50px);
     position: relative;
     opacity:0;
     visibility: hidden;
     transform: translateY(50%);
     transition: all .3s;
+    @include r(768){
+      @include x-rem(padding,50px 20px);
+    }
     @include r(480){
       @include x-rem(padding,45px 10px);
     }
@@ -3484,6 +3502,11 @@ footer {
       font-family: $ProximaLight;
       font-weight: 300;
       position: relative;
+      @include x-rem(letter-spacing,1.5px);
+      + .small-title{
+        @include x-rem(letter-spacing,.7px);
+        @include x-rem(font-size,16px);
+      }
     }
     .title-text{
       text-align: center;
@@ -3536,7 +3559,7 @@ footer {
       }
     }
   }
-  &.success_hidden,&.vacancy-success_hidden{
+  &.success_hidden,&.vacancy-success_hidden,&.call-success_hidden{
     .hidden-block{
       @include x-rem(width,500px);
     .hidden-title{
@@ -3551,6 +3574,12 @@ footer {
       padding-bottom: 0;
       .features__nav-modal{
         @include x-rem(bottom,25px);
+        .carousel-prev{
+          @include x-rem(margin-left,55px);
+        }
+        .carousel-next{
+          @include x-rem(margin-right,55px);
+        }
       }
     }
     .product-galery-wrap{
@@ -3826,7 +3855,6 @@ footer {
     left:-16%;
   }
   .bread__add-container{
-    min-width:150%;
     box-shadow: 0 0 10px rgba(0,0,0,.2);
     display:inline-block;
   }
@@ -3834,7 +3862,7 @@ footer {
 .add-list{
   list-style:none;
   .add-list-item{
-    @include x-rem(padding,10px 10px 10px 20px);
+    @include x-rem(padding,10px 20px);
     background: $white;
     transition: background .3s;
     cursor: pointer;
@@ -4107,7 +4135,7 @@ footer {
       position: relative;
       display: inline-block;
       z-index: 2;
-      @include x-rem(padding,5px 9px);
+      @include x-rem(padding,5px 15px 5px 9px);
       span{
         vertical-align: middle;
       }
@@ -4170,8 +4198,9 @@ footer {
       }
       .select-all-title{
         @include x-rem(font-size,14px);
-        color:$red;
+        color:$letters;
         font-family:$ProximaRegular;
+        transition-delay: .3s;
       }
       .icon{
           display: inline-block;
@@ -4179,9 +4208,23 @@ footer {
           @include x-rem(height,7px);
           vertical-align: super;
           .st1{
-            fill:$red;
+             transition-delay: .3s;
+            fill:$letters;
           }
         }
+      .js-all-title{
+        &.active{
+          .select-all-title{
+            color:$red;
+          }
+            .icon{
+              .st1{
+
+              fill:$red;
+            }
+          }
+        }
+      }
       .select-all-inner{
         position: absolute;
         background-color: $white;
@@ -4257,6 +4300,12 @@ footer {
     }
     .price-min{
       border-right-color: transparent!important;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .price-max{
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
    }
   }
@@ -4367,7 +4416,7 @@ footer {
     color:$white;
     border:none;
     outline: 0;
-    @include x-rem(padding, 6px 50px);
+    @include x-rem(padding, 6px 55px);
     border-radius: 4px;
     @include x-rem(letter-spacing, 1px);
     transition: opacity .3s;
@@ -4524,6 +4573,7 @@ footer {
           transition: all .2s ease;
         }
         a{
+          transition: color .3s;
           color:$letters;
           display: inline-block;
           width:100%;
@@ -4534,6 +4584,11 @@ footer {
             opacity: 1;
           }
         }
+        &:hover{
+            a{
+              color:$red;
+            }
+          }
       }
       &.active{
         opacity: 1;
@@ -4620,8 +4675,8 @@ footer {
   @include clearfix;
   .item-grid-wrap{
     width:25%;
-    @include x-rem(margin-bottom,40px);
     @include x-rem(height, 370px);
+    @include x-rem(margin-bottom, 20px);
     @include r(1108){
       width:33.3%;
     }
@@ -4638,7 +4693,46 @@ footer {
       width:100%;
     }
   }
-  
+  .border{
+    color: $border;
+    background-color: $border;
+    border: 0;
+    height:1px;
+    display: none;
+    width:100%;
+    @include x-rem(margin-bottom, 40px);
+    @include r(769){
+      transform: translateY(25px);
+    }
+    &:nth-child(2n){
+      @include r(768){
+        display: none!important;
+      }
+    }
+    &:nth-child(4n){
+        @include r(970){
+        display:block !important;
+      }
+      @include r(770){
+        display: none !important;
+      }
+    }
+    &:nth-child(8n){
+      display: block;
+        @include r(1108){
+        display: none;
+      }
+    }
+    &:nth-child(6n){
+        @include r(1108){
+        display:block;
+      }
+      @include r(970){
+        display: none;
+      }
+    }
+    
+  }
 }
 .product_item{
   display: inline-block;
@@ -4659,7 +4753,7 @@ footer {
     display: inline-block;
     position: relative;
     width:20%;
-    @include x-rem(padding,10px);
+    @include x-rem(padding,15px);
     &:hover+ .product_iten-content{
       .hits_name{
       a{
@@ -4685,6 +4779,9 @@ footer {
     width:20%;
     display: inline-block ;
     float: right;
+    .hits-stat-more{
+      @include x-rem(padding,5px 15px);
+    }
     @include r(570){
       width:100%;
       @include x-rem(padding, 0 10px);
@@ -5233,7 +5330,7 @@ footer {
   .hits_tools{
     margin: 0;
     padding:0;
-    margin-left: 35%; 
+    margin-left: 38%; 
     display: inline-block;
     @include r(1200){
       margin-left: 15%; 
@@ -5363,6 +5460,9 @@ footer {
   display: inline-block;
   float: left;
   @include x-rem(padding-top,7px);
+  img{
+    margin:0!important;
+  }
 }
 .product-content{
   overflow: hidden;
@@ -5384,6 +5484,7 @@ footer {
   }
   .product-content-text{
   color:$letters;
+  padding: 0;
   }
 }
 
@@ -5705,7 +5806,7 @@ footer {
   display: block;
   width:100%;
   @include x-rem(max-width,500px);
-  @include x-rem(padding,10px 0);
+  @include x-rem(padding,15px 0);
   @include clearfix;
   border-bottom:1px solid $border;
   .modal-item-img,.modal-item-info,.modal-item-price{
@@ -5729,6 +5830,12 @@ footer {
   }
   .modal-item-price{
     width:21%;
+    .hits_coast{
+      @include x-rem(font-size,14px);
+      span{
+        display: block;
+      }
+    }
     @include r(570){
       width:100%;
       text-align: right;
@@ -5913,6 +6020,9 @@ footer {
       @include x-rem(padding-top,20px);
     }
     &:nth-child(3){
+      .char-wrapper{
+        border-bottom: 0;
+      }
       @include r(768){
       .char-descr,.char-name{
         width:100%;
@@ -5952,7 +6062,7 @@ footer {
     display: inline-block;
    }
    .char-main-name{
-    width:33.3%;
+    width:36%;
     @include x-rem(padding,16px 10px 0 0);
     @include x-rem(font-size,17px);
     @include r(768){
@@ -5960,7 +6070,7 @@ footer {
     }
    }
    .char-options{
-    width:66.6%;
+    width:64%;
     @include r(768){
       width:100%;
     }
@@ -6099,6 +6209,11 @@ footer {
  @include x-rem(margin-bottom,60px);
  border-bottom:1px solid $border;
  border-top:1px solid $border;
+ .feedback-form{
+  .form-feed{
+    width:100%;
+  }
+ }
 }
 .msg{
   display: none;
@@ -6179,6 +6294,7 @@ footer {
       border-radius: 0 !important;
       @include x-rem(width, 80px);
       @include x-rem(height, 80px);
+      z-index: 2;
       img{
         width:100%;
       }
@@ -6315,7 +6431,9 @@ footer {
 }
 .add-info{
   @include x-rem(font-size,12px );
+  @include x-rem(margin-top,4px );
   color:#8f8f8f;
+  font-family: $ProximaSemibold;
   font-weight: 600;
   display: block;
 }
@@ -6324,7 +6442,7 @@ footer {
   width:50%;
   float:left;
   background-repeat: no-repeat;
-  background-position: left 10px center;
+  background-position: left center;
   background-size:30px 30px;
   @include x-rem(padding,7px 0 7px 60px );
   @include x-rem(margin-bottom,13px );
@@ -6478,7 +6596,7 @@ footer {
   @include x-rem(font-size,14px);
   .compare_tab-item{
     display: inline-block;
-    @include x-rem(padding,10px 0);
+    @include x-rem(padding,0 0 10px 0);
     color:#000;
     a{
       color:#000;
@@ -6637,6 +6755,7 @@ footer {
   }
   .hits-stat-more{
   position: absolute;
+  @include x-rem(padding,6px 15px);
   bottom: 3px;
   }
   .hits_name{
@@ -6681,6 +6800,23 @@ footer {
       max-width:100%;
       margin: 0 auto;
     }
+    .hits_name{
+      text-decoration: none;
+      font-size: 16px;
+      font-size: 1rem;
+      color: #000;
+      text-align: left;
+      line-height: 1.3;
+      transition: color .3s;
+    }
+    &:hover{
+      .hits_name{
+        color:$red;
+      }
+    }
+  }
+  .hits_coast,.hits_coast_new{
+    @include x-rem(font-size,14px);
   }
 }
 .compare_group{
@@ -6826,7 +6962,7 @@ footer {
     }
   }
   .error-text{
-    @include x-rem(margin, 40px 0);
+    @include x-rem(margin,20px 0 40px );
     a{
       color:$red;
     }
@@ -6863,7 +6999,7 @@ footer {
   .message-title{
     @include x-rem(font-size, 28px);
     font-weight: 300;
-
+    margin:0;
   }
   .order-number{
     font-weight: 600;
@@ -6909,6 +7045,7 @@ footer {
 .price-calc-wrap{
   display: block;
   overflow: hidden;
+
   @include r(910){
         width: 100%;
       }
@@ -6962,6 +7099,9 @@ footer {
    .price{
     display: inline-block;
     width:100%;
+    &:not(:first-child){
+      @include x-rem(padding-top, 4px);
+    }
     .price-name,.prices{
       display: inline-block;
       width:50%;
@@ -6989,9 +7129,11 @@ footer {
       }
     }
     &.price-total{
-      @include x-rem(padding-top, 15px);
+      @include x-rem(padding-top, 27px);
       @include x-rem(margin-top, 15px);
       border-top: 1px solid $border;
+      line-height:1;
+
     }
     .total-count {
         color:#000;
@@ -7592,6 +7734,7 @@ footer {
     }
   }
   .hits_coast{
+    @include x-rem(font-size,14px);
     span{
       font-weight: 300;
     }
@@ -7748,6 +7891,7 @@ footer {
   width:40%;
   float:left;
   @include x-rem(padding-right,55px);
+  @include x-rem(letter-spacing,.5px);
   @include x-rem(font-size,16px);
   @include x-rem(min-height,1px);
   color:#000;
@@ -7781,6 +7925,7 @@ footer {
     float:left;
     width:auto;
     margin-right: 5%;
+    margin-bottom:0;
     .input-checked{
       border-radius:50%;
       &:before{
@@ -7874,13 +8019,18 @@ footer {
       float:left;
       @include x-rem(padding,5px 0);
     }
+    + .hits-stat-more{
+      width:200px;
+      @include x-rem(padding,7.5px 15px);
+    }
 }
 .forgot-pass{
   color:$letters2;
   float:right;
-  transform: translateY(-125%);
+  transform: translateY(-122%);
   @include x-rem(margin-right,15px);
-  @include x-rem(padding-left,5px);
+  @include x-rem(padding,2px 0 2px 5px );
+  @include x-rem(font-size,12px);
   font-weight: bold;
   background: #fff;
 }
@@ -7974,7 +8124,7 @@ footer {
   .form-block{
     padding-right: 0;
     border: 0;
-    .text-block{
+    p{
        padding-right: 0;
     }
   }
@@ -7987,16 +8137,17 @@ footer {
   .product-image{
     @include x-rem(width,37px);
   }
-  .text-block{
+  p{
     @include x-rem(margin-bottom,15px);
     @include x-rem(padding-right,55px);
-    @include x-rem(font-size,16px);
+    @include x-rem(font-size,14px);
     @include r(768){
       @include x-rem(padding-right,10px);
     }
   }
   .gray{
       color:$letters2;
+      @include x-rem(font-size,16px);
     }
   .black{
     @include x-rem(font-size,14px);
@@ -8020,6 +8171,9 @@ footer {
       padding:5% 10%;
     }
   }
+  .step-wrapper{
+    @include clearfix;
+  }
   .step-decribe{
     @include x-rem(font-size,12px);
     @include x-rem(margin-bottom,25px);
@@ -8039,12 +8193,15 @@ footer {
     .title-small{
       @include x-rem(margin-bottom,10px);
     }
+    p{
+      padding:0;
+    }
   }
-  .step-img{
+  img{
     width:100%;
-    @include x-rem(margin,20px 0);
+    @include x-rem(margin,20px 0 30px);
   }
-  .step-list{
+  ul{
     @include x-rem(margin,15px 0 0);
     @include x-rem(font-size,14px);
     list-style:none;
@@ -8059,13 +8216,17 @@ footer {
     text-align: center;
     border-top:1px solid $border;
     border-bottom:1px solid $border;
+    p.gray{
+      padding:0;
+      @include x-rem(font-size,14px);
+    }
     @include r(570){
       width:100%;
       +.step-text{
         width:100%;
       }
     }
-    .section-title{
+    span{
       @include x-rem(margin-bottom,20px);
       @include x-rem(font-size,16px);
       display: inline-block;
@@ -8073,7 +8234,7 @@ footer {
       font-weight: 600;
     }
   }
-  .step-list-item{
+  li{
     @include x-rem(margin-bottom,10px)
     @include x-rem(padding,0 20px)
     position: relative;
@@ -8540,6 +8701,7 @@ transition:border .3s;
       display: inline-block;
       float:none;
       margin:0;
+      @include x-rem(padding,5px 10px);
     }
     .news-tittle{
       font-family: $ProximaLight;
@@ -8598,6 +8760,9 @@ transition:border .3s;
     @include x-rem(margin-bottom,30px);
     .brand_block{
       display: inline-block;
+      p{
+        padding:0;
+      }
     }
     @include r(570){
       width:50%;
@@ -8695,7 +8860,7 @@ transition:border .3s;
   }
 }
 .brand-description{
-  @include x-rem(margin-bottom,45px);
+  @include x-rem(margin-bottom,65px);
   .brand-description-img{
     display: inline-block;
     float:left;
@@ -8809,11 +8974,14 @@ transition:border .3s;
   float:left;
   &.text{
     width:100%;
-    .text-block{
+    p{
       @include x-rem(font-size,14px);
       padding:0;
       margin:0;
     }
+  }
+  .section-title{
+    @include x-rem(font-size,17px);
   }
   @include r(570){
     width:100%;
@@ -8822,6 +8990,7 @@ transition:border .3s;
 .vacancy-contact{
   @include x-rem(padding,20px);
   @include x-rem(border-radius,3px);
+  @include x-rem(margin-top,20px);
   display: inline-block;
   width:100%;
   border:1px solid $border;
