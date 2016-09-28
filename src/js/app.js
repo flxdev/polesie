@@ -184,7 +184,7 @@ $(function() {
 
 var mobileMain = function(){
 		var menuItem = $('.menu-item> a');
-		if($(window).width() <770){
+		if($(window).width() <850){
 
 			menuItem.each(function(){
 
@@ -221,7 +221,7 @@ var mobileMain = function(){
 mobileMain();
 var mobileSub = function(){
 		var subItem = $('.sub-item > a');
-		if($(window).width() <770){
+		if($(window).width() <850){
 
 			subItem.each(function(){
 
@@ -478,7 +478,8 @@ mobileSub();
       breakpoint: 768,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 4
+        slidesToScroll: 4,
+        arrows: false,
       }
     },
     {
@@ -847,7 +848,7 @@ if($('#brand').length){
 				if (!div.is(e.target) 
 				    && div.has(e.target).length === 0) {
 					div.parent().removeClass('active');
-					$("html").css("overflow-y","scroll"); 
+					$("body").css("overflow-y","scroll"); 
 					var slider =div.parent().find('.slick-slider');
 					setTimeout(function(){
 						slider.slick('unslick');
@@ -986,8 +987,8 @@ var menuAdd = function(){
 	var topItem = $('.top-line-nav nav .top-item:nth-child(n+4)');
 	var topCont = $('.top-line-nav .drop-line-nav');
 	var top3 = $('.top-line-nav nav .top-item:nth-child(3)');
-	var brandItem = $('.index-brands .tabs > .tab:nth-child(n+1)');
-	var brandCont = $('.index-brands  .drop-line-nav > .tabs');
+	var brandItem = $('.discount.brand .product_tabs-wrapper>.tabs > .tab:nth-child(n+1)');
+	var brandCont = $('.discount.brand  .drop-line-nav > .tabs');
 	brandItem.clone().appendTo(brandCont);
 	menuItems.clone().appendTo(btn);
 	topItem.detach().prependTo(topCont);
