@@ -43,6 +43,12 @@ input::-webkit-inner-spin-button {
     border-radius: 10px;
     background: $letters2;
 }
+::selection {
+background: $yellowHov; 
+}
+::-moz-selection {
+background: $yellowHov; 
+}
 }
 :-ms-input-placeholder { 
 color: $letters2 !important;
@@ -220,7 +226,7 @@ body {
     position: relative;
     padding-right: 24px;
     color:$letters;
-    @include x-rem(letter-spacing,1px);
+    @include x-rem(letter-spacing,.75px);
     &:after {
       content: "";
       width: 14px;
@@ -244,7 +250,7 @@ body {
   padding-right: 22px;
   vertical-align: top;
   position: relative;
-  @include x-rem(letter-spacing,.8px);
+  @include x-rem(letter-spacing,.75px);
   //hide 3rd block that appended in dropdonw
   &:nth-child(3){
     @include r(1054){
@@ -278,14 +284,13 @@ body {
 
 .wrap-catalog-btn {
   display: none;
-
   p {
     font-weight: bold;
     position: relative;
     font-family: $ProximaSemibold;
     cursor: pointer;
     display: inline-block;
-
+    user-select:none;
     &:before {
       content: "";
       position: absolute;
@@ -320,7 +325,7 @@ body {
   visibility: hidden;
   transform: translateY(-10%);
   transition: all .3s;
-  transition-delay: .3s;
+  transition-delay: .25s;
   &.active{
     opacity: 1;
     visibility: visible;
@@ -508,14 +513,17 @@ body {
   }
   @include r(482){
       padding-top: 6px;
+      vertical-align: middle;
       .logo{
         width:130px !important;
+        height:37px !important;
       }
     }
   @include r(320){
       padding-top: 6px;
       .logo{
         width:100px !important;
+        height:27px !important;
       }
     }
   .logo {
@@ -766,6 +774,7 @@ input:focus:-moz-placeholder {
       float: right;
       &:hover{
         background-color: $yellowHov;
+        transition: background .3s;
       }
     }
   }
@@ -1109,10 +1118,10 @@ input:focus:-moz-placeholder {
           background-color: $red;
           color:$white;
           position: absolute;
-          top:-10px;
-          right:0;
+          top:-8px;
+          right:1px;
           height:20px;
-          line-height:1.4; 
+          line-height:1.6; 
         }
       }
   }
@@ -1135,14 +1144,10 @@ input:focus:-moz-placeholder {
       margin-right: 10px;
     }
     &.active {
-      background: #fff445;
+      background: #f11b1b;
       transition:all .3s;
-      color: #000;
       span{
         color:$letters;
-      }
-      .stcart{
-        fill:$letters;
       }
     }
     .stcart{
@@ -1180,7 +1185,7 @@ input:focus:-moz-placeholder {
   z-index: 1;
   top: 0;
   transition: all .3s;
-  transition-delay: .3s;
+  transition-delay: .25s;
   &.active{
     opacity: 1;
     visibility: visible;
@@ -1198,6 +1203,7 @@ input:focus:-moz-placeholder {
   position: relative;
   transform: translateX(-250px);
   z-index: 2;
+  cursor:auto;
 }
 
 .cart_list_block_scroll {
@@ -1456,7 +1462,7 @@ input:focus:-moz-placeholder {
         display: inline-block;
         width:100%;
         line-height:1;
-        letter-spacing: 1px;
+        letter-spacing: .75px;
         .menu-arrow{
           display: none;
           float:right;
@@ -1535,6 +1541,7 @@ input:focus:-moz-placeholder {
   display: block;
   position: absolute;
   width: 100%;
+  min-height:392px;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -1789,7 +1796,7 @@ input:focus:-moz-placeholder {
 }
 
 .main-nav-featur {
-  padding-top: 15px;
+  padding-top: 25px;
 }
 
 /* section @promo@ */
@@ -2438,8 +2445,11 @@ input:focus:-moz-placeholder {
     @include x-rem(height, 34px);
     border:2px solid $white;
     transform: skew(-10deg);
-    @include x-rem(margin,0 3px);
+    
     border-radius: 4px;
+    &:not(:first-child){
+      @include x-rem(margin-right,4px);
+    }
     .status__item-bg{
       width:100%;
       height:100%;
@@ -2564,7 +2574,7 @@ input:focus:-moz-placeholder {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width:210px;
+  max-width:210px;
 }
 
 .hits_coast_new {
@@ -2732,6 +2742,7 @@ input:focus:-moz-placeholder {
       cursor: pointer;
       margin-right: 30px;
       @include x-rem(letter-spacing,.8px);
+      transition: border-color .25s;
       @include r(1040){
         margin-right: 2%;
       }
@@ -3000,7 +3011,8 @@ input:focus:-moz-placeholder {
   .news_date {
     color: #9d9c9c;
     font-size: 14px;
-    @include x-rem(margin-bottom,10px)
+    @include x-rem(margin-bottom,10px);
+    line-height:1;
   }
 
   .news_descr {
@@ -3474,7 +3486,7 @@ footer {
       visibility: visible;
       transform: translateY(0);
       transition: all .5s;
-      transition-delay: .5s;
+      transition-delay: .45s;
     }
   }
   @include r(570){
@@ -3828,9 +3840,9 @@ footer {
     .bread__add-menu-wrap{
       opacity: 1;
       visibility: visible;
-      transition: all .3s;
+      transition: all .2s;
       transform: translateY(0);
-      transition-delay:.5s;
+      transition-delay:.25s;
     }
     &:last-child{
     >a{
@@ -3848,8 +3860,8 @@ footer {
   visibility: hidden;
   z-index: 3;
   transform: translateY(-10%);
-  transition: all .3s;
-  transition-delay:.5s; 
+  transition: all .2s;
+  transition-delay:.25s;
   @include x-rem(padding-top,22px);
   @include r(482){
     left:-16%;
@@ -3875,7 +3887,7 @@ footer {
     }
     &:hover{
       background: $yellowHov;
-      transition: background .3s;
+      transition: color .3s;
       a{
         color:$red;
       }
@@ -3953,10 +3965,11 @@ footer {
   }
 }
 .aside-list_item{
-    @include x-rem(padding,10px 0);
     a{
+      @include x-rem(padding,14px 0 13px);
       color:#000;
       transition: color .3s;
+      line-height:1;
     }
     &:hover{
       a{
@@ -4157,6 +4170,7 @@ footer {
     font-weight: bold;
     position: relative;
     cursor:pointer;
+    user-select:none;
     .price-wrapper{
       opacity:0;
     }
@@ -4179,7 +4193,7 @@ footer {
       }
       +.selection_body{
         .price-wrapper{
-         transition-delay:.3s;
+         transition-delay:.25s;
         }
 
       }
@@ -4278,7 +4292,7 @@ footer {
       display: inline-block;
       outline: 0;
       @include x-rem(padding-left, 25px);
-      @include x-rem(height, 25px);
+      @include x-rem(height, 30px);
       @include x-rem(font-size, 12px);
        @include x-rem(margin-bottom, 10px);
       position: relative;
@@ -4291,7 +4305,7 @@ footer {
       @include x-rem(font-size, 14px);
       position: absolute;
       @include x-rem(margin-right, -19px);
-      @include x-rem(margin-top, 1px);
+      @include x-rem(margin-top, 3.5px);
       color:#000;
       @include x-rem(font-size, 14px);
       z-index: 1;
@@ -4386,6 +4400,18 @@ footer {
 .select-u-body.select-radio{
   .input-checked{
     border-radius: 50%;
+    &:before{
+      background-image: none;
+      @include x-rem(width,8px);
+      @include x-rem(height,8px);
+      background: $red;
+      border-radius:50%;
+      margin:auto;
+      top:0;
+      left:0;
+      bottom:0;
+      right:0;
+    }
   }
 }
 .select-u-body{
@@ -4426,8 +4452,8 @@ footer {
       @include x-rem(padding, 6px 25px);
     }
     &:hover{
-      opacity: 0.69;
-      transition: opacity .3s;
+      background: #f11b1b;
+      transition: background .3s;
     }
   }
   .selection_find-clear{
@@ -4515,6 +4541,7 @@ footer {
       @include clearfix;
       @include x-rem(font-size, 14px); 
       cursor:pointer;
+      user-select:none;
       span, i{
         display: inline-block;
         float: left;
@@ -4633,6 +4660,7 @@ footer {
     @include x-rem(padding,1px);
     img{
     // max-width:100%;
+    width:100%;
     @include x-rem(max-width,215px);
     @include x-rem(max-height,200px);
     display: block;
@@ -4647,6 +4675,11 @@ footer {
   .hits-wrap{
     a{
       vertical-align: sub;
+    }
+    .hits_defer{
+        @include r(1040){
+         padding:0 15px !important;
+        }
     }
   }
   .hits_coast{
@@ -4734,6 +4767,18 @@ footer {
     
   }
 }
+.hits-bg{
+  .item-grid-wrap{
+    width:100%;
+    .hits_coast{
+      p>span{
+        @include r(996){
+          display: block;
+        }
+      }
+    }
+  }
+}
 .product_item{
   display: inline-block;
   width:100%;
@@ -4742,24 +4787,23 @@ footer {
   border-radius: 2px;
   transition: all .3s ease;
   @include clearfix;
-  &:not(:last-child){
-    border-bottom: 1px solid $border; 
+  &:not(:first-child){
+    border-top: 1px solid $border; 
   }
   &:hover{
   box-shadow: 0.5px 0.866px 5px 0px rgba( 0, 0, 0 ,.24);
-  border-bottom-color: transparent; 
+  border-top-color: transparent; 
   }
   .product_item-img{
     display: inline-block;
     position: relative;
     width:20%;
+    cursor:pointer;
     @include x-rem(padding,15px);
     &:hover+ .product_iten-content{
       .hits_name{
-      a{
         color:$red;
         transition: color .3s ease;
-        }
       }
     }
     img{
@@ -4768,6 +4812,9 @@ footer {
       margin:0 auto;
     }
     float: left;
+    @include r(768){
+      padding: 5px;
+    }
     @include r(570){
       width:100%;
       img{
@@ -4786,38 +4833,52 @@ footer {
       width:100%;
       @include x-rem(padding, 0 10px);
     }
+    .price-more-wrap{
+      @include clearfix;
+      @include r(570){
+        display:block;
+        overflow: hidden;
+        .hits_stat{
+          display: block;
+          width:100%;
+          text-align: right;
+          margin-bottom: 10px;
+          .stat_yes{
+            width:100px;
+          }
+        }
+      }
+    }
     .hits_coast{
       span{
-        @include r(1040){
+        @include r(1180){
           display: block;
         }
-        @include r(570){
-        display: inline-block;
-        }
+        // @include r(570){
+        // display: inline-block;
+        // }
       }
       @include r(570){
         display: inline-block;
         float: left;
         }
        @include r(444){
-        @include x-rem(margin-top, 10px);
           span{
 
             @include x-rem(font-size, 12px);
           }
         
         }
-    }
+      }
       .hits_tools{
         display: block;
       }
-        
     .hits_stat{
       display: block;
        @include x-rem(margin-top,18px);
        @include r(570){
-        display: inline-block;
         margin-top: 0;
+        float: right;
         @include x-rem(padding-left,18px);
         }
       @include r(440){
@@ -4829,7 +4890,7 @@ footer {
         width:100%;
         display: none;
         &.active{
-          display: block;
+          display: inline-block;
         }
       }
       .hits-stat-more{
@@ -4870,16 +4931,36 @@ footer {
         }
       }
     }
+    .hits_name{
+        color:#000;
+      }
+    .hits_about{
+        cursor: pointer;
+        a{
+          @include clearfix;
+        }
+        
+        &:hover{
+          .hits_name{
+            color:$red;
+          }
+        }
+      }
     .hits_descr {
       overflow: visible;
       height:auto;
       width: auto;
+      max-width:100%;
       @include x-rem(padding-right,10px);
       white-space: normal;
+      color:$letters;
       }
       .hits_tools{
         display: block;
         margin: 0;
+        @include r(570){
+          padding:10px 0;
+        }
       }
     }
     
@@ -4887,7 +4968,6 @@ footer {
   top:0;
 }
 .hits_tools{
-
   .hits-wrap{
     display: inline-block;
     .hits_comparison, .hits_defer{
@@ -4997,15 +5077,12 @@ footer {
 }
 .hits_name{
   height: auto;
-  a{
-    transition: color .3s ease;
-  }
-  
+  transition: color .3s ease;
 }
 .hits_raiting{
   display: inline-block ;
   width:100%;
-  @include x-rem(margin,15px 0);
+  @include x-rem(padding,15px 0);
 
   .hits_raiting-star-wrap{
     display: inline-block ;
@@ -5028,6 +5105,9 @@ footer {
     display: inline-block;
     @include x-rem(margin-left,30px);  
     color:$letters2;
+    @include r(776){
+      @include x-rem(margin-left,12px);
+    }
     @include r(380){
       @include x-rem(margin-left,10px);
     }
@@ -5542,7 +5622,7 @@ footer {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
-      transition: all .3s;
+      // transition: all .3s;
     }
   }
 }
@@ -5708,11 +5788,11 @@ footer {
     transition: fill .3s;
   }
   &:hover{
-    background: $yellowHov;
-    color:#000;
+    background: #f11b1b;
+    color:#fff;
     transition: all .3s;
     .stcart{
-    fill:#000;
+    fill:#fff;
     transition: fill .3s;
     }
   }
@@ -5733,6 +5813,9 @@ footer {
 }
 .product-button-wrap{
   .product-buy-btn{
+    @include r(1260){
+      width:100%;
+    }
      @include r(1040){
       width:48%;
       margin-left: 2%;
@@ -5750,6 +5833,12 @@ footer {
       }
     }
   }
+  + .product-oneclick{
+    @include r(1260){
+      display: block;
+      margin:23px auto 0;
+    }
+  }
 }
 .product-oneclick{
   background: $yellow;
@@ -5761,7 +5850,7 @@ footer {
   @include x-rem(border-radius,3px);
   @include x-rem(margin-top,23px);
   &:hover{
-    background: $yellowHov;
+    background: #f3e400;
     transition: background .3s;
   }
   &.disabled{
@@ -5771,6 +5860,9 @@ footer {
 }
 .btn-width{
   width:100%;
+  @include r(1040){
+    max-width:300px;
+  }
 }
 //++++++++++++++++++++++++++++++++++++++++
 //modal cart
@@ -6662,6 +6754,17 @@ footer {
     }
   }
 }
+.row-fixed{
+  .hits_block{
+    @include clearfix; 
+    img{
+      float:left;
+    }
+  }
+  .compare-item-close{
+      right:0 !important;
+    }
+}
 .compare-row{
   &.table-title{
     @include x-rem(min-height,20px);
@@ -6726,6 +6829,7 @@ footer {
   @include x-rem(margin-bottom,-20px);
   .compare-item-name{
     @include x-rem(font-size,17px);
+    line-height:1;
   }
 }
 
@@ -6753,16 +6857,23 @@ footer {
     @include x-rem(min-width,250px);
     @include x-rem(max-width,250px);
   }
+  .img-wrap{
+    @include clearfix;
+  }
   .hits-stat-more{
-  position: absolute;
-  @include x-rem(padding,6px 15px);
-  bottom: 3px;
+    position: absolute;
+    @include x-rem(padding,6px 15px);
+    bottom: 3px;
   }
   .hits_name{
     font-weight: 100;
+    margin-top:10px;
   }
    .hits_coast{
     @include x-rem(margin,10px 0);
+    @include r(768){
+      display:inline-block;
+    }
    }
    .compare-item-close{
     @include x-rem(width,12px);
@@ -6776,6 +6887,9 @@ footer {
     background-position: center center;
     z-index: 1;
     cursor: pointer;
+    @include r(768){
+      right:0;
+    }
    }
    .select-u-body{
     position: absolute;
@@ -6788,12 +6902,18 @@ footer {
    }
    .compare-value{
     font-weight: 100;
+    line-height:1.45;
    }
 }
 .compare-item-main{
   @include x-rem(padding-bottom,50px);
   @include x-rem(max-height,400px);
+  @include x-rem(max-width,300px);
   @include clearfix;
+  position: relative;
+  @include r(768){
+    max-width:100%;
+  }
   .hits_block{
     img{
       display: block;
@@ -6869,10 +6989,12 @@ footer {
       }
       .hits-stat-more{
         @include x-rem(right,10px);
-        @include x-rem(top,70px);
+        @include x-rem(top,50px);
         bottom:auto;
-        @include r(380){
-          display:none;;
+        margin-top: 0;
+        @include r(415){
+          right:-10px;
+          @include x-rem(top,65px);
         }
       }
     }
@@ -7151,6 +7273,8 @@ footer {
    }
    .hits-stat-more{
     width:100%;
+    max-width: 300px;
+    padding: .4375rem 1.25rem;
    }
 }
 .print-btn{
@@ -7160,6 +7284,10 @@ footer {
   background-image: url(../img/features/print.svg);
   background-repeat: no-repeat;
   background-position: left center;
+  transition: color .3s;
+  &:hover{
+    color:$red;
+  }
 }
 .tab-head{
   width:100%;
@@ -7477,7 +7605,7 @@ footer {
   float: right;
   width:45%;
   @include x-rem(margin-bottom,20px);
-  @include r(768){
+  @include r(1040){
    width: 55%;
   }
   @include r(570){
@@ -7488,6 +7616,10 @@ footer {
     display: table;
     border:1px solid $border;
     position: relative;
+    &:focus{
+      border: 1px solid;
+      border-color: $yellowHov;
+    }
     .help-block{
       position: absolute;
       bottom: -25px;
@@ -7503,7 +7635,8 @@ footer {
     cursor: pointer;
     color:$letters;
     &:hover{
-      background: #fbf8f8;
+      background: $yellowHov;
+      transition:background .3s;
     }
     @include r(570){
      @include x-rem(padding,7px);
@@ -7514,6 +7647,7 @@ footer {
     width:70%;
     border:none;
     @include x-rem(padding,7px 15px);
+
   }
 }
 .cart-outer-wrapper{
@@ -7599,6 +7733,7 @@ footer {
       }
       @include r(1040){
         width:100%;
+
       }
       @include r(768){
         @include x-rem(padding, 7.5px 5px 7.5px 5px);
@@ -7639,7 +7774,7 @@ footer {
        @include r(1150){
         @include x-rem(margin-left,30px);
       }
-      @include r(768){
+      @include r(850){
         @include x-rem(padding,20px 15px);
         @include x-rem(margin-left,10px);
       }
@@ -7651,10 +7786,10 @@ footer {
   @include r(1250){
       @include x-rem(width,430px);
     }
-  @include r(768){
+  @include r(850){
       @include x-rem(width,315px);
     }
-  @include r(570){
+  @include r(700){
       width:100%;
     }
   .offer-inner{
@@ -7665,9 +7800,13 @@ footer {
     @include r(1150){
       @include x-rem(margin-right,30px);
     }
-    @include r(768){
+    @include r(850){
       @include x-rem(padding,20px 15px);
       @include x-rem(margin-right,10px);
+      @include x-rem(margin-bottom,15px);
+    }
+    @include r(700){
+      @include x-rem(margin-right,0);
     }
     @include r(570){
       margin:0;
@@ -7703,6 +7842,7 @@ footer {
   .btn-item.print{
     display: inline-block;
     float: right;
+    margin-top:4px;
     a{
       background-image:  url(../img/utility/edit.svg);
     }
@@ -7729,6 +7869,14 @@ footer {
   .elem-name{
     display: block;
     overflow: hidden;
+    .hits_name{
+      color:#000;
+      @include x-rem(font-size,16px);
+      line-height:1.3;
+      &:hover{
+        color:$red;
+      }
+    }
     @include r(1250){
       @include x-rem(padding-right,10px);
     }
@@ -7749,11 +7897,12 @@ footer {
   }
   .prices{
     width:70% !important;
+    float: right!important;
   }
   .prices-item{
     display: inline-block;
-    float: left;
-    @include x-rem(padding,0 5px);
+    float: right;
+    @include x-rem(padding,0 0 0 5px);
   }
   .total{
     @include x-rem(font-size,17px);
@@ -7808,7 +7957,7 @@ footer {
         }
       }
   }
-  @include r(768){
+  @include r(570){
      @include x-rem(padding,10px);
      margin-right:0;
   }
@@ -8052,7 +8201,7 @@ footer {
     }
     &.btn-big{
       @include x-rem(width,200px);
-      margin: 0;
+      margin: 0 auto;
     }
   }
 }
@@ -8087,6 +8236,11 @@ footer {
       color:$red;
       font-weight: 600;
     }
+    &:hover{
+      a{
+        color: $red;
+      }
+    }
     svg{
       @include x-rem(margin-right,10px);
       display: inline-block;
@@ -8096,6 +8250,7 @@ footer {
       color:inherit;
       display: block;
       overflow: hidden;
+      transition: color .3s;
     }
   }
   .selection_wrapper{
@@ -8724,16 +8879,22 @@ transition:border .3s;
 .news-small-wrap{
   @include clearfix;
   .news_block{
+    @include x-rem(margin-bottom,20px);
     display: inline-block;
     width:50%;
     float:left;
-    @include x-rem(margin-bottom,30px);
     &:nth-child(even){
       padding-right: 0;
     }
     @include r(600){
       width:100%;
       padding-right:0; 
+    }
+    img{
+      margin:0 auto;
+    }
+    .news_descr{
+      padding-right:0;
     }
   }
 }
@@ -8823,10 +8984,16 @@ transition:border .3s;
 .brand-main-list{
   list-style: none;
   width:100%;
+  li{
+    padding-left: 0;
+  }
   .main-list-item{
     width:100%;
     @include x-rem(margin-bottom,20px);
     @include clearfix;
+    &:before{
+          display: none;
+        }
     .main-letter{
       font-weight: 600;
       display: inline-block;
@@ -8844,6 +9011,9 @@ transition:border .3s;
       }
       .inner-list-item{
         @include x-rem(padding-right,10px);
+        &:before{
+          display: none;
+        }
         &:not(:last-child){
           @include x-rem(margin-bottom,10px);
         }

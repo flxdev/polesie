@@ -327,7 +327,8 @@ html(lang='ru')
                     .cart-msg
                       span.text Без учета доставки
                     a(href="#").hits-stat-more Оформить заказ
-                    a(href="#",data-target =".oneclick_hidden").product-oneclick.btn-width.js-modal-trigger Купить в 1 клик
+                    .oneclick-wrap
+                      a(href="#",data-target =".oneclick_hidden").product-oneclick.btn-width.js-modal-trigger Купить в 1 клик
             //end of tabs
             section.discount.hits.btop
               h2 Хиты этой недели
@@ -336,306 +337,317 @@ html(lang='ru')
                   // slider - block
                   .slider_block.hits-bg
                     // discount_block hit
-                    .hits_block_wrap
-                      .hits_block
-                        .hits_status
-                          .status_item.item-new
-                            .status__item-bg
-                              span New
-                          .status_item.item-sale
-                            .status__item-bg
-                              span -10%
-                        img(src='img/promo/bike_hit.jpg', alt='#')
-                        .hits_about
-                          p.hits_name
-                            a(href='#') STELS Navigator 500 V 26 (2016)
-                          p.hits_descr
-                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
-                        .hits_coast
-                          p.hits_coast_new
-                            | 10 435,60 р. 
-                            span  10 435 600 р
-                          p.hits_coast
-                            | 13 435,60 р. 
-                            span  13 435 600 р
-                        .hits_tools
-                          .hits-wrap
-                            .hits_comparison.add.active
-                              a(href='#') 
-                            .hits_comparison.added
-                              a(href='#') 
-                          .hits-wrap
-                            .hits_defer.add
-                              a(href='#') 
-                            .hits_defer.added.active
-                              a(href='#') 
-                          .hits-wrap.review     
-                            .hits_review
-                              a(href='#')
-                                | Отзывы 
-                                span (18)
-                        .hits_stat
-                          p.stat_yes.active В наличии
-                          p.stat_yes.zakaz Под заказ
-                          a(href='#') Подробнее
+                    .item-grid-wrap
+                      .hits_block_wrap
+                        a(href="#")
+                          .hits_block
+                            .hits_status
+                              .status_item.item-new
+                                .status__item-bg
+                                  span New
+                              .status_item.item-sale
+                                .status__item-bg
+                                  span -10%
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            .hits_about
+                              p.hits_name
+                                a(href='#') STELS Navigator 500 V 26 (2016)
+                              p.hits_descr
+                                | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                            .hits_coast
+                              p.hits_coast_new
+                                | 10 435,60 р. 
+                                span  10 435 600 р
+                              p.hits_coast
+                                | 13 435,60 р. 
+                                span  13 435 600 р
+                            .hits_tools
+                              .hits-wrap
+                                .hits_comparison.add.active
+                                  a(href='#') 
+                                .hits_comparison.added
+                                  a(href='#') 
+                              .hits-wrap
+                                .hits_defer.add
+                                  a(href='#') 
+                                .hits_defer.added.active
+                                  a(href='#') 
+                              .hits-wrap.review     
+                                .hits_review
+                                  a(href='#')
+                                    | Отзывы 
+                                    span (18)
+                            .hits_stat
+                              p.stat_yes.active В наличии
+                              p.stat_yes.zakaz Под заказ
+                              a(href='#') Подробнее
                   .slider_block.hits-bg
-                    .hits_block_wrap
-                      .hits_block
-                        .hits_status
-                          .status_item.item-new
-                            .status__item-bg
-                              span New
-                          .status_item.item-sale
-                            .status__item-bg
-                              span -10%
-                        img(src='img/promo/bike_hit.jpg', alt='#')
-                        .hits_about
-                          p.hits_name
-                            a(href='#') STELS Navigator 500 V 26 (2016)
-                          p.hits_descr
-                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
-                        .hits_coast
-                          p.hits_coast_new
-                            | 10 435,60 р. 
-                            span  10 435 600 р
-                          p.hits_coast
-                            | 13 435,60 р. 
-                            span  13 435 600 р
-                        .hits_tools
-                          .hits-wrap
-                            .hits_comparison.add.active
-                              a(href='#') 
-                            .hits_comparison.added
-                              a(href='#') 
-                          .hits-wrap
-                            .hits_defer.add
-                              a(href='#') 
-                            .hits_defer.added.active
-                              a(href='#') 
-                          .hits-wrap.review     
-                            .hits_review
-                              a(href='#')
-                                | Отзывы 
-                                span (18)
-                        .hits_stat
-                          p.stat_yes.active В наличии
-                          p.stat_yes.zakaz Под заказ
-                          a(href='#') Подробнее
+                    .item-grid-wrap
+                      .hits_block_wrap
+                        .hits_block
+                          .hits_status
+                            .status_item.item-new
+                              .status__item-bg
+                                span New
+                            .status_item.item-sale
+                              .status__item-bg
+                                span -10%
+                          img(src='img/promo/bike_hit.jpg', alt='#')
+                          .hits_about
+                            p.hits_name
+                              a(href='#') STELS Navigator 500 V 26 (2016)
+                            p.hits_descr
+                              | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                          .hits_coast
+                            p.hits_coast_new
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                            p.hits_coast
+                              | 13 435,60 р. 
+                              span  13 435 600 р
+                          .hits_tools
+                            .hits-wrap
+                              .hits_comparison.add.active
+                                a(href='#') 
+                              .hits_comparison.added
+                                a(href='#') 
+                            .hits-wrap
+                              .hits_defer.add
+                                a(href='#') 
+                              .hits_defer.added.active
+                                a(href='#') 
+                            .hits-wrap.review     
+                              .hits_review
+                                a(href='#')
+                                  | Отзывы 
+                                  span (18)
+                          .hits_stat
+                            p.stat_yes.active В наличии
+                            p.stat_yes.zakaz Под заказ
+                            a(href='#') Подробнее
                   .slider_block.hits-bg
-                    .hits_block_wrap
-                      .hits_block
-                        .hits_status
-                          .status_item.item-new
-                            .status__item-bg
-                              span New
-                          .status_item.item-sale
-                            .status__item-bg
-                              span -10%
-                        img(src='img/promo/bike_hit.jpg', alt='#')
-                        .hits_about
-                          p.hits_name
-                            a(href='#') STELS Navigator 500 V 26 (2016)
-                          p.hits_descr
-                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
-                        .hits_coast
-                          p.hits_coast_new
-                            | 10 435,60 р. 
-                            span  10 435 600 р
-                          p.hits_coast
-                            | 13 435,60 р. 
-                            span  13 435 600 
-                        .hits_tools
-                          .hits-wrap
-                            .hits_comparison.add.active
-                              a(href='#') 
-                            .hits_comparison.added
-                              a(href='#') 
-                          .hits-wrap
-                            .hits_defer.add
-                              a(href='#') 
-                            .hits_defer.added.active
-                              a(href='#') 
-                          .hits-wrap.review     
-                            .hits_review
-                              a(href='#')
-                                | Отзывы 
-                                span (18)
-                        .hits_stat
-                          p.stat_yes.active В наличии
-                          p.stat_yes.zakaz Под заказ
-                          a(href='#') Подробнее
+                    .item-grid-wrap
+                      .hits_block_wrap
+                        a(href="#")
+                          .hits_block
+                            .hits_status
+                              .status_item.item-new
+                                .status__item-bg
+                                  span New
+                              .status_item.item-sale
+                                .status__item-bg
+                                  span -10%
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            .hits_about
+                              p.hits_name
+                                a(href='#') STELS Navigator 500 V 26 (2016)
+                              p.hits_descr
+                                | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                            .hits_coast
+                              p.hits_coast_new
+                                | 10 435,60 р. 
+                                span  10 435 600 р
+                              p.hits_coast
+                                | 13 435,60 р. 
+                                span  13 435 600 р
+                            .hits_tools
+                              .hits-wrap
+                                .hits_comparison.add.active
+                                  a(href='#') 
+                                .hits_comparison.added
+                                  a(href='#') 
+                              .hits-wrap
+                                .hits_defer.add
+                                  a(href='#') 
+                                .hits_defer.added.active
+                                  a(href='#') 
+                              .hits-wrap.review     
+                                .hits_review
+                                  a(href='#')
+                                    | Отзывы 
+                                    span (18)
+                            .hits_stat
+                              p.stat_yes.active В наличии
+                              p.stat_yes.zakaz Под заказ
+                              a(href='#') Подробнее
                   .slider_block.hits-bg
-                    .hits_block_wrap
-                      .hits_block
-                        .hits_status
-                          .status_item.item-new
-                            .status__item-bg
-                              span New
-                          .status_item.item-sale
-                            .status__item-bg
-                              span -10%
-                        img(src='img/promo/bike_hit.jpg', alt='#')
-                        .hits_about
-                          p.hits_name
-                            a(href='#') STELS Navigator 500 V 26 (2016)
-                          p.hits_descr
-                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
-                        .hits_coast
-                          p.hits_coast_new
-                            | 10 435,60 р. 
-                            span  10 435 600 р
-                          p.hits_coast
-                            | 13 435,60 р. 
-                            span  13 435 600 р
-                        .hits_tools
-                          .hits-wrap
-                            .hits_comparison.add.active
-                              a(href='#') 
-                            .hits_comparison.added
-                              a(href='#') 
-                          .hits-wrap
-                            .hits_defer.add
-                              a(href='#') 
-                            .hits_defer.added.active
-                              a(href='#') 
-                          .hits-wrap.review     
-                            .hits_review
-                              a(href='#')
-                                | Отзывы 
-                                span (18)
-                        .hits_stat
-                          p.stat_yes.active В наличии
-                          p.stat_yes.zakaz Под заказ
-                          a(href='#') Подробнее
+                    .item-grid-wrap
+                      .hits_block_wrap
+                        .hits_block
+                          .hits_status
+                            .status_item.item-new
+                              .status__item-bg
+                                span New
+                            .status_item.item-sale
+                              .status__item-bg
+                                span -10%
+                          img(src='img/promo/bike_hit.jpg', alt='#')
+                          .hits_about
+                            p.hits_name
+                              a(href='#') STELS Navigator 500 V 26 (2016)
+                            p.hits_descr
+                              | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                          .hits_coast
+                            p.hits_coast_new
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                            p.hits_coast
+                              | 13 435,60 р. 
+                              span  13 435 600 р
+                          .hits_tools
+                            .hits-wrap
+                              .hits_comparison.add.active
+                                a(href='#') 
+                              .hits_comparison.added
+                                a(href='#') 
+                            .hits-wrap
+                              .hits_defer.add
+                                a(href='#') 
+                              .hits_defer.added.active
+                                a(href='#') 
+                            .hits-wrap.review     
+                              .hits_review
+                                a(href='#')
+                                  | Отзывы 
+                                  span (18)
+                          .hits_stat
+                            p.stat_yes.active В наличии
+                            p.stat_yes.zakaz Под заказ
+                            a(href='#') Подробнее
                   .slider_block.hits-bg
-                    .hits_block_wrap
-                      .hits_block
-                        .hits_status
-                          .status_item.item-new
-                            .status__item-bg
-                              span New
-                          .status_item.item-sale
-                            .status__item-bg
-                              span -10%
-                        img(src='img/promo/bike_hit.jpg', alt='#')
-                        .hits_about
-                          p.hits_name
-                            a(href='#') STELS Navigator 500 V 26 (2016)
-                          p.hits_descr
-                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
-                        .hits_coast
-                          p.hits_coast_new
-                            | 10 435,60 р. 
-                            span  10 435 600 р
-                          p.hits_coast
-                            | 13 435,60 р. 
-                            span  13 435 600 р
-                        .hits_tools
-                          .hits-wrap
-                            .hits_comparison.add.active
-                              a(href='#') 
-                            .hits_comparison.added
-                              a(href='#') 
-                          .hits-wrap
-                            .hits_defer.add
-                              a(href='#') 
-                            .hits_defer.added.active
-                              a(href='#') 
-                          .hits-wrap.review     
-                            .hits_review
-                              a(href='#')
-                                | Отзывы 
-                                span (18)
-                        .hits_stat
-                          p.stat_yes.active В наличии
-                          p.stat_yes.zakaz Под заказ
-                          a(href='#') Подробнее
+                    .item-grid-wrap
+                      .hits_block_wrap
+                        a(href="#")
+                          .hits_block
+                            .hits_status
+                              .status_item.item-new
+                                .status__item-bg
+                                  span New
+                              .status_item.item-sale
+                                .status__item-bg
+                                  span -10%
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            .hits_about
+                              p.hits_name
+                                a(href='#') STELS Navigator 500 V 26 (2016)
+                              p.hits_descr
+                                | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                            .hits_coast
+                              p.hits_coast_new
+                                | 10 435,60 р. 
+                                span  10 435 600 р
+                              p.hits_coast
+                                | 13 435,60 р. 
+                                span  13 435 600 р
+                            .hits_tools
+                              .hits-wrap
+                                .hits_comparison.add.active
+                                  a(href='#') 
+                                .hits_comparison.added
+                                  a(href='#') 
+                              .hits-wrap
+                                .hits_defer.add
+                                  a(href='#') 
+                                .hits_defer.added.active
+                                  a(href='#') 
+                              .hits-wrap.review     
+                                .hits_review
+                                  a(href='#')
+                                    | Отзывы 
+                                    span (18)
+                            .hits_stat
+                              p.stat_yes.active В наличии
+                              p.stat_yes.zakaz Под заказ
+                              a(href='#') Подробнее
                   .slider_block.hits-bg
-                    .hits_block_wrap
-                      .hits_block
-                        .hits_status
-                          .status_item.item-new
-                            .status__item-bg
-                              span New
-                          .status_item.item-sale
-                            .status__item-bg
-                              span -10%
-                        img(src='img/promo/bike_hit.jpg', alt='#')
-                        .hits_about
-                          p.hits_name
-                            a(href='#') STELS Navigator 500 V 26 (2016)
-                          p.hits_descr
-                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
-                        .hits_coast
-                          p.hits_coast_new
-                            | 10 435,60 р. 
-                            span  10 435 600 р
-                          p.hits_coast
-                            | 13 435,60 р. 
-                            span  13 435 600 р
-                        .hits_tools
-                          .hits-wrap
-                            .hits_comparison.add.active
-                              a(href='#') 
-                            .hits_comparison.added
-                              a(href='#') 
-                          .hits-wrap
-                            .hits_defer.add
-                              a(href='#') 
-                            .hits_defer.added.active
-                              a(href='#') 
-                          .hits-wrap.review     
-                            .hits_review
-                              a(href='#')
-                                | Отзывы 
-                                span (18)
-                        .hits_stat
-                          p.stat_yes.active В наличии
-                          p.stat_yes.zakaz Под заказ
-                          a(href='#') Подробнее
+                    .item-grid-wrap
+                      .hits_block_wrap
+                        .hits_block
+                          .hits_status
+                            .status_item.item-new
+                              .status__item-bg
+                                span New
+                            .status_item.item-sale
+                              .status__item-bg
+                                span -10%
+                          img(src='img/promo/bike_hit.jpg', alt='#')
+                          .hits_about
+                            p.hits_name
+                              a(href='#') STELS Navigator 500 V 26 (2016)
+                            p.hits_descr
+                              | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                          .hits_coast
+                            p.hits_coast_new
+                              | 10 435,60 р. 
+                              span  10 435 600 р
+                            p.hits_coast
+                              | 13 435,60 р. 
+                              span  13 435 600 р
+                          .hits_tools
+                            .hits-wrap
+                              .hits_comparison.add.active
+                                a(href='#') 
+                              .hits_comparison.added
+                                a(href='#') 
+                            .hits-wrap
+                              .hits_defer.add
+                                a(href='#') 
+                              .hits_defer.added.active
+                                a(href='#') 
+                            .hits-wrap.review     
+                              .hits_review
+                                a(href='#')
+                                  | Отзывы 
+                                  span (18)
+                          .hits_stat
+                            p.stat_yes.active В наличии
+                            p.stat_yes.zakaz Под заказ
+                            a(href='#') Подробнее
                   .slider_block.hits-bg
-                    .hits_block_wrap
-                      .hits_block
-                        .hits_status
-                          .status_item.item-new
-                            .status__item-bg
-                              span New
-                          .status_item.item-sale
-                            .status__item-bg
-                              span -10%
-                        img(src='img/promo/bike_hit.jpg', alt='#')
-                        .hits_about
-                          p.hits_name
-                            a(href='#') STELS Navigator 500 V 26 (2016)
-                          p.hits_descr
-                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
-                        .hits_coast
-                          p.hits_coast_new
-                            | 10 435,60 р. 
-                            span  10 435 600 р
-                          p.hits_coast
-                            | 13 435,60 р. 
-                            span  13 435 600 р
-                        .hits_tools
-                          .hits-wrap
-                            .hits_comparison.add.active
-                              a(href='#') 
-                            .hits_comparison.added
-                              a(href='#') 
-                          .hits-wrap
-                            .hits_defer.add
-                              a(href='#') 
-                            .hits_defer.added.active
-                              a(href='#') 
-                          .hits-wrap.review     
-                            .hits_review
-                              a(href='#')
-                                | Отзывы 
-                                span (18)
-                        .hits_stat
-                          p.stat_yes.active В наличии
-                          p.stat_yes.zakaz Под заказ
-                          a(href='#') Подробнее
+                    .item-grid-wrap
+                      .hits_block_wrap
+                        a(href="#")
+                          .hits_block
+                            .hits_status
+                              .status_item.item-new
+                                .status__item-bg
+                                  span New
+                              .status_item.item-sale
+                                .status__item-bg
+                                  span -10%
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            .hits_about
+                              p.hits_name
+                                a(href='#') STELS Navigator 500 V 26 (2016)
+                              p.hits_descr
+                                | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                            .hits_coast
+                              p.hits_coast_new
+                                | 10 435,60 р. 
+                                span  10 435 600 р
+                              p.hits_coast
+                                | 13 435,60 р. 
+                                span  13 435 600 р
+                            .hits_tools
+                              .hits-wrap
+                                .hits_comparison.add.active
+                                  a(href='#') 
+                                .hits_comparison.added
+                                  a(href='#') 
+                              .hits-wrap
+                                .hits_defer.add
+                                  a(href='#') 
+                                .hits_defer.added.active
+                                  a(href='#') 
+                              .hits-wrap.review     
+                                .hits_review
+                                  a(href='#')
+                                    | Отзывы 
+                                    span (18)
+                            .hits_stat
+                              p.stat_yes.active В наличии
+                              p.stat_yes.zakaz Под заказ
+                              a(href='#') Подробнее
             section.discount.themed
               h2 Ранее просмотренные
               .discount-slider

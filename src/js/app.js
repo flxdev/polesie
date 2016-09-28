@@ -300,7 +300,7 @@ mobileSub();
         var elementClick = $(this).attr("href")
         var destination = $(elementClick).offset().top;
 
-        jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination - 120}, 500);
+        jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination - 125}, 500);
          e.preventDefault();
          if (elementClick == '#tab_item') {
          	$("#brand .tab").removeClass("active").eq(1).addClass("active");
@@ -668,20 +668,12 @@ mobileSub();
     {
       breakpoint: 980,
       settings: {
-        slidesToShow: 4,
-        slidesToScroll: 4
-      }
-    },
-    {
-      breakpoint: 768,
-      settings: {
         slidesToShow: 3,
-        slidesToScroll: 3,
-        arrows: false,
+        slidesToScroll: 3
       }
     },
     {
-      breakpoint: 490,
+      breakpoint: 550,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
@@ -848,8 +840,7 @@ if($('#brand').length){
 
 		data = $(this).data('target');
 
-		$('body').find(data).addClass('active');
-		$("html").css("overflow-y","hidden");
+		$('body').css("overflow-y","hidden").find(data).addClass('active');
 
 		$(document).mouseup(function (e){ 
 				var div = $('.hidden-block');
@@ -877,7 +868,7 @@ $('.button_close').click(function(){
 			}
 			
 			if(!$(this).hasClass('js-modal-trigger')){
-			 $("html").css("overflow-y","scroll");
+			 $("body").css("overflow-y","scroll");
 			}
 		});
 	
@@ -1348,7 +1339,7 @@ if($('.sort_wrapper').length){
 							clr.addClass('off');
 							setTimeout(function(){
 								targetToText.removeClass('active').addClass('is-checked').parents('.input-wrapper').removeClass('has-error').addClass('has-success');
-							}, 300)
+							}, 100)
 							setTimeout(function(){
 								clr.removeClass('off');
 							}, 1000)

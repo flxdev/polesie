@@ -142,16 +142,17 @@ html(lang='ru')
                               span.input-checked
                             span.input-text Взрослый
                         .select-all-cont
-                          span.select-all-title.js-all-title Все Варианты 
-                          .icon
-                            svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='18px', viewbox='0 0 15 3', style='enable-background:new 0 0 15 3;', xml:space='preserve')
-                              style(type='text/css').
-                                .st1{fill-rule:evenodd;clip-rule:evenodd;fill:#3B3B3B;}
-                              g
+                          .select-all-maincont.js-all-title
+                            span.select-all-title Все Варианты 
+                            .icon
+                              svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px',width='18px', viewbox='0 0 15 3', style='enable-background:new 0 0 15 3;', xml:space='preserve')
+                                style(type='text/css').
+                                  .st1{fill-rule:evenodd;clip-rule:evenodd;fill:#3B3B3B;}
                                 g
-                                  path.st1(d='M1.5,0C0.7,0,0,0.7,0,1.5C0,2.3,0.7,3,1.5,3C2.3,3,3,2.3,3,1.5C3,0.7,2.3,0,1.5,0z M7.5,0C6.7,0,6,0.7,6,1.5\
-                                  C6,2.3,6.7,3,7.5,3C8.3,3,9,2.3,9,1.5C9,0.7,8.3,0,7.5,0z M13.5,0C12.7,0,12,0.7,12,1.5C12,2.3,12.7,3,13.5,3\
-                                  C14.3,3,15,2.3,15,1.5C15,0.7,14.3,0,13.5,0z')
+                                  g
+                                    path.st1(d='M1.5,0C0.7,0,0,0.7,0,1.5C0,2.3,0.7,3,1.5,3C2.3,3,3,2.3,3,1.5C3,0.7,2.3,0,1.5,0z M7.5,0C6.7,0,6,0.7,6,1.5\
+                                    C6,2.3,6.7,3,7.5,3C8.3,3,9,2.3,9,1.5C9,0.7,8.3,0,7.5,0z M13.5,0C12.7,0,12,0.7,12,1.5C12,2.3,12.7,3,13.5,3\
+                                    C14.3,3,15,2.3,15,1.5C15,0.7,14.3,0,13.5,0z')
                           .select-all-inner.js-all-inner
                             ul.select-u-body
                               li.select-u-item
@@ -393,22 +394,24 @@ html(lang='ru')
                         .status_item.item-new
                           .status__item-bg
                             span New
-                      img(src="img/promo/bike_hit.jpg", alt="bike")
+                      a(href="#")
+                        img(src="img/promo/bike_hit.jpg", alt="bike")
                     .product_iten-content
                       .hits_about
-                        p.hits_name
-                          a(href='#') STELS Navigator S6 Edge 32Gb
-                        .hits_raiting
-                          .hits_raiting-star-wrap
-                            i.star-raiting
-                          .hits_raiting-article
-                            span.art Актикул
-                            span.art-num 46146
-                          .hits_raiting-code
-                            span.cod Код
-                            span.art-num 146
-                        p.hits_descr
-                          | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                        a(href="#")
+                          p.hits_name
+                            | STELS Navigator S6 Edge 32Gb
+                          .hits_raiting
+                            .hits_raiting-star-wrap
+                              i.star-raiting
+                            .hits_raiting-article
+                              span.art Актикул
+                              span.art-num 46146
+                            .hits_raiting-code
+                              span.cod Код
+                              span.art-num 146
+                          p.hits_descr
+                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
                       .hits_tools
                         .hits-wrap
                           .hits_comparison.add.active
@@ -437,32 +440,35 @@ html(lang='ru')
                         p.hits_coast
                           | 13 435,60 р. 
                           span  13 435 600 р
-                      .hits_stat
-                        p.stat_yes.active В наличии
-                        p.stat_yes.zakaz Под заказ
-                      a.hits-stat-more(href='#') Подробнее
+                      .price-more-wrap
+                        .hits_stat
+                          p.stat_yes.active В наличии
+                          p.stat_yes.zakaz Под заказ
+                        a.hits-stat-more(href='#') Подробнее
                   .product_item
                     .product_item-img
                       .hits_status
                         .status_item.item-new
                           .status__item-bg
                             span New
-                      img(src="img/promo/bike_hit.jpg", alt="bike")
+                      a(href="#")
+                        img(src="img/promo/bike_hit.jpg", alt="bike")
                     .product_iten-content
                       .hits_about
-                        p.hits_name
-                          a(href='#') STELS Navigator S6 Edge 32Gb
-                        .hits_raiting
-                          .hits_raiting-star-wrap
-                            i.star-raiting
-                          .hits_raiting-article
-                            span.art Актикул
-                            span.art-num 46146
-                          .hits_raiting-code
-                            span.cod Код
-                            span.art-num 146
-                        p.hits_descr
-                          | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                        a(href="#")
+                          p.hits_name
+                            | STELS Navigator S6 Edge 32Gb
+                          .hits_raiting
+                            .hits_raiting-star-wrap
+                              i.star-raiting
+                            .hits_raiting-article
+                              span.art Актикул
+                              span.art-num 46146
+                            .hits_raiting-code
+                              span.cod Код
+                              span.art-num 146
+                          p.hits_descr
+                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
                       .hits_tools
                         .hits-wrap
                           .hits_comparison.add.active
@@ -491,32 +497,35 @@ html(lang='ru')
                         p.hits_coast
                           | 13 435,60 р. 
                           span  13 435 600 р
-                      .hits_stat
-                        p.stat_yes.active В наличии
-                        p.stat_yes.zakaz Под заказ
-                      a.hits-stat-more(href='#') Подробнее
+                      .price-more-wrap
+                        .hits_stat
+                          p.stat_yes.active В наличии
+                          p.stat_yes.zakaz Под заказ
+                        a.hits-stat-more(href='#') Подробнее
                   .product_item
                     .product_item-img
                       .hits_status
                         .status_item.item-new
                           .status__item-bg
                             span New
-                      img(src="img/promo/bike_hit.jpg", alt="bike")
+                      a(href="#")
+                        img(src="img/promo/bike_hit.jpg", alt="bike")
                     .product_iten-content
                       .hits_about
-                        p.hits_name
-                          a(href='#') STELS Navigator S6 Edge 32Gb
-                        .hits_raiting
-                          .hits_raiting-star-wrap
-                            i.star-raiting
-                          .hits_raiting-article
-                            span.art Актикул
-                            span.art-num 46146
-                          .hits_raiting-code
-                            span.cod Код
-                            span.art-num 146
-                        p.hits_descr
-                          | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                        a(href="#")
+                          p.hits_name
+                            | STELS Navigator S6 Edge 32Gb
+                          .hits_raiting
+                            .hits_raiting-star-wrap
+                              i.star-raiting
+                            .hits_raiting-article
+                              span.art Актикул
+                              span.art-num 46146
+                            .hits_raiting-code
+                              span.cod Код
+                              span.art-num 146
+                          p.hits_descr
+                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
                       .hits_tools
                         .hits-wrap
                           .hits_comparison.add.active
@@ -545,32 +554,35 @@ html(lang='ru')
                         p.hits_coast
                           | 13 435,60 р. 
                           span  13 435 600 р
-                      .hits_stat
-                        p.stat_yes.active В наличии
-                        p.stat_yes.zakaz Под заказ
-                      a.hits-stat-more(href='#') Подробнее
+                      .price-more-wrap
+                        .hits_stat
+                          p.stat_yes.active В наличии
+                          p.stat_yes.zakaz Под заказ
+                        a.hits-stat-more(href='#') Подробнее
                   .product_item
                     .product_item-img
                       .hits_status
                         .status_item.item-new
                           .status__item-bg
                             span New
-                      img(src="img/promo/bike_hit.jpg", alt="bike")
+                      a(href='#')
+                        img(src="img/promo/bike_hit.jpg", alt="bike")
                     .product_iten-content
                       .hits_about
-                        p.hits_name
-                          a(href='#') STELS Navigator S6 Edge 32Gb
-                        .hits_raiting
-                          .hits_raiting-star-wrap
-                            i.star-raiting
-                          .hits_raiting-article
-                            span.art Актикул
-                            span.art-num 46146
-                          .hits_raiting-code
-                            span.cod Код
-                            span.art-num 146
-                        p.hits_descr
-                          | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                        a(href="#")
+                          p.hits_name
+                            | STELS Navigator S6 Edge 32Gb
+                          .hits_raiting
+                            .hits_raiting-star-wrap
+                              i.star-raiting
+                            .hits_raiting-article
+                              span.art Актикул
+                              span.art-num 46146
+                            .hits_raiting-code
+                              span.cod Код
+                              span.art-num 146
+                          p.hits_descr
+                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
                       .hits_tools
                         .hits-wrap
                           .hits_comparison.add.active
@@ -599,10 +611,11 @@ html(lang='ru')
                         p.hits_coast
                           | 13 435,60 р. 
                           span  13 435 600 р
-                      .hits_stat
-                        p.stat_yes.active В наличии
-                        p.stat_yes.zakaz Под заказ
-                      a.hits-stat-more(href='#') Подробнее
+                      .price-more-wrap
+                        .hits_stat
+                          p.stat_yes.active В наличии
+                          p.stat_yes.zakaz Под заказ
+                        a.hits-stat-more(href='#') Подробнее
                   .product_item
                     .product_item-img
                       .hits_status
@@ -612,22 +625,24 @@ html(lang='ru')
                         .status_item.item-sale
                           .status__item-bg
                             span -50%
-                      img(src="img/promo/bike_hit.jpg", alt="bike")
+                      a(href='#')
+                        img(src="img/promo/bike_hit.jpg", alt="bike")
                     .product_iten-content
                       .hits_about
-                        p.hits_name
-                          a(href='#') STELS Navigator S6 Edge 32Gb
-                        .hits_raiting
-                          .hits_raiting-star-wrap
-                            i.star-raiting
-                          .hits_raiting-article
-                            span.art Актикул
-                            span.art-num 46146
-                          .hits_raiting-code
-                            span.cod Код
-                            span.art-num 146
-                        p.hits_descr
-                          | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                        a(href="#")
+                          p.hits_name
+                            | STELS Navigator S6 Edge 32Gb
+                          .hits_raiting
+                            .hits_raiting-star-wrap
+                              i.star-raiting
+                            .hits_raiting-article
+                              span.art Актикул
+                              span.art-num 46146
+                            .hits_raiting-code
+                              span.cod Код
+                              span.art-num 146
+                          p.hits_descr
+                            | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
                       .hits_tools
                         .hits-wrap
                           .hits_comparison.add.active
@@ -656,10 +671,11 @@ html(lang='ru')
                         p.hits_coast
                           | 13 435,60 р. 
                           span  13 435 600 р
-                      .hits_stat
-                        p.stat_yes.active В наличии
-                        p.stat_yes.zakaz Под заказ
-                      a.hits-stat-more(href='#') Подробнее
+                      .price-more-wrap
+                        .hits_stat
+                          p.stat_yes.active В наличии
+                          p.stat_yes.zakaz Под заказ
+                        a.hits-stat-more(href='#') Подробнее
               
                 .pagination_wrap
                   .pagination_container
