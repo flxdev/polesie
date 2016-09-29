@@ -15,16 +15,36 @@ html(lang='ru')
       // header
       include ./includes/_headmenu.jade
       // promo / slider - banners
-      section
-        ul.breadcrums
-            a.home-btn(href="#")
-                .home-img
-                    svg#Layer_home(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='9px', y='5px', viewbox='0 0 14.1 13', style='enable-background:new 0 0 14.1 13;', xml:space='preserve')
-                      style(type='text/css').
-                        .sthome{fill-rule:evenodd;clip-rule:evenodd;fill:#989898;}
-                      path.sthome(d='M7.1,0l4.8,4.1L14,5.8c0,0,0.2,0.4,0,0.7c-0.3,0.4-0.8,0.2-0.8,0.2l-0.5-0.2v5.8c0,0.3-0.3,0.6-0.6,0.6h-3V8h-4\
-                      v5h-3c-0.3,0-0.6-0.3-0.6-0.6V6.6L0.9,6.8c0,0-0.6,0-0.8-0.2c-0.2-0.3,0-0.9,0-0.9l2-1.6L7.1,0z')
-            li.bread-item
+      .content_main-wrapper
+        section
+          ul.breadcrums
+              a.home-btn(href="#")
+                  .home-img
+                      svg#Layer_home(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='9px', y='5px', viewbox='0 0 14.1 13', style='enable-background:new 0 0 14.1 13;', xml:space='preserve')
+                        style(type='text/css').
+                          .sthome{fill-rule:evenodd;clip-rule:evenodd;fill:#989898;}
+                        path.sthome(d='M7.1,0l4.8,4.1L14,5.8c0,0,0.2,0.4,0,0.7c-0.3,0.4-0.8,0.2-0.8,0.2l-0.5-0.2v5.8c0,0.3-0.3,0.6-0.6,0.6h-3V8h-4\
+                        v5h-3c-0.3,0-0.6-0.3-0.6-0.6V6.6L0.9,6.8c0,0-0.6,0-0.8-0.2c-0.2-0.3,0-0.9,0-0.9l2-1.6L7.1,0z')
+              li.bread-item
+                  a(href="#") Спорт и туризм
+                  .bread-arrow
+                      svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                        style(type='text/css').
+                          .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                        path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                  .bread__add-menu-wrap
+                    .bread__add-container
+                      ul.add-list
+                        li.add-list-item
+                          a(href="#") Товары для детей
+                        li.add-list-item
+                          a(href="#") Мода и красота
+                        li.add-list-item
+                          a(href="#") Электроника и техника
+                        li.add-list-item
+                          a(href="#") Всякие гадости
+                  
+              li.bread-item
                 a(href="#") Спорт и туризм
                 .bread-arrow
                     svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
@@ -41,653 +61,634 @@ html(lang='ru')
                       li.add-list-item
                         a(href="#") Электроника и техника
                       li.add-list-item
-                        a(href="#") Всякие гадости
-                
-            li.bread-item
-              a(href="#") Спорт и туризм
-              .bread-arrow
-                  svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
-                    style(type='text/css').
-                      .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
-                    path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
-              .bread__add-menu-wrap
-                .bread__add-container
-                  ul.add-list
-                    li.add-list-item
-                      a(href="#") Товары для детей
-                    li.add-list-item
-                      a(href="#") Мода и красота
-                    li.add-list-item
-                      a(href="#") Электроника и техника
-                    li.add-list-item
-                      a(href="#") Ldt jlbyflwfnbrkfccybws rrr
-            li.bread-item
-                a(href="#") Спорт и туризм
-      section
-        h1.section-title Спорт и туризм
-        .section__wrapper
-            .aside__menu
-                aside
-                  .moblie_btn
-                    span Показать разделы
-                    .bread-arrow
-                      svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
-                        style(type='text/css').
-                          .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
-                        path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
-                  ul.aside-list.js-toggle-target
-                      li.aside-list_item
-                        a(href="#") Велосипеды
-                      li.aside-list_item
-                        a(href="#") Аксессуары для велосипедов
-                      li.aside-list_item
-                        a(href="#") Тренажёрный зал и фитнес
-                      li.aside-list_item
-                        a(href="#") Спортивный зал
-                      li.aside-list_item
-                        a(href="#") Зимние виды спорта
-                      li.aside-list_item
-                        a(href="#") Аксессуары для велосипедов
-                      li.aside-list_item
-                        a(href="#") Аксессуары для велосипедов
-            .section__content
-              .content-categories
-                h3.categoties-name Все категории раздела «Спорт и туризм»
-                a(href="#").categories_item
-                  .categories_item-img
-                    img(src="img/promo/discount-block.jpg", alt="dsfsd")
-                  .discount_name 
-                    span.name Веслосипед 
-                    span.discount -5%
-                  p.categories_item-price от 150,00 р.
-                a(href="#").categories_item
-                  .categories_item-img
-                    img(src="img/promo/discount-block.jpg", alt="dsfsd")
-                  .discount_name
-                    span.name Туризм
-                    span.discount -5%
-                  p.categories_item-price от 150,00 р.
-                a(href="#").categories_item
-                  .categories_item-img
-                    img(src="img/promo/discount-block.jpg", alt="dsfsd")
-                  .discount_name 
-                    span.name Палатки gfkfnrb gfkfff;fgdfgdgfd Палаткиииии
-                    span.discount -3%
-                  p.categories_item-price от 150,00 р.
-                a(href="#").categories_item
-                  .categories_item-img
-                    img(src="img/promo/discount-block.jpg", alt="dsfsd")
-                  .discount_name
-                    span.name Весло 
-                    span.discount -5%
-                  p.categories_item-price от 150,00 р.
-                a(href="#").categories_item
-                  .categories_item-img
-                    img(src="img/promo/discount-block.jpg", alt="dsfsd")
-                  .discount_name
-                    span.name Весло 
-                    span.discount -5%
-                  p.categories_item-price от 150,00 р.
-                a(href="#").categories_item
-                  .categories_item-img
-                    img(src="img/promo/discount-block.jpg", alt="dsfsd")
-                  .discount_name
-                    span.name Весло 
-                    span.discount -5%
-                  p.categories_item-price от 150,00 р.
-                a(href="#").categories_item
-                  .categories_item-img
-                    img(src="img/promo/discount-block.jpg", alt="dsfsd")
-                  .discount_name
-                    span.name Весло 
-                    span.discount -5%
-                  p.categories_item-price от 150,00 р.
-                a(href="#").categories_item
-                  .categories_item-img
-                    img(src="img/promo/discount-block.jpg", alt="dsfsd")
-                  .discount_name
-                    span.name Весло 
-                    span.discount -5%
-                  p.categories_item-price от 150,00 р.
+                        a(href="#") Ldt jlbyflwfnbrkfccybws rrr
+              li.bread-item
+                  a(href="#") Спорт и туризм
+        section
+          h1.section-title Спорт и туризм
+          .section__wrapper
+              .aside__menu
+                  aside
+                    .moblie_btn
+                      span Показать разделы
+                      .bread-arrow
+                        svg#Layer_arr(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 9 5', style='enable-background:new 0 0 9 5;', xml:space='preserve')
+                          style(type='text/css').
+                            .bre-arr{fill-rule:evenodd;clip-rule:evenodd;fill:#3b3b3b;}
+                          path.bre-arr(d='M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5')
+                    ul.aside-list.js-toggle-target
+                        li.aside-list_item
+                          a(href="#") Велосипеды
+                        li.aside-list_item
+                          a(href="#") Аксессуары для велосипедов
+                        li.aside-list_item
+                          a(href="#") Тренажёрный зал и фитнес
+                        li.aside-list_item
+                          a(href="#") Спортивный зал
+                        li.aside-list_item
+                          a(href="#") Зимние виды спорта
+                        li.aside-list_item
+                          a(href="#") Аксессуары для велосипедов
+                        li.aside-list_item
+                          a(href="#") Аксессуары для велосипедов
+              .section__content
+                .content-categories
+                  h3.categoties-name Все категории раздела «Спорт и туризм»
+                  a(href="#").categories_item
+                    .categories_item-img
+                      img(src="img/promo/discount-block.jpg", alt="dsfsd")
+                    .discount_name 
+                      span.name Веслосипед 
+                      span.discount -5%
+                    p.categories_item-price от 150,00 р.
+                  a(href="#").categories_item
+                    .categories_item-img
+                      img(src="img/promo/discount-block.jpg", alt="dsfsd")
+                    .discount_name
+                      span.name Туризм
+                      span.discount -5%
+                    p.categories_item-price от 150,00 р.
+                  a(href="#").categories_item
+                    .categories_item-img
+                      img(src="img/promo/discount-block.jpg", alt="dsfsd")
+                    .discount_name 
+                      span.name Палатки gfkfnrb gfkfff;fgdfgdgfd Палаткиииии
+                      span.discount -3%
+                    p.categories_item-price от 150,00 р.
+                  a(href="#").categories_item
+                    .categories_item-img
+                      img(src="img/promo/discount-block.jpg", alt="dsfsd")
+                    .discount_name
+                      span.name Весло 
+                      span.discount -5%
+                    p.categories_item-price от 150,00 р.
+                  a(href="#").categories_item
+                    .categories_item-img
+                      img(src="img/promo/discount-block.jpg", alt="dsfsd")
+                    .discount_name
+                      span.name Весло 
+                      span.discount -5%
+                    p.categories_item-price от 150,00 р.
+                  a(href="#").categories_item
+                    .categories_item-img
+                      img(src="img/promo/discount-block.jpg", alt="dsfsd")
+                    .discount_name
+                      span.name Весло 
+                      span.discount -5%
+                    p.categories_item-price от 150,00 р.
+                  a(href="#").categories_item
+                    .categories_item-img
+                      img(src="img/promo/discount-block.jpg", alt="dsfsd")
+                    .discount_name
+                      span.name Весло 
+                      span.discount -5%
+                    p.categories_item-price от 150,00 р.
+                  a(href="#").categories_item
+                    .categories_item-img
+                      img(src="img/promo/discount-block.jpg", alt="dsfsd")
+                    .discount_name
+                      span.name Весло 
+                      span.discount -5%
+                    p.categories_item-price от 150,00 р.
 
-              .discount.themed.discount-inner
-                h2 Тематические подборки
-                // THEME @child@
-                h3 Детям на праздник
-                .discount-slider
-                  .slick-slider-discount-themed
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                // THEME @technic@
-                h3 Умная техника
-                .discount-slider
-                  .slick-slider-discount-themed
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р. 
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р. 
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                // THEME @in help@
-                h3 Маме на кухню
-                .discount-slider
-                  .slick-slider-discount-themed
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                    // slider - block
-                    .slider_block
-                      // block themed
-                      .themed_block
-                        a(href="#")
-                          img(src='img/promo/themed101.jpg', alt='#')
-                          p.themed_name
-                            | Каталка Полесье Боби [5434]
-                          p.themed_cat Машинки
-                          p.themed_coast 435,60 р.
-                .themed_more
-                  a(href='#') Показать ещё
-              .discount.hits.discount_inner
-                h2 Хиты этой недели
-                .discount-slider.discount-hoverable
-                  .slick-slider-discount-hits
-                    // slider - block
-                    .slider_block.hits-bg
-                      // discount_block hit
-                      .hits_block_wrap
-                        .hits_block
-                          .hits_status
-                            //.item-new и .item-sale добавляем для изменения цвета бэкграунда
-                            .status_item.item-new
-                              .status__item-bg
-                                span New
-                            .status_item.item-sale
-                              .status__item-bg
-                                span -10%
-                          img(src='img/promo/mobile_hit.jpg', alt='#')
-                          .hits_about
-                            p.hits_name
-                              a(href='#') Samsung Galaxy S6 Edge 32Gb
-                            p.hits_descr
-                              | Горный, рама сталь Hi-ten, колеса 26", вилка амортизационная, трансмиссия 21 скор. тормоза,яички, тормоза
-                          .hits_coast
-                            p.hits_coast_new
-                              | 10 435,60 р. 
-                              span  10 435 600 р
-                            p.hits_coast.old
-                              | 13 435,60 р. 
-                              span  13 435 600 р
-                          .hits_tools
-                            ul
-                              li.hits_comparison
-                                a(href='#')
-                                  img(src='img/main/comparison.svg', alt='#')
-                              li.hits_defer
-                                a(href='#')
-                                  img(src='img/main/defer.svg', alt='#')
-                              li.hits_review
-                                a(href='#')
-                                  | Отзывы 
-                                  span (18)
-                          .hits_stat
-                            p.stat_yes В наличии
-                            a(href='#') Подробнее
-                    // slider - block
-                    .slider_block.hits-bg
-                      // discount_block hit
-                      .item-grid-wrap
-                        .hits_block_wrap
+                .discount.themed.discount-inner
+                  h2 Тематические подборки
+                  // THEME @child@
+                  h3 Детям на праздник
+                  .discount-slider
+                    .slick-slider-discount-themed
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
                           a(href="#")
-                            .hits_block
-                              .hits_status
-                                .status_item.item-new
-                                  .status__item-bg
-                                    span New
-                                .status_item.item-sale
-                                  .status__item-bg
-                                    span -10%
-                              img(src='img/promo/bike_hit.jpg', alt='#')
-                              .hits_about
-                                p.hits_name
-                                  a(href='#') STELS Navigator 500 V 26 (2016)
-                                p.hits_descr
-                                  | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
-                              .hits_coast
-                                p.hits_coast_new
-                                  | 10 435,60 р. 
-                                  span  10 435 600 р
-                                p.hits_coast
-                                  | 13 435,60 р. 
-                                  span  13 435 600 р
-                              .hits_tools
-                                .hits-wrap
-                                  .hits_comparison.add.active
-                                    a(href='#') 
-                                  .hits_comparison.added
-                                    a(href='#') 
-                                .hits-wrap
-                                  .hits_defer.add
-                                    a(href='#') 
-                                  .hits_defer.added.active
-                                    a(href='#') 
-                                .hits-wrap.review     
-                                  .hits_review
-                                    a(href='#')
-                                      | Отзывы 
-                                      span (18)
-                              .hits_stat
-                                p.stat_yes.active В наличии
-                                p.stat_yes.zakaz Под заказ
-                                a(href='#') Подробнее
-                    // slider - block
-                    .slider_block.hits-bg
-                      // discount_block hit
-                      .item-grid-wrap
-                        .hits_block_wrap
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
                           a(href="#")
-                            .hits_block
-                              .hits_status
-                                .status_item.item-new
-                                  .status__item-bg
-                                    span New
-                                .status_item.item-sale
-                                  .status__item-bg
-                                    span -10%
-                              img(src='img/promo/bike_hit.jpg', alt='#')
-                              .hits_about
-                                p.hits_name
-                                  a(href='#') STELS Navigator 500 V 26 (2016)
-                                p.hits_descr
-                                  | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
-                              .hits_coast
-                                p.hits_coast_new
-                                  | 10 435,60 р. 
-                                  span  10 435 600 р
-                                p.hits_coast
-                                  | 13 435,60 р. 
-                                  span  13 435 600 р
-                              .hits_tools
-                                .hits-wrap
-                                  .hits_comparison.add.active
-                                    a(href='#') 
-                                  .hits_comparison.added
-                                    a(href='#') 
-                                .hits-wrap
-                                  .hits_defer.add
-                                    a(href='#') 
-                                  .hits_defer.added.active
-                                    a(href='#') 
-                                .hits-wrap.review     
-                                  .hits_review
-                                    a(href='#')
-                                      | Отзывы 
-                                      span (18)
-                              .hits_stat
-                                p.stat_yes.active В наличии
-                                p.stat_yes.zakaz Под заказ
-                                a(href='#') Подробнее
-                    // slider - block
-                    .slider_block.hits-bg
-                      // discount_block hit
-                      .item-grid-wrap
-                        .hits_block_wrap
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
                           a(href="#")
-                            .hits_block
-                              .hits_status
-                                .status_item.item-new
-                                  .status__item-bg
-                                    span New
-                                .status_item.item-sale
-                                  .status__item-bg
-                                    span -10%
-                              img(src='img/promo/bike_hit.jpg', alt='#')
-                              .hits_about
-                                p.hits_name
-                                  a(href='#') STELS Navigator 500 V 26 (2016)
-                                p.hits_descr
-                                  | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
-                              .hits_coast
-                                p.hits_coast_new
-                                  | 10 435,60 р. 
-                                  span  10 435 600 р
-                                p.hits_coast
-                                  | 13 435,60 р. 
-                                  span  13 435 600 р
-                              .hits_tools
-                                .hits-wrap
-                                  .hits_comparison.add.active
-                                    a(href='#') 
-                                  .hits_comparison.added
-                                    a(href='#') 
-                                .hits-wrap
-                                  .hits_defer.add
-                                    a(href='#') 
-                                  .hits_defer.added.active
-                                    a(href='#') 
-                                .hits-wrap.review     
-                                  .hits_review
-                                    a(href='#')
-                                      | Отзывы 
-                                      span (18)
-                              .hits_stat
-                                p.stat_yes.active В наличии
-                                p.stat_yes.zakaz Под заказ
-                                a(href='#') Подробнее
-                    // slider - block
-                    .slider_block.hits-bg
-                      // discount_block hit
-                      .item-grid-wrap
-                        .hits_block_wrap
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
                           a(href="#")
-                            .hits_block
-                              .hits_status
-                                .status_item.item-new
-                                  .status__item-bg
-                                    span New
-                                .status_item.item-sale
-                                  .status__item-bg
-                                    span -10%
-                              img(src='img/promo/bike_hit.jpg', alt='#')
-                              .hits_about
-                                p.hits_name
-                                  a(href='#') STELS Navigator 500 V 26 (2016)
-                                p.hits_descr
-                                  | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
-                              .hits_coast
-                                p.hits_coast_new
-                                  | 10 435,60 р. 
-                                  span  10 435 600 р
-                                p.hits_coast
-                                  | 13 435,60 р. 
-                                  span  13 435 600 р
-                              .hits_tools
-                                .hits-wrap
-                                  .hits_comparison.add.active
-                                    a(href='#') 
-                                  .hits_comparison.added
-                                    a(href='#') 
-                                .hits-wrap
-                                  .hits_defer.add
-                                    a(href='#') 
-                                  .hits_defer.added.active
-                                    a(href='#') 
-                                .hits-wrap.review     
-                                  .hits_review
-                                    a(href='#')
-                                      | Отзывы 
-                                      span (18)
-                              .hits_stat
-                                p.stat_yes.active В наличии
-                                p.stat_yes.zakaz Под заказ
-                                a(href='#') Подробнее
-                    // slider - block
-                    .slider_block.hits-bg
-                      // discount_block hit
-                      .item-grid-wrap
-                        .hits_block_wrap
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
                           a(href="#")
-                            .hits_block
-                              .hits_status
-                                .status_item.item-new
-                                  .status__item-bg
-                                    span New
-                                .status_item.item-sale
-                                  .status__item-bg
-                                    span -10%
-                              img(src='img/promo/bike_hit.jpg', alt='#')
-                              .hits_about
-                                p.hits_name
-                                  a(href='#') STELS Navigator 500 V 26 (2016)
-                                p.hits_descr
-                                  | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
-                              .hits_coast
-                                p.hits_coast_new
-                                  | 10 435,60 р. 
-                                  span  10 435 600 р
-                                p.hits_coast
-                                  | 13 435,60 р. 
-                                  span  13 435 600 р
-                              .hits_tools
-                                .hits-wrap
-                                  .hits_comparison.add.active
-                                    a(href='#') 
-                                  .hits_comparison.added
-                                    a(href='#') 
-                                .hits-wrap
-                                  .hits_defer.add
-                                    a(href='#') 
-                                  .hits_defer.added.active
-                                    a(href='#') 
-                                .hits-wrap.review     
-                                  .hits_review
-                                    a(href='#')
-                                      | Отзывы 
-                                      span (18)
-                              .hits_stat
-                                p.stat_yes.active В наличии
-                                p.stat_yes.zakaz Под заказ
-                                a(href='#') Подробнее
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                  // THEME @technic@
+                  h3 Умная техника
+                  .discount-slider
+                    .slick-slider-discount-themed
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р. 
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р. 
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                  // THEME @in help@
+                  h3 Маме на кухню
+                  .discount-slider
+                    .slick-slider-discount-themed
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                      // slider - block
+                      .slider_block
+                        // block themed
+                        .themed_block
+                          a(href="#")
+                            img(src='img/promo/themed101.jpg', alt='#')
+                            p.themed_name
+                              | Каталка Полесье Боби [5434]
+                            p.themed_cat Машинки
+                            p.themed_coast 435,60 р.
+                  .themed_more
+                    a(href='#') Показать ещё
+                .discount.hits.discount_inner
+                  h2 Хиты этой недели
+                  .discount-slider.discount-hoverable
+                    .slick-slider-discount-hits
+                      // slider - block
+                      .slider_block.hits-bg
+                        // discount_block hit
+                        .hits_block_wrap
+                          .hits_block
+                            .hits_status
+                              //.item-new и .item-sale добавляем для изменения цвета бэкграунда
+                              .status_item.item-new
+                                .status__item-bg
+                                  span New
+                              .status_item.item-sale
+                                .status__item-bg
+                                  span -10%
+                            img(src='img/promo/mobile_hit.jpg', alt='#')
+                            .hits_about
+                              p.hits_name
+                                a(href='#') Samsung Galaxy S6 Edge 32Gb
+                              p.hits_descr
+                                | Горный, рама сталь Hi-ten, колеса 26", вилка амортизационная, трансмиссия 21 скор. тормоза,яички, тормоза
+                            .hits_coast
+                              p.hits_coast_new
+                                | 10 435,60 р. 
+                                span  10 435 600 р
+                              p.hits_coast.old
+                                | 13 435,60 р. 
+                                span  13 435 600 р
+                            .hits_tools
+                              ul
+                                li.hits_comparison
+                                  a(href='#')
+                                    img(src='img/main/comparison.svg', alt='#')
+                                li.hits_defer
+                                  a(href='#')
+                                    img(src='img/main/defer.svg', alt='#')
+                                li.hits_review
+                                  a(href='#')
+                                    | Отзывы 
+                                    span (18)
+                            .hits_stat
+                              p.stat_yes В наличии
+                              a(href='#') Подробнее
+                      // slider - block
+                      .slider_block.hits-bg
+                        // discount_block hit
+                        .item-grid-wrap
+                          .hits_block_wrap
+                            a(href="#")
+                              .hits_block
+                                .hits_status
+                                  .status_item.item-new
+                                    .status__item-bg
+                                      span New
+                                  .status_item.item-sale
+                                    .status__item-bg
+                                      span -10%
+                                img(src='img/promo/bike_hit.jpg', alt='#')
+                                .hits_about
+                                  p.hits_name
+                                    a(href='#') STELS Navigator 500 V 26 (2016)
+                                  p.hits_descr
+                                    | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                                .hits_coast
+                                  p.hits_coast_new
+                                    | 10 435,60 р. 
+                                    span  10 435 600 р
+                                  p.hits_coast
+                                    | 13 435,60 р. 
+                                    span  13 435 600 р
+                                .hits_tools
+                                  .hits-wrap
+                                    .hits_comparison.add.active
+                                      a(href='#') 
+                                    .hits_comparison.added
+                                      a(href='#') 
+                                  .hits-wrap
+                                    .hits_defer.add
+                                      a(href='#') 
+                                    .hits_defer.added.active
+                                      a(href='#') 
+                                  .hits-wrap.review     
+                                    .hits_review
+                                      a(href='#')
+                                        | Отзывы 
+                                        span (18)
+                                .hits_stat
+                                  p.stat_yes.active В наличии
+                                  p.stat_yes.zakaz Под заказ
+                                  a(href='#') Подробнее
+                      // slider - block
+                      .slider_block.hits-bg
+                        // discount_block hit
+                        .item-grid-wrap
+                          .hits_block_wrap
+                            a(href="#")
+                              .hits_block
+                                .hits_status
+                                  .status_item.item-new
+                                    .status__item-bg
+                                      span New
+                                  .status_item.item-sale
+                                    .status__item-bg
+                                      span -10%
+                                img(src='img/promo/bike_hit.jpg', alt='#')
+                                .hits_about
+                                  p.hits_name
+                                    a(href='#') STELS Navigator 500 V 26 (2016)
+                                  p.hits_descr
+                                    | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                                .hits_coast
+                                  p.hits_coast_new
+                                    | 10 435,60 р. 
+                                    span  10 435 600 р
+                                  p.hits_coast
+                                    | 13 435,60 р. 
+                                    span  13 435 600 р
+                                .hits_tools
+                                  .hits-wrap
+                                    .hits_comparison.add.active
+                                      a(href='#') 
+                                    .hits_comparison.added
+                                      a(href='#') 
+                                  .hits-wrap
+                                    .hits_defer.add
+                                      a(href='#') 
+                                    .hits_defer.added.active
+                                      a(href='#') 
+                                  .hits-wrap.review     
+                                    .hits_review
+                                      a(href='#')
+                                        | Отзывы 
+                                        span (18)
+                                .hits_stat
+                                  p.stat_yes.active В наличии
+                                  p.stat_yes.zakaz Под заказ
+                                  a(href='#') Подробнее
+                      // slider - block
+                      .slider_block.hits-bg
+                        // discount_block hit
+                        .item-grid-wrap
+                          .hits_block_wrap
+                            a(href="#")
+                              .hits_block
+                                .hits_status
+                                  .status_item.item-new
+                                    .status__item-bg
+                                      span New
+                                  .status_item.item-sale
+                                    .status__item-bg
+                                      span -10%
+                                img(src='img/promo/bike_hit.jpg', alt='#')
+                                .hits_about
+                                  p.hits_name
+                                    a(href='#') STELS Navigator 500 V 26 (2016)
+                                  p.hits_descr
+                                    | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                                .hits_coast
+                                  p.hits_coast_new
+                                    | 10 435,60 р. 
+                                    span  10 435 600 р
+                                  p.hits_coast
+                                    | 13 435,60 р. 
+                                    span  13 435 600 р
+                                .hits_tools
+                                  .hits-wrap
+                                    .hits_comparison.add.active
+                                      a(href='#') 
+                                    .hits_comparison.added
+                                      a(href='#') 
+                                  .hits-wrap
+                                    .hits_defer.add
+                                      a(href='#') 
+                                    .hits_defer.added.active
+                                      a(href='#') 
+                                  .hits-wrap.review     
+                                    .hits_review
+                                      a(href='#')
+                                        | Отзывы 
+                                        span (18)
+                                .hits_stat
+                                  p.stat_yes.active В наличии
+                                  p.stat_yes.zakaz Под заказ
+                                  a(href='#') Подробнее
+                      // slider - block
+                      .slider_block.hits-bg
+                        // discount_block hit
+                        .item-grid-wrap
+                          .hits_block_wrap
+                            a(href="#")
+                              .hits_block
+                                .hits_status
+                                  .status_item.item-new
+                                    .status__item-bg
+                                      span New
+                                  .status_item.item-sale
+                                    .status__item-bg
+                                      span -10%
+                                img(src='img/promo/bike_hit.jpg', alt='#')
+                                .hits_about
+                                  p.hits_name
+                                    a(href='#') STELS Navigator 500 V 26 (2016)
+                                  p.hits_descr
+                                    | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                                .hits_coast
+                                  p.hits_coast_new
+                                    | 10 435,60 р. 
+                                    span  10 435 600 р
+                                  p.hits_coast
+                                    | 13 435,60 р. 
+                                    span  13 435 600 р
+                                .hits_tools
+                                  .hits-wrap
+                                    .hits_comparison.add.active
+                                      a(href='#') 
+                                    .hits_comparison.added
+                                      a(href='#') 
+                                  .hits-wrap
+                                    .hits_defer.add
+                                      a(href='#') 
+                                    .hits_defer.added.active
+                                      a(href='#') 
+                                  .hits-wrap.review     
+                                    .hits_review
+                                      a(href='#')
+                                        | Отзывы 
+                                        span (18)
+                                .hits_stat
+                                  p.stat_yes.active В наличии
+                                  p.stat_yes.zakaz Под заказ
+                                  a(href='#') Подробнее
+                      // slider - block
+                      .slider_block.hits-bg
+                        // discount_block hit
+                        .item-grid-wrap
+                          .hits_block_wrap
+                            a(href="#")
+                              .hits_block
+                                .hits_status
+                                  .status_item.item-new
+                                    .status__item-bg
+                                      span New
+                                  .status_item.item-sale
+                                    .status__item-bg
+                                      span -10%
+                                img(src='img/promo/bike_hit.jpg', alt='#')
+                                .hits_about
+                                  p.hits_name
+                                    a(href='#') STELS Navigator 500 V 26 (2016)
+                                  p.hits_descr
+                                    | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                                .hits_coast
+                                  p.hits_coast_new
+                                    | 10 435,60 р. 
+                                    span  10 435 600 р
+                                  p.hits_coast
+                                    | 13 435,60 р. 
+                                    span  13 435 600 р
+                                .hits_tools
+                                  .hits-wrap
+                                    .hits_comparison.add.active
+                                      a(href='#') 
+                                    .hits_comparison.added
+                                      a(href='#') 
+                                  .hits-wrap
+                                    .hits_defer.add
+                                      a(href='#') 
+                                    .hits_defer.added.active
+                                      a(href='#') 
+                                  .hits-wrap.review     
+                                    .hits_review
+                                      a(href='#')
+                                        | Отзывы 
+                                        span (18)
+                                .hits_stat
+                                  p.stat_yes.active В наличии
+                                  p.stat_yes.zakaz Под заказ
+                                  a(href='#') Подробнее
 
-      
+        
       .mask-js
       // footer
       include ./includes/_footer.jade

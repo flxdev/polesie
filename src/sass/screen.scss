@@ -222,6 +222,9 @@ body {
   @include r(1150){
     padding-right: 40px;
   }
+  @include r(880){
+    padding-right: 30px;
+  }
   a {
     position: relative;
     padding-right: 24px;
@@ -252,6 +255,12 @@ body {
   position: relative;
   @include x-rem(letter-spacing,.75px);
   //hide 3rd block that appended in dropdonw
+  @include r(880){
+    &:not(:last-child){
+      padding-right: 15px;
+    }
+    
+  }
   &:nth-child(3){
     @include r(1054){
     display: none;
@@ -260,7 +269,7 @@ body {
   &:first-child {
     font-family: $ProximaSemibold;
   }
-    .drop-line-nav li{
+    .add-list li{
       &:first-child{
         display: none;
         @include r(1054){
@@ -268,14 +277,31 @@ body {
         }
       }
   }
-  &.dropdown-btn{
+  &.bread-item{
     cursor: pointer;
+    padding-left: 0;
+    @include x-rem(letter-spacing, .75px);
+    @include x-rem(font-size, 13px);
+    &:hover{
+      >a{
+        color:$red;
+      }
+      .st1{
+          fill:$red;
+      }
+    }
+    a{
+      font-weight: 300;
+    }
+    &:before{
+      display:none;
+    }
     .icon{
-      width:20px;
+      width:15px;
       height:30px;
       display: inline-block;
       position: absolute;
-      right: -10px;
+      right: 0;
       top:0;
       z-index: 1;
     }
@@ -1507,6 +1533,7 @@ input:focus:-moz-placeholder {
 .js-mobile-menu-btn{
   padding: 12px 10px;
   display: none;
+  height:50px;
   transition: transform .3s;
   @include r(850){
     display: block;
@@ -1520,7 +1547,7 @@ input:focus:-moz-placeholder {
     width:100%;
   }
   .icon.arr-r{
-    height:100%;
+    height:25px;
     width:20px;
     float: right;
     transform: rotate(270deg);
@@ -2790,39 +2817,6 @@ input:focus:-moz-placeholder {
       text-decoration: none;
     }
   }
-  .drop-menu-wrapper{
-    @include x-rem(width,170px );
-    top:-30px;
-    left:20px;
-  }
-  .dropdown-btn{
-    display:none;
-    position: relative;
-     @include r(870){
-        display: table-cell;
-        padding: 0 15px;
-      }
-      @include r(600){
-        display: none;
-      }
-    .tab{
-      display: none;
-      @include x-rem(padding,5px 5px 5px 15px );
-        &:nth-child(n+4){
-            display:block;
-          }
-
-      @include r(480){
-        &:nth-child(n+2){
-            display:block;
-          }
-        }
-
-    }
-    .tabs{
-      padding-bottom: 0;
-    }
-  }
   .brand_all {
     display: inline-block;
     float: right;
@@ -3980,6 +3974,7 @@ footer {
   @include r(768){
     width:100%;
     padding: 0;
+    padding-bottom: 15px;
   }
   aside{
     border: 2px solid $border;
@@ -4033,6 +4028,9 @@ footer {
     width:100%;
     height:auto;
     @include x-rem(margin-bottom,40px);
+    @include r(980){
+      padding-top: 0;
+    }
     .ban_1{
       width:33%;
       &:first-child{
@@ -5369,7 +5367,9 @@ footer {
         }
       }
     }
-
+.product-modal-slider .product-slider-item img{
+  @include x-rem(max-height,600px);
+}
 
 .product-galery-wrap{
   @include x-rem(padding-top,85px);
@@ -7931,16 +7931,17 @@ footer {
   @include x-rem(padding,15px 0 0);
   border:none;
   .price-name {
-    width:25%!important;
+    width:22%!important;
     @include x-rem(min-width,80px);
   }
   .prices{
-    width:70% !important;
+    width:69% !important;
     float: right!important;
   }
   .prices-item{
     display: inline-block;
     float: right;
+    white-space: nowrap;
     @include x-rem(padding,0 0 0 5px);
   }
   .total{
@@ -8260,6 +8261,7 @@ footer {
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++
 .presonal-aside{
     padding: 1.5625rem 1.25rem !important;
+    margin-bottom: 40px;
     @include r(768){
       padding: .75rem !important;
       @include x-rem(margin-bottom,10px);
@@ -9138,6 +9140,7 @@ transition:border .3s;
 }
 .vacancy-date{
   float:right;
+  white-space: nowrap;
 }
 .accordion-container{
   &.accordion-noborder{
