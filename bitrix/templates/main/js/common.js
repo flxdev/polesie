@@ -147,9 +147,9 @@ $(window).on('load',function(){
 	 	})
 	}
 	
-	if($('.compare_fakehead-inner').length){
-		$(".headhesive").addClass('is-hidden');
-	}
+	// if($('.compare_fakehead-inner').length){
+	// 	$(".headsive").addClass('is-hidden');
+	// }
 });
 $(document).ready(function () {
 
@@ -387,14 +387,14 @@ var mobileSub = function(){
 		}
 }
 mobileSub();
-	// Create a new instance of Headhesive
-	var options = {
-		offset: 400
-	};
-	var header = new Headhesive('.header', options);
+	// // Create a new instance of Headhesive
+	// var options = {
+	// 	offset: 400
+	// };
+	// var header = new Headhesive('.header', options);
 	
 	$(".wrap-catalog-btn p").click(function(){
-		$(".headhesive .main-nav").toggle();
+		$(".headsive .main-nav").toggleClass('active');
 	});
 
 
@@ -407,7 +407,7 @@ mobileSub();
 			subitem = $('.nav-main li');
 			item.mouseenter(function(){
 				$(this).find('.drop-nav-dropmenu').first().parent().addClass('active').siblings().removeClass('active');
-				if(head.hasClass('headhesive--stick')){
+				if(head.hasClass('headsive')){
 					mask.stop(true,true).fadeIn();
 				}
 				$(this).find(subitem).on('mouseenter',function(){
@@ -1834,6 +1834,7 @@ jQuery(document).ready(function($){
 	var mainHeader = $('#wrap .cd-auto-hide-header'),
 		secondaryNavigation = $('.cd-secondary-nav'),
 		belowNavHeroContent = $('.sub-nav-hero'),
+		mainmenu = mainHeader.find('.main-nav'),
 		headerHeight = mainHeader.height();
 	
 	var scrolling = false,
@@ -1870,10 +1871,26 @@ jQuery(document).ready(function($){
 	    	mainHeader.removeClass('is-hidden');
 	    } else if( currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
 	    	mainHeader.addClass('is-hidden');
+	    	mainmenu.removeClass('active');
 	    	$('.mobile-search').removeClass('active');
 	    }
 	}
 });
+//add Class to header for manipulate blocks
+$(window).on('scroll', function(){
+	scrollHead();
+});
+var scrollHead = function () {
+	var scroll = $(window).scrollTop();
+	var target = $('#wrap .cd-auto-hide-header');
+	var tarH = target.height();
+    if (scroll < tarH -100) {
+    	target.removeClass('headsive');
+    } else  {
+		target.addClass('headsive');
+    }
+}
+
 $(".form-col .dropzone").dropzone({ 
 	url: "/file/post",
 	dictDefaultMessage: 'Загрузить фото <span class = "fsize">(не более 5Мб)</span> ',
