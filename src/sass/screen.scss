@@ -5123,11 +5123,13 @@ footer {
     .hits_comparison{
     &.add{
       a{
+        transform: translateY(1px);
         background-image: url(../img/main/comparison.svg)
       }
     &:hover{
       a{
-          background-image:url(../img/main/empty_compariso.svg); 
+            transform: translateY(1px);
+            background-image:url(../img/main/empty_compariso.svg); 
         }
       .hits-text{
            color:$red;
@@ -5136,13 +5138,17 @@ footer {
     }
      &.added{
         a{
-        background-image:url(../img/main/full_compariso.svg); 
+            transform: translateY(1px);
+            background-image:url(../img/main/full_compariso.svg); 
       }
     }
   }
 .hits_social{
   .hits-soc-wrap{
     position: relative;
+    svg{
+      transform: translateY(2px);
+    }
     &:hover{
       .soc_wrap{
         opacity: 1;
@@ -5171,11 +5177,13 @@ footer {
       &.add{
         a{
           background-position: top left;
+          transform:translateY(2px);
           background-image: url(../img/main/defer.svg)
         }
       &:hover{
         a{
           background-position: top left;
+          transform:translateY(2px);
             background-image:url(../img/main/defer_hover.svg); 
           }
         .hits-text{
@@ -5186,6 +5194,7 @@ footer {
         &.added{
             a{
               background-position: top left;
+              transform:translateY(2px);
             background-image:url(../img/main/defer_active.svg); 
           }
         }
