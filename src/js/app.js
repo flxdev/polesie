@@ -152,11 +152,11 @@ $(function() {
 
 		if(!_.hasClass('mobile-back')){
 
-			_.css({'transform': 'translateX(-100%)'});
+			_.css({'transform': 'translateX(-105%)'});
 			content.addClass('is-hidden');
 			menu.removeClass('is-hidden');
 			$('.mobile-back').removeClass('is-hidden');
-			$('body').css({'overflow': 'hidden'});
+			$('html').css({'overflow': 'hidden'});
 
 		}
 		else{
@@ -164,13 +164,13 @@ $(function() {
 			_.addClass('is-hidden');
 			content.removeClass('is-hidden');
 			menu.addClass('is-hidden');
-			$('body').removeAttr('style');
+			$('html').removeAttr('style');
 			_.prev().css({'transform': 'translateX(0)'});
 		}
 
 		$(window).resize(function(){
 			if($(window).width() > 768){
-				$('body').removeAttr('style');
+				$('html').removeAttr('style');
 				content.removeClass('is-hidden');
 				menu.addClass('is-hidden');
 				$('.mobile-back').addClass('is-hidden').prev().css({'transform': 'translateX(0)'});
@@ -352,17 +352,21 @@ mobileSub();
 					trigger.removeClass('active');
 					timeout = timeout;
 				})
-
-			
-
-
 	}
+	// $(window).on('scroll',function(){
+
+	// 	if($('.bread-item:hover').length != 0){
+	// 		$('body').trigger('click')
+	// 		}
+
+	// })	
 	//SLICK slider
 	$('.slick-slider').slick({
 		accessibility: true,
 		arrows: true,
 		dots: true,
 		draggable: false,
+		touchMove: false,
 		appendArrows: $('.galery__nav'),
   nextArrow:'<button type="button" class="carousel-next"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st0" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
   prevArrow:'<button type="button" class="carousel-prev"><div class="icon"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 9 5" style="enable-background:new 0 0 9 5;" xml:space="preserve"><style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#9E9E9E;}</style><path class="st0" d="M4.5,5L9,0.6L8.4,0L4.5,3.7L0.6,0L0,0.6L4.5,5"/></svg></div></button>',
@@ -644,8 +648,8 @@ mobileSub();
     {
       breakpoint: 330,
       settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        slidesToShow: 2,
+        slidesToScroll: 2,
         arrows: false,
       }
     }
@@ -841,14 +845,14 @@ if($('#brand').length){
 
 		data = $(this).data('target');
 
-		$('body').css("overflow-y","hidden").find(data).addClass('active');
+		$('body, html').css("overflow-y","hidden").find(data).addClass('active');
 
 		$(document).mouseup(function (e){ 
 				var div = $('.hidden-block');
 				if (!div.is(e.target) 
 				    && div.has(e.target).length === 0) {
 					div.parent().removeClass('active');
-					$("body").css("overflow-y","scroll"); 
+					$("body, html").css("overflow-y","scroll"); 
 					var slider =div.parent().find('.slick-slider');
 					setTimeout(function(){
 						slider.slick('unslick');
@@ -869,7 +873,7 @@ $('.button_close').click(function(){
 			}
 			
 			if(!$(this).hasClass('js-modal-trigger')){
-			 $("body").css("overflow-y","scroll");
+			 $("body, html").css("overflow-y","scroll");
 			}
 		});
 	

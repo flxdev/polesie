@@ -882,12 +882,23 @@ input:focus:-moz-placeholder {
     @include r(1270){
       @include x-rem(margin,10px 0 0 0 );
     }
+    @include r(850){
+       &:hover{
+        .acc-text{
+          color:$letters;
+        }
+        &:before{
+          background-image:url(../img/main/account.svg)!important;
+        }
+      }
+    }
     &:hover{
       .acc-text{
         color:$red;
       }
       &:before{
         background-image:url(../img/main/account-v.svg);
+
       }
     }
     .acc-text{
@@ -1147,21 +1158,29 @@ input:focus:-moz-placeholder {
       }
     @include r(768){
         padding:0;
-        background: transparent;
-        color:transparent;
+        background: transparent!important;
+        color:transparent!important;
         float: left;
+        svg{
+          fill:$letters;
+        }
         &.active{
           background: transparent !important;
           color: transparent !important;
         }
         span{
           background-color: $red;
-          color:$white;
+          color:$white!important;
           position: absolute;
           top:-8px;
           right:1px;
           height:20px;
           line-height:1.6; 
+        }
+        &:hover{
+          .stcart {
+              fill: #3B3B3B;
+          }
         }
       }
   }
@@ -1226,10 +1245,16 @@ input:focus:-moz-placeholder {
   top: 0;
   transition: all .3s;
   transition-delay: .25s;
+  @include r(768){
+      opacity:0;
+      visibility: hidden;
+      display: none
+  }
   &.active{
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+
   }
 }
 .cart_list_hidden {
@@ -1523,6 +1548,7 @@ input:focus:-moz-placeholder {
         @include r(850){
           text-align: left;
           padding: 12px 5px;
+          line-height:1.65;
         }
         &.active{
           .menu-arrow{
@@ -1540,6 +1566,9 @@ input:focus:-moz-placeholder {
           color: #fff;
           transition:background .3s;
           transition: color.3s;
+          @include r(850){
+            color: $red;
+          }
         }
       }
     }
@@ -1612,6 +1641,7 @@ input:focus:-moz-placeholder {
     opacity:1;
     transform:translateY(0);
     visibility: visible;
+    min-height:0;
   }
 }
 
@@ -1622,7 +1652,7 @@ input:focus:-moz-placeholder {
     transition: background .3s;
     @include r(850){
       background: $white;
-      color:$red;
+      color:$letters;
     }
   }
   .main-nav-dropmenu {
@@ -1697,6 +1727,10 @@ input:focus:-moz-placeholder {
         @include r(850){
         border-left: 2px solid transparent;
         background: #fff;
+        a{
+          color:$letters!important;
+        }
+
       }
     }
   }
@@ -2571,6 +2605,9 @@ input:focus:-moz-placeholder {
     .hits_name{
       a{
         color:$red;
+        @include r(850){
+          color:#000;
+        }
       }
       
     }
@@ -2809,6 +2846,9 @@ input:focus:-moz-placeholder {
 #brand {
   padding-top: 10px;
   border-top-width: 0px;
+  @include r(768){
+    position: relative;
+  }
   .tabs {
     padding-bottom: 15px;
     transition:border .3s;
@@ -2979,6 +3019,9 @@ input:focus:-moz-placeholder {
     @include x-rem(max-width, 133px);
     display: block;
     padding-bottom: 14px;
+    @include r(375){
+      margin-left:0;
+    }
   }
   &:hover {
     .themed_name{
@@ -3256,6 +3299,8 @@ footer {
   }
   .help-block{
     position: absolute;
+    bottom:-22px;
+    left:0;
   }
   @include r(420){
     border-color: transparent;
@@ -3501,7 +3546,7 @@ footer {
     @include x-rem(letter-spacing,1px);
     &:before {
       content: "";
-      background: url("../img/promo/FlexMedia.jpg");
+      background: url("../img/logof.svg") no-repeat center;
       width: 17px;
       height: 19px;
       position: absolute;
@@ -3538,7 +3583,8 @@ footer {
     }
   }
   @include r(570){
-    overflow-y: auto;
+    padding-top:0;
+
   }
   .hidden-block{
     @include x-rem(max-width,950px);
@@ -3554,8 +3600,9 @@ footer {
     @include r(768){
       @include x-rem(padding,50px 20px);
     }
-    @include r(480){
-      @include x-rem(padding,45px 10px);
+   @include r(570){
+      max-height:100%;
+      overflow-y: auto;
     }
     .hidden-title{
       text-align: center;
@@ -5691,6 +5738,7 @@ footer {
   max-width:80%;
   .top-line-region{
     padding:0; 
+    white-space: nowrap;
    a{
     color:#000;
    }
@@ -6135,7 +6183,7 @@ footer {
     @include r(768){
       min-width:100%;
       position: static;
-      @include x-rem(margin,25px 0);
+      @include x-rem(margin,25px 0 0);
       @include x-rem(padding,15px);
     }
     &.active{
@@ -6191,15 +6239,15 @@ footer {
     .brand-mobile-wrap{
       @include r(600){
         @include x-rem(height,47px);
-        overflow-y: hidden;
+        overflow: hidden;
       }
       .brand-mobile-arr{
         position: absolute;
          @include x-rem(height,47px);
-         @include x-rem(width,16px);
-         background: $white;
+         @include x-rem(width,15px);
+         // background: $white;
          right:0;
-         top:0;
+         top:12px;
          overflow: hidden;
          display: none;
          @include r(600){
@@ -6209,6 +6257,9 @@ footer {
           @include x-rem(margin-top,10px);
           transform:rotate(270deg);
           transform-origin: 50%;
+          svg{
+            background: #fff;
+          }
          }
       }
     }
@@ -6263,6 +6314,9 @@ footer {
     @include r(768){
       padding-right:0; 
       @include x-rem(padding-top,20px);
+    }
+    @include r(480){
+      @include x-rem(padding-top,10px);
     }
     &:nth-child(3){
       .char-wrapper{
@@ -6750,6 +6804,7 @@ footer {
     @include x-rem(padding-right,20px ); 
     @include r(768){
       padding: 0;
+      @include x-rem(padding-top,10px );
      }
     .video{
       position: relative;
@@ -6816,6 +6871,10 @@ footer {
   .item-date{
     @include x-rem(font-size,14px );
     color:$letters2; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
   }
   .item-title{
     @include x-rem(font-size,16px );
@@ -7811,6 +7870,11 @@ footer {
   @include r(900){
    position: relative;
    @include x-rem(padding-top,20px);
+  }
+  @include r(768){
+    .tab_content,.tab-btns{
+      padding-bottom: 0!important;
+    }
   }
 }
 .cart-main-wrapper{
