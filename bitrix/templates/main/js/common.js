@@ -1680,25 +1680,64 @@ $('.rev-star').click(function() {
   return false;
 });
 //video playlist
+
 if($('.video-playlist-cont').length){
 
-	var item = $('.video-item'),
-		playerCont = $('.video-main-cont').find('iframe');
+	var items = $('.video-item'),
+		playerCont = $('.video-main-cont').find('iframe'),
+		ids = [],
+		ytKey = 'AIzaSyB8QyzluQIiSnV8BKWW4ivg2QCrEQC4dWE',
+		ytPart = 'snippet,statistics',
+		ytLink = 'https://www.googleapis.com/youtube/v3/videos';
 
-	item.each(function(){
+	items.each(function(){
 		var _ = $(this);
-
+		ids.push(_.data('id'));
+		// viewcont.text(this.data.title);
+		// titlecont.text(res.data.title)
 		_.click(function(e){
 			_.addClass('active').siblings().removeClass('active');
-
 			e.preventDefault();
 			var src = _.attr('href');
-
-
 			playerCont.attr('src',src);
-
 		})
 	})
+
+	$.ajax({
+		url: ytLink,
+		type: 'get',
+		dataType: 'json',
+		data: {key: ytKey, part: ytPart, id: ids.join(',')},
+		success: function(res) {
+			if(typeof res == 'object') {
+				$.each(res.items, function(k,e) {
+					this.data = {};
+					this.data.title = e.snippet.title;
+					this.data.publishData = new Date(e.snippet.publishedAt);
+					this.data.views = e.statistics.viewCount;
+
+					if(typeof BX != 'undefined') 
+						this.data.publishData = BX.date.format("d F, Y", this.data.publishData.getTime());
+					else 
+						console.log('Подключи BX');
+				
+					var item = items.filter('[data-id='+e.id+']');
+					item.find('.item-title').text(this.data.title);
+					item.find('.item-date').text(this.data.publishData);
+					item.find('.item-counter').text(''+this.data.views + ' просмотров');
+					
+				})
+			} 
+		}
+	})
+	function placeText(item){
+		var viewcont =  item.find('.item-counter');
+		var datecont =  item.find('.item-date');
+		var titlecont =  item.find('.item-title');
+		var id = item.data('id');
+		console.log(id);
+		viewcont.text()
+	}
 }
 // FORMS STARTS HERE
 if($('.js-forgoten-pass-wrap').length){
