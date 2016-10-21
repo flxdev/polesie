@@ -295,7 +295,7 @@ body {
     cursor: pointer;
     padding-left: 0;
     @include x-rem(letter-spacing, .75px);
-    @include x-rem(font-size, 13px);
+    font-size: 13px;
     &:hover{
       >a{
         color:$red;
@@ -305,7 +305,9 @@ body {
       }
     }
     a{
+      position: static;
       font-weight: 300;
+      font-size:13px;
     }
     &:before{
       display:none;
@@ -844,7 +846,9 @@ input:focus:-moz-placeholder {
     text-decoration: none;
     line-height: 36px;
     position: relative;
-
+    &:hover{
+      color:$red;
+    }
     &:after {
       content: '';
       background: url("../img/main/scroll_down.svg");
@@ -1272,7 +1276,7 @@ input:focus:-moz-placeholder {
 }
 
 .cart_list_block_scroll {
-  height: 370px;
+  max-height: 370px;
   overflow: auto;
 }
 
@@ -1284,8 +1288,7 @@ input:focus:-moz-placeholder {
       color:$red;
     }
   }
-  &:after {
-    content: "";
+  .cart_list_block_remove{
     background: url("../img/main/del_product.svg");
     position: absolute;
     width: 13px;
@@ -2670,7 +2673,7 @@ input:focus:-moz-placeholder {
   color: #9d9c9c;
   font-size: 14px;
   font-weight: 300;
-  padding-left: 3px;
+  padding-left: 7px;
 }
 
 .hits_coast {
@@ -3984,6 +3987,8 @@ footer {
   >a{
     color:$grey;
     @include x-rem(font-size,12px);
+    position: relative;
+    z-index: 5;
   }
   &:last-child{
     >a{
@@ -4646,7 +4651,7 @@ footer {
       height: 1px;
       background-color:#9d9c9c; 
       position: absolute;
-      top:50%;
+      top:47%;
       transform: translateY(-50%);
       left: 0;
     }
@@ -4813,6 +4818,7 @@ footer {
   border:none;
   @include x-rem(font-size,14px);
   transition: background .3s;
+  user-select:none;
   @include r(1040){
     @include x-rem(margin-top,15px);
     @include x-rem(padding,4px 10px);
@@ -4857,6 +4863,7 @@ footer {
     span{
       @include r(768){
         display: block;
+        padding-left: 0;
       }
     }
   }
@@ -5166,12 +5173,18 @@ footer {
          @include x-rem(padding,0 8px);
          @include x-rem(font-size,14px);
         }
+      .hits-text{
+        display: none;
+      }
       }
     .hits_comparison{
     &.add{
       a{
         transform: translateY(1px);
         background-image: url(../img/main/comparison.svg)
+      }
+      .hits-text.no-added{
+        display:inline;
       }
     &:hover{
       a{
@@ -5184,9 +5197,12 @@ footer {
       }
     }
      &.added{
-        a{
-            transform: translateY(1px);
-            background-image:url(../img/main/full_compariso.svg); 
+      a{
+        transform: translateY(1px);
+        background-image:url(../img/main/full_compariso.svg); 
+      }
+      .hits-text.added{
+        display:inline;
       }
     }
   }
@@ -5227,6 +5243,9 @@ footer {
           transform:translateY(2px);
           background-image: url(../img/main/defer.svg)
         }
+        .hits-text.no-added{
+          display:inline;
+        }
       &:hover{
         a{
           background-position: top left;
@@ -5239,10 +5258,13 @@ footer {
           }
         }
         &.added{
-            a{
-              background-position: top left;
-              transform:translateY(2px);
+          a{
+            background-position: top left;
+            transform:translateY(2px);
             background-image:url(../img/main/defer_active.svg); 
+          }
+          .hits-text.added{
+            display:inline;
           }
         }
       }
@@ -6766,6 +6788,12 @@ footer {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
+    &.innactive{
+      background-image: url(../img/utility/star-gray.svg)
+    }
+    &.active{
+      background-image: url(../img/utility/star-yellow.svg)
+    }
   }
   .rev-hidden{
     display: none;
@@ -7831,9 +7859,12 @@ footer {
     display: table;
     border:1px solid $border;
     position: relative;
-    &:focus{
+    &:hover{
       border: 1px solid;
       border-color: $yellowHov;
+    }
+    &.active{
+      border-color: #00d000;
     }
     .help-block{
       position: absolute;
@@ -7913,6 +7944,9 @@ footer {
     }
     @include r(900){
       width:35%;
+    }
+    @include r(480){
+      width:100%;
     }
   }
    .elem-price{

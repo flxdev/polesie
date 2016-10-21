@@ -250,6 +250,7 @@
                       p.hits_coast.old
                         | 13 435,60 р. 
                         span  13 435 600 р
+                .cart_list_block_remove
               .cart_list_block
                 a(href="#")
                   img(src='img/promo/bike_hit.jpg', alt='#')
@@ -264,6 +265,7 @@
                       p.hits_coast.old
                         | 13 435,60 р. 
                         span  13 435 600 р
+                .cart_list_block_remove
               .cart_list_block
                 a(href="#")
                   img(src='img/promo/bike_hit.jpg', alt='#')
@@ -278,6 +280,7 @@
                       p.hits_coast.old
                         | 13 435,60 р. 
                         span  13 435 600 р
+                .cart_list_block_remove
               .cart_list_block
                 a(href="#")
                   img(src='img/promo/bike_hit.jpg', alt='#')
@@ -292,6 +295,7 @@
                       p.hits_coast.old
                         | 13 435,60 р. 
                         span  13 435 600 р
+                .cart_list_block_remove
             .cart_total
               p
                 | Итого: 
@@ -304,7 +308,34 @@
         .cart_list-empty
           .cart_list_hidden
             p Ваша корзина совершенно пуста
-      
+        script.
+          (function(){
+              var cart = $('.cart'),
+                parent = cart.parent(),
+                list = parent.find('.cart_list-wrapper'),
+                timeout = 300;
+
+              setTimeout(function(){
+                cart.on('mouseenter', function(){
+                parent.addClass('active');
+                cart.addClass('active');
+                list.addClass('active');
+              });
+              },timeout);
+              
+              parent.on('mouseleave', function(){
+                parent.removeClass('active');
+                cart.removeClass('active');
+                list.removeClass('active');
+                timeout = timeout;
+              });
+              $(document).mouseup(function (e) {
+              var container = $(".cart_list-wrapper");
+              if (container.has(e.target).length === 0){
+                container.removeClass('active');
+              }
+            });
+            })();
     // main-nav
     .main-nav
       nav.nav

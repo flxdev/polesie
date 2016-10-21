@@ -241,7 +241,9 @@
 														<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
 														<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
 													</div>
-												</div></a></div>
+												</div></a>
+											<div class="cart_list_block_remove"></div>
+										</div>
 										<div class="cart_list_block"><a href="#"><img src="img/promo/bike_hit.jpg" alt="#">
 												<div class="cart_list_descr">
 													<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
@@ -251,7 +253,9 @@
 														<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
 														<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
 													</div>
-												</div></a></div>
+												</div></a>
+											<div class="cart_list_block_remove"></div>
+										</div>
 										<div class="cart_list_block"><a href="#"><img src="img/promo/bike_hit.jpg" alt="#">
 												<div class="cart_list_descr">
 													<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
@@ -261,7 +265,9 @@
 														<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
 														<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
 													</div>
-												</div></a></div>
+												</div></a>
+											<div class="cart_list_block_remove"></div>
+										</div>
 										<div class="cart_list_block"><a href="#"><img src="img/promo/bike_hit.jpg" alt="#">
 												<div class="cart_list_descr">
 													<p class="cart_list_name">Samsung Galaxy S6 Edge 32Gb</p>
@@ -271,7 +277,9 @@
 														<p class="hits_coast_new">10 435,60 р. <span> 10 435 600 р</span></p>
 														<p class="hits_coast old">13 435,60 р. <span> 13 435 600 р</span></p>
 													</div>
-												</div></a></div>
+												</div></a>
+											<div class="cart_list_block_remove"></div>
+										</div>
 									</div>
 									<div class="cart_total">
 										<p>Итого: <span>4 466,60 р. <span> 44 666 000 р</span></span></p>
@@ -284,6 +292,35 @@
 									<p>Ваша корзина совершенно пуста</p>
 								</div>
 							</div>
+							<script>
+								(function(){
+								    var cart = $('.cart'),
+								      parent = cart.parent(),
+								      list = parent.find('.cart_list-wrapper'),
+								      timeout = 300;
+								
+								    setTimeout(function(){
+								      cart.on('mouseenter', function(){
+								      parent.addClass('active');
+								      cart.addClass('active');
+								      list.addClass('active');
+								    });
+								    },timeout);
+								    
+								    parent.on('mouseleave', function(){
+								      parent.removeClass('active');
+								      cart.removeClass('active');
+								      list.removeClass('active');
+								      timeout = timeout;
+								    });
+								    $(document).mouseup(function (e) {
+								    var container = $(".cart_list-wrapper");
+								    if (container.has(e.target).length === 0){
+								      container.removeClass('active');
+								    }
+								  });
+								  })();
+							</script>
 						</div>
 					</div>
 					<!-- main-nav-->
@@ -1174,7 +1211,7 @@
 			<div class="hidden-block">
 				<div class="hidden-block-close button_close"></div>
 				<h2 class="hidden-title">Консультация</h2>
-				<form action="/" class="form-feed">
+				<form action="/" class="form-feed js-form-feed">
 					<div class="input-wrapper">
 						<label class="input-label"> <span class="text">Ваше имя</span></label>
 						<input type="text" name="" placeholder="Иванов Степан Иванович" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Имя не должно быть короче 2 букв и не содержать цифры" class="input-main input-from">
@@ -1199,7 +1236,7 @@
 			<div class="hidden-block">
 				<div class="hidden-block-close button_close"></div>
 				<h2 class="hidden-title">Купить в 1 клик</h2>
-				<form action="/" class="form-feed">
+				<form action="/" class="form-feed js-form-feed">
 					<div class="input-wrapper">
 						<label class="input-label"> <span class="text">Ваше имя</span></label>
 						<input type="text" name="" placeholder="Иванов Степан Иванович" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Имя не должно быть короче 2 букв и не содержать цифры" class="input-main input-from">
@@ -1220,7 +1257,7 @@
 			<div class="hidden-block">
 				<div class="hidden-block-close button_close"></div>
 				<h2 class="hidden-title">Обратный звонок</h2>
-				<form action="/" class="call-form">
+				<form action="/" class="call-form js-call-validate">
 					<div class="input-wrapper">
 						<label class="input-label"> <span class="text">Ваше имя</span></label>
 						<input type="text" name="" placeholder="Иванов Степан Иванович" data-validation="required" data-validation-error-msg="Это обязательное поле" class="input-main input-from">
@@ -1246,7 +1283,7 @@
 				<div class="hidden-block-close button_close"></div>
 				<h2 class="hidden-title">Личный кабинет</h2>
 				<div class="tab-form-wrapper">
-					<form action="/" class="form-feed">
+					<form action="/" class="form-feed js-form-feed">
 						<div class="form-block block-login">
 							<div class="form-block-content">
 								<div class="input-wrapper">
@@ -1270,7 +1307,7 @@
 				<div class="hidden-block-close button_close"></div>
 				<h2 class="hidden-title">Восстановление пароля     </h2>
 				<div class="tab-form-wrapper">
-					<form action="" name="pass-forgotten" class="form-feed form-noborder">
+					<form action="" name="pass-forgotten" class="form-feed js-password-validate form-noborder">
 						<div class="form-block">
 							<div class="form-block-content">
 								<div class="input-text">Изменение пароля будет возможно после того, как вы перейдете по ссылке, которая будет отправлена вам на указанный e-mail</div>
@@ -1305,7 +1342,7 @@
 			<div class="hidden-block">
 				<div class="hidden-block-close button_close"></div>
 				<h1 class="hidden-title">Отклик на вакансию</h1><span class="small-title">Инженер-проектировщик</span>
-				<form action="/" class="vacancy-form">
+				<form action="/" class="vacancy-form js-vacancy-validate">
 					<div class="input-wrapper">
 						<label class="input-label"> <span class="text">Ваше имя</span></label>
 						<input type="text" name="" placeholder="Иванов Степан Иванович" data-validation="length required" data-validation-length="min2" data-validation-error-msg="Имя не должно быть короче 2 букв и не содержать цифры" class="input-main input-from">
@@ -1319,7 +1356,7 @@
 						<input type="tel" name="" placeholder="+375 29 000-00-00" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Введите свой телефонный номер в формате +375ХХХХХХХХХ" class="input-main input-from">
 					</div>
 					<div class="input-wrapper">
-						<div class="dropzone"></div>
+						<div class="dropzone js-vacancy-doc"></div>
 					</div>
 					<input type="submit" value="Откликнуться" class="hits-stat-more">
 				</form>

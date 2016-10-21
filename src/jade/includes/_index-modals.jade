@@ -962,7 +962,7 @@
   .hidden-block
     .hidden-block-close.button_close
     h2.hidden-title Консультация
-    form(action="/").form-feed
+    form(action="/").form-feed.js-form-feed
       .input-wrapper
         label.input-label 
           span.text Ваше имя
@@ -984,7 +984,7 @@
   .hidden-block
     .hidden-block-close.button_close
     h2.hidden-title Купить в 1 клик
-    form(action="/").form-feed
+    form(action="/").form-feed.js-form-feed
       .input-wrapper
         label.input-label 
           span.text Ваше имя
@@ -1002,7 +1002,7 @@
   .hidden-block
     .hidden-block-close.button_close
     h2.hidden-title Обратный звонок
-    form(action="/").call-form
+    form(action="/").call-form.js-call-validate
      .input-wrapper
         label.input-label 
           span.text Ваше имя
@@ -1025,7 +1025,7 @@
     .hidden-block-close.button_close
     h2.hidden-title Личный кабинет
     .tab-form-wrapper
-       form(action="/").form-feed
+       form(action="/").form-feed.js-form-feed
         .form-block.block-login
           .form-block-content
             .input-wrapper
@@ -1047,7 +1047,7 @@
     .hidden-block-close.button_close
     h2.hidden-title Восстановление пароля     
     .tab-form-wrapper
-       form(action="", name='pass-forgotten').form-feed.form-noborder
+       form(action="", name='pass-forgotten').form-feed.js-password-validate.form-noborder
         .form-block
           .form-block-content
             .input-text Изменение пароля будет возможно после того, как вы перейдете по ссылке, которая будет отправлена вам на указанный e-mail
@@ -1071,7 +1071,7 @@
     .hidden-block-close.button_close
     h1.hidden-title Отклик на вакансию
     span.small-title Инженер-проектировщик
-    form(action="/").vacancy-form
+    form(action="/").vacancy-form.js-vacancy-validate
       .input-wrapper
         label.input-label 
           span.text Ваше имя
@@ -1085,7 +1085,7 @@
           span.text Телефон
         input.input-main.input-from(type='tel',name="", placeholder = '+375 29 000-00-00',data-validation="custom",data-validation-regexp="^[-0-9()+ ]+$",data-validation-error-msg="Введите свой телефонный номер в формате +375ХХХХХХХХХ")
       .input-wrapper
-        .dropzone
+        .dropzone.js-vacancy-doc
       input.hits-stat-more(type="submit",  value = 'Откликнуться')
 
 

@@ -428,17 +428,17 @@ mobileSub();
 	})();
 	//scroll to element
 	$(".js-scroll").click(function (e) {
-
+ 		e.preventDefault();
         var elementClick = $(this).attr("href")
-        var destination = $(elementClick).offset().top;
-
-        jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination - 125}, 500);
-         e.preventDefault();
-         if (elementClick == '#tab_item') {
-         	$("#brand .tab").removeClass("active").eq(1).addClass("active");
-        $("#brand").find('.tab_item').hide().eq($("#brand .active").index()).fadeIn();
-         }
-        
+        if($(elementClick).length){
+        	var destination = $(elementClick).offset().top;
+	        jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination - 125}, 400);
+	        if (elementClick == '#tab_item') {
+	        	var tab = $(this).data('tab');
+	         	$("#brand .tab").removeClass("active");
+	         	$(tab).addClass('active').delay(200).trigger('click');
+	       }
+        }
     });
     // 2-0 2-2 all items
 	if($('.js-all-title').length){
@@ -446,7 +446,7 @@ mobileSub();
 			trigger = $('.js-all-title'),
 			target = $('.js-all-inner'),
 			сontainer= $('.select-all-cont'),
-			timeout = 300;
+			timeout = 350;
 
 			setTimeout(function(){
 				trigger.each(function(){
@@ -830,32 +830,28 @@ mobileSub();
 
 	}
 
-if($('#brand').length){
+// if($('#brand').length){
 
-	$("#brand").find('.tab_item').not(":first").hide();
+// 	// $("#brand").find('.tab_item').not(":first").hide();
 
-	$("#brand .tab").click(function() {
+// 	// $("#brand .tab").click(function() {
 
-		if(!$(this).hasClass('innactive')){
+// 	// 	if(!$(this).hasClass('innactive')){
+// 	// 		$("#brand .tab").removeClass("active").addClass('innactive').eq($(this).index()).addClass("active");
+// 	// 		setTimeout(function(){
+// 	// 			$("#brand .tab").removeClass('innactive');
+// 	// 		},300);
 
-			$("#brand .tab").removeClass("active").addClass('innactive').eq($(this).index()).addClass("active");
-
-			setTimeout(function(){
-				$("#brand .tab").removeClass('innactive');
-			},300);
-
-			$("#brand").find('.tab_item').hide().eq($("#brand .active").index()).fadeIn().find('.slick-slider').slick('setPosition');
+// 	// 		$("#brand").find('.tab_item').hide().eq($("#brand .active").index()).fadeIn().find('.slick-slider').slick('setPosition');
 			
-			if($(this).is(':last-child')){
-				$("#brand").find('.tabs_consult').last().addClass('active').siblings().removeClass('active');
-			}else{
-				$("#brand").find('.tabs_consult').first().addClass('active').siblings().removeClass('active');
-
-			}
-		}
-	}).eq(0).addClass("active");
-
-}
+// 	// 		if($(this).is(':last-child')){
+// 	// 			$("#brand").find('.tabs_consult').last().addClass('active').siblings().removeClass('active');
+// 	// 		}else{
+// 	// 			$("#brand").find('.tabs_consult').first().addClass('active').siblings().removeClass('active');
+// 	// 		}
+// 	// 	}
+// 	// }).eq(0).addClass("active");
+// }
 
 
 //input blocks
@@ -898,33 +894,33 @@ if($('#brand').length){
 	})();
 
 // hover card
-	(function(){
-		var cart = $('.cart'),
-			parent = cart.parent(),
-			list = parent.find('.cart_list-wrapper'),
-			timeout = 300;
+	// (function(){
+	// 	var cart = $('.cart'),
+	// 		parent = cart.parent(),
+	// 		list = parent.find('.cart_list-wrapper'),
+	// 		timeout = 300;
 
-		setTimeout(function(){
-			cart.on('mouseenter', function(){
-			parent.addClass('active');
-			cart.addClass('active');
-			list.addClass('active');
-		});
-		},timeout);
+	// 	setTimeout(function(){
+	// 		cart.on('mouseenter', function(){
+	// 		parent.addClass('active');
+	// 		cart.addClass('active');
+	// 		list.addClass('active');
+	// 	});
+	// 	},timeout);
 		
-		parent.on('mouseleave', function(){
-			parent.removeClass('active');
-			cart.removeClass('active');
-			list.removeClass('active');
-			timeout = timeout;
-		});
-		$(document).mouseup(function (e) {
-		var container = $(".cart_list-wrapper");
-		if (container.has(e.target).length === 0){
-			container.removeClass('active');
-		}
-	});
-	})();
+	// 	parent.on('mouseleave', function(){
+	// 		parent.removeClass('active');
+	// 		cart.removeClass('active');
+	// 		list.removeClass('active');
+	// 		timeout = timeout;
+	// 	});
+	// 	$(document).mouseup(function (e) {
+	// 	var container = $(".cart_list-wrapper");
+	// 	if (container.has(e.target).length === 0){
+	// 		container.removeClass('active');
+	// 	}
+	// });
+	// })();
 
 	// hover nav
 (function(){
@@ -1119,12 +1115,12 @@ var menuAdd = function(){
 
 	var btn = $('.js-container');
 	var menuItems = $('.main-nav nav .menu-item:nth-child(n+6)');
-
 	var topItem = $('.top-line-nav nav .top-item:nth-child(n+4)');
 	var topCont = $('.top-line-nav .add-list');
 	var top3 = $('.top-line-nav nav .top-item:nth-child(3)');
 	var brandItem = $('.discount.brand .product_tabs-wrapper>.tabs > .tab:nth-child(n+1)');
 	var brandCont = $('.discount.brand  .drop-line-nav > .tabs');
+
 	brandItem.clone().appendTo(brandCont);
 	menuItems.clone().appendTo(btn);
 	topItem.detach().prependTo(topCont).addClass('add-list-item');
@@ -1321,7 +1317,7 @@ if($('.sort_wrapper').length){
  					target.removeClass('active');
  					trigger.removeClass('active');
 
- 				},500);
+ 				},300);
  			});
  				$(document).mouseup(function (e){ 
 					if (!trigger.is(e.target) 
@@ -1400,8 +1396,9 @@ if($('.sort_wrapper').length){
 		else{
 			trigger.addClass('js-modal-trigger').attr('data-target','.product_hidden');
 		}
-	}
+	}; 
 	modalOff();
+
 	$(window).resize(function(){
 		modalOff();
 	});
@@ -1665,15 +1662,16 @@ function getChar(event) {
     }
    });
 
-$('.rev-star').click(function() {
+$('.rev-star').click(function(e) {
 	$(this).closest('.input-wrapper').addClass('has-success');
+	e.preventDefault();
   num = parseInt($(this).data("num"));
   i = 1;
   for (i = 1; i <= num; i++) {
-    $("#rev-star-" + i).css("background-image", "url(img/utility/star-yellow.svg)");
+    $("#rev-star-" + i).removeClass('innactive').addClass('active');
   }
   for (i = num + 1; i <= 5; i++) {
-    $("#rev-star-" + i).css("background-image", "url(img/utility/star-gray.svg)");
+    $("#rev-star-" + i).removeClass('active').addClass('innactive');
   }
   $(".rev-hidden").val(num);
 
@@ -1730,14 +1728,6 @@ if($('.video-playlist-cont').length){
 			} 
 		}
 	})
-	function placeText(item){
-		var viewcont =  item.find('.item-counter');
-		var datecont =  item.find('.item-date');
-		var titlecont =  item.find('.item-title');
-		var id = item.data('id');
-		console.log(id);
-		viewcont.text()
-	}
 }
 // FORMS STARTS HERE
 if($('.js-forgoten-pass-wrap').length){
@@ -1762,7 +1752,6 @@ if($('.js-forgoten-pass-wrap').length){
 		$('.js-form-login').show();
 	})
 
-
 	 var form_validate = $('.js-form-email');
     if (form_validate.length) {
         form_validate.each(function () {
@@ -1779,7 +1768,7 @@ if($('.js-forgoten-pass-wrap').length){
         });
     };
 }
-var form_main = $('.form-feed');
+var form_main = $('.js-form-feed');
 if (form_main.length) {
     form_main.each(function () {
         var form_this = $(this);
@@ -1809,7 +1798,7 @@ if (form_main.length) {
         });
     });
 };
-var form_mail = $('.password_hidden .form-feed');
+var form_mail = $('.password_hidden .js-password-validate');
 //modal password form
 if (form_mail.length) {
 
@@ -1826,7 +1815,7 @@ if (form_mail.length) {
         });
     });
 };
-var form_call = $('.call-form');
+var form_call = $('.js-call-validate');
 if (form_call.length) {
 
     form_call.each(function () {
@@ -1856,7 +1845,7 @@ if (form_subscribe.length) {
         });
     });
 };
-var form_vac = $('.vacancy_hidden .vacancy-form');
+var form_vac = $('.vacancy_hidden .js-vacancy-validate');
 if (form_vac.length) {
     form_vac.each(function () {
         var form_this = $(this);
@@ -1934,7 +1923,7 @@ var scrollHead = function () {
     }
 }
 
-$(".form-col .dropzone").dropzone({ 
+$(".form-col .js-img-input").dropzone({ 
 	url: "/file/post",
 	dictDefaultMessage: 'Загрузить фото <span class = "fsize">(не более 5Мб)</span> ',
 	dictFileTooBig : 'Файл слишком большой',
@@ -1945,7 +1934,7 @@ $(".form-col .dropzone").dropzone({
 	addRemoveLinks :true
 	 });
 
-$(".vacancy-form .dropzone").dropzone({ 
+$(".vacancy-form .js-vacancy-doc").dropzone({ 
 	url: "/file/post",
 	previewTemplate: '<div class="dz-preview dz-file-preview"><div class="dz-details"><div class="dz-filename"><span data-dz-name></span></div></div><div class="dz-success-mark"><span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 86.3 93" width ="15px" height = "16px" style="enable-background:new 0 0 86.3 93;" xml:space="preserve"><style type="text/css">.st0{fill:none;stroke:#FF0000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}</style><path class="st0" d="M70.3,57.8L44.4,83.7c-9.3,9.3-24.6,9.3-33.9,0L9.8,83c-9.3-9.3-9.3-24.6,0-33.9l41-41c7-7,18.5-7,25.5,0 l2.1,2.1c7,7,6.2,16.8-0.8,23.8l-17,17.5"/><line class="st0" x1="80.5" y1="47.6" x2="78.3" y2="49.8"/><path class="st0" d="M60.6,51.4l-13.7,14c-5.4,5.4-14,6.7-19.5,1.3L26.7,66c-5.4-5.4-4.4-13.8,1-19.3l27.7-26.6"/></svg></span></div><div class="dz-error-message"><span data-dz-errormessage></span></div></div>',
 	dictDefaultMessage: 'Прикрепите резюме ',

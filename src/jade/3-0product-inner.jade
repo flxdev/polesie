@@ -154,7 +154,7 @@ html(lang='ru')
                   
                   .hits-wrap.review     
                     .hits_review
-                      a(href='#')
+                      a(href='#tab_item',data-tab='#otziv').js-scroll
                         | Отзывы 
                         span (18)
               .product-main-wrap
@@ -275,7 +275,7 @@ html(lang='ru')
                   h4.product-small-title Краткие характеристики
                   p.hits_descr
                     | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза. У меня сын такой носит, сносу нет. Берите не пожалеете. Ососбенно если у вас ноги короткие.
-                  a(href="#tab_item").product-learn-more.js-scroll
+                  a(href="#tab_item",data-tab='#characteristics').product-learn-more.js-scroll
                     |Узнать больше
                     svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink',width='18px',height='18px', x='0px', y='0px', viewbox='0 0 18 18', style='enable-background:new 0 0 18 18;', xml:space='preserve')
                       style(type='text/css').
@@ -313,10 +313,10 @@ html(lang='ru')
                 .brand-mobile-wrap
                   .tabs.product-brand
                     span.tab Обзор
-                    span.tab Характеристики
+                    span#characteristics.tab Характеристики
                     span.tab Видео
                     span.tab Материалы для скачивания
-                    span.tab Отзывы
+                    span#otziv.tab Отзывы
                      span.counter (18)
                   .brand-mobile-arr
                     .bread-arr
@@ -627,7 +627,7 @@ html(lang='ru')
                         .char-main-name
                           h4 Отзыв
                           span.fed-talk Расскажите о товаре
-                        form(action="/").form-feed
+                        form(action="/").form-feed.js-form-feed
                           .form-col
                             .input-wrapper
                               label.input-label
@@ -637,11 +637,11 @@ html(lang='ru')
                               label.input-label
                                 span.text  Оцените товар по 5-ти бальной шкале
                                 .rev-stars
-                                  a#rev-star-1.rev-star(href='', data-num='1',style = 'background-image: url(img/utility/star-gray.svg)')
-                                  a#rev-star-2.rev-star(href='', data-num='2',style = 'background-image: url(img/utility/star-gray.svg)')
-                                  a#rev-star-3.rev-star(href='', data-num='3',style = 'background-image: url(img/utility/star-gray.svg)')
-                                  a#rev-star-4.rev-star(href='', data-num='4',style = 'background-image: url(img/utility/star-gray.svg)')
-                                  a#rev-star-5.rev-star(href='', data-num='5',style = 'background-image: url(img/utility/star-gray.svg)')
+                                  a#rev-star-1.innactive.rev-star(href='', data-num='1')
+                                  a#rev-star-2.innactive.rev-star(href='', data-num='2')
+                                  a#rev-star-3.innactive.rev-star(href='', data-num='3')
+                                  a#rev-star-4.innactive.rev-star(href='', data-num='4')
+                                  a#rev-star-5.innactive.rev-star(href='', data-num='5')
                                   input.rev-hidden(type="text")
                           .form-col.form-col-special
                             .input-wrapper
@@ -654,7 +654,7 @@ html(lang='ru')
                                 span.text Недостатки
                               textarea.input-main.input-small(name="", rows="3", placeholder = 'Опишите, что вам в нем не понравилось',data-validation="length required",data-validation-length="min10",data-validation-error-msg="Текст не должен быть короче 10ти символов")
                             .input-wrapper
-                              .dropzone
+                              .dropzone.js-img-input
 
 
                           span.fed-talk Оставвьте ваши данные
@@ -671,7 +671,25 @@ html(lang='ru')
                                 input.input-main.input-from(type='email',name="", placeholder = 'info@mail.com',data-validation="email",data-validation-error-msg="E-mail должен содержать @")
                                 span.add-info E-mail не публикуется на сайте
                           input.hits-stat-more(type="submit", placeholder = 'Отправить')
-            //end of tabs
+              //в корзине будешь вешщать класс актив сам
+              script.
+                  $("#brand").find('.tab_item').not(":first").hide().find('.tab').first().addClass('active');
+                  $("#brand .tab").click(function() {
+                    if(!$(this).hasClass('innactive')){
+                      $("#brand .tab").removeClass("active").addClass('innactive').eq($(this).index()).addClass("active");
+                      setTimeout(function(){
+                        $("#brand .tab").removeClass('innactive');
+                      },300);
+
+                      $("#brand").find('.tab_item').hide().eq($("#brand .active").index()).fadeIn().find('.slick-slider').slick('setPosition');
+                      
+                      if($(this).is(':last-child')){
+                        $("#brand").find('.tabs_consult').last().addClass('active').siblings().removeClass('active');
+                      }else{
+                          $("#brand").find('.tabs_consult').first().addClass('active').siblings().removeClass('active');
+                        }
+                    }
+                  });
             section.discount.hits.btop
               h2 Похожие товары
               .discount-slider.discount-hoverable
