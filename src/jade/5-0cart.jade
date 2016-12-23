@@ -231,10 +231,18 @@ html(lang='ru')
                                   path.stmore(d='M9,0C4,0,0,4,0,9c0,5,4,9,9,9c5,0,9-4,9-9C18,4,14,0,9,0z M9,17c-4.4,0-8-3.6-8-8c0-4.4,3.6-8,8-8\
                                   c4.4,0,8,3.6,8,8C17,13.4,13.4,17,9,17z M10.4,5L6,9l4.4,4l0.6-0.6L7.3,9L11,5.6L10.4,5z')
                             |Продолжить покупки
+
                           .promo-form-wrap
                             form.promo-form(action="/").form-feed.js-form-feed
-                              input.promo-imput(type="text", placeholder = 'Введите промокод',data-validation = 'required',data-validation-error-msg="Поле не может быть пустым")
+                              input.promo-imput(type="text", placeholder = 'Введите промокод',data-validation = 'required',data-validation-error-msg="Промокод не найден")
                               button.promo-submit(type='submit') Применить
+                            .offer-message
+                              //новая картинка, у тебя ее нету
+                              img(src="img/utility/success.png", alt="")
+                              .offer-text Промокод принят
+                                span GIFT59GJ5
+                              .offer-cancel
+
                       .tab_item
                         .tab-cart-wrap
                           .tab-head.tab-like

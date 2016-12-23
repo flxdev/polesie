@@ -1,0 +1,281 @@
+doctype html
+//if lt IE 7 
+  html.ie.ie6(lang='en')  
+//if IE 7 
+  html.ie.ie7(lang='en')  
+//if IE 8 
+  html.ie.ie8(lang='en')  
+// [if (gte IE 9)|!(IE)] <!
+html(lang='ru')
+  // <![endif]
+  head
+    include ./includes/_head.jade
+  body
+    #wrap
+      // header
+      include ./includes/_headmenu.jade
+
+      .content_main-wrapper
+        section
+          ul.breadcrums
+              a.home-btn(href="#")
+                  i.home-img
+                      svg#Layer_home(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='9px', y='5px', viewbox='0 0 14.1 13', style='enable-background:new 0 0 14.1 13;', xml:space='preserve')
+                        style(type='text/css').
+                          .sthome{fill-rule:evenodd;clip-rule:evenodd;fill:#989898;}
+                        path.sthome(d='M7.1,0l4.8,4.1L14,5.8c0,0,0.2,0.4,0,0.7c-0.3,0.4-0.8,0.2-0.8,0.2l-0.5-0.2v5.8c0,0.3-0.3,0.6-0.6,0.6h-3V8h-4\
+                        v5h-3c-0.3,0-0.6-0.3-0.6-0.6V6.6L0.9,6.8c0,0-0.6,0-0.8-0.2c-0.2-0.3,0-0.9,0-0.9l2-1.6L7.1,0z')
+              li.bread-item
+                  a(href="#") Поиск
+        section
+          h1.section-title Поиск
+          .section__wrapper
+            .search-main-wrap
+              .search-main-search
+                form(action="").search-main-form.js-search-form
+                  input(type="search" value='dsdsdsdsdsds').search-main-input
+                  input(type="submit").search-main-submit
+                  span.cancel-form
+              .compare_tabs
+                .compare_tab-item
+                  a(href="#") По каталогу
+                .compare_tab-item.active
+                  a(href="#") По тексту
+              .search-main-result
+                .loader-wrap
+                  #floatingBarsG
+                    #rotateG_01.blockG
+                    #rotateG_02.blockG
+                    #rotateG_03.blockG
+                    #rotateG_04.blockG
+                    #rotateG_05.blockG
+                    #rotateG_06.blockG
+                    #rotateG_07.blockG
+                    #rotateG_08.blockG                
+                .search-main-result-text
+                  // |По вашему запросу
+                  // span чочочо
+                  // |ничего не найдено.
+                  // .dop-text
+                  //   |Попробуйте сформулировать запрос иначе.
+                  |По вашему запросу
+                  span Велосипед
+                  |найдено 
+                  span 4 наименования
+                .search-main-result-cont
+                  .news_block
+                    a(href='#')
+                      img(src='img/promo/news1.jpg', alt='#')
+                      time.news_date 06 июля, 2016 года
+                      p.news_descr Каталки игровые с конструктором Каталки игровые с 
+                      p.small-text   Lorem ipsum dolor 
+                        span sit amet, 
+                        |consectetur adipisicing elit. Asperiores id similique dolore molestias non, deleniti, omnis animi doloremque laudantium, assumenda laborum voluptates. Alias veniam, corporis voluptate quod molestias, harum vero.
+
+                  .news_block                                 
+                    a(href='#')
+                      img(src='img/promo/news1.jpg', alt='#')
+                      time.news_date 06 июля, 2016 года
+                      p.news_descr Каталки игровые с конструктором Каталки игровые с 
+                      p.small-text   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores id similique dolore molestias non, 
+                        span deleniti, omnis animi 
+                        |doloremque laudantium, assumenda laborum voluptates. Alias veniam, corporis voluptate quod molestias, harum vero.
+                  .news_block                                 
+                    a(href='#')
+                      img(src='img/promo/news1.jpg', alt='#')
+                      time.news_date 06 июля, 2016 года
+                      p.news_descr Каталки игровые с конструктором Каталки
+                      p.small-text   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores id similique dolore molestias non, deleniti,
+                        span omnis animi 
+                        |doloremque laudantium, assumenda laborum voluptates. Alias veniam, corporis voluptate quod molestias, harum vero.
+                //товары
+                .search-main-result-text
+                  |По вашему запросу
+                  span Велосипед
+                  |найдено 
+                  span 4 наименования
+                .search-main-result-cont
+                  .products_wrap
+                    .item-grid-wrap
+                      .hits_block_wrap
+                        a(href="#")
+                          .hits_block
+                            .hits_status
+                              .status_item.item-new
+                                .status__item-bg
+                                  span New
+                              .status_item.item-sale
+                                .status__item-bg
+                                  span -10%
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            .hits_about
+                              p.hits_name
+                                a(href='#') STELS Navigator 500 V 26 (2016)
+                              p.hits_descr
+                                | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                            .hits_coast
+                              p.hits_coast_new
+                                | 10 435,60 р. 
+                                span  10 435 600 р
+                              p.hits_coast
+                                | 13 435,60 р. 
+                                span  13 435 600 р
+                            .hits_tools
+                              .hits-wrap
+                                .hits_comparison.add.active
+                                  a(href='#') 
+                                .hits_comparison.added
+                                  a(href='#') 
+                              .hits-wrap
+                                .hits_defer.add
+                                  a(href='#') 
+                                .hits_defer.added.active
+                                  a(href='#') 
+                              .hits-wrap.review     
+                                .hits_review
+                                  a(href='#')
+                                    | Отзывы 
+                                    span (18)
+                            .hits_stat
+                              p.stat_yes.active В наличии
+                              p.stat_yes.zakaz Под заказ
+                              a(href='#') Подробнее
+                    .item-grid-wrap
+                      .hits_block_wrap
+                        a(href="#")
+                          .hits_block
+                            .hits_status
+                              .status_item.item-new
+                                .status__item-bg
+                                  span New
+                              .status_item.item-sale
+                                .status__item-bg
+                                  span -10%
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            .hits_about
+                              p.hits_name
+                                a(href='#') STELS Navigator 500 V 26 (2016)
+                              p.hits_descr
+                                | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                            .hits_coast
+                              p.hits_coast_new
+                                | 10 435,60 р. 
+                                span  10 435 600 р
+                              p.hits_coast
+                                | 13 435,60 р. 
+                                span  13 435 600 р
+                            .hits_tools
+                              .hits-wrap
+                                .hits_comparison.add.active
+                                  a(href='#') 
+                                .hits_comparison.added
+                                  a(href='#') 
+                              .hits-wrap
+                                .hits_defer.add
+                                  a(href='#') 
+                                .hits_defer.added.active
+                                  a(href='#') 
+                              .hits-wrap.review     
+                                .hits_review
+                                  a(href='#')
+                                    | Отзывы 
+                                    span (18)
+                            .hits_stat
+                              p.stat_yes.active В наличии
+                              p.stat_yes.zakaz Под заказ
+                              a(href='#') Подробнее
+                    .item-grid-wrap
+                      .hits_block_wrap
+                        a(href="#")
+                          .hits_block
+                            .hits_status
+                              .status_item.item-new
+                                .status__item-bg
+                                  span New
+                              .status_item.item-sale
+                                .status__item-bg
+                                  span -10%
+                            img(src='img/promo/bike_hit.jpg', alt='#')
+                            .hits_about
+                              p.hits_name
+                                a(href='#') STELS Navigator 500 V 26 (2016)
+                              p.hits_descr
+                                | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                            .hits_coast
+                              p.hits_coast_new
+                                | 10 435,60 р. 
+                                span  10 435 600 р
+                              p.hits_coast
+                                | 13 435,60 р. 
+                                span  13 435 600 р
+                            .hits_tools
+                              .hits-wrap
+                                .hits_comparison.add.active
+                                  a(href='#') 
+                                .hits_comparison.added
+                                  a(href='#') 
+                              .hits-wrap
+                                .hits_defer.add
+                                  a(href='#') 
+                                .hits_defer.added.active
+                                  a(href='#') 
+                              .hits-wrap.review     
+                                .hits_review
+                                  a(href='#')
+                                    | Отзывы 
+                                    span (18)
+                            .hits_stat
+                              p.stat_yes.active В наличии
+                              p.stat_yes.zakaz Под заказ
+                              a(href='#') Подробнее
+                    .item-grid-wrap
+                        .hits_block_wrap
+                          a(href="#")
+                            .hits_block
+                              .hits_status
+                                .status_item.item-new
+                                  .status__item-bg
+                                    span New
+                                .status_item.item-sale
+                                  .status__item-bg
+                                    span -10%
+                              img(src='img/promo/bike_hit.jpg', alt='#')
+                              .hits_about
+                                p.hits_name
+                                  a(href='#') STELS Navigator 500 V 26 (2016)
+                                p.hits_descr
+                                  | Горный, рама сталь Hi-ten, коле- са 26", вилка амортизационная, трансмиссия 21 скор., тормоза...
+                              .hits_coast
+                                p.hits_coast_new
+                                  | 10 435,60 р. 
+                                  span  10 435 600 р
+                                p.hits_coast
+                                  | 13 435,60 р. 
+                                  span  13 435 600 р
+                              .hits_tools
+                                .hits-wrap
+                                  .hits_comparison.add.active
+                                    a(href='#') 
+                                  .hits_comparison.added
+                                    a(href='#') 
+                                .hits-wrap
+                                  .hits_defer.add
+                                    a(href='#') 
+                                  .hits_defer.added.active
+                                    a(href='#') 
+                                .hits-wrap.review     
+                                  .hits_review
+                                    a(href='#')
+                                      | Отзывы 
+                                      span (18)
+                              .hits_stat
+                                p.stat_yes.active В наличии
+                                p.stat_yes.zakaz Под заказ
+                                a(href='#') Подробнее
+
+
+
+      .mask-js
+      // footer
+      include ./includes/_footer.jade
+    include ./includes/_index-modals.jade
