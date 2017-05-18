@@ -7,7 +7,7 @@
   "dependencies": {
     "browser-sync": "*",
     "gulp": "*",
-    "gulp-autoprefixer": "*",
+    "gulp-autoprefixer": "^3.1.1",
     "gulp-imagemin": "*",
     "gulp-minify-css": "*",
     "gulp-rigger": "*",
